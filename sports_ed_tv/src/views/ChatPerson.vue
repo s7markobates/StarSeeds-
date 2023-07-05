@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="flex justify-start items-start p-3">
-                <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100">
+                <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
                 <button class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
                     <i class="fas fa-paper-plane text-xl"></i>
                 </button>
