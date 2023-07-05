@@ -10,11 +10,11 @@
             <h2 class="self-center text-5xl uppercase text-gray-500 mt-1 mb-4 tracking-tight">Log in</h2>
             <div>
               <label for="name" class="ml-3 text-gray-500 font-semibold">Name</label>
-              <input v-model="formData.name" id="name" type="text" class="input-field" placeholder="Enter your full name" required autocomplete="name">
+              <input v-model="formData.name" id="name" type="text" class="input-field" placeholder="Enter your full name" required >
             </div>
             <div class="mt-2">
               <label for="email" class="ml-3 text-gray-500 font-semibold">Email address</label>
-              <input v-model="formData.email" id="email" type="email" class="input-field" placeholder="vm@executive-digital.com" required autocomplete="email">
+              <input v-model="formData.email" id="email" type="email" class="input-field" placeholder="vm@executive-digital.com" required >
             </div>
             <div class="mt-2">
               <label for="password" class="ml-3 text-gray-500 font-semibold">Password</label>

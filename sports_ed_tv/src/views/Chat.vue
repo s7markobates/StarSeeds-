@@ -25,9 +25,9 @@
       <ul>
         <li v-for="person in filteredPeople" :key="person.id">
           <div class="flex justify-between items-center py-4">
-            <div class="flex justify-between items-center" @click="openChat(person.id)">
-              <img :src="person.image" class="h-[60px] w-[60px] p-1 rounded-full border border-gray-600 hover_ ml-4 cursor-pointer" alt="Profile Image" />
-              <h1 class="text-[22px] text-gray-600 hover:text-orange-400 font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
+            <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-[1.1]" @click="openChat(person.id)">
+              <img :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+              <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
             </div>
             <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-4 cursor-pointer" @click="deletePerson(person.id)"></i>
           </div>
@@ -111,13 +111,13 @@ const getFirstName = computed(() => {
   }
 })
 
+const showModal = ref(false)
+const personToDelete = ref(null)
+
 const deletePerson = (personId) => {
   personToDelete.value = personId
   showModal.value = true
 }
-
-const showModal = ref(false)
-const personToDelete = ref(null)
 
 const confirmDelete = () => {
   if (personToDelete.value) {

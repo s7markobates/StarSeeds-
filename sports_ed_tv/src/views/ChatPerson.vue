@@ -1,34 +1,35 @@
 <template>
-    <div>
-        <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
-            <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
-              <div class="flex items-center">
-                <RouterLink :to="{ name: 'chat'}">
-                  <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
-                  <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
-                </RouterLink>
-              </div>
-            </div>
-            <div class="text-xl font-bold flex-1 mt-4 ">
-                <h1 class="flex justify-center items-center">OBELEŽENA_OSOBA 's CHAT</h1>
-            </div>
-            <div class="flex-1 mr-6 "></div>
+  <div>
+    <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
+      <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
+        <div class="flex items-center">
+          <RouterLink :to="{ name: 'chat'}">
+            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
+            <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
+          </RouterLink>
         </div>
-
-        <div class="w-[96%] mt-5 mx-auto">
-            <div class="bg-gray-100 w-full h-[580px] rounded-3xl">
-                <div class="px-20 py-8">
-                    <p>Chat started, say "Hello!"</p>
-                </div>
-            </div>
-            <div class="flex justify-start items-start p-3">
-                <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
-                <button class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
-                    <i class="fas fa-paper-plane text-xl"></i>
-                </button>
-            </div>
-        </div>
+      </div>
+      <div class="text-xl font-bold flex-1 mt-4 ">
+          <h1 class="flex justify-center items-center">OBELEŽENA_OSOBA 's CHAT</h1>
+      </div>
+      <div class="flex-1 mr-6 ">
+      </div>
     </div>
+
+    <div class="w-[96%] mt-5 mx-auto">
+      <div class="bg-gray-100 w-full h-[580px] rounded-3xl">
+        <div class="px-20 py-8">
+          <p>Chat started, say "Hello!"</p>
+        </div>
+      </div>
+      <div class="flex justify-start items-start p-3">
+        <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
+        <button class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
+          <i class="fas fa-paper-plane text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -44,6 +45,7 @@ onMounted(() => {
   if (localProfile) {
     fetchProfile(localProfile)
   }
+  // fetchPeople()
 })
 
 const fetchProfile = (localProfile) => {
@@ -59,6 +61,17 @@ const fetchProfile = (localProfile) => {
     console.log(err.message)
   })
 }
+
+// const fetchPeople = () => {
+//   fetch('http://localhost:3000/profile')
+//     .then(response => response.json())
+//     .then(data => {
+//       people.value = data
+//     })
+//     .catch(err => {
+//       console.log(err.message)
+//     })
+// }
 
 const getFirstName = computed(() => {
   if (profile.value) {

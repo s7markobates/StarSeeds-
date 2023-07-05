@@ -1,7 +1,10 @@
 <template>
     <div class="text-gray-600 mt-[96px] h-[100%]">
         <div class="text-xl font-bold flex justify-between ">
-            <h1 class="ml-10 mt-4">All profiles:</h1>
+            <div class="flex justify-center items-center ml-11 mt-4 ">
+                <i class="fas fa-user-tie text-xl mr-3"></i>
+                <h1 class="">All profiles:</h1>
+            </div>
             <div class="mt-4">
                 <RouterLink :to="{ name: 'feed' }">
                     <div class="flex items-center">
