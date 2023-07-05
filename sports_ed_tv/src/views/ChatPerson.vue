@@ -37,6 +37,8 @@ import { RouterLink } from 'vue-router'
 
 const profile = ref(null)
 
+// work in progress
+
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
   if (localProfile) {
