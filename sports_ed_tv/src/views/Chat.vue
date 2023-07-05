@@ -1,6 +1,6 @@
 <template>
-  <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-start items-center">
-    <div v-if="profile" class="text-xl font-bold flex justify-start items-center ml-6 mt-4">
+  <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
+    <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
       <RouterLink :to="{ name: 'feed'}">
         <div class="flex items-center">
           <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
@@ -8,9 +8,10 @@
         </div>
       </RouterLink>
     </div>
-    <div class="text-xl font-bold flex justify-start items-center ml-[540px] mt-4">
-      <h1>{{ getFirstName }}'s CHATS</h1>
+    <div class="text-xl font-bold flex-1 mt-4 ">
+      <h1 class="flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
     </div>
+    <div class="flex-1 mr-6 "></div>
   </div>
 
   <div class="w-[95%] mx-auto mt-3 flex flex-col mb-24">
