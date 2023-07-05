@@ -2,7 +2,7 @@
 
   <NavbarHead />
 
-  <Body/>
+  <Body></Body>
 
   <RouterView />
 
