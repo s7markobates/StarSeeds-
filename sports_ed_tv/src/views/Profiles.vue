@@ -1,0 +1,51 @@
+<template>
+    <div class="text-gray-600 mt-[96px] h-[100%]">
+        <div class="text-xl font-bold flex justify-between ">
+            <h1 class="ml-10 mt-4">All profiles:</h1>
+            <div class="mt-4">
+                <RouterLink :to="{ name: 'feed' }">
+                    <div class="flex items-center">
+                        <span class="mr-2 hover:text-orange-400">Go to current feed</span>
+                        <i class="fas fa-arrow-right text-orange-400 text-2xl mr-10" ></i>
+                    </div>
+                </RouterLink>
+            </div>
+        </div>
+        <div class="w-[95%] mx-auto mt-3 mb-24 bg-gray-200 p-2 rounded-lg shadow-md">
+            <div v-for="profile in profiles" :key="profile.id" >
+                <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
+                    <div class="flex flex-col items-start justify-center bg-gray-100 hover:bg-slate-50 p-1 m-3 rounded-md shadow-md">
+                        <ul class="">
+                            <li class="p-2 text-lg">
+                                <h1 class="font-semibold">{{ profile.name }}</h1>
+                                <p>{{ profile.email }}</p>
+                            </li>                        
+                        </ul>
+                    </div>
+                </RouterLink>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import { RouterLink } from 'vue-router'
+
+export default {
+    data() {
+        return {
+            profiles: []
+        }
+    },
+    mounted() {
+        fetch('http://localhost:3000/profile')
+        .then(res => res.json())
+        .then(data => this.profiles = data)
+        .catch(err => console.log(err.message))
+    }
+}
+
+</script>
+
+<style scoped>
+</style>
