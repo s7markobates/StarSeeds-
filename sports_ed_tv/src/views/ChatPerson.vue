@@ -17,15 +17,29 @@
     </div>
 
     <div class="w-[96%] mt-5 mx-auto">
-      <div class="bg-gray-100 w-full h-[580px] rounded-3xl">
-        <div class="bg-gray-100 w-full h-[580px] rounded-3xl">
-          <div class="px-20 py-8 flex flex-col w-[80%] mx-auto text-white">
-            <span class="bg-red-300 p-4 mr-7 mb-2 rounded-b-xl rounded-tr-xl">Chat started, say "Hello!"</span>
-            <span class="bg-orange-300 p-4 ml-7 mb-2 rounded-b-xl rounded-tl-xl">Hello to you, too...</span>
+
+      <div class="bg-gray-100 w-full h-[580px] rounded-3xl ">
+        <div class="flex justify-evenly items-end h-full overflow-hidden" >
+          <div class="pb-10">
+            <img v-if="currentPerson" :src="currentPerson.image" class="h-24 w-24 rounded-full border-2 border-orange-400" alt="Profile Image" />
           </div>
-          <img v-if="profile && profile.image" :src="profile.image" class="h-24 w-24 rounded-full shadow-2xl border-2 border-gray-300 ml-auto mr-20" alt="Profile Image" />
+          <div class="w-[800px] text-white ">
+            <div class="flex flex-col overflow-y-scroll">
+              <p class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl inline">Hellooooooooooooooooooo!</p>
+              <p class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl inline">Hello to you, too.</p>
+              <p class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl inline">See ya!</p>
+              <p class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur, voluptatum accusantium non similique possimus libero at assumenda eum sit accusamus. Nostrum, modi dolor, ratione aspernatur cupiditate ea qui odit, amet molestiae cumque dicta debitis consequuntur repellat repellendus eaque libero dignissimos distinctio eveniet iste impedit. Fuga obcaecati dolore eius adipisci consectetur doloremque ducimus ad suscipit omnis voluptas eos dolor, quisquam repellendus ipsam laudantium veniam consequuntur minus similique numquam quia animi, eaque dolorem. Quas accusantium aut tenetur soluta sit repudiandae libero molestias, non, fuga voluptates doloribus, necessitatibus illo similique. Consequatur laudantium voluptatibus odio quas fugit laboriosam rerum accusantium doloribus rem quos!</p>
+              <p class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl inline">Hello to you, too.</p>
+              <p class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl inline">See ya!</p>
+              <p class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl inline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur, voluptatum accusantium non similique possimus libero at assumenda eum sit accusamus. Nostrum, modi dolor, ratione aspernatur cupiditate ea qui odit, amet molestiae cumque dicta debitis consequuntur repellat repellendus eaque libero dignissimos distinctio eveniet iste impedit. Fuga obcaecati dolore eius adipisci consectetur doloremque ducimus ad suscipit omnis voluptas eos dolor, quisquam repellendus ipsam laudantium veniam consequuntur minus similique numquam quia animi, eaque dolorem. Quas accusantium aut tenetur soluta sit repudiandae libero molestias, non, fuga voluptates doloribus, necessitatibus illo similique. Consequatur laudantium voluptatibus odio quas fugit laboriosam rerum accusantium doloribus rem quos!</p>
+            </div>
+          </div>
+          <div class="pb-10">
+            <img v-if="profile && profile.image" :src="profile.image" class="h-24 w-24 rounded-full border-2 border-orange-400" alt="Profile Image" />
+          </div>
         </div>
       </div>
+
       <div class="flex justify-start items-start p-3">
         <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
         <button class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
@@ -34,7 +48,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
