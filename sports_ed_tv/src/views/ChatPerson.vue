@@ -18,8 +18,12 @@
 
     <div class="w-[96%] mt-5 mx-auto">
       <div class="bg-gray-100 w-full h-[580px] rounded-3xl">
-        <div class="px-20 py-8">
-          <p>Chat started, say "Hello!"</p>
+        <div class="bg-gray-100 w-full h-[580px] rounded-3xl">
+          <div class="px-20 py-8 flex flex-col w-[80%] mx-auto text-white">
+            <span class="bg-red-300 p-4 mr-7 mb-2 rounded-b-xl rounded-tr-xl">Chat started, say "Hello!"</span>
+            <span class="bg-orange-300 p-4 ml-7 mb-2 rounded-b-xl rounded-tl-xl">Hello to you, too...</span>
+          </div>
+          <!-- <img :src="profile.image" class="h-24 w-24 rounded-full shadow-2xl border-2 border-gray-300 ml-auto mt-auto" alt="Profile Image" /> -->
         </div>
       </div>
       <div class="flex justify-start items-start p-3">
@@ -37,15 +41,14 @@ import { ref, onMounted, computed } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const profile = ref(null)
-
-// work in progress
+const people = ref([])
 
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
   if (localProfile) {
     fetchProfile(localProfile)
   }
-  // fetchPeople()
+  fetchPeople()
 })
 
 const fetchProfile = (localProfile) => {
@@ -55,6 +58,7 @@ const fetchProfile = (localProfile) => {
     const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
     if (loggedInProfile) {
       profile.value = loggedInProfile
+      console.log(profile.value)
     }
   })
   .catch(err => {
@@ -62,16 +66,17 @@ const fetchProfile = (localProfile) => {
   })
 }
 
-// const fetchPeople = () => {
-//   fetch('http://localhost:3000/profile')
-//     .then(response => response.json())
-//     .then(data => {
-//       people.value = data
-//     })
-//     .catch(err => {
-//       console.log(err.message)
-//     })
-// }
+const fetchPeople = () => {
+  fetch('http://localhost:3000/profile')
+    .then(response => response.json())
+    .then(data => {
+      people.value = data
+      console.log(people.value)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+}
 
 const getFirstName = computed(() => {
   if (profile.value) {

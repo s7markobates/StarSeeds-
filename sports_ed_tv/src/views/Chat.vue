@@ -136,6 +136,7 @@ const cancelDelete = () => {
 
 const openChat = (personId) => {
   router.push({ name: 'chatPerson', params: { id: personId } })
+  console.log(personId)
 }
 
 </script>
