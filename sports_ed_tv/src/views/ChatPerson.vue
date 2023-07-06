@@ -25,7 +25,7 @@
               <img v-if="currentPerson" :src="currentPerson.image" class="h-24 w-24 rounded-full border-2 border-orange-400" alt="Profile Image" />
             </div>
             <div class="w-[800px] text-white ">
-              <div class="flex flex-col h-[580px] overflow-y-scroll">
+              <div class="flex flex-col h-[580px] overflow-y-scroll ">
                 <span class="bg-red-300 p-3 my-3 mr-16 rounded-b-xl rounded-tr-xl ">Hellooooooooooooooooooo!</span>
                 <span class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl ">Hello to you, too.</span>
                 <span class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl ">See ya!</span>
@@ -43,8 +43,8 @@
       </div>
 
       <div class="flex justify-start items-start p-3">
-        <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
-        <button class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
+        <input v-model="messageInput" type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
+        <button @click="sendMessage" class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
           <i class="fas fa-paper-plane text-xl"></i>
         </button>
       </div>
@@ -60,6 +60,7 @@ const profile = ref(null)
 const people = ref(null)
 const route = useRoute()
 const currentPerson = ref(null)
+const messageInput = ref('')
 
 
 onMounted(() => {
@@ -111,6 +112,20 @@ const getFirstName = computed(() => {
   }
 })
 
+const sendMessage = () => {
+  const message = messageInput.value
+  if (message) {
+    // Dodajte poruku u overflow div
+    const messageElement = document.createElement('span')
+    messageElement.textContent = message
+    messageElement.classList.add('bg-orange-300', 'p-3', 'mb-3', 'ml-16', 'rounded-b-xl', 'text-right', 'rounded-tl-xl')
+    const overflowDiv = document.querySelector('.overflow-y-scroll')
+    overflowDiv.appendChild(messageElement)
+
+    // Resetujte input polje
+    messageInput.value = ''
+  }
+}
 </script>
 
 <style>
