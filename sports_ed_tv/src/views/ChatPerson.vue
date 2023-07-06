@@ -25,7 +25,7 @@
               <img v-if="currentPerson" :src="currentPerson.image" class="h-24 w-24 rounded-full border-2 border-orange-400" alt="Profile Image" />
             </div>
             <div class="w-[800px] text-white ">
-              <div class="flex flex-col h-[580px] overflow-y-scroll scrollbar-hidden">
+              <div class="flex flex-col h-[580px] overflow-y-scroll">
                 <span class="bg-red-300 p-3 my-3 mr-16 rounded-b-xl rounded-tr-xl ">Hellooooooooooooooooooo!</span>
                 <span class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl ">Hello to you, too.</span>
                 <span class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl ">See ya!</span>
@@ -41,7 +41,6 @@
           </div>
         </div>
       </div>
-
 
       <div class="flex justify-start items-start p-3">
         <input type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
