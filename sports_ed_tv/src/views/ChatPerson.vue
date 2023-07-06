@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="text-xl font-bold flex-1 mt-4 ">
-          <h1 class="flex justify-center items-center">OBELEŽENA_OSOBA 's CHAT</h1>
+          <h1 class="flex justify-center items-center">OSOBA 's CHAT</h1>
       </div>
       <div class="flex-1 mr-6 ">
       </div>
@@ -23,7 +23,7 @@
             <span class="bg-red-300 p-4 mr-7 mb-2 rounded-b-xl rounded-tr-xl">Chat started, say "Hello!"</span>
             <span class="bg-orange-300 p-4 ml-7 mb-2 rounded-b-xl rounded-tl-xl">Hello to you, too...</span>
           </div>
-          <!-- <img :src="profile.image" class="h-24 w-24 rounded-full shadow-2xl border-2 border-gray-300 ml-auto mt-auto" alt="Profile Image" /> -->
+          <img v-if="profile && profile.image" :src="profile.image" class="h-24 w-24 rounded-full shadow-2xl border-2 border-gray-300 ml-auto mr-20" alt="Profile Image" />
         </div>
       </div>
       <div class="flex justify-start items-start p-3">
