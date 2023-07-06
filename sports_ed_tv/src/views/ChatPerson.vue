@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="text-xl font-bold flex-1 mt-4 ">
-          <h1 class="flex justify-center items-center">OSOBA 's CHAT</h1>
+          <h1 class="flex justify-center items-center">OSOBA's CHAT</h1>
       </div>
       <div class="flex-1 mr-6 ">
       </div>
@@ -34,14 +34,17 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 
 const profile = ref(null)
-const people = ref([])
+const people = ref(null)
+const route = useRoute()
+
 
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
@@ -68,15 +71,23 @@ const fetchProfile = (localProfile) => {
 
 const fetchPeople = () => {
   fetch('http://localhost:3000/profile')
-    .then(response => response.json())
-    .then(data => {
-      people.value = data
-      console.log(people.value)
-    })
-    .catch(err => {
-      console.log(err.message)
-    })
+  .then(response => response.json())
+  .then(data => {
+    people.value = data
+
+    const personId = route.params.id
+    console.log(personId)
+
+    const selectedPerson = people.value.find(person => person.id == personId)
+    if (selectedPerson) {
+      console.log(selectedPerson)
+    }
+  })
+  .catch(err => {
+    console.log(err.message)
+  })
 }
+
 
 const getFirstName = computed(() => {
   if (profile.value) {
