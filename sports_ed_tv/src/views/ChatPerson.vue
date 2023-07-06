@@ -9,8 +9,8 @@
           </RouterLink>
         </div>
       </div>
-      <div class="text-xl font-bold flex-1 mt-4 ">
-          <h1 class="flex justify-center items-center">OSOBA's CHAT</h1>
+      <div v-if="currentPerson" class="text-xl font-bold flex-1 mt-4 ">
+          <h1 class="flex justify-center items-center text-orange-400">CHAT: {{currentPerson.name}}</h1>
       </div>
       <div class="flex-1 mr-6 ">
       </div>
@@ -44,6 +44,7 @@ import { RouterLink, useRoute } from 'vue-router'
 const profile = ref(null)
 const people = ref(null)
 const route = useRoute()
+const currentPerson = ref(null)
 
 
 onMounted(() => {
@@ -79,15 +80,13 @@ const fetchPeople = () => {
     console.log(personId)
 
     const selectedPerson = people.value.find(person => person.id == personId)
-    if (selectedPerson) {
-      console.log(selectedPerson)
-    }
+    currentPerson.value = selectedPerson
+    console.log(currentPerson.value)
   })
   .catch(err => {
     console.log(err.message)
   })
 }
-
 
 const getFirstName = computed(() => {
   if (profile.value) {
