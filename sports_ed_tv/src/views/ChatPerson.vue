@@ -22,17 +22,8 @@
         <div class="pb-10">
           <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
         </div>
-        <div class="flex flex-col overflow-y-scroll h-[580px] w-[70%] text-white">
-          <span class="current-person-message">Hellooooooooooooooooooo!</span>
-          <span class="profile-message">Hello to you, too.</span>
-          <span class="current-person-message">Hellooooooooooooooooooo!</span>
-          <span class="profile-message ">Hello to you, too.</span>
-          <span class="current-person-message">Hellooooooooooooooooooo!</span>
-          <span class="profile-message">Hello to you, too.</span>
-          <span class="current-person-message">Hellooooooooooooooooooo!</span>
-          <span class="current-person-message">Hellooooooooooooooooooo!</span>
-          <span class="current-person-message">Hellooooooooooooooooooo!</span>
-          <span class="profile-message ">Hello to you, too.</span>
+        <div class="flex flex-col-reverse overflow-y-scroll h-[580px] w-[70%] text-white">
+          <span v-for="message in reversedMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
         </div>
         <div class="pb-10">
           <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
@@ -59,7 +50,7 @@ const people = ref(null)
 const route = useRoute()
 const currentPerson = ref(null)
 const messageInput = ref('')
-
+const messages = ref([])
 
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
@@ -109,22 +100,28 @@ const getFirstName = computed(() => {
 const sendMessage = () => {
   const message = messageInput.value
   if (message) {
-    const messageElement = document.createElement('span')
-    messageElement.textContent = message
-    messageElement.classList.add('bg-orange-300', 'p-3', 'my-2', 'ml-16', 'rounded-b-xl', 'rounded-tl-xl', 'text-right')
+    const newMessage = {
+      content: message,
+      sender: profile.value
+    }
+    messages.value.push(newMessage)
 
+    // Scroll ide do poslednje poruke
     const overflowDiv = document.querySelector('.overflow-y-scroll')
-    overflowDiv.appendChild(messageElement)
-
-    // Scroll goes up when enter new message
-    overflowDiv.scrollTop = 0
-    setTimeout(() => {
-      overflowDiv.scrollTop = overflowDiv.scrollHeight
-    }, 0)
+    overflowDiv.scrollTop = overflowDiv.scrollHeight
 
     messageInput.value = ''
   }
 }
+
+const reversedMessages = computed(() => {
+  return messages.value.slice().reverse()
+})
+
+const messageClass = (message) => {
+  return message.sender === profile.value ? 'profile-message' : 'current-person-message'
+}
+
 </script>
 
 <style>
