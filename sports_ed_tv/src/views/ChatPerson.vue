@@ -83,6 +83,7 @@ const fetchPeople = () => {
     const personId = route.params.id
     const selectedPerson = people.value.find(person => person.id == personId)
     currentPerson.value = selectedPerson
+    console.log(currentPerson.value.name)
   })
   .catch(err => {
     console.log(err.message)
