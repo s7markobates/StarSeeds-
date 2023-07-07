@@ -112,6 +112,7 @@ const sendMessage = () => {
     const messageElement = document.createElement('span')
     messageElement.textContent = message
     messageElement.classList.add('bg-orange-300', 'p-3', 'my-2', 'ml-16', 'rounded-b-xl', 'rounded-tl-xl', 'text-right')
+
     const overflowDiv = document.querySelector('.overflow-y-scroll')
     overflowDiv.appendChild(messageElement)
 
@@ -137,9 +138,9 @@ const sendMessage = () => {
   @apply h-24 w-24 rounded-full border-2 border-orange-400
 }
 .input-class {
-  @apply w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
+  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
 }
 .bttn-class {
-  @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-500 text-white rounded-full ml-5
+  @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
 }
 </style>
