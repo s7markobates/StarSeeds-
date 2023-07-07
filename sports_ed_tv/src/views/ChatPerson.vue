@@ -144,8 +144,9 @@ const filteredMessages = computed(() => {
   return messages.value.filter(message => {
     const isSender = message.sender === selectedSenderId
     const isRecipient = message.recipient === selectedRecipientId
+    const isReverseSenderRecipient = message.sender === selectedRecipientId && message.recipient === selectedSenderId
 
-    return isSender && isRecipient
+    return isSender && isRecipient || isReverseSenderRecipient
   })
 })
 </script>
