@@ -20,13 +20,13 @@
     <div v-if="profile" class="w-[96%] mt-5 mx-auto">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
-          <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
+          <img v-if="currentPerson" :src="currentPerson.image" class="img-class-current" alt="CurrentPersonImage" />
         </div>
         <div class="flex flex-col-reverse overflow-y-scroll h-[580px] w-[70%] text-white">
           <span v-for="message in filteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
         </div>
         <div class="pb-10">
-          <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
+          <img v-if="profile && profile.image" :src="profile.image" class="img-class-profile" alt="Profile Image" />
         </div>
       </div>
 
@@ -153,13 +153,16 @@ const filteredMessages = computed(() => {
 
 <style>
 .profile-message {
-  @apply bg-orange-300 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right
+  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right
 }
 .current-person-message {
-  @apply bg-red-300 p-3 my-2 mr-16 rounded-b-xl rounded-tr-xl
+  @apply bg-red-400 p-3 my-2 mr-16 rounded-b-xl rounded-tr-xl
 }
-.img-class {
-  @apply h-24 w-24 rounded-full border-2 border-orange-400
+.img-class-profile {
+  @apply h-32 w-32 rounded-full border-4 border-orange-400
+}
+.img-class-current {
+  @apply h-32 w-32 rounded-full border-4 border-red-400
 }
 .input-class {
   @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
