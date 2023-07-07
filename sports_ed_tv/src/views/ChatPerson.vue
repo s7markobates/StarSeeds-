@@ -140,6 +140,6 @@ const sendMessage = () => {
   @apply w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
 }
 .bttn-class {
-  @apply w-[80px] px-4 py-[7px] bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white rounded-full ml-5
+  @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-500 text-white rounded-full ml-5
 }
 </style>
