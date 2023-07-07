@@ -22,7 +22,7 @@
         <div class="pb-10">
           <img v-if="currentPerson" :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
         </div>
-        <div class="flex flex-col-reverse overflow-y-scroll h-[580px] w-[70%] text-white">
+        <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[580px] w-[70%] text-white">
           <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
         </div>
         <div class="pb-10">
@@ -37,7 +37,7 @@
         </button>
       </div>
     </div>
-
+    
   </div>
 </template>
 
@@ -159,10 +159,10 @@ const goToProfile = (personId) => {
 
 <style>
 .profile-message {
-  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right
+  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right 
 }
 .current-person-message {
-  @apply bg-red-400 p-3 my-2 mr-16 rounded-b-xl rounded-tr-xl
+  @apply bg-red-400 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl
 }
 .img-class-profile {
   @apply h-32 w-32 rounded-full border-4 border-orange-400 hover:scale-105
@@ -175,5 +175,17 @@ const goToProfile = (personId) => {
 }
 .bttn-class {
   @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.5rem; /* Promenite širinu skrol trake po potrebi */
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 </style>

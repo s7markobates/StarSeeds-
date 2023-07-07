@@ -1,18 +1,18 @@
 <template>
   <div class="text-gray-600 mt-[96px] h-[100%]">
     <div class="text-xl font-bold flex justify-start">
-      <div @click="goBack" class="ml-10 mt-3 cursor-pointer flex items-center">
+      <div @click="goToProfiles" class="ml-10 mt-3 cursor-pointer flex items-center">
         <i class="fas fa-arrow-left text-orange-400 text-2xl"></i>
-        <span class="ml-2 hover:text-orange-400">{{ profile.name }} profile</span>
+        <span class="ml-2 hover:text-orange-400">All members</span>
       </div>
     </div>
-    <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
+    <div class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
       <div class="flex justify-between items-end">
         <div v-if="profile">
           <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
           <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
-          <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button">Chat with {{ profile.name }}</button>
-          <button v-else class="button" @click="goToChat">Go to my Chats</button>
+          <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button">Chat with {{ profile.name }}<i class="fas fa-paper-plane text-sm ml-2"></i></button>
+          <button v-else class="button" @click="goToChat">Go to my Chats<i class="fas fa-paper-plane text-sm ml-2"></i></button>
         </div>           
         <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
@@ -33,7 +33,7 @@ export default {
     }
   },
   methods: {
-    goBack() {
+    goToProfiles() {
       this.$router.push({ name: 'profiles' })
     },
     openChat(personId) {

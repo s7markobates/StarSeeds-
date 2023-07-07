@@ -3,7 +3,7 @@
         <div class="text-xl font-bold flex justify-between ">
             <div class="flex justify-center items-center ml-11 mt-4 ">
                 <i class="fas fa-user-tie text-xl mr-3"></i>
-                <h1 class="">All profiles:</h1>
+                <h1 class="">All members:</h1>
             </div>
             <div class="mt-4">
                 <RouterLink :to="{ name: 'feed' }">

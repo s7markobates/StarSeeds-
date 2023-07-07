@@ -5,7 +5,7 @@
         <RouterLink :to="{ name: 'profiles'}" class="">
           <div class="flex items-center">
             <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
-            <span class="hover:text-orange-400">All profiles</span>
+            <span class="hover:text-orange-400">All members</span>
           </div>
         </RouterLink>
       </div>
@@ -27,7 +27,7 @@
       <p class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
     </div>
     <div v-if="profile" class="w-[98%] mx-auto mt-5 flex flex-col items-center ">
-      <h1 class="mb-2">Change your description:</h1>
+      <h1 class="mb-2">Update your description:</h1>
       <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description"></textarea>
       <button @click="updateDescription" class="update-button">Update Description</button>
     </div>
@@ -94,7 +94,7 @@ const getFirstName = computed(() => {
   
 <style scoped>
 .update-button {
-  @apply mt-5 px-3 h-9 w-[200px] border rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 font-bold cursor-pointer
+  @apply mt-5 px-3 h-9 w-[200px] border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 font-bold cursor-pointer
 }
 .textarea-style {
   @apply border-4 border-gray-200 bg-gray-50 w-[70%] rounded-lg p-3 text-justify focus:outline-none
