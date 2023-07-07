@@ -23,7 +23,7 @@
           <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
         </div>
         <div class="flex flex-col-reverse overflow-y-scroll h-[580px] w-[70%] text-white">
-          <span v-for="message in reversedMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
+          <span v-for="message in filteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
         </div>
         <div class="pb-10">
           <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
@@ -73,6 +73,7 @@ const fetchProfile = (localProfile) => {
     const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
     if (loggedInProfile) {
       profile.value = loggedInProfile
+      console.log(profile.value.id)
     }
   })
   .catch(err => {
@@ -89,7 +90,7 @@ const fetchPeople = () => {
     const personId = route.params.id
     const selectedPerson = people.value.find(person => person.id == personId)
     currentPerson.value = selectedPerson
-    console.log(currentPerson.value.name)
+    console.log(currentPerson.value.id)
   })
   .catch(err => {
     console.log(err.message)
@@ -135,6 +136,11 @@ const messageClass = (message) => {
 const generateUniqueId = () => {
   return Math.random().toString(36).substr(2, 9)
 }
+
+const filteredMessages = computed(() => {
+  const selectedRecipientId = currentPerson.value ? currentPerson.value.id : null
+  return messages.value.filter(message => message.recipient === selectedRecipientId)
+})
 </script>
 
 <style>
