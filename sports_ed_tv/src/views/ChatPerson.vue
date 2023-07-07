@@ -138,8 +138,15 @@ const generateUniqueId = () => {
 }
 
 const filteredMessages = computed(() => {
+  const selectedSenderId = profile.value ? profile.value.id : null
   const selectedRecipientId = currentPerson.value ? currentPerson.value.id : null
-  return messages.value.filter(message => message.recipient === selectedRecipientId)
+
+  return messages.value.filter(message => {
+    const isSender = message.sender === selectedSenderId
+    const isRecipient = message.recipient === selectedRecipientId
+
+    return isSender && isRecipient
+  })
 })
 </script>
 
