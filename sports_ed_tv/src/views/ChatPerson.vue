@@ -57,7 +57,13 @@ onMounted(() => {
   if (localProfile) {
     fetchProfile(localProfile)
   }
+
   fetchPeople()
+
+  const savedMessages = localStorage.getItem('messages')
+  if (savedMessages) {
+    messages.value = JSON.parse(savedMessages)
+  }
 })
 
 const fetchProfile = (localProfile) => {
@@ -102,16 +108,19 @@ const sendMessage = () => {
   const message = messageInput.value
   if (message) {
     const newMessage = {
+      id: generateUniqueId(),
       content: message,
-      sender: profile.value
+      sender: profile.value.id,
+      recipient: currentPerson.value.id
     }
     messages.value.push(newMessage)
 
-    // Scroll ide do poslednje poruke
     const overflowDiv = document.querySelector('.overflow-y-scroll')
     overflowDiv.scrollTop = overflowDiv.scrollHeight
 
     messageInput.value = ''
+
+    localStorage.setItem('messages', JSON.stringify(messages.value))
   }
 }
 
@@ -120,9 +129,12 @@ const reversedMessages = computed(() => {
 })
 
 const messageClass = (message) => {
-  return message.sender === profile.value ? 'profile-message' : 'current-person-message'
+  return message.sender === profile.value.id ? 'profile-message' : 'current-person-message'
 }
 
+const generateUniqueId = () => {
+  return Math.random().toString(36).substr(2, 9)
+}
 </script>
 
 <style>
