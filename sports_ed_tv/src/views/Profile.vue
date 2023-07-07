@@ -6,12 +6,13 @@
         <span class="ml-2 hover:text-orange-400">{{ profile.name }} profile</span>
       </div>
     </div>
-    <div class="w-[50%] mx-auto my-14 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
+    <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
       <div class="flex justify-between items-end">
         <div v-if="profile">
           <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
           <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
           <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button">Chat with {{ profile.name }}</button>
+          <button v-else class="button" @click="goToChat">Go to my Chats</button>
         </div>           
         <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
@@ -33,10 +34,13 @@ export default {
   },
   methods: {
     goBack() {
-      this.$router.go(-1)
+      this.$router.push({ name: 'profiles' })
     },
     openChat(personId) {
       this.$router.push({ name: 'chatPerson', params: { id: personId } })
+    },
+    goToChat() {
+      this.$router.push({ name: 'chat' })
     }
   },
   mounted() {

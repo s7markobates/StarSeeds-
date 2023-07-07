@@ -20,13 +20,13 @@
     <div v-if="profile" class="w-[96%] mt-5 mx-auto">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
-          <img v-if="currentPerson" :src="currentPerson.image" class="img-class-current" alt="CurrentPersonImage" />
+          <img v-if="currentPerson" :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
         </div>
         <div class="flex flex-col-reverse overflow-y-scroll h-[580px] w-[70%] text-white">
           <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
         </div>
         <div class="pb-10">
-          <img v-if="profile && profile.image" :src="profile.image" class="img-class-profile" alt="Profile Image" />
+          <img v-if="profile && profile.image" :src="profile.image" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
         </div>
       </div>
 
@@ -43,7 +43,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 const profile = ref(null)
 const people = ref(null)
@@ -51,6 +51,7 @@ const route = useRoute()
 const currentPerson = ref(null)
 const messageInput = ref('')
 const messages = ref([])
+const router = useRouter()
 
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
@@ -148,6 +149,12 @@ const filteredMessages = computed(() => {
 const reversedFilteredMessages = computed(() => {
   return filteredMessages.value.slice().reverse()
 })
+
+const goToProfile = (personId) => {
+  router.push({ name: 'profileDetails', params: { id: personId } })
+  console.log(personId)
+}
+
 </script>
 
 <style>
