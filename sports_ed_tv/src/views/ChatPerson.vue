@@ -26,13 +26,20 @@
             </div>
             <div class="w-[800px] text-white ">
               <div class="flex flex-col h-[580px] overflow-y-scroll ">
-                <span class="bg-red-300 p-3 my-3 mr-16 rounded-b-xl rounded-tr-xl ">Hellooooooooooooooooooo!</span>
-                <span class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl ">Hello to you, too.</span>
-                <span class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl ">See ya!</span>
-                <span class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur, voluptatum accusantium non similique possimus libero at assumenda eum sit accusamus. Nostrum, modi dolor, ratione aspernatur cupiditate ea qui odit, amet molestiae cumque dicta debitis consequuntur repellat repellendus eaque libero dignissimos distinctio eveniet iste impedit. Fuga obcaecati dolore eius adipisci consectetur doloremque ducimus ad suscipit omnis voluptas eos dolor, quisquam repellendus ipsam laudantium veniam consequuntur minus similique numquam quia animi, eaque dolorem. Quas accusantium aut tenetur soluta sit repudiandae libero molestias, non, fuga voluptates doloribus, necessitatibus illo similique. Consequatur laudantium voluptatibus odio quas fugit laboriosam rerum accusantium doloribus rem quos!</span>
-                <span class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl ">Hello to you, too.</span>
-                <span class="bg-red-300 p-3 mb-3 mr-16 rounded-b-xl rounded-tr-xl ">See ya!</span>
-                <span class="bg-orange-300 p-3 mb-3 ml-16 rounded-b-xl text-right rounded-tl-xl ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur, voluptatum accusantium non similique possimus libero at assumenda eum sit accusamus. Nostrum, modi dolor, ratione aspernatur cupiditate ea qui odit, amet molestiae cumque dicta debitis consequuntur repellat repellendus eaque libero dignissimos distinctio eveniet iste impedit. Fuga obcaecati dolore eius adipisci consectetur doloremque ducimus ad suscipit omnis voluptas eos dolor, quisquam repellendus ipsam laudantium veniam consequuntur minus similique numquam quia animi, eaque dolorem. Quas accusantium aut tenetur soluta sit repudiandae libero molestias, non, fuga voluptates doloribus, necessitatibus illo similique. Consequatur laudantium voluptatibus odio quas fugit laboriosam rerum accusantium doloribus rem quos!</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="profile-message">Hello to you, too.</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="profile-message ">Hello to you, too.</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="profile-message">Hello to you, too.</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="profile-message ">Hello to you, too.</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="profile-message">Hello to you, too.</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="current-person-message">Hellooooooooooooooooooo!</span>
+                <span class="profile-message ">Hello to you, too.</span>
               </div>
             </div>
             <div class="pb-10">
@@ -78,7 +85,6 @@ const fetchProfile = (localProfile) => {
     const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
     if (loggedInProfile) {
       profile.value = loggedInProfile
-      console.log(profile.value)
     }
   })
   .catch(err => {
@@ -93,11 +99,9 @@ const fetchPeople = () => {
     people.value = data
 
     const personId = route.params.id
-    console.log(personId)
 
     const selectedPerson = people.value.find(person => person.id == personId)
     currentPerson.value = selectedPerson
-    console.log(currentPerson.value)
   })
   .catch(err => {
     console.log(err.message)
@@ -115,19 +119,22 @@ const getFirstName = computed(() => {
 const sendMessage = () => {
   const message = messageInput.value
   if (message) {
-    // Dodajte poruku u overflow div
     const messageElement = document.createElement('span')
     messageElement.textContent = message
     messageElement.classList.add('bg-orange-300', 'p-3', 'mb-3', 'ml-16', 'rounded-b-xl', 'text-right', 'rounded-tl-xl')
     const overflowDiv = document.querySelector('.overflow-y-scroll')
     overflowDiv.appendChild(messageElement)
 
-    // Resetujte input polje
     messageInput.value = ''
   }
 }
 </script>
 
 <style>
-    
+.profile-message {
+  @apply bg-orange-300 p-3 my-2 ml-16 rounded-b-xl text-right rounded-tl-xl
+}
+.current-person-message {
+  @apply bg-red-300 p-3 my-2 mr-16 rounded-b-xl rounded-tr-xl
+}
 </style>

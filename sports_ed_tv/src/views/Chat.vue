@@ -78,7 +78,6 @@ const fetchProfile = (localProfile) => {
     const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
     if (loggedInProfile) {
       profile.value = loggedInProfile
-      console.log(profile.value)
     }
   })
   .catch(err => {
@@ -91,7 +90,6 @@ const fetchPeople = () => {
   .then(response => response.json())
   .then(data => {
     people.value = data
-    console.log(people.value);
   })
   .catch(err => {
     console.log(err.message)
@@ -138,7 +136,6 @@ const cancelDelete = () => {
 
 const openChat = (personId) => {
   router.push({ name: 'chatPerson', params: { id: personId } })
-  console.log(personId)
 }
 
 </script>
