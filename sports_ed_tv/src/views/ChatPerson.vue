@@ -111,7 +111,7 @@ const sendMessage = () => {
   if (message) {
     const messageElement = document.createElement('span')
     messageElement.textContent = message
-    messageElement.classList.add('bg-orange-300', 'p-3', 'mb-3', 'ml-16', 'rounded-b-xl', 'text-right', 'rounded-tl-xl')
+    messageElement.classList.add('bg-orange-300', 'p-3', 'my-2', 'ml-16', 'rounded-b-xl', 'rounded-tl-xl', 'text-right')
     const overflowDiv = document.querySelector('.overflow-y-scroll')
     overflowDiv.appendChild(messageElement)
 
@@ -128,7 +128,7 @@ const sendMessage = () => {
 
 <style>
 .profile-message {
-  @apply bg-orange-300 p-3 my-2 ml-16 rounded-b-xl text-right rounded-tl-xl
+  @apply bg-orange-300 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right
 }
 .current-person-message {
   @apply bg-red-300 p-3 my-2 mr-16 rounded-b-xl rounded-tr-xl
