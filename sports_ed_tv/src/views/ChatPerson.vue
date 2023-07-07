@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="w-[96%] mt-5 mx-auto">
+    <div v-if="profile" class="w-[96%] mt-5 mx-auto">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
           <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
