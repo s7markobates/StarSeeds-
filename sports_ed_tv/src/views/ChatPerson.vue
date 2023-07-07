@@ -22,7 +22,7 @@
         <div class="pb-10">
           <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
         </div>
-        <div class="flex flex-col overflow-y-scroll h-[580px] w-[800px] text-white">
+        <div class="flex flex-col overflow-y-scroll h-[580px] w-[70%] text-white">
           <span class="current-person-message">Hellooooooooooooooooooo!</span>
           <span class="profile-message">Hello to you, too.</span>
           <span class="current-person-message">Hellooooooooooooooooooo!</span>
@@ -90,7 +90,6 @@ const fetchPeople = () => {
     people.value = data
 
     const personId = route.params.id
-
     const selectedPerson = people.value.find(person => person.id == personId)
     currentPerson.value = selectedPerson
   })
@@ -141,6 +140,6 @@ const sendMessage = () => {
   @apply w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
 }
 .bttn-class {
-  @apply w-[80px] px-4 py-[7px] bg-orange-500 hover:bg-orange-400 text-white rounded-full ml-5
+  @apply w-[80px] px-4 py-[7px] bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white rounded-full ml-5
 }
 </style>
