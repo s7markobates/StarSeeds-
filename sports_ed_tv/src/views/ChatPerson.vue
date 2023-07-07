@@ -22,14 +22,10 @@
         <div class="h-full">
           <div class="flex justify-evenly items-end ">
             <div class="pb-10">
-              <img v-if="currentPerson" :src="currentPerson.image" class="h-24 w-24 rounded-full border-2 border-orange-400" alt="Profile Image" />
+              <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="Profile Image" />
             </div>
             <div class="w-[800px] text-white ">
               <div class="flex flex-col h-[580px] overflow-y-scroll ">
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="profile-message">Hello to you, too.</span>
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="profile-message ">Hello to you, too.</span>
                 <span class="current-person-message">Hellooooooooooooooooooo!</span>
                 <span class="profile-message">Hello to you, too.</span>
                 <span class="current-person-message">Hellooooooooooooooooooo!</span>
@@ -43,15 +39,15 @@
               </div>
             </div>
             <div class="pb-10">
-              <img v-if="profile && profile.image" :src="profile.image" class="h-24 w-24 rounded-full border-2 border-orange-400" alt="Profile Image" />
+              <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
             </div>
           </div>
         </div>
       </div>
 
       <div class="flex justify-start items-start p-3">
-        <input v-model="messageInput" @keyup.enter="sendMessage" type="text" class="w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none">
-        <button @click="sendMessage" class="w-[80px] px-4 py-[7px] bg-orange-500 text-white rounded-full ml-5">
+        <input v-model="messageInput" @keyup.enter="sendMessage" type="text" class="input-class">
+        <button @click="sendMessage" class="bttn-class">
           <i class="fas fa-paper-plane text-xl"></i>
         </button>
       </div>
@@ -142,5 +138,14 @@ const sendMessage = () => {
 }
 .current-person-message {
   @apply bg-red-300 p-3 my-2 mr-16 rounded-b-xl rounded-tr-xl
+}
+.img-class {
+  @apply h-24 w-24 rounded-full border-2 border-orange-400
+}
+.input-class {
+  @apply w-[80%] h-[55px] ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
+}
+.bttn-class {
+  @apply w-[80px] px-4 py-[7px] bg-orange-500 hover:bg-orange-400 text-white rounded-full ml-5
 }
 </style>
