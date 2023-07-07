@@ -157,7 +157,7 @@ const goToProfile = (personId) => {
 
 </script>
 
-<style>
+<style scoped>
 .profile-message {
   @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right 
 }

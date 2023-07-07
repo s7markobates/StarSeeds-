@@ -140,6 +140,6 @@ const openChat = (personId) => {
 
 </script>
 
-<style>
+<style scoped>
     
 </style>
