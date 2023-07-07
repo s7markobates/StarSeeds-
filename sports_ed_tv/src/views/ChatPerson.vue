@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
       <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
         <div class="flex items-center">
@@ -10,37 +11,32 @@
         </div>
       </div>
       <div v-if="currentPerson" class="text-xl font-bold flex-1 mt-4 ">
-          <h1 class="flex justify-center items-center text-orange-400">CHAT: {{currentPerson.name}}</h1>
+        <h1 class="flex justify-center items-center text-orange-400">CHAT: {{currentPerson.name}}</h1>
       </div>
       <div class="flex-1 mr-6 ">
       </div>
     </div>
 
     <div class="w-[96%] mt-5 mx-auto">
-
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl">
-        <div class="h-full">
-          <div class="flex justify-evenly items-end ">
-            <div class="pb-10">
-              <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="Profile Image" />
-            </div>
-            <div class="w-[800px] text-white ">
-              <div class="flex flex-col h-[580px] overflow-y-scroll ">
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="profile-message">Hello to you, too.</span>
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="profile-message ">Hello to you, too.</span>
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="profile-message">Hello to you, too.</span>
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="current-person-message">Hellooooooooooooooooooo!</span>
-                <span class="profile-message ">Hello to you, too.</span>
-              </div>
-            </div>
-            <div class="pb-10">
-              <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
-            </div>
+        <div class="flex justify-evenly items-end">
+          <div class="pb-10">
+            <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
+          </div>
+          <div class="flex flex-col overflow-y-scroll h-[580px] w-[800px] text-white">
+            <span class="current-person-message">Hellooooooooooooooooooo!</span>
+            <span class="profile-message">Hello to you, too.</span>
+            <span class="current-person-message">Hellooooooooooooooooooo!</span>
+            <span class="profile-message ">Hello to you, too.</span>
+            <span class="current-person-message">Hellooooooooooooooooooo!</span>
+            <span class="profile-message">Hello to you, too.</span>
+            <span class="current-person-message">Hellooooooooooooooooooo!</span>
+            <span class="current-person-message">Hellooooooooooooooooooo!</span>
+            <span class="current-person-message">Hellooooooooooooooooooo!</span>
+            <span class="profile-message ">Hello to you, too.</span>
+          </div>
+          <div class="pb-10">
+            <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
           </div>
         </div>
       </div>
@@ -52,6 +48,7 @@
         </button>
       </div>
     </div>
+
   </div>
 </template>
 
