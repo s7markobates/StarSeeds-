@@ -18,26 +18,24 @@
     </div>
 
     <div class="w-[96%] mt-5 mx-auto">
-      <div class="bg-gray-200 w-full h-[580px] rounded-3xl">
-        <div class="flex justify-evenly items-end">
-          <div class="pb-10">
-            <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
-          </div>
-          <div class="flex flex-col overflow-y-scroll h-[580px] w-[800px] text-white">
-            <span class="current-person-message">Hellooooooooooooooooooo!</span>
-            <span class="profile-message">Hello to you, too.</span>
-            <span class="current-person-message">Hellooooooooooooooooooo!</span>
-            <span class="profile-message ">Hello to you, too.</span>
-            <span class="current-person-message">Hellooooooooooooooooooo!</span>
-            <span class="profile-message">Hello to you, too.</span>
-            <span class="current-person-message">Hellooooooooooooooooooo!</span>
-            <span class="current-person-message">Hellooooooooooooooooooo!</span>
-            <span class="current-person-message">Hellooooooooooooooooooo!</span>
-            <span class="profile-message ">Hello to you, too.</span>
-          </div>
-          <div class="pb-10">
-            <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
-          </div>
+      <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
+        <div class="pb-10">
+          <img v-if="currentPerson" :src="currentPerson.image" class="img-class" alt="CurrentPersonImage" />
+        </div>
+        <div class="flex flex-col overflow-y-scroll h-[580px] w-[800px] text-white">
+          <span class="current-person-message">Hellooooooooooooooooooo!</span>
+          <span class="profile-message">Hello to you, too.</span>
+          <span class="current-person-message">Hellooooooooooooooooooo!</span>
+          <span class="profile-message ">Hello to you, too.</span>
+          <span class="current-person-message">Hellooooooooooooooooooo!</span>
+          <span class="profile-message">Hello to you, too.</span>
+          <span class="current-person-message">Hellooooooooooooooooooo!</span>
+          <span class="current-person-message">Hellooooooooooooooooooo!</span>
+          <span class="current-person-message">Hellooooooooooooooooooo!</span>
+          <span class="profile-message ">Hello to you, too.</span>
+        </div>
+        <div class="pb-10">
+          <img v-if="profile && profile.image" :src="profile.image" class="img-class" alt="Profile Image" />
         </div>
       </div>
 
