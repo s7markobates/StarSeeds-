@@ -12,7 +12,7 @@
           <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
           <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
         </div>           
-        <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-20" alt="Profile Image" />
+        <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
       <p class="text-justify mt-7">
         <span class="font-bold">Description: </span>{{ profile.description }}

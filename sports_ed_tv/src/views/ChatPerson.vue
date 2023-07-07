@@ -125,6 +125,12 @@ const sendMessage = () => {
     const overflowDiv = document.querySelector('.overflow-y-scroll')
     overflowDiv.appendChild(messageElement)
 
+    // Scroll goes up when enter new message
+    overflowDiv.scrollTop = 0
+    setTimeout(() => {
+      overflowDiv.scrollTop = overflowDiv.scrollHeight
+    }, 0)
+
     messageInput.value = ''
   }
 }
