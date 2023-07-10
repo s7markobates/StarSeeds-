@@ -100,6 +100,7 @@ const signIn = () => {
       formData.value.name = ""
       formData.value.email = ""
       formData.value.password = ""
+      formData.value.description = ""
       router.push('/feed')
     } else {
       alert('Incorrect name, email, or password. Please try again.')

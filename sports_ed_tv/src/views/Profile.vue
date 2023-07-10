@@ -3,7 +3,7 @@
     <div class="text-xl font-bold flex justify-start">
       <div @click="goToProfiles" class="ml-10 mt-3 cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
-        <div class="flex justify-center items-center hover:text-orange-400">
+        <div class="flex justify-center items-center hover:text-orange-400 filter-none hue-rotate-90 hover:filter">
           <img src="../assets/logo-main.png" class="h-6" alt="">
           <h1 class="ml-1">members</h1>
         </div>
@@ -26,7 +26,7 @@
         <img v-else src="../assets/avatar.jpg" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
       <div class="text-justify mt-4">
-        <p v-if="profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>
+        <p v-if="profile && profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>
         <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
       </div>
     </div>

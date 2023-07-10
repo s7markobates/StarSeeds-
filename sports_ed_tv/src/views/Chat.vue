@@ -16,7 +16,7 @@
 
   <div class="w-[95%] mx-auto mt-3 flex flex-col mb-24">
     <div class="h-[72px] w-full bg-slate-100 mx-auto flex justify-center items-center rounded-t-2xl">
-      <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Search profile">
+      <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
         <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">
         <i class="fas fa-search text-orange-400 text-2xl "></i>
       </div>

@@ -4,9 +4,9 @@
       <div class="ml-5 flex items-center">
         <RouterLink :to="{ name: 'profiles'}" title="View all the members">
           <div class="flex items-center">
-            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
-            <div class="flex justify-center items-center hover:text-orange-400">
-              <img src="../assets/logo-main.png" class="h-6" alt="">
+            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3 "></i>
+            <div class="flex justify-center items-center hover:text-orange-400 filter-none hue-rotate-90 hover:filter">
+              <img src="../assets/logo-main.png" class="h-6">
               <h1 class="ml-1">members</h1>
           </div>
           </div>
