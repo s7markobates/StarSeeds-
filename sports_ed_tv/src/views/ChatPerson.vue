@@ -20,13 +20,13 @@
     <div v-if="profile" class="w-[96%] mt-5 mx-auto">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
-          <img v-if="currentPerson" :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
+          <img v-if="currentPerson" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
         </div>
         <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[580px] w-[70%] text-white">
           <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
         </div>
         <div class="pb-10">
-          <img v-if="profile && profile.image" :src="profile.image" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
+          <img v-if="profile && profile.image" title="Go to my profile" :src="profile.image" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
         </div>
       </div>
 
@@ -130,7 +130,7 @@ const messageClass = (message) => {
 }
 
 const generateUniqueId = () => {
-  return Math.random().toString(36).substr(2, 9)
+  return Math.random().toString(36).substring(2, 9)
 }
 
 const filteredMessages = computed(() => {

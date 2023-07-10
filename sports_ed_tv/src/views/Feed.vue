@@ -5,7 +5,10 @@
         <RouterLink :to="{ name: 'profiles'}" class="">
           <div class="flex items-center">
             <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
-            <span class="hover:text-orange-400">All members</span>
+            <div class="flex justify-center items-center hover:text-orange-400">
+              <img src="../assets/logo-main.png" class="h-6" alt="">
+              <h1 class="ml-1">members</h1>
+          </div>
           </div>
         </RouterLink>
       </div>

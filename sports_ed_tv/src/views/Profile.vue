@@ -2,8 +2,11 @@
   <div class="text-gray-600 mt-[96px] h-[100%]">
     <div class="text-xl font-bold flex justify-start">
       <div @click="goToProfiles" class="ml-10 mt-3 cursor-pointer flex items-center">
-        <i class="fas fa-arrow-left text-orange-400 text-2xl"></i>
-        <span class="ml-2 hover:text-orange-400">All members</span>
+        <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
+        <div class="flex justify-center items-center hover:text-orange-400">
+          <img src="../assets/logo-main.png" class="h-6" alt="">
+          <h1 class="ml-1">members</h1>
+      </div>
       </div>
     </div>
     <div class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
@@ -13,7 +16,11 @@
           <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
           <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button">Chat with {{ profile.name }}<i class="fas fa-paper-plane text-sm ml-2"></i></button>
           <button v-else class="button" @click="goToChat">Go to my Chats<i class="fas fa-paper-plane text-sm ml-2"></i></button>
-        </div>           
+          <button class="button-icon"><i class="fab fa-facebook"></i></button>
+          <button class="button-icon"><i class="fab fa-instagram"></i></button>
+          <button class="button-icon"><i class="fab fa-twitter"></i></button>
+          <button class="button-icon"><i class="fab fa-github"></i></button>
+        </div>        
         <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
       <p class="text-justify mt-4">
@@ -58,5 +65,8 @@ export default {
 <style scoped>
 .button {
   @apply mt-4 h-8 px-4 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 cursor-pointer
+}
+.button-icon {
+  @apply mt-4 ml-2 py-[2px] px-[6px] border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>
