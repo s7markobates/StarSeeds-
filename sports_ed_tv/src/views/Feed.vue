@@ -1,30 +1,30 @@
 <template>
-  <div class="text-gray-600 text-lg mt-[70px] h-[100%]">
-    <div v-if="profile" class="text-xl font-bold flex justify-between">
-      <div class="ml-5">
-        <RouterLink :to="{ name: 'profiles'}" title="View all the members">
-          <div class="flex justify-center items-center">
-            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3 "></i>
+  <div class="text-gray-600 text-lg mt-[70px]">
+    <div v-if="profile" class="w-[96%] mx-auto text-xl font-bold flex justify-between">
+      <div class="flex-1">
+        <div class="flex justify-start items-center">
+          <RouterLink :to="{ name: 'profiles'}" title="View all the members">
             <div class="flex justify-center items-center hover:text-orange-400 filter-none hue-rotate-90 hover:filter">
+              <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2 "></i>
               <img src="../assets/logo-main.png" class="h-6">
               <h1 class="ml-1">members</h1>
             </div>
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
       </div>
-      <div>
-        <span>{{ getFirstName }}'s FEED</span>
+      <div class="flex-1">
+        <span class="flex justify-center">{{ getFirstName }}'s FEED</span>
       </div>
-      <div class="mr-5 flex items-center">
-        <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
-          <div class="flex items-center">
+      <div class="flex-1">
+        <div class="flex justify-end items-center">
+          <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
-            <i class="fas fa-arrow-right text-orange-400 text-2xl cursor-pointer ml-3"></i>
-          </div>
-        </RouterLink>
+            <i class="fas fa-arrow-right text-orange-400 text-2xl cursor-pointer ml-2"></i>
+          </RouterLink>
+        </div>
       </div>
     </div>
-    <div v-if="profile" class="w-[98%] mx-auto mt-10 bg-gray-200 p-4 rounded-sm shadow-md text-lg">
+    <div v-if="profile" class="w-[96%] mx-auto mt-10 bg-gray-200 p-5 rounded-3xl shadow-md text-lg">
       <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
       <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
       <p v-if="profile.description" class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
