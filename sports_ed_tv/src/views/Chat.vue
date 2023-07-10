@@ -1,20 +1,20 @@
 <template>
-  <div class="text-gray-600 text-lg mt-[70px] h-[100%] flex justify-between items-center">
-    <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6">
-      <div class="flex items-center">
-        <RouterLink :to="{ name: 'feed'}" :title="'Go to ' + getFirstName + '\'s feed'">
-          <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
+  <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[96%] mx-auto text-xl">
+    <div v-if="profile" class="flex-1 font-bold ">
+      <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
+        <RouterLink :to="{ name: 'feed'}" >
+          <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2"></i>
           <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
         </RouterLink>
       </div>
     </div>
-    <div class="text-xl font-bold flex-1 ">
+    <div class=" font-bold flex-1 ">
       <h1 class="flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
     </div>
-    <div class="flex-1 mr-6 "></div>
+    <div class="flex-1"></div>
   </div>
 
-  <div class="w-[95%] mx-auto mt-10 flex flex-col mb-24">
+  <div class="w-[96%] mx-auto mt-10 flex flex-col mb-24">
     <div class="h-[72px] w-full bg-slate-100 mx-auto flex justify-center items-center rounded-t-2xl">
       <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
         <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">

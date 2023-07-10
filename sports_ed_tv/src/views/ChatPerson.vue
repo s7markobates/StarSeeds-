@@ -4,7 +4,7 @@
       <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
           <RouterLink :to="{ name: 'chat'}">
-            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
+            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2"></i>
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
           </RouterLink>
         </div>

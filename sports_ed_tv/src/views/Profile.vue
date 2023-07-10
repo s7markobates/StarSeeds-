@@ -1,7 +1,7 @@
 <template>
   <div class="text-gray-600 mt-[70px] h-[100%]">
     <div class="text-xl font-bold flex justify-start">
-      <div @click="goToProfiles" class="ml-10 cursor-pointer flex items-center" title="View all the members">
+      <div @click="goToProfiles" class="ml-7 cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400 filter-none hue-rotate-90 hover:filter">
           <img src="../assets/logo-main.png" class="h-6" alt="">
