@@ -15,7 +15,7 @@
       <div class="flex-1 mr-6 ">
       </div>
     </div>
-    <div v-if="profile" class="w-[96%] mx-auto mt-4">
+    <div v-if="profile" class="w-[96%] mx-auto mt-10">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
           <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />

@@ -17,7 +17,7 @@
                 </RouterLink>
             </div>
         </div>
-        <div class="w-[95%] mx-auto mt-4 mb-24 bg-gray-200 p-2 rounded-lg shadow-md">
+        <div class="w-[95%] mx-auto mt-10 mb-24 bg-gray-200 p-2 rounded-lg shadow-md">
             <div v-for="profile in profiles" :key="profile.id" >
                 <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
                     <div :title="'Go to ' + profile.name + ' profile'" class="flex flex-col items-start justify-center bg-gray-100 hover:bg-slate-50 p-1 m-3 rounded-md shadow-md">

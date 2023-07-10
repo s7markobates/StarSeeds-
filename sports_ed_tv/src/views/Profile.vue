@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div class="w-[50%] mx-auto mt-4 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
+    <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
       <div class="flex justify-between items-end">
         <div v-if="profile">
           <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>

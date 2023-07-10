@@ -24,7 +24,7 @@
         </RouterLink>
       </div>
     </div>
-    <div v-if="profile" class="w-[98%] mx-auto mt-4 bg-gray-200 p-4 rounded-sm shadow-md text-lg">
+    <div v-if="profile" class="w-[98%] mx-auto mt-10 bg-gray-200 p-4 rounded-sm shadow-md text-lg">
       <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
       <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
       <p v-if="profile.description" class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
