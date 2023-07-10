@@ -1,6 +1,6 @@
 <template>
-  <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`">
-    <span class="text-xs font-bold text-center text-white py-1 px-0 leading-4">{{ getInitials }}</span>
+  <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`" >
+    <span class="text-xs font-bold text-center text-white py-1 px-0 leading-4" title="View profile details">{{ getInitials }}</span>
   </div>
 
   <div v-if="isAvatarOpen" class="bg-white h-screen w-screen absolute top-14 left-0 text-gray-600 text-lg">
@@ -59,7 +59,7 @@ defineProps({
 
 const getInitials = computed(() => {
     if (avatarProfile.value) {
-        const name = avatarProfile.value.name || 'A'
+        const name = avatarProfile.value.name || ''
         const words = name.trim().split(' ')
         const initials = words.map(word => word.charAt(0).toUpperCase()).join('')
         return initials

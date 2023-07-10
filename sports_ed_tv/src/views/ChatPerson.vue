@@ -74,7 +74,6 @@ const fetchProfile = (localProfile) => {
     const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
     if (loggedInProfile) {
       profile.value = loggedInProfile
-      console.log(profile.value.id)
     }
   })
   .catch(err => {
@@ -91,7 +90,6 @@ const fetchPeople = () => {
     const personId = route.params.id
     const selectedPerson = people.value.find(person => person.id == personId)
     currentPerson.value = selectedPerson
-    console.log(currentPerson.value.id)
   })
   .catch(err => {
     console.log(err.message)
@@ -152,7 +150,6 @@ const reversedFilteredMessages = computed(() => {
 
 const goToProfile = (personId) => {
   router.push({ name: 'profileDetails', params: { id: personId } })
-  console.log(personId)
 }
 
 </script>
