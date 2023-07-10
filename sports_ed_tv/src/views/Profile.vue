@@ -22,11 +22,13 @@
           <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
           <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
         </div>        
-        <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
+        <img v-if="profile.image" :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
+        <img v-else src="../assets/avatar.jpg" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
-      <p class="text-justify mt-4">
-        <span class="font-bold">Description: </span>{{ profile.description }}
-      </p>
+      <div class="text-justify mt-4">
+        <p v-if="profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>
+        <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
+      </div>
     </div>
   </div>
 </template>

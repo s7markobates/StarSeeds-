@@ -27,7 +27,8 @@
     <div v-if="profile" class="w-[98%] mx-auto mt-3 bg-gray-200 p-4 rounded-sm shadow-md text-lg">
       <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
       <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
-      <p class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
+      <p v-if="profile.description" class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
+      <p v-else class="text-justify"><span class="font-bold">Description: </span>Profile has no description entered.</p>
     </div>
     <div v-if="profile" class="w-[98%] mx-auto mt-5 flex flex-col items-center ">
       <h1 class="mb-2">Update your description:</h1>

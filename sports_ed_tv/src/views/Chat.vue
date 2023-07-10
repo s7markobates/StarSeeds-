@@ -26,7 +26,8 @@
         <li v-for="person in filteredPeople" :key="person.id">
           <div class="flex justify-between items-center py-4">
             <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
-              <img :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+              <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+              <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
               <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
             </div>
             <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>

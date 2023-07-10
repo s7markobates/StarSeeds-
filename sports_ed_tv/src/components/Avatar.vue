@@ -12,7 +12,8 @@
       </div>
 
       <div class="ml-10 mt-2 flex items-center">
-        <img :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
+        <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
+        <img v-else src="../assets/avatar.jpg" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
         <button @click="handleLogout" class="logout-button">
           <span class="text-sm font-semibold" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
         </button>
