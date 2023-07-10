@@ -21,7 +21,7 @@
               <input v-model="formData.password" id="password" type="password" class="input-field-gray" placeholder="••••••" required>
             </div>  
             <button class="yellow-button" @click.prevent="signIn" title="Sign in with existing member">SIGN IN</button>
-            <button class="yellow-button" @click.prevent="forgotPassword">FORGOT YOUR PASSWORD?</button>
+            <button class="yellow-button" @click.prevent="forgotPassword" title="Don't forget your password">FORGOT YOUR PASSWORD?</button>
             <div class="mt-3">
               <div class="flex items-center border-t border-gray-300 w-full pt-5">
                 <p class="mr-10 font-semibold text-gray-500">Don't have an account?</p>
@@ -112,7 +112,7 @@ const signIn = () => {
 }
 
 const forgotPassword = () => {
-  console.log('Jebi ga momak, to već ne znam da uradim još uvek. :)');
+  console.log('Tek treba ovo da naučim. :)');
 }
 
 </script>

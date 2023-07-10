@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
       <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
@@ -16,7 +15,6 @@
       <div class="flex-1 mr-6 ">
       </div>
     </div>
-
     <div v-if="profile" class="w-[96%] mt-5 mx-auto">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
@@ -31,15 +29,13 @@
           <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
         </div>
       </div>
-
       <div class="flex justify-start items-start p-3">
         <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
         <button @click="sendMessage" class="bttn-class" title="Send message">
           <i class="fas fa-paper-plane text-xl"></i>
         </button>
       </div>
-    </div>
-    
+    </div>    
   </div>
 </template>
 
@@ -60,7 +56,7 @@ onMounted(() => {
   if (localProfile) {
     fetchProfile(localProfile)
   }
-
+  
   fetchPeople()
 
   const savedMessages = localStorage.getItem('messages')

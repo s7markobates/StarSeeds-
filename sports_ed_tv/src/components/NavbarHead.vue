@@ -1,13 +1,13 @@
 <template>
   <div>
     <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 ">
-      <BurgerMenu :is-open="isOpen" @click="toggleMenu" />
+      <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
       <Logo class="absolute top-[2px] left-[45.2%] z-30"/>
       <div>
-        <div v-if="isOnFeed" v-show="!isOpen">
-          <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar"/>
+        <div v-if="isOnFeed" v-show="!isOpen" >
+          <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
-        <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]">
+        <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
           <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 hover:bg-orange-500 hover:text-white ">
             <p class="font-medium text-[15px] px-[5px]">Sign In</p> 
           </button>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div v-show="!isOpen" v-if="!modalActive && !isAvatarOpen" >
+  <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive && !isAvatarOpen" >
     <nav class="fixed top-[56px] w-full flex justify-between items-center uppercase h-10 bg-white text-gray-600 p-2">
       <RouterLink to="/sports" class="mx-1">Sports</RouterLink>
       <RouterLink to="/videos" class="mx-1">Videos</RouterLink>
@@ -67,6 +67,17 @@ const isOnFeed = computed(() => router.currentRoute.value.name === 'feed' ||
                                 router.currentRoute.value.name === 'chat' ||
                                 router.currentRoute.value.name === 'chatPerson'
 )
+
+const shouldShowNav = computed(() => {
+  const currentRouteName = router.currentRoute.value.name;
+  return (
+    currentRouteName === 'feed' ||
+    currentRouteName === 'profiles' ||
+    currentRouteName === 'profileDetails'||
+    currentRouteName === 'chat'||
+    currentRouteName === 'chatPerson'
+  )
+})
 
 const toggleAvatar = () => {
   isAvatarOpen.value = !isAvatarOpen.value

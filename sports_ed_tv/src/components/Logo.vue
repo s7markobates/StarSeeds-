@@ -1,8 +1,10 @@
 <template>
   <div :class="darkModeClass">
-    <a href="">
-      <img v-if="!darkModeClass.dark" src="../assets/logo-main.png" class="h-9 mt-2" alt="Logo">
-      <img v-else src="../assets/logo-dark.png" class="h-[25px] mt-[15px]" alt="Logo">
+    <a v-if="!darkModeClass.dark" href="">
+      <img src="../assets/logo-main.png" class="h-9 mt-2" alt="Logo">
+    </a>
+    <a v-else href="/feed">
+      <img src="../assets/logo-dark.png" class="h-[25px] mt-[15px]" alt="Logo">
     </a>
   </div>
 </template>
