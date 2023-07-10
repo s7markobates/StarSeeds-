@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-600 text-lg mt-[110px] h-[100%]">
+  <div class="text-gray-600 text-lg mt-[70px] h-[100%]">
     <div v-if="profile" class="text-xl font-bold flex justify-between">
       <div class="ml-5 flex items-center">
         <RouterLink :to="{ name: 'profiles'}" title="View all the members">
@@ -24,14 +24,14 @@
         </RouterLink>
       </div>
     </div>
-    <div v-if="profile" class="w-[98%] mx-auto mt-3 bg-gray-200 p-4 rounded-sm shadow-md text-lg">
+    <div v-if="profile" class="w-[98%] mx-auto mt-4 bg-gray-200 p-4 rounded-sm shadow-md text-lg">
       <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
       <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
       <p v-if="profile.description" class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
       <p v-else class="text-justify"><span class="font-bold">Description: </span>Profile has no description entered.</p>
     </div>
-    <div v-if="profile" class="w-[98%] mx-auto mt-5 flex flex-col items-center ">
-      <h1 class="mb-2">Update your description:</h1>
+    <div v-if="profile" class="w-[98%] mx-auto mt-4 flex flex-col items-center ">
+      <h1 class="mb-4">Update your description:</h1>
       <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description" title="Update your description"></textarea>
       <button @click="updateDescription" class="update-button" title="Update your description">Update Description</button>
     </div>

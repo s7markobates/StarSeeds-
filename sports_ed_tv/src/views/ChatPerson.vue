@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
-      <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
+    <div class="text-gray-600 text-lg mt-[70px] h-[100%] flex justify-between items-center">
+      <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
           <RouterLink :to="{ name: 'chat'}">
             <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
@@ -9,13 +9,13 @@
           </RouterLink>
         </div>
       </div>
-      <div v-if="currentPerson" class="text-xl font-bold flex-1 mt-4 ">
+      <div v-if="currentPerson" class="text-xl font-bold flex-1">
         <h1 class="flex justify-center items-center text-orange-400">CHAT: {{currentPerson.name}}</h1>
       </div>
       <div class="flex-1 mr-6 ">
       </div>
     </div>
-    <div v-if="profile" class="w-[96%] mt-5 mx-auto">
+    <div v-if="profile" class="w-[96%] mx-auto mt-4">
       <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
         <div class="pb-10">
           <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />

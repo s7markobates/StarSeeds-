@@ -1,6 +1,6 @@
 <template>
-  <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
-    <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
+  <div class="text-gray-600 text-lg mt-[70px] h-[100%] flex justify-between items-center">
+    <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6">
       <div class="flex items-center">
         <RouterLink :to="{ name: 'feed'}" :title="'Go to ' + getFirstName + '\'s feed'">
           <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
@@ -8,13 +8,13 @@
         </RouterLink>
       </div>
     </div>
-    <div class="text-xl font-bold flex-1 mt-4 ">
+    <div class="text-xl font-bold flex-1 ">
       <h1 class="flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
     </div>
     <div class="flex-1 mr-6 "></div>
   </div>
 
-  <div class="w-[95%] mx-auto mt-3 flex flex-col mb-24">
+  <div class="w-[95%] mx-auto mt-4 flex flex-col mb-24">
     <div class="h-[72px] w-full bg-slate-100 mx-auto flex justify-center items-center rounded-t-2xl">
       <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
         <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">
