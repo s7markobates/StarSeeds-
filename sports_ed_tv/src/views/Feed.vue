@@ -1,14 +1,14 @@
 <template>
   <div class="text-gray-600 text-lg mt-[70px] h-[100%]">
     <div v-if="profile" class="text-xl font-bold flex justify-between">
-      <div class="ml-5 flex items-center">
+      <div class="ml-5">
         <RouterLink :to="{ name: 'profiles'}" title="View all the members">
-          <div class="flex items-center">
+          <div class="flex justify-center items-center">
             <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3 "></i>
             <div class="flex justify-center items-center hover:text-orange-400 filter-none hue-rotate-90 hover:filter">
               <img src="../assets/logo-main.png" class="h-6">
               <h1 class="ml-1">members</h1>
-          </div>
+            </div>
           </div>
         </RouterLink>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <div :class="darkModeClass">
-    <a v-if="!darkModeClass.dark" href="">
+    <a v-if="!darkModeClass.dark" href="/">
       <img src="../assets/logo-main.png" class="h-9 mt-2" alt="Logo">
     </a>
     <a v-else href="/feed">
