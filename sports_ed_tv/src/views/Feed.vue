@@ -4,7 +4,7 @@
       <div class="flex-1">
         <div class="flex justify-start items-center">
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">
-            <div class="flex justify-center items-center hover:text-orange-400 filter-none hue-rotate-90 hover:filter">
+            <div class="flex justify-center items-center hover:text-orange-400 ">
               <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2 "></i>
               <img src="../assets/logo-main.png" class="h-6">
               <h1 class="ml-1">members</h1>
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div v-if="profile" class="w-[96%] mx-auto mt-10 bg-gray-200 p-5 rounded-3xl shadow-md text-lg">
+    <div v-if="profile" class="w-[96%] mx-auto mt-10 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
       <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
       <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
       <p v-if="profile.description" class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>

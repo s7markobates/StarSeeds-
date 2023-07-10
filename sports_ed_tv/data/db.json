@@ -69,6 +69,12 @@
       "email": "slikar2@genije.com",
       "password": "123",
       "id": 9
+    },
+    {
+      "name": "Julije Cezar",
+      "email": "rome@imperor.it",
+      "password": "13",
+      "id": 10
     }
   ]
 }
