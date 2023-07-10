@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="mt-4">
-                <RouterLink :to="{ name: 'feed' }">
+                <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                     <div class="flex items-center">
                         <span class="mr-2 hover:text-orange-400">Go to current feed</span>
                         <i class="fas fa-arrow-right text-orange-400 text-2xl mr-10" ></i>

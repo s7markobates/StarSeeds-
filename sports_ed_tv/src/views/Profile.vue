@@ -1,25 +1,26 @@
 <template>
   <div class="text-gray-600 mt-[96px] h-[100%]">
     <div class="text-xl font-bold flex justify-start">
-      <div @click="goToProfiles" class="ml-10 mt-3 cursor-pointer flex items-center">
+      <div @click="goToProfiles" class="ml-10 mt-3 cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
           <img src="../assets/logo-main.png" class="h-6" alt="">
           <h1 class="ml-1">members</h1>
-      </div>
+        </div>
       </div>
     </div>
     <div class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
       <div class="flex justify-between items-end">
         <div v-if="profile">
           <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
-          <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
-          <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button">Chat with {{ profile.name }}<i class="fas fa-paper-plane text-sm ml-2"></i></button>
-          <button v-else class="button" @click="goToChat">Go to my Chats<i class="fas fa-paper-plane text-sm ml-2"></i></button>
-          <button class="button-icon"><i class="fab fa-facebook"></i></button>
-          <button class="button-icon"><i class="fab fa-instagram"></i></button>
-          <button class="button-icon"><i class="fab fa-twitter"></i></button>
-          <button class="button-icon"><i class="fab fa-github"></i></button>
+          <p v-if="profile.email !== matchedEmail" ><span class="font-bold">Email: </span><span class="underline text-blue-500 cursor-pointer" title="Send an email">{{ profile.email }}</span></p>
+          <p v-else><span class="font-bold">Email: </span><span>{{ profile.email }}</span></p>
+          <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name ">Chat with {{ profile.name }}<i class="fas fa-paper-plane text-sm ml-2"></i></button>
+          <button v-else class="button" @click="goToChat" title="Go to my Chat page">Go to my Chats<i class="fas fa-paper-plane text-sm ml-2"></i></button>
+          <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
+          <button class="button-icon" title="Facebook" ><i class="fab fa-facebook pl-[1px]"></i></button>
+          <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
+          <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
         </div>        
         <img :src="profile.image" class="h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14" alt="Profile Image" />
       </div>
@@ -36,7 +37,8 @@ export default {
   data() {
     return {
       profile: {},
-      matchedName: ''
+      matchedName: '',
+      matchedEmail: ''
     }
   },
   methods: {
@@ -53,6 +55,7 @@ export default {
   mounted() {
     const formData = JSON.parse(localStorage.getItem('formData'))
     this.matchedName = formData.name
+    this.matchedEmail = formData.email
     
     fetch('http://localhost:3000/profile/' + this.id)
     .then(res => res.json())
@@ -67,6 +70,6 @@ export default {
   @apply mt-4 h-8 px-4 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 cursor-pointer
 }
 .button-icon {
-  @apply mt-4 ml-2 py-[2px] px-[6px] border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 cursor-pointer
+  @apply mt-4 ml-2 py-[2px] px-[6px] border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:border-red-500 cursor-pointer
 }
 </style>

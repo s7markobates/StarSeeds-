@@ -3,7 +3,7 @@
 
     <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
       <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
-        <div class="flex items-center">
+        <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
           <RouterLink :to="{ name: 'chat'}">
             <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
@@ -31,8 +31,8 @@
       </div>
 
       <div class="flex justify-start items-start p-3">
-        <input v-model="messageInput" @keyup.enter="sendMessage" type="text" class="input-class">
-        <button @click="sendMessage" class="bttn-class">
+        <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
+        <button @click="sendMessage" class="bttn-class" title="Send message">
           <i class="fas fa-paper-plane text-xl"></i>
         </button>
       </div>
@@ -165,10 +165,10 @@ const goToProfile = (personId) => {
   @apply bg-red-400 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl
 }
 .img-class-profile {
-  @apply h-32 w-32 rounded-full border-4 border-orange-400 hover:scale-105
+  @apply h-32 w-32 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-xl
 }
 .img-class-current {
-  @apply h-32 w-32 rounded-full border-4 border-red-400 hover:scale-105
+  @apply h-32 w-32 rounded-full border-4 border-red-400 hover:scale-105 hover:shadow-xl
 }
 .input-class {
   @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none

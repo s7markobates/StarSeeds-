@@ -2,7 +2,7 @@
   <div class="text-gray-600 text-lg mt-[96px] h-[100%] flex justify-between items-center">
     <div v-if="profile" class="text-xl font-bold flex-1 justify-start items-center ml-6 mt-4">
       <div class="flex items-center">
-        <RouterLink :to="{ name: 'feed'}">
+        <RouterLink :to="{ name: 'feed'}" :title="'Go to ' + getFirstName + '\'s feed'">
           <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
           <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
         </RouterLink>
@@ -16,7 +16,7 @@
 
   <div class="w-[95%] mx-auto mt-3 flex flex-col mb-24">
     <div class="h-[72px] w-full bg-slate-100 mx-auto flex justify-center items-center rounded-t-2xl">
-      <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer">
+      <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Search profile">
         <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">
         <i class="fas fa-search text-orange-400 text-2xl "></i>
       </div>
@@ -29,7 +29,7 @@
               <img :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
               <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
             </div>
-            <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-4 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
+            <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
           </div>
         </li>
       </ul>

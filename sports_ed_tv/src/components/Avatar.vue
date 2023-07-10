@@ -12,9 +12,9 @@
       </div>
 
       <div class="ml-10 mt-2 flex items-center">
-        <img :src="avatarProfile.image" class="img-class" alt="Profile Image" @click="uploadImage"/>
+        <img :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
         <button @click="handleLogout" class="logout-button">
-          <span class="text-sm font-semibold ">Logout</span>
+          <span class="text-sm font-semibold" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
         </button>
       </div>
       <p class="text-[12px] ml-10 mt-2">(click image to update profile)</p>
@@ -22,7 +22,7 @@
       <div class="ml-10 mt-1">
         <p class="font-bold">{{ avatarProfile.name }}</p>
         <p class="text-[15px]">{{ avatarProfile.email }}</p>
-        <p class="font-semibold text-[16px]">Lifetime Member</p>
+        <p class="font-bold text-[15px] text-gray-400">Lifetime Member</p>
       </div>
 
       <div class="ml-12 mt-4">

@@ -2,7 +2,7 @@
   <div class="text-gray-600 text-lg mt-[110px] h-[100%]">
     <div v-if="profile" class="text-xl font-bold flex justify-between">
       <div class="ml-5 flex items-center">
-        <RouterLink :to="{ name: 'profiles'}" class="">
+        <RouterLink :to="{ name: 'profiles'}" title="View all the members">
           <div class="flex items-center">
             <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-3"></i>
             <div class="flex justify-center items-center hover:text-orange-400">
@@ -16,9 +16,9 @@
         <span>{{ getFirstName }}'s FEED</span>
       </div>
       <div class="mr-5 flex items-center">
-        <RouterLink :to="{ name: 'chat'}" class="">
+        <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
           <div class="flex items-center">
-            <span class="hover:text-orange-400">{{ getFirstName }}'s CHAT</span>
+            <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
             <i class="fas fa-arrow-right text-orange-400 text-2xl cursor-pointer ml-3"></i>
           </div>
         </RouterLink>
@@ -31,8 +31,8 @@
     </div>
     <div v-if="profile" class="w-[98%] mx-auto mt-5 flex flex-col items-center ">
       <h1 class="mb-2">Update your description:</h1>
-      <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description"></textarea>
-      <button @click="updateDescription" class="update-button">Update Description</button>
+      <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description" title="Update your description"></textarea>
+      <button @click="updateDescription" class="update-button" title="Update your description">Update Description</button>
     </div>
   </div>
 </template>
