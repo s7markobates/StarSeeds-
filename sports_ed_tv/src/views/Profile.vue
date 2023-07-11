@@ -12,7 +12,7 @@
     <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
       <div class="flex justify-between items-end">
         <div v-if="profile">
-          <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
+          <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
           <p v-if="profile.email !== matchedEmail" ><span class="font-bold">Email: </span><span class="underline text-blue-500 cursor-pointer" title="Send an email">{{ profile.email }}</span></p>
           <p v-else><span class="font-bold">Email: </span><span>{{ profile.email }}</span></p>
           <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name ">Chat with {{ profile.name }}<i class="fas fa-paper-plane text-sm ml-2"></i></button>
@@ -52,6 +52,9 @@ export default {
     },
     goToChat() {
       this.$router.push({ name: 'chat' })
+    },
+    goToFeed() {
+      this.$router.push({ name: 'feed' })
     }
   },
   mounted() {
@@ -72,9 +75,9 @@ export default {
   @apply mt-4 h-8 px-4 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 cursor-pointer
 }
 .button-icon {
-  @apply mt-4 ml-2 py-[2px] px-[6px] border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:cursor-no-drop active:border-red-500 cursor-pointer
+  @apply ml-2 py-[2px] px-[6px] border-2 rounded-full bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:cursor-no-drop active:border-red-500 cursor-pointer
 }
 .img-profile{
-  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14 hover:scale-110 hover:cursor-zoom-in
+  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14
 }
 </style>

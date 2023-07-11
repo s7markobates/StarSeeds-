@@ -25,9 +25,18 @@
       </div>
     </div>
     <div v-if="profile" class="w-[96%] mx-auto mt-10 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
-      <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
-      <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
-      <p v-if="profile.description" class="text-justify"><span class="font-bold">Description: </span>{{ profile.description }}</p>
+      <div class="flex">
+        <div class="flex-1">
+          <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
+          <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
+        </div>
+        <div class="flex-1 text-center">
+          <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-tie button-icon"></i></button>
+          <button @click="goToChat" title="Go to your chat"><i class="fas fa-paper-plane button-icon"></i></button>
+        </div>
+        <div class="flex-1"></div>
+      </div>
+      <p v-if="profile.description" class="text-justify mt-2"><span class="font-bold">Description: </span>{{ profile.description }}</p>
       <p v-else class="text-justify"><span class="font-bold">Description: </span>Profile has no description entered.</p>
     </div>
     <div v-if="profile" class="w-[98%] mx-auto mt-4 flex flex-col items-center ">
@@ -41,10 +50,11 @@
 <script setup>
 
 import { ref, onMounted, computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 
 const profile = ref(null)
 const descriptionInput = ref('')
+const router = useRouter()
   
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
@@ -94,6 +104,14 @@ const getFirstName = computed(() => {
   }
 })
 
+const goToChat = () => {
+  router.push({ name: 'chat' })
+}
+
+const goToProfile = (personId) => {
+  router.push({ name: 'profileDetails', params: { id: personId } })
+}
+
 </script>
   
 <style scoped>
@@ -102,6 +120,9 @@ const getFirstName = computed(() => {
 }
 .textarea-style {
   @apply border-4 border-gray-200 bg-gray-50 w-[70%] rounded-lg p-3 text-justify focus:outline-none
+}
+.button-icon {
+  @apply mx-2 mt-2 p-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400   cursor-pointer
 }
 </style>
   
