@@ -2,7 +2,7 @@
     <div class="text-gray-600 mt-[70px]">
         <div class="text-xl font-bold flex justify-between </div> w-[96%] mx-auto">
             <div class="flex justify-center items-center">
-                <i class="fas fa-user-tie text-xl mr-[13px]"></i>
+                <i class="fas fa-user-tie text-xl mr-[11px]"></i>
                 <div class="flex justify-center items-center">
                     <img src="../assets/logo-main.png" class="h-6" alt="">
                     <h1 class="ml-1">members:</h1>

@@ -1,7 +1,7 @@
 <template>
-  <div class="text-gray-600 mt-[70px] h-[100%]">
-    <div class="text-xl font-bold flex justify-start">
-      <div @click="goToProfiles" class="ml-7 cursor-pointer flex items-center" title="View all the members">
+  <div class="text-gray-600 mt-[70px]">
+    <div class="w-[96%] mx-auto text-xl font-bold flex justify-start">
+      <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
           <img src="../assets/logo-main.png" class="h-6" alt="">
@@ -75,6 +75,6 @@ export default {
   @apply mt-4 ml-2 py-[2px] px-[6px] border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:cursor-no-drop active:border-red-500 cursor-pointer
 }
 .img-profile{
-  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14 hover:cursor-crosshair
+  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14 active:cursor-crosshair active:scale-150 hover:cursor-zoom-in
 }
 </style>
