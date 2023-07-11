@@ -22,8 +22,8 @@
           <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
           <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
         </div>        
-        <img v-if="profile.image" :src="profile.image" class="img-profile" title="Zoom in" alt="Profile Image" />
-        <img v-else src="../assets/avatar.jpg" class="img-profile" title="Zoom in" alt="Profile Image" />
+        <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
+        <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
       </div>
       <div class="text-justify mt-4">
         <p v-if="profile && profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>

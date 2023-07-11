@@ -31,8 +31,8 @@
           <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
         </div>
         <div class="flex-1 text-center">
-          <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-tie button-icon"></i></button>
-          <button @click="goToChat" title="Go to your chat"><i class="fas fa-paper-plane button-icon"></i></button>
+          <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-tie button-profile"></i></button>
+          <button @click="goToChat" title="Go to your chat"><i class="fas fa-paper-plane button-chat"></i></button>
         </div>
         <div class="flex-1"></div>
       </div>
@@ -121,8 +121,11 @@ const goToProfile = (personId) => {
 .textarea-style {
   @apply border-4 border-gray-200 bg-gray-50 w-[70%] rounded-lg p-3 text-justify focus:outline-none
 }
-.button-icon {
-  @apply mx-2 mt-2 p-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400   cursor-pointer
+.button-profile {
+  @apply mx-1 mt-2 px-3 py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400   cursor-pointer
+}
+.button-chat {
+  @apply mx-1 mt-2 px-[11px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400   cursor-pointer
 }
 </style>
   
