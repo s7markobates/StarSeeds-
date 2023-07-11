@@ -56,11 +56,11 @@ const profiles = ref([])
 
 onMounted(() => {
     fetch('http://localhost:3000/profile')
-        .then(res => res.json())
-        .then(data => {
-            profiles.value = data
-        })
-        .catch(err => console.log(err.message))
+    .then(res => res.json())
+    .then(data => {
+        profiles.value = data
+    })
+    .catch(err => console.log(err.message))
 })
 </script>
   
