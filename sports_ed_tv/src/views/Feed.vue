@@ -1,6 +1,6 @@
 <template>
-  <div class="text-gray-600 text-lg mt-[70px]">
-    <div v-if="profile" class="w-[96%] mx-auto text-xl font-bold flex justify-between">
+  <div v-if="profile" class="text-gray-600 text-lg mt-[70px]">
+    <div class="w-[96%] mx-auto text-xl font-bold flex justify-between">
       <div class="flex-1">
         <div class="flex justify-start items-center">
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">

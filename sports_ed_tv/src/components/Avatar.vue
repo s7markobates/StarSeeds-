@@ -87,9 +87,6 @@ onMounted(() => {
 const handleLogout = () => {
   localStorage.removeItem('formData')
   router.push('/')
-  if (router.currentRoute.value.path === '/') {
-    window.location.reload()
-  }
 }
 
 const uploadImage = () => {
