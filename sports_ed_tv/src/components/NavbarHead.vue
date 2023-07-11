@@ -16,8 +16,7 @@
       <ModalSignIn :modalActive="modalActive" @close-modal="toggleModal" />
     </div>
   </div>
-
-  <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive && !isAvatarOpen" >
+  <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
     <nav class="fixed top-[56px] w-full flex justify-between items-center uppercase h-10 bg-white text-gray-600 p-2">
       <RouterLink to="/sports" class="mx-1">Sports</RouterLink>
       <RouterLink to="/videos" class="mx-1">Videos</RouterLink>
@@ -52,20 +51,23 @@ const toggleModal = () => {
 }
 
 const navbarClass = computed(() => {
-const currentRoute = useRoute()
-return currentRoute.name === 'profiles' ||
-       currentRoute.name === 'profileDetails' ||
-       currentRoute.name === 'feed' ||
-       currentRoute.name === 'chat' ||
-       currentRoute.name === 'chatPerson'
-       ? 'dark' : 'light'
+  const currentRoute = useRoute()
+  return (
+    currentRoute.name === 'profiles' ||
+    currentRoute.name === 'profileDetails' ||
+    currentRoute.name === 'feed' ||
+    currentRoute.name === 'chat' ||
+    currentRoute.name === 'chatPerson'
+    ? 'dark' : 'light'
+  )
 })
 
-const isOnFeed = computed(() => router.currentRoute.value.name === 'feed' ||
-                                router.currentRoute.value.name === 'profiles' ||
-                                router.currentRoute.value.name === 'profileDetails' ||
-                                router.currentRoute.value.name === 'chat' ||
-                                router.currentRoute.value.name === 'chatPerson'
+const isOnFeed = computed(() => 
+  router.currentRoute.value.name === 'feed' ||
+  router.currentRoute.value.name === 'profiles' ||
+  router.currentRoute.value.name === 'profileDetails' ||
+  router.currentRoute.value.name === 'chat' ||
+  router.currentRoute.value.name === 'chatPerson'
 )
 
 const shouldShowNav = computed(() => {
@@ -75,7 +77,8 @@ const shouldShowNav = computed(() => {
     currentRouteName === 'profiles' ||
     currentRouteName === 'profileDetails'||
     currentRouteName === 'chat'||
-    currentRouteName === 'chatPerson'
+    currentRouteName === 'chatPerson' ||
+    currentRouteName === 'avatar'
   )
 })
 
@@ -97,11 +100,11 @@ router.afterEach(() => {
 
 <style scoped>
 .dark {
-background-color: #011D57;
-color: white;
+  background-color: #011D57;
+  color: white;
 }
 .light {
-background-color: white;
-color: darkslategray;
+  background-color: white;
+  color: darkslategray;
 }
 </style>
