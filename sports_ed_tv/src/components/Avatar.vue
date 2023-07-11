@@ -3,7 +3,7 @@
     <span class="text-xs font-bold text-center text-white py-1 px-0 leading-4" title="View profile details">{{ getInitials }}</span>
   </div>
   <div v-if="isAvatarOpen" class="bg-white h-screen w-screen absolute top-14 left-0 text-gray-600 text-lg">
-    <div v-if="avatarProfile.name" class="mt-4 ">
+    <div v-if="avatarProfile" class="mt-4 ">
       <div class="ml-4 flex items-center cursor-pointer" @click="$emit('toggle-avatar')">
         <i class="fas fa-arrow-left text-orange-400 text-2xl" ></i>
         <span class="text-lg font-bold ml-3 ">{{ avatarProfile.name }} MENU</span>
@@ -111,30 +111,6 @@ const handleImageUpload = (event) => {
 }
 
 const saveImageOnServer = (imageData) => {
-  const updatedProfile = { ...avatarProfile.value, image: imageData }
-
-  fetch(`http://localhost:3000/profile/${avatarProfile.value.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(updatedProfile),
-  })
-  .then((response) => response.json())
-  .then((data) => {
-    if (data) {
-      avatarProfile.value = updatedProfile
-      // Ažuriranje slike profila na frontend-u
-      avatarProfile.value.image = imageData
-      alert('Profile image updated successfully!')
-    }
-  })
-  .catch((err) => {
-    console.log(err.message)
-  })
-}
-
-const updateAvatarImageOnServer = (imageData) => {
   const updatedProfile = { ...avatarProfile.value, image: imageData }
 
   fetch(`http://localhost:3000/profile/${avatarProfile.value.id}`, {
