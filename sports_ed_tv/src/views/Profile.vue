@@ -75,6 +75,6 @@ export default {
   @apply mt-4 ml-2 py-[2px] px-[6px] border-2 rounded-3xl bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:cursor-no-drop active:border-red-500 cursor-pointer
 }
 .img-profile{
-  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14 active:cursor-crosshair active:scale-150 hover:cursor-zoom-in
+  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-5 -mt-14
 }
 </style>
