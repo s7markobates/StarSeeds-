@@ -121,7 +121,6 @@ const saveImageOnServer = (imageData) => {
   .then((data) => {
     if (data) {
       avatarProfile.value = updatedProfile
-      // Ažuriranje slike profila na frontend-u
       avatarProfile.value.image = imageData
       alert('Profile image updated successfully!')
     }
