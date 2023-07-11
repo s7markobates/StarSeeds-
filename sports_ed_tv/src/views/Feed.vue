@@ -122,10 +122,10 @@ const goToProfile = (personId) => {
   @apply border-4 border-gray-200 bg-gray-50 w-[70%] rounded-lg p-3 text-justify focus:outline-none
 }
 .button-profile {
-  @apply mx-1 mt-2 px-3 py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400   cursor-pointer
+  @apply mx-1 mt-2 px-[12px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 .button-chat {
-  @apply mx-1 mt-2 px-[11px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400   cursor-pointer
+  @apply mx-1 mt-2 pl-[11px] pr-[12px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>
   

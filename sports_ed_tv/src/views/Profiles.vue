@@ -17,6 +17,20 @@
             </RouterLink>
         </div>
     </div>
+    <!-- <div class="w-[96%] mx-auto mt-10 mb-24 ">
+        <div v-for="profile in profiles" :key="profile.id">
+            <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
+                <div :title="'Go to ' + profile.name + ' profile'" class="">
+                    <ul class="grid grid-cols-3">
+                        <li class="p-2 text-lg">
+                            <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
+                            <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
+                        </li>
+                    </ul>
+                </div>
+            </RouterLink>
+        </div>
+    </div> -->
     <div class="w-[96%] mx-auto mt-10 mb-24 bg-gray-200 p-2 rounded-lg shadow-md">
         <div v-for="profile in profiles" :key="profile.id">
             <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
@@ -37,19 +51,22 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
-  
+
 const profiles = ref([])
 
 onMounted(() => {
     fetch('http://localhost:3000/profile')
-    .then(res => res.json())
-    .then(data => {
-    profiles.value = data
-    })
-    .catch(err => console.log(err.message))
+        .then(res => res.json())
+        .then(data => {
+            profiles.value = data
+        })
+        .catch(err => console.log(err.message))
 })
 </script>
   
 <style scoped>
+.img-profile {
+    @apply h-48 w-48 rounded-full border-2 border-gray-300 shadow-xl
+}
 </style>
   
