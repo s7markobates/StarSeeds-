@@ -10,39 +10,28 @@
         </div>
         <div class="">
             <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
-                <div class="flex items-center">
-                    <span class="hover:text-orange-400">Go to your feed</span>
-                    <i class="fas fa-arrow-right text-orange-400 text-2xl ml-2"></i>
-                </div>
+            <div class="flex items-center">
+                <span class="hover:text-orange-400">Go to your feed</span>
+                <i class="fas fa-arrow-right text-orange-400 text-2xl ml-2"></i>
+            </div>
             </RouterLink>
         </div>
     </div>
-    <!-- <div class="w-[96%] mx-auto mt-10 mb-24 ">
-        <div v-for="profile in profiles" :key="profile.id">
-            <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
-                <div :title="'Go to ' + profile.name + ' profile'" class="">
-                    <ul class="grid grid-cols-3">
-                        <li class="p-2 text-lg">
-                            <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
-                            <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
-                        </li>
-                    </ul>
-                </div>
-            </RouterLink>
-        </div>
-    </div> -->
-    <div class="w-[96%] mx-auto mt-10 mb-24 bg-gray-200 p-2 rounded-lg shadow-md">
-        <div v-for="profile in profiles" :key="profile.id">
-            <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
-                <div :title="'Go to ' + profile.name + ' profile'" class="flex flex-col items-start justify-center bg-gray-100 hover:bg-slate-50 p-1 m-3 rounded-md shadow-md">
-                    <ul class="">
-                        <li class="p-2 text-lg">
+    <div class="w-[70%] mx-auto mt-10 mb-24">
+        <div class="grid grid-cols-3 gap-x-2 gap-y-12">
+            <div v-for="profile in profiles" :key="profile.id"  class="flex justify-center items-center">
+                <ul>
+                    <li class="p-2 text-lg" :title="'Go to ' + profile.name + ' profile'">
+                        <RouterLink  :to="{ name: 'profileDetails', params: { id: profile.id } }">
+                        <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
+                        <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
+                        <div class="flex flex-col items-center mt-4">
                             <h1 class="font-semibold">{{ profile.name }}</h1>
-                            <p>{{ profile.email }}</p>
-                        </li>
-                    </ul>
-                </div>
-            </RouterLink>
+                        </div>
+                        </RouterLink>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -55,18 +44,18 @@ import { RouterLink } from 'vue-router'
 const profiles = ref([])
 
 onMounted(() => {
-    fetch('http://localhost:3000/profile')
+fetch('http://localhost:3000/profile')
     .then(res => res.json())
     .then(data => {
-        profiles.value = data
+    profiles.value = data
     })
     .catch(err => console.log(err.message))
 })
+
 </script>
-  
+
 <style scoped>
 .img-profile {
-    @apply h-48 w-48 rounded-full border-2 border-gray-300 shadow-xl
+    @apply h-52 w-52 rounded-full border-2 border-gray-300 shadow-2xl hover:scale-110
 }
 </style>
-  
