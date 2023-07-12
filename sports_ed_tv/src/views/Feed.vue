@@ -64,16 +64,36 @@
         <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description here..." title="Update your description"></textarea>
       </div>
     </div>
+
+    <div v-if="profile" class="w-[40%] mx-auto mt-5 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
+      <div class="flex flex-col">
+        <div>
+          <textarea v-model="statusInput" class="w-full rounded-lg p-2" rows="5" name="status-enter" placeholder="Enter your status"></textarea>
+        </div>
+        <div class="flex justify-end">
+          <button @click="saveStatus" class="text-orange-400 hover:text-amber-800 text-xl">
+            <i class="fas fa-poop"></i>
+            <i class="fas fa-poop"></i>
+            <i class="fas fa-poop"></i>
+            <i class="fas fa-poop"></i>
+            <i class="fas fa-poop"></i>
+          </button>
+        </div>
+        <div v-for="status in sortedStatuses" :key="status.id" class="mt-3">
+          <p class="bg-gray-300 rounded-lg p-2">{{ status.text }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
   
 <script setup>
-
 import { ref, onMounted, computed } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 
 const profile = ref(null)
 const descriptionInput = ref('')
+const statusInput = ref('')
 const router = useRouter()
 const descriptionEditMode = ref(false)
 
@@ -83,20 +103,20 @@ onMounted(() => {
     fetchProfile(localProfile)
   }
 })
-  
+
 const fetchProfile = (localProfile) => {
   fetch('http://localhost:3000/profile')
-  .then(response => response.json())
-  .then(data => {
-    const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
-    if (loggedInProfile) {
-      profile.value = loggedInProfile
-      descriptionInput.value = loggedInProfile.description
-    }
-  })
-  .catch(err => {
-    console.log(err.message)
-  })
+    .then(response => response.json())
+    .then(data => {
+      const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
+      if (loggedInProfile) {
+        profile.value = loggedInProfile
+        descriptionInput.value = loggedInProfile.description
+      }
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
 }
 
 const getFirstName = computed(() => {
@@ -127,18 +147,50 @@ const updateDescription = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ description: profile.value.description })
     })
-    .then(response => response.json())
-    .then(data => {
-      // console.log('Description updated:', data)
-      toggleDescriptionEditMode()
-    })
-    .catch(err => {
-      console.log(err.message)
-    })
+      .then(response => response.json())
+      .then(data => {
+        toggleDescriptionEditMode()
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
   }
 }
 
+const saveStatus = () => {
+  if (statusInput.value && profile.value) {
+    const newStatus = {
+      text: statusInput.value
+    }
+
+    profile.value.statuses.push(newStatus)
+
+    fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ statuses: profile.value.statuses })
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Status saved:', data)
+        statusInput.value = ''
+      })
+      .catch(error => {
+        console.error('Error saving status:', error)
+      })
+  }
+}
+
+const sortedStatuses = computed(() => {
+  if (profile.value) {
+    const profileStatuses = profile.value.statuses || []
+    return profileStatuses.sort((a, b) => b.id - a.id)
+  }
+  return []
+})
+
 </script>
+
   
 <style scoped>
 .button-profile {
