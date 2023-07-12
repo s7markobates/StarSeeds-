@@ -1,5 +1,5 @@
 <template>
-  <div v-if="profile" class="text-gray-600 text-lg mt-[70px] mb-20">
+  <div v-if="profile" class="text-gray-600 text-lg mt-[70px] mb-64">
     <div class="w-[96%] mx-auto text-xl font-bold flex justify-between">
       <div class="flex-1">
         <div class="flex justify-start items-center">
@@ -36,13 +36,33 @@
         </div>
         <div class="flex-1"></div>
       </div>
-      <p v-if="profile.description" class="text-justify mt-2"><span class="font-bold">Description: </span>{{ profile.description }}</p>
-      <p v-else class="text-justify"><span class="font-bold">Description: </span>Profile has no description entered.</p>
-    </div>
-    <div v-if="profile" class="w-[98%] mx-auto mt-4 flex flex-col items-center ">
-      <h1 class="mb-4">Update your description:</h1>
-      <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description" title="Update your description"></textarea>
-      <button @click="updateDescription" class="update-button" title="Update your description">Update Description</button>
+      <div v-if="!descriptionEditMode" class="text-justify">
+        <div v-if="profile.description">
+          <span class="font-bold">Description:
+            <button @click="toggleDescriptionEditMode" title="Update description">
+              <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
+            </button>
+          </span>
+          <p>{{ profile.description }}</p>
+        </div>
+        <div v-else class="text-justify">
+          <span class="font-bold">Description:
+            <button @click="toggleDescriptionEditMode" title="Add description">
+              <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
+            </button>
+          </span>
+          <p>Profile has no description entered.</p>
+        </div>
+      </div>
+      <div v-if="descriptionEditMode" class="mx-auto flex flex-col items-start">
+        <p class="font-bold">Description:
+          <button @click="updateDescription" class="" title="Save description">
+            <i class="far fa-edit text-gray-500 hover:text-orange-400"></i>
+            <span class="italic font-thin text-xs ml-1">(save description)</span>
+          </button>
+        </p>
+        <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description here..." title="Update your description"></textarea>
+      </div>
     </div>
   </div>
 </template>
@@ -55,7 +75,8 @@ import { RouterLink, useRouter } from 'vue-router'
 const profile = ref(null)
 const descriptionInput = ref('')
 const router = useRouter()
-  
+const descriptionEditMode = ref(false)
+
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
   if (localProfile) {
@@ -77,24 +98,6 @@ const fetchProfile = (localProfile) => {
     console.log(err.message)
   })
 }
-  
-const updateDescription = () => {
-  if (profile.value) {
-    profile.value.description = descriptionInput.value
-    fetch(`http://localhost:3000/profile/${profile.value.id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ description: profile.value.description })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Description updated:', data)
-    })
-    .catch(err => {
-      console.log(err.message)
-    })
-  }
-}
 
 const getFirstName = computed(() => {
   if (profile.value) {
@@ -112,20 +115,40 @@ const goToProfile = (personId) => {
   router.push({ name: 'profileDetails', params: { id: personId } })
 }
 
+const toggleDescriptionEditMode = () => {
+  descriptionEditMode.value = !descriptionEditMode.value
+}
+
+const updateDescription = () => {
+  if (profile.value) {
+    profile.value.description = descriptionInput.value
+    fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ description: profile.value.description })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // console.log('Description updated:', data)
+      toggleDescriptionEditMode()
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+  }
+}
+
 </script>
   
 <style scoped>
-.update-button {
-  @apply mt-5 px-3 h-9 w-[200px] border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 font-bold cursor-pointer
-}
-.textarea-style {
-  @apply border-4 border-gray-200 bg-gray-50 w-[70%] rounded-lg p-3 text-justify focus:outline-none
-}
 .button-profile {
   @apply mx-1 mt-2 px-[12px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 .button-chat {
   @apply mx-1 mt-2 pl-[11px] pr-[12px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
+.textarea-style {
+  @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none
 }
 </style>
   

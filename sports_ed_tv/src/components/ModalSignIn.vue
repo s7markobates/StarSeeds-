@@ -14,7 +14,7 @@
             </div>
             <div class="mt-2">
               <label for="email" class="ml-3 text-gray-500 font-semibold">Email address</label>
-              <input v-model="formData.email" id="email" type="email" class="input-field" placeholder="vm@executive-digital.com" required >
+              <input v-model="formData.email" id="email" type="email" class="input-field" placeholder="Enter your email" required >
             </div>
             <div class="mt-2">
               <label for="password" class="ml-3 text-gray-500 font-semibold">Password</label>
