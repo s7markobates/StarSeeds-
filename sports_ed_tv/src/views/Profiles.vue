@@ -8,22 +8,22 @@
                 <h1 class="ml-1">members:</h1>
             </div>
         </div>
-        <div class="">
-            <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
+        <div>
             <div class="flex items-center">
+            <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                 <span class="hover:text-orange-400">Go to your feed</span>
                 <i class="fas fa-arrow-right text-orange-400 text-2xl ml-2"></i>
-            </div>
             </RouterLink>
+            </div>
         </div>
     </div>
-    <div class="h-[72px] w-full mx-auto flex justify-center items-center">
-        <div class="bg-gray-100 flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
+    <div class="h-[72px] flex justify-center items-center">
+        <div class="h-8 w-[300px] bg-gray-100 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
           <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-100" placeholder="Search members...">
           <i class="fas fa-search text-orange-400 text-2xl "></i>
         </div>
     </div>
-    <div class="w-[70%] mx-auto mt-5">
+    <div class="w-[70%] mx-auto mt-7">
         <div class="grid grid-cols-3 gap-x-2 gap-y-12">
             <div v-for="profile in filteredProfiles" :key="profile.id"  class="flex justify-center items-center">
                 <ul>
@@ -47,7 +47,6 @@
 import { ref, onMounted, computed  } from 'vue'
 import { RouterLink } from 'vue-router'
 const searchText = ref('')
-
 const profiles = ref([])
 
 onMounted(() => {
