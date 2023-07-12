@@ -6,12 +6,15 @@
 
   <RouterView />
 
+  <Footer/>
+
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
 import NavbarHead from './components/NavbarHead.vue'
 import Body from './components/Body.vue'
+import Footer from './components/Footer.vue'
 
 </script>
 
