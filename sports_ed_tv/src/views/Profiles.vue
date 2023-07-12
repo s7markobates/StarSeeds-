@@ -21,7 +21,7 @@
         <div class="grid grid-cols-3 gap-x-2 gap-y-12">
             <div v-for="profile in profiles" :key="profile.id"  class="flex justify-center items-center">
                 <ul>
-                    <li class="p-2 text-lg hover:text-orange-400" :title="'Go to ' + profile.name + ' profile'">
+                    <li class="p-2 text-lg hover:text-orange-400 hover:text-xl" :title="'Go to ' + profile.name + ' profile'">
                         <RouterLink  :to="{ name: 'profileDetails', params: { id: profile.id } }">
                         <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
                         <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
@@ -56,6 +56,6 @@ fetch('http://localhost:3000/profile')
 
 <style scoped>
 .img-profile {
-    @apply h-52 w-52 rounded-full border-2 border-gray-300 shadow-xl hover:border-orange-400
+    @apply h-52 w-52 rounded-full border-2 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400
 } 
 </style>
