@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
 .dark {
-  background-color: #011D57;
+  background-color: #001f3f;
   color: white;
 }
 </style>
