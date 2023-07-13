@@ -17,12 +17,16 @@
     </div>
   </div>
   <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
-    <nav class="fixed top-[56px] w-full flex justify-between items-center uppercase h-10 bg-white text-gray-600 p-2">
-      <RouterLink to="/sports" class="mx-1">Sports</RouterLink>
-      <RouterLink to="/videos" class="mx-1">Videos</RouterLink>
-      <RouterLink to="/blogs" class="mx-1">Blogs</RouterLink>
+    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 bg-white text-gray-600 p-2">
+      <RouterLink to="/about" class="mx-1 uppercase">About</RouterLink>
+      <RouterLink to="/videos" class="mx-1 uppercase">Videos</RouterLink>
+      <RouterLink to="/blogs" class="mx-1 uppercase">Blogs</RouterLink>
       <RouterLink to="/discover" class="mx-1">
-        <img src="../assets/logo-small.png" class="h-7" alt="Logo discover" />
+        <div class="text-md font-style">
+          <span class="text-orange-400 mr-[3px]">Star</span>
+          <i class="fas fa-meteor text-orange-400"></i>
+          <span class="text-yellow-400">seeds</span>
+        </div>
       </RouterLink>
     </nav>
   </div>
@@ -106,5 +110,8 @@ router.afterEach(() => {
 .light {
   background-color: white;
   color: darkslategray;
+}
+.font-style {
+  font-family: 'Yatra One', cursive;
 }
 </style>
