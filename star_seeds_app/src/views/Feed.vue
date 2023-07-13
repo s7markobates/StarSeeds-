@@ -5,7 +5,7 @@
         <div class="flex justify-start items-center">
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">
             <div class="flex justify-center items-center hover:text-orange-400 ">
-              <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2 "></i>
+              <i class="fas fa-space-shuttle fa-rotate-180 text-orange-400 text-2xl cursor-pointer mr-2 "></i>
               <img src="../assets/logo-main.png" class="h-6">
               <h1 class="ml-1">members</h1>
             </div>
@@ -19,7 +19,7 @@
         <div class="flex justify-end items-center">
           <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
-            <i class="fas fa-arrow-right text-orange-400 text-2xl cursor-pointer ml-2"></i>
+            <i class="fas fa-space-shuttle text-orange-400 text-2xl cursor-pointer ml-2"></i>
           </RouterLink>
         </div>
       </div>
@@ -32,8 +32,8 @@
         </div>
         <div class="flex-1 text-center">
           <button @click="goToProfiles" title="See all members"><i class="fas fa-users button-profiles"></i></button>
-          <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-tie button-profile"></i></button>
-          <button @click="goToChat" title="Go to your chat"><i class="fas fa-paper-plane button-chat"></i></button>
+          <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button-profile"></i></button>
+          <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-chat"></i></button>
         </div>
         <div class="flex-1"></div>
       </div>
@@ -101,7 +101,9 @@
     </div>
   </div>
 </template>
-  
+
+<i class="fas fa-space-shuttle fa-rotate-180"></i>
+
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'

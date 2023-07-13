@@ -2,7 +2,7 @@
 <div class="text-gray-600 mt-[70px] mb-32">
     <div class="text-xl font-bold flex justify-between w-[96%] mx-auto">
         <div class="flex justify-center items-center">
-            <i class="fas fa-user-tie text-xl mr-[11px]"></i>
+            <i class="fas fa-user-astronaut text-xl mr-[11px]"></i>
             <div class="flex justify-center items-center">
                 <img src="../assets/logo-main.png" class="h-6" alt="">
                 <h1 class="ml-1">members:</h1>
@@ -12,7 +12,7 @@
             <div class="flex items-center">
             <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                 <span class="hover:text-orange-400">Go to your feed</span>
-                <i class="fas fa-arrow-right text-orange-400 text-2xl ml-2"></i>
+                <i class="fas fa-space-shuttle text-orange-400 text-2xl ml-2"></i>
             </RouterLink>
             </div>
         </div>

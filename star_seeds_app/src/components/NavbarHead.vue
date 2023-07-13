@@ -2,13 +2,13 @@
   <div>
     <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 ">
       <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
-      <Logo class="absolute top-[2px] left-[45.2%] z-30"/>
+      <Logo/>
       <div>
         <div v-if="isOnFeed" v-show="!isOpen" >
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
-          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 hover:bg-orange-500 hover:text-white ">
+          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 bg-white hover:bg-orange-500 hover:text-white ">
             <p class="font-medium text-[15px] px-[5px]">Sign In</p> 
           </button>
         </div>

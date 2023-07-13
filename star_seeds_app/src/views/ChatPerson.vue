@@ -4,7 +4,7 @@
       <div v-if="profile" class=" text-xl font-bold flex-1 justify-start items-center">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
           <RouterLink :to="{ name: 'chat'}">
-            <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2"></i>
+            <i class="fas fa-space-shuttle fa-rotate-180 text-orange-400 text-2xl cursor-pointer mr-2"></i>
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
           </RouterLink>
         </div>
@@ -32,7 +32,7 @@
       <div class="flex justify-start items-start p-3">
         <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
         <button @click="sendMessage" class="bttn-class" title="Send message">
-          <i class="fas fa-paper-plane text-xl"></i>
+          <i class="fas fa-rocket text-xl"></i>
         </button>
       </div>
     </div>    

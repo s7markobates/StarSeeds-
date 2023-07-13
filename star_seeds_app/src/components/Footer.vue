@@ -1,7 +1,11 @@
 <template>
     <hr>
-    <div class="flex justify-center">
-        <img src="../assets/logo-footer.png" class="h-16 mt-5" alt="">
+    <div class="flex justify-center mt-10">
+        <p class="text-4xl font-style">
+            <span class="text-orange-400 mr-[3px]">Star</span>
+            <i class="fas fa-meteor text-orange-400"></i>
+            <span class="text-yellow-400">seeds</span>
+        </p>
     </div>
     <div class="flex justify-center mt-5 text-lg text-gray-500 font-semibold">
         <p>Contact Us</p>
@@ -18,10 +22,14 @@
 </template>
 
 <script setup>
+import Logo from './Logo.vue'
 </script>
 
 <style scoped>
 .button-icon {
     @apply mx-2 h-12 w-12 py-[2px] px-[6px] border rounded-full bg-white border-gray-300 text-orange-400 cursor-pointer
-  }
+}
+.font-style {
+    font-family: 'Yatra One', cursive;
+}
 </style>
