@@ -12,15 +12,15 @@
     <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
       <div class="flex justify-between items-end">
         <div v-if="profile">
-          <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
+          <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
           <p v-if="profile.email !== matchedEmail" ><span class="font-bold">Email: </span><span class="underline text-blue-500 cursor-pointer" title="Send an email">{{ profile.email }}</span></p>
           <p v-else><span class="font-bold">Email: </span><span>{{ profile.email }}</span></p>
           <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name ">Chat with {{ profile.name }}<i class="fas fa-paper-plane text-sm ml-2"></i></button>
           <button v-else class="button" @click="goToChat" title="Go to my Chat page">Go to my Chats<i class="fas fa-paper-plane text-sm ml-2"></i></button>
-          <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
           <button class="button-icon" title="Facebook" ><i class="fab fa-facebook pl-[1px]"></i></button>
           <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
           <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
+          <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
         </div>        
         <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
         <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
@@ -29,6 +29,18 @@
         <p v-if="profile && profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>
         <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
       </div>
+    </div>
+    <div v-if="statuses && statuses.length > 0" class="w-[45%] mx-auto mt-5 bg-gray-200 px-4 py-1 rounded-lg shadow-md">
+      <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
+        <img v-if="profile.image" :src="profile.image" class="img-status"/>
+        <img v-else src="../assets/avatar.jpg" class="img-status" />
+        <p class="bg-gray-100 rounded-lg px-2 py-1 w-full">{{ status.text }}</p>
+      </div>
+    </div>
+    <div v-else class="w-[45%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md flex justify-start items-center">
+      <img v-if="profile.image" :src="profile.image" class="img-status"/>
+      <img v-else src="../assets/avatar.jpg" class="img-status" />
+      <p class="bg-gray-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>
     </div>
   </div>
 </template>
@@ -40,8 +52,22 @@ export default {
     return {
       profile: {},
       matchedName: '',
-      matchedEmail: ''
+      matchedEmail: '',
+      statuses: []
     }
+  },
+  mounted() {
+    const formData = JSON.parse(localStorage.getItem('formData'))
+    this.matchedName = formData.name
+    this.matchedEmail = formData.email
+    
+    fetch('http://localhost:3000/profile/' + this.id)
+    .then(res => res.json())
+    .then(data => {
+      this.profile = data
+      this.statuses = data.statuses // Ažurirajte svojstvo statuses sa statusima iz odgovora servera
+    })
+    .catch(err => console.log(err.message))
   },
   methods: {
     goToProfiles() {
@@ -56,17 +82,7 @@ export default {
     goToFeed() {
       this.$router.push({ name: 'feed' })
     }
-  },
-  mounted() {
-    const formData = JSON.parse(localStorage.getItem('formData'))
-    this.matchedName = formData.name
-    this.matchedEmail = formData.email
-    
-    fetch('http://localhost:3000/profile/' + this.id)
-    .then(res => res.json())
-    .then(data => this.profile = data)
-    .catch(err => console.log(err.message))
-  }
+  }  
 }
 </script>
 
@@ -79,5 +95,8 @@ export default {
 }
 .img-profile{
   @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-6 -mt-14
+}
+.img-status{
+  @apply h-10 w-10 rounded-full border-2 border-gray-300 mr-2
 }
 </style>

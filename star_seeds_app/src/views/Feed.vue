@@ -31,6 +31,7 @@
           <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
         </div>
         <div class="flex-1 text-center">
+          <button @click="goToProfiles" title="See all members"><i class="fas fa-users button-profiles"></i></button>
           <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-tie button-profile"></i></button>
           <button @click="goToChat" title="Go to your chat"><i class="fas fa-paper-plane button-chat"></i></button>
         </div>
@@ -61,7 +62,13 @@
             <span class="italic font-thin text-xs ml-1">(save description)</span>
           </button>
         </p>
-        <textarea v-model="descriptionInput" class="textarea-style" rows="5" placeholder="Enter profile description here..." title="Update your description"></textarea>
+        <textarea
+          v-model="descriptionInput"
+          class="textarea-style"
+          rows="5"
+          placeholder="Enter profile description here..."
+          title="Update your description">
+        </textarea>
       </div>
     </div>
 
@@ -74,8 +81,8 @@
             class="w-full rounded-lg p-2 focus:outline-none"
             rows="5"
             name="status-enter"
-            placeholder="What's on your mind right now?"
-          ></textarea>
+            placeholder="What's on your mind right now?">
+          </textarea>
         </div>
         <div class="flex justify-end">
           <button @click="saveStatus" class="text-orange-400 hover:text-amber-800 text-xl">
@@ -113,17 +120,17 @@ onMounted(() => {
 
 const fetchProfile = (localProfile) => {
   fetch('http://localhost:3000/profile')
-    .then(response => response.json())
-    .then(data => {
-      const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
-      if (loggedInProfile) {
-        profile.value = loggedInProfile
-        descriptionInput.value = loggedInProfile.description
-      }
-    })
-    .catch(err => {
-      console.log(err.message)
-    })
+  .then(response => response.json())
+  .then(data => {
+    const loggedInProfile = data.find(profile => profile.name === localProfile.name && profile.email === localProfile.email)
+    if (loggedInProfile) {
+      profile.value = loggedInProfile
+      descriptionInput.value = loggedInProfile.description
+    }
+  })
+  .catch(err => {
+    console.log(err.message)
+  })
 }
 
 const getFirstName = computed(() => {
@@ -134,12 +141,16 @@ const getFirstName = computed(() => {
   }
 })
 
-const goToChat = () => {
-  router.push({ name: 'chat' })
+const goToProfiles = () => {
+  router.push({ name: 'profiles' })
 }
 
 const goToProfile = (personId) => {
   router.push({ name: 'profileDetails', params: { id: personId } })
+}
+
+const goToChat = () => {
+  router.push({ name: 'chat' })
 }
 
 const toggleDescriptionEditMode = () => {
@@ -154,13 +165,13 @@ const updateDescription = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ description: profile.value.description })
     })
-      .then(response => response.json())
-      .then(data => {
-        toggleDescriptionEditMode()
-      })
-      .catch(err => {
-        console.log(err.message)
-      })
+    .then(response => response.json())
+    .then(data => {
+      toggleDescriptionEditMode()
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
   }
 }
 
@@ -203,17 +214,19 @@ const handleEnter = () => {
   if (statusInput.value.trim() !== '') {
     saveStatus()
   }
-};
+}
 
 </script>
 
-  
 <style scoped>
 .button-profile {
   @apply mx-1 mt-2 px-[12px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
+.button-profiles {
+  @apply mx-1 mt-2 px-[9.5px] py-[11.6px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
 .button-chat {
-  @apply mx-1 mt-2 pl-[11px] pr-[12px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+  @apply mx-1 mt-2 pl-[10.8px] pr-[11.8px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 .textarea-style {
   @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none

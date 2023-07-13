@@ -121,7 +121,7 @@
       "description": "Octavian Augustus (63 BCE - 14 CE), also known as Gaius Octavius Thurinus, was the first Roman emperor and a significant figure in Roman history. He played a vital role in the transition from the Roman Republic to the Roman Empire, leaving a lasting impact on Rome's political and cultural landscape. Born into a prominent family, Octavian rose to power after the assassination of his great-uncle, Julius Caesar. He formed the Second Triumvirate with Mark Antony and Marcus Lepidus, effectively ruling Rome. However, conflicts arose, leading to a civil war between Octavian and Antony. Octavian emerged victorious in 31 BCE at the Battle of Actium, establishing himself as the sole ruler of Rome. Taking the title \"Augustus\" in 27 BCE, he became Rome's first emperor. Augustus implemented crucial reforms and policies that brought stability and transformed the Roman Empire. He emphasized traditional Roman values, encouraging moral and social renewal. Augustus revitalized religious practices and supported the revival of family values. As emperor, Augustus implemented administrative and military reforms, strengthening the Roman army and expanding its frontiers. He undertook ambitious construction projects, beautifying Rome and fostering a sense of Roman identity. Augustus also pursued diplomacy, establishing client kingdoms and ensuring the empire's security. During his reign, Augustus ushered in the Pax Romana, a period of relative peace and prosperity that lasted for over two centuries. His rule set the precedent for future emperors, establishing the imperial system that endured for centuries. Augustus's legacy as the first Roman emperor and the founder of the Roman Empire is significant. His reign transformed Rome politically, socially, and culturally, leaving an indelible mark on Western civilization."
     },
     {
-      "name": "Probni primer",
+      "name": "Probni Primer",
       "email": "proba@app.com",
       "password": "123",
       "id": 12,
@@ -129,6 +129,15 @@
       "statuses": [
         {
           "text": "A status?"
+        },
+        {
+          "text": "Da li je nešto puklo?"
+        },
+        {
+          "text": "Statusi."
+        },
+        {
+          "text": "Dodat novi status nakon dorade profile komponente."
         }
       ]
     }
