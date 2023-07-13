@@ -37,7 +37,7 @@
         <p class="bg-gray-100 rounded-lg px-2 py-1 w-full">{{ status.text }}</p>
       </div>
     </div>
-    <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md flex justify-start items-center">
+    <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
       <img v-if="profile.image" :src="profile.image" class="img-status"/>
       <img v-else src="../assets/avatar.jpg" class="img-status" />
       <p class="bg-gray-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>

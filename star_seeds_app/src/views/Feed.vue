@@ -91,7 +91,11 @@
         </div>
         <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
           <p class="bg-gray-100 rounded-lg p-2 w-full">{{ status.text }}</p>
-          <i @click="deleteStatus(status.id)" class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"></i>
+          <i
+            class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+            @click="deleteStatus(status.id)"
+            title="Delete status">
+          </i>
         </div>
       </div>
     </div>
@@ -191,7 +195,7 @@ const saveStatus = () => {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Status saved:', data)
+      // console.log('Status saved:', data)
       statusInput.value = ''
     })
     .catch(error => {
@@ -227,7 +231,7 @@ const deleteStatus = (statusId) => {
       })
       .then(response => response.json())
       .then(data => {
-        console.log('Status deleted:', data)
+        // console.log('Status deleted:', data)
       })
       .catch(error => {
         console.error('Error deleting status:', error)
