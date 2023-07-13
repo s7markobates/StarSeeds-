@@ -68,7 +68,14 @@
     <div v-if="profile" class="w-[40%] mx-auto mt-5 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
       <div class="flex flex-col">
         <div>
-          <textarea v-model="statusInput" class="w-full rounded-lg p-2" rows="5" name="status-enter" placeholder="Enter your status"></textarea>
+          <textarea
+            v-model="statusInput"
+            @keydown.enter.prevent="handleEnter"
+            class="w-full rounded-lg p-2 focus:outline-none"
+            rows="5"
+            name="status-enter"
+            placeholder="What's on your mind right now?"
+          ></textarea>
         </div>
         <div class="flex justify-end">
           <button @click="saveStatus" class="text-orange-400 hover:text-amber-800 text-xl">
@@ -79,8 +86,8 @@
             <i class="fas fa-poop"></i>
           </button>
         </div>
-        <div v-for="status in sortedStatuses" :key="status.id" class="mt-3">
-          <p class="bg-gray-300 rounded-lg p-2">{{ status.text }}</p>
+        <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3">
+          <p class="bg-gray-100 rounded-lg p-2">{{ status.text }}</p>
         </div>
       </div>
     </div>
@@ -162,6 +169,9 @@ const saveStatus = () => {
     const newStatus = {
       text: statusInput.value
     }
+    if (!profile.value.statuses) {
+      profile.value.statuses = [] // Inicijalizujte niz ako ne postoji
+    }
 
     profile.value.statuses.push(newStatus)
 
@@ -170,14 +180,14 @@ const saveStatus = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ statuses: profile.value.statuses })
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Status saved:', data)
-        statusInput.value = ''
-      })
-      .catch(error => {
-        console.error('Error saving status:', error)
-      })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Status saved:', data)
+      statusInput.value = ''
+    })
+    .catch(error => {
+      console.error('Error saving status:', error)
+    })
   }
 }
 
@@ -188,6 +198,12 @@ const sortedStatuses = computed(() => {
   }
   return []
 })
+
+const handleEnter = () => {
+  if (statusInput.value.trim() !== '') {
+    saveStatus()
+  }
+};
 
 </script>
 

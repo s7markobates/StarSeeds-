@@ -56,6 +56,8 @@ const formData = ref({
   password: ""
 })
 
+const localStatuses = ref([])
+
 const submitFormSignUp = () => {
   fetch('http://localhost:3000/profile')
   .then(response => response.json())
@@ -77,6 +79,7 @@ const submitFormSignUp = () => {
         formData.value.email = ""
         formData.value.password = ""
         formData.value.description = ""
+        localStatuses.value = []
         router.push('/feed')
       })
       .catch(err => {
@@ -101,6 +104,10 @@ const signIn = () => {
       formData.value.email = ""
       formData.value.password = ""
       formData.value.description = ""
+      localStatuses.value.forEach(status => {
+          existingProfile.statuses.push(status) // Dodajte lokalno sačuvane statuse u profil prilikom sign-in-a
+        })
+        localStatuses.value = []
       router.push('/feed')
     } else {
       alert('Incorrect name, email, or password. Please try again.')
@@ -113,6 +120,36 @@ const signIn = () => {
 
 const forgotPassword = () => {
   console.log('Tek treba ovo da naučim. :)');
+}
+
+const saveStatus = () => {
+  if (statusInput.value) {
+    const newStatus = { text: statusInput.value }
+
+    if (profile.value) {
+      profile.value.statuses.push(newStatus)
+      updateProfileOnServer(profile.value)
+    } else {
+      localStatuses.value.push(newStatus) // Sačuvajte status lokalno ako nema prijavljenog profila
+    }
+
+    statusInput.value = ""
+  }
+}
+
+const updateProfileOnServer = (profileData) => {
+  fetch(`http://localhost:3000/profile/${profileData.id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ statuses: profileData.statuses })
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Profile updated:', data)
+    })
+    .catch(error => {
+      console.error('Error updating profile:', error)
+    })
 }
 
 </script>
