@@ -1,10 +1,14 @@
 <template>
-  <div class="text-gray-600 mt-[70px] mb-64">
+  <div class="text-gray-600 mt-[70px] mb-[300px]">
     <div class="w-[96%] mx-auto text-xl font-bold flex justify-start">
       <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
-          <img src="../assets/logo-main.png" class="h-6" alt="">
+          <p class="text-xl">
+            <span class="text-orange-400 mr-[3px]">Star</span>
+            <i class="fas fa-meteor text-orange-400"></i>
+            <span class="text-yellow-400">seeds</span>
+          </p>
           <h1 class="ml-1">members</h1>
         </div>
       </div>

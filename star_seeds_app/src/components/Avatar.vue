@@ -2,25 +2,26 @@
   <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`" >
     <span class="text-md font-semibold text-center text-white" title="View profile details">{{ getInitials }}</span>
   </div>
-  <div v-if="isAvatarOpen" class="bg-gray-100 h-[500px] w-[300px] absolute top-14 right-0 text-gray-600 text-lg rounded-b-2xl">
-    <div v-if="avatarProfile" class="mt-4 flex flex-col items-end mr-10">
-      <div class="ml-4 flex items-center cursor-pointer" @click="$emit('toggle-avatar')">
-        <i class="fas fa-arrow-left text-orange-400 text-2xl" ></i>
-        <span class="text-lg font-bold ml-3 ">{{ avatarProfile.name }} MENU</span>
-      </div>
+  <div v-if="isAvatarOpen" class="bg-gray-50 h-[400px] w-[300px] absolute top-14 right-0 text-gray-600 text-lg border-x-2 border-b-2 border-orange-400 rounded-b-2xl">
+    <div v-if="avatarProfile" class="mt-4 flex flex-col items-center">
       <div class="mt-2 flex items-center">
-        <button @click="handleLogout" class="logout-button">
-          <span class="text-sm font-semibold" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
-        </button>
         <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
         <img v-else src="../assets/avatar.jpg" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
       </div>
-      <p class="text-[12px] ml-10 mt-2">(click image to update profile)</p>
-      <div class="ml-10 mt-1">
+      <p class="text-sm italic mt-2">(click image to update profile)</p>
+      <div class="mt-1">
         <p class="font-bold">{{ avatarProfile.name }}</p>
         <p class="text-[15px]">{{ avatarProfile.email }}</p>
         <p class="font-bold text-[15px] text-gray-400">Lifetime Member</p>
       </div>
+      <button @click="handleLogout" class="logout-button">
+        <span class="text-sm font-semibold" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
+      </button>
+      <p class="mt-9 text-2xl">
+        <span class="text-orange-400 mr-[3px]">Star</span>
+        <i class="fas fa-meteor text-orange-400"></i>
+        <span class="text-yellow-400">seeds</span>
+      </p>
     </div>
   </div>
 </template>
@@ -125,9 +126,9 @@ const saveImageOnServer = (imageData) => {
   @apply relative top-[8px] right-[8px] w-[40px] h-[40px] rounded-full flex justify-center items-center cursor-pointer
 }
 .img-class {
-  @apply h-24 w-24 rounded-full shadow-xl border border-gray-200 cursor-pointer
+  @apply h-32 w-32 rounded-full shadow-xl border border-gray-200 cursor-pointer
 }
 .logout-button {
-  @apply ml-6 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+  @apply mt-2 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>

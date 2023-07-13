@@ -6,7 +6,11 @@
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">
             <div class="flex justify-center items-center hover:text-orange-400 ">
               <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2 "></i>
-              <img src="../assets/logo-main.png" class="h-6">
+              <p class="text-xl">
+                <span class="text-orange-400 mr-[3px]">Star</span>
+                <i class="fas fa-meteor text-orange-400"></i>
+                <span class="text-yellow-400">seeds</span>
+              </p>
               <h1 class="ml-1">members</h1>
             </div>
           </RouterLink>

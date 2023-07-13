@@ -1,23 +1,28 @@
 <template>
-    <hr>
-    <div class="flex justify-center mt-10">
-        <p class="text-4xl font-style">
-            <span class="text-orange-400 mr-[3px]">Star</span>
-            <i class="fas fa-meteor text-orange-400"></i>
-            <span class="text-yellow-400">seeds</span>
-        </p>
-    </div>
-    <div class="flex justify-center mt-5 text-lg text-gray-500 font-semibold">
-        <p>Contact Us</p>
-        <p class="mx-10">Terms and Conditions</p>
-        <p>Privacy Policy</p> 
-    </div>
-    <div class="flex justify-center mt-5 mb-12">
-        <button class="button-icon" title="GitHub"><i class="fab fa-linkedin-in text-2xl pl-[1px]"></i></button>
-        <button class="button-icon" title="Facebook"><i class="fab fa-facebook-f text-2xl pl-[1px]"></i></button>
-        <button class="button-icon" title="Twitter"><i class="fab fa-twitter text-2xl pl-[1px]"></i></button>
-        <button class="button-icon" title="Instagram"><i class="fab fa-instagram text-2xl pl-[1px]"></i></button>
-        <button class="button-icon" title="GitHub"><i class="fab fa-github text-2xl pl-[1px]"></i></button>
+    <div class="bg-gray-50">
+        <hr>
+        <div class="flex justify-center mt-10">
+            <p class="text-4xl font-style">
+                <span class="text-orange-400 mr-[3px]">Star</span>
+                <i class="fas fa-meteor text-orange-400"></i>
+                <span class="text-yellow-400">seeds</span>
+            </p>
+        </div>
+        <div class="flex justify-center mt-5 text-lg text-gray-500 font-semibold">
+            <p>Contact Us</p>
+            <p class="mx-10">Terms and Conditions</p>
+            <p>Privacy Policy</p> 
+        </div>
+        <div class="flex justify-center mt-5 pb-5">
+            <button class="button-icon" title="GitHub"><i class="fab fa-linkedin-in text-2xl pl-[1px]"></i></button>
+            <button class="button-icon" title="Facebook"><i class="fab fa-facebook-f text-2xl pl-[1px]"></i></button>
+            <button class="button-icon" title="Twitter"><i class="fab fa-twitter text-2xl pl-[1px]"></i></button>
+            <button class="button-icon" title="Instagram"><i class="fab fa-instagram text-2xl pl-[1px]"></i></button>
+            <button class="button-icon" title="GitHub"><i class="fab fa-github text-2xl pl-[1px]"></i></button>
+        </div>
+        <div class="flex flex-col items-center text-sm font-light pb-5">
+            <h1>© 2023 Star Seeds | All Rights Reserved | Powered by bts ©</h1>
+        </div>
     </div>
 </template>
 
