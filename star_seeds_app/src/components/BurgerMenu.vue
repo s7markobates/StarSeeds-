@@ -6,7 +6,7 @@
     <div v-if="isOpen" :class="darkModeClass" class=" h-[300px] w-screen bg-white z-30">
       <RouterLink :to="{ name: 'home' }">
         <div class="w-full ml-6 pt-10 flex items-center">
-          <i class="fas fa-space-shuttle fa-rotate-180 text-gray-700 text-md" ></i>
+          <i class="fas fa-arrow-left text-gray-700 text-md" ></i>
           <span class="text-lg font-base ml-1 uppercase">Explore</span>
         </div>
       </RouterLink>

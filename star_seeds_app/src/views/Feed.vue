@@ -5,7 +5,7 @@
         <div class="flex justify-start items-center">
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">
             <div class="flex justify-center items-center hover:text-orange-400 ">
-              <i class="fas fa-space-shuttle fa-rotate-180 text-orange-400 text-2xl cursor-pointer mr-2 "></i>
+              <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2 "></i>
               <img src="../assets/logo-main.png" class="h-6">
               <h1 class="ml-1">members</h1>
             </div>
@@ -19,7 +19,7 @@
         <div class="flex justify-end items-center">
           <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
-            <i class="fas fa-space-shuttle text-orange-400 text-2xl cursor-pointer ml-2"></i>
+            <i class="fas fa-arrow-right text-orange-400 text-2xl cursor-pointer ml-2"></i>
           </RouterLink>
         </div>
       </div>
@@ -102,7 +102,7 @@
   </div>
 </template>
 
-<i class="fas fa-space-shuttle fa-rotate-180"></i>
+<i class="fas fa-arrow-left"></i>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'

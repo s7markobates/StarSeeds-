@@ -2,7 +2,7 @@
   <div class="text-gray-600 mt-[130px] mb-40">
     <div class="fixed top-[96px] bg-white w-full ml-3 flex items-center -z-10">
       <i class="fas fa-arrow-left text-orange-400 text-2xl" @click="goBack"></i>
-      <span class="text-lg font-bold ml-3 ">Blog/SPORT</span>
+      <span class="text-lg font-bold ml-3 ">Blog</span>
     </div>
     <div v-for="blog in blogsLinks" class="md-container mx-[170px] -z-50">
       <ul>
@@ -94,7 +94,7 @@ export default {
           link: ''
         },
         {
-          name: 'Must-own Sports Books',
+          name: 'Must-own Books',
           link: ''
         },
         {
@@ -178,23 +178,19 @@ export default {
           link: ''
         },
         {
-          name: 'Sports Agency',
+          name: 'Agency',
           link: ''
         },
         {
-          name: 'Sports Medicine',
+          name: 'Medicine',
           link: ''
         },
         {
-          name: 'Sports Parenting',
+          name: 'Parenting',
           link: ''
         },
         {
-          name: 'Sports Psychology',
-          link: ''
-        },
-        {
-          name: 'SportsEdTV Tutorials',
+          name: 'Psychology',
           link: ''
         },
         {

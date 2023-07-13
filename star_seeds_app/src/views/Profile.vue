@@ -2,7 +2,7 @@
   <div class="text-gray-600 mt-[70px] mb-64">
     <div class="w-[96%] mx-auto text-xl font-bold flex justify-start">
       <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
-        <i class="fas fa-space-shuttle fa-rotate-180 text-orange-400 text-2xl mr-2"></i>
+        <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
           <img src="../assets/logo-main.png" class="h-6" alt="">
           <h1 class="ml-1">members</h1>
