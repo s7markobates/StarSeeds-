@@ -30,14 +30,14 @@
         <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
       </div>
     </div>
-    <div v-if="statuses && statuses.length > 0" class="w-[45%] mx-auto mt-5 bg-gray-200 px-4 py-1 rounded-lg shadow-md">
+    <div v-if="statuses && statuses.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-1 rounded-lg shadow-md">
       <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
         <img v-if="profile.image" :src="profile.image" class="img-status"/>
         <img v-else src="../assets/avatar.jpg" class="img-status" />
         <p class="bg-gray-100 rounded-lg px-2 py-1 w-full">{{ status.text }}</p>
       </div>
     </div>
-    <div v-else class="w-[45%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md flex justify-start items-center">
+    <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-3 rounded-lg shadow-md flex justify-start items-center">
       <img v-if="profile.image" :src="profile.image" class="img-status"/>
       <img v-else src="../assets/avatar.jpg" class="img-status" />
       <p class="bg-gray-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>

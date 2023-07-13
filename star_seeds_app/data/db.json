@@ -6,25 +6,16 @@
       "password": "123",
       "statuses": [
         {
-          "text": "Da li radi?"
+          "id": 1689245118098,
+          "text": "1"
         },
         {
-          "text": "Radi extra."
+          "id": 1689245119383,
+          "text": "2"
         },
         {
-          "text": "Radi mi ispisivanje statusa, lepo lepo. :D"
-        },
-        {
-          "text": "Da li radi enter"
-        },
-        {
-          "text": "Da li sad radi enter"
-        },
-        {
-          "text": "radi lepo i isčitavanje poruka! Extra!!!"
-        },
-        {
-          "text": "Da li i dalje rade statusi?"
+          "id": 1689245120609,
+          "text": "3"
         }
       ],
       "description": "Marko is a frontend developer with a passion for creating engaging and user-friendly web experiences. With expertise in HTML, CSS, and JavaScript, he collaborates with design and development teams to bring designs to life. Marko is skilled in building responsive layouts, optimizing website performance, and implementing intuitive user interfaces. He continuously stays updated with the latest frontend trends and best practices to deliver exceptional digital solutions.",
@@ -126,20 +117,7 @@
       "password": "123",
       "id": 12,
       "description": "Opis radi.",
-      "statuses": [
-        {
-          "text": "A status?"
-        },
-        {
-          "text": "Da li je nešto puklo?"
-        },
-        {
-          "text": "Statusi."
-        },
-        {
-          "text": "Dodat novi status nakon dorade profile komponente."
-        }
-      ]
+      "statuses": []
     }
   ]
 }

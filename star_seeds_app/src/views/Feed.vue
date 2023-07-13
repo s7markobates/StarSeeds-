@@ -71,7 +71,6 @@
         </textarea>
       </div>
     </div>
-
     <div v-if="profile" class="w-[40%] mx-auto mt-5 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
       <div class="flex flex-col">
         <div>
@@ -81,20 +80,18 @@
             class="w-full rounded-lg p-2 focus:outline-none"
             rows="5"
             name="status-enter"
-            placeholder="What's on your mind right now?">
+            placeholder="What's on your mind right now?"
+            title="Write new status">
           </textarea>
         </div>
-        <div class="flex justify-end">
-          <button @click="saveStatus" class="text-orange-400 hover:text-amber-800 text-xl">
-            <i class="fas fa-poop"></i>
-            <i class="fas fa-poop"></i>
-            <i class="fas fa-poop"></i>
-            <i class="fas fa-poop"></i>
-            <i class="fas fa-poop"></i>
+        <div class="flex justify-end mt-1">
+          <button @click="saveStatus" class="button-status" title="Submit new status">
+            <i class="fas fa-poop"></i><i class="fas fa-poop"></i><i class="fas fa-poop"></i>
           </button>
         </div>
-        <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3">
-          <p class="bg-gray-100 rounded-lg p-2">{{ status.text }}</p>
+        <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
+          <p class="bg-gray-100 rounded-lg p-2 w-full">{{ status.text }}</p>
+          <i @click="deleteStatus(status.id)" class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"></i>
         </div>
       </div>
     </div>
@@ -178,6 +175,7 @@ const updateDescription = () => {
 const saveStatus = () => {
   if (statusInput.value && profile.value) {
     const newStatus = {
+      id: Date.now(), // Generiše jedinstveni id na osnovu trenutnog vremena
       text: statusInput.value
     }
     if (!profile.value.statuses) {
@@ -205,7 +203,7 @@ const saveStatus = () => {
 const sortedStatuses = computed(() => {
   if (profile.value) {
     const profileStatuses = profile.value.statuses || []
-    return profileStatuses.sort((a, b) => b.id - a.id)
+    return profileStatuses.sort((a, b) => a.id - b.id)
   }
   return []
 })
@@ -213,6 +211,28 @@ const sortedStatuses = computed(() => {
 const handleEnter = () => {
   if (statusInput.value.trim() !== '') {
     saveStatus()
+  }
+}
+
+const deleteStatus = (statusId) => {
+  if (profile.value) {
+    const statusIndex = profile.value.statuses.findIndex(status => status.id === statusId)
+    if (statusIndex !== -1) {
+      profile.value.statuses.splice(statusIndex, 1)
+
+      fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ statuses: profile.value.statuses })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Status deleted:', data)
+      })
+      .catch(error => {
+        console.error('Error deleting status:', error)
+      })
+    }
   }
 }
 
@@ -227,6 +247,9 @@ const handleEnter = () => {
 }
 .button-chat {
   @apply mx-1 mt-2 pl-[10.8px] pr-[11.8px] py-[11px] border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
+.button-status {
+  @apply text-white bg-orange-400 hover:bg-white hover:text-amber-800 text-lg border-2 border-orange-400 rounded-full py-[2px] px-3
 }
 .textarea-style {
   @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none
