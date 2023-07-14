@@ -41,7 +41,10 @@
               <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button-profile"></i></button>
               <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-chat"></i></button>
             </div>
-            <div class="flex-1"></div>
+            <div class="flex-1 text-end justify-end">
+              <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of the Jedi Order"></i>
+              <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of Galactic Republic"></i>
+            </div>
           </div>
           <div v-if="!descriptionEditMode" class="text-justify">
             <div v-if="profile.description">
