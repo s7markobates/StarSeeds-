@@ -33,17 +33,16 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
 import BurgerMenu from '../components/BurgerMenu.vue'
 import Logo from '../components/Logo.vue'
 import ModalSignIn from '../components/ModalSignIn.vue'
 import Avatar from './Avatar.vue'
+import { ref, computed } from 'vue'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 const isOpen = ref(false)
 const modalActive = ref(null)
 const isAvatarOpen = ref(false)
-
 const router = useRouter()
 
 const toggleMenu = () => {

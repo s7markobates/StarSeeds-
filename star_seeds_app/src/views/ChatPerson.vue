@@ -157,16 +157,16 @@ const goToProfile = (personId) => {
   @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right 
 }
 .current-person-message {
-  @apply bg-red-400 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl
+  @apply bg-[#001f3f] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl
 }
 .img-class-profile {
   @apply h-32 w-32 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-2xl cursor-pointer
 }
 .img-class-current {
-  @apply h-32 w-32 rounded-full border-4 border-red-400 hover:scale-105 hover:shadow-2xl cursor-pointer
+  @apply h-32 w-32 rounded-full border-4 border-[#001f3f] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer
 }
 .input-class {
-  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-gray-100 focus:outline-none
+  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-gray-200 focus:outline-none
 }
 .bttn-class {
   @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5

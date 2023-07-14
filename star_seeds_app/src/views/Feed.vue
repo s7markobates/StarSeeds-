@@ -96,14 +96,14 @@
 
         <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
           
-          <div class="bg-gray-100 rounded-lg p-2 w-full flex justify-between">
+          <div class="bg-gray-100 rounded-lg p-2 w-full flex justify-between items-center">
+            
             <!-- Provera da li se status trenutno uređuje -->
-
             <template v-if="editingStatus && editingStatus.id === status.id">
               <textarea
                 v-model="editingStatus.text"
                 class="w-full rounded-lg p-2 focus:outline-none"
-                rows="2"
+                rows="3"
                 placeholder="Edit your status..."
                 title="Edit status">
               </textarea>
@@ -117,37 +117,35 @@
           </div>
 
           <i
-          v-if="!editingStatus || editingStatus.id !== status.id"
-          class="fas fa-edit text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
-          @click="startEditingStatus(status)"
-          title="Edit status"
-        ></i>
-        <i
-          v-if="!editingStatus || editingStatus.id !== status.id"
-          class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
-          @click="deleteStatus(status.id)"
-          title="Delete status"
-        ></i>
-        <i
-          v-if="editingStatus && editingStatus.id === status.id"
-          class="far fa-check-circle text-green-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
-          @click="saveEditedStatus"
-          title="Save changes"
-        ></i>
-        <i
-          v-if="editingStatus && editingStatus.id === status.id"
-          class="fas fa-times-circle text-red-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
-          @click="cancelEditingStatus"
-          title="Cancel editing"
-        ></i>
+            v-if="!editingStatus || editingStatus.id !== status.id"
+            class="fas fa-edit text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+            @click="startEditingStatus(status)"
+            title="Edit status">
+          </i>
+          <i
+            v-if="!editingStatus || editingStatus.id !== status.id"
+            class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+            @click="deleteStatus(status.id)"
+            title="Delete status">
+          </i>
+          <i
+            v-if="editingStatus && editingStatus.id === status.id"
+            class="far fa-check-circle text-green-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
+            @click="saveEditedStatus"
+            title="Save changes">
+          </i>
+          <i
+            v-if="editingStatus && editingStatus.id === status.id"
+            class="fas fa-times-circle text-red-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
+            @click="cancelEditingStatus"
+            title="Cancel editing">
+          </i>
         </div>
 
       </div>
     </div>
   </div>
 </template>
-
-<i class="fas fa-arrow-left"></i>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
@@ -158,9 +156,7 @@ const descriptionInput = ref('')
 const statusInput = ref('')
 const router = useRouter()
 const descriptionEditMode = ref(false)
-
 const editingStatus = ref(null)
-
 
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
@@ -316,13 +312,13 @@ const editStatus = (status) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ statuses: profile.value.statuses }),
       })
-        .then((response) => response.json())
-        .then((data) => {
-          // console.log('Status updated:', data);
-        })
-        .catch((error) => {
-          console.error('Error updating status:', error);
-        });
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log('Status updated:', data);
+      })
+      .catch((error) => {
+        console.error('Error updating status:', error);
+      })
     }
   }
 };
