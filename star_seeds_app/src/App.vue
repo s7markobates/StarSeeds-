@@ -2,7 +2,7 @@
 
   <NavbarHead />
   
-  <RouterView />
+  <RouterView class="h-screen"/>
 
   <Footer/>
 

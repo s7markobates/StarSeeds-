@@ -8,7 +8,7 @@
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
-          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 bg-white hover:bg-orange-500 hover:text-white ">
+          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 bg-blue-400 hover:bg-orange-500 hover:text-white ">
             <p class="font-medium text-[15px] px-[5px]">Sign In</p> 
           </button>
         </div>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
-    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 bg-white text-gray-600 p-2">
+    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 bg-blue-400 text-white p-2">
       <RouterLink to="/about" class="mx-1 uppercase">About</RouterLink>
       <RouterLink to="/videos" class="mx-1 uppercase">Videos</RouterLink>
       <RouterLink to="/blogs" class="mx-1 uppercase">Blogs</RouterLink>
@@ -107,8 +107,8 @@ router.afterEach(() => {
   color: white;
 }
 .light {
-  background-color: white;
-  color: darkslategray;
+  background: linear-gradient(to bottom, #3B82F6, #60A5FA);
+  color: white;
 }
 .font-style {
   font-family: 'Yatra One', cursive;

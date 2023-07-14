@@ -1,41 +1,47 @@
 <template>
-  <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[96%] mx-auto text-xl">
-    <div v-if="profile" class="flex-1 font-bold ">
-      <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
-        <RouterLink :to="{ name: 'feed'}" >
-          <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
-          <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
-        </RouterLink>
+  <template v-if="profile && filteredPeople">
+    <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[96%] mx-auto text-xl">
+      <div v-if="profile" class="flex-1 font-bold ">
+        <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
+          <RouterLink :to="{ name: 'feed'}" >
+            <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
+            <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
+          </RouterLink>
+        </div>
       </div>
-    </div>
-    <div class=" font-bold flex-1 ">
-      <h1 class="flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
-    </div>
-    <div class="flex-1"></div>
-  </div>
-
-  <div class="w-[96%] mx-auto mt-10 flex flex-col mb-20">
-    <div class="h-[72px] w-full bg-slate-100 mx-auto flex justify-center items-center rounded-t-2xl">
-      <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
-        <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">
-        <i class="fas fa-search text-orange-400 text-2xl "></i>
+      <div class=" font-bold flex-1 ">
+        <h1 class="flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
       </div>
+      <div class="flex-1"></div>
     </div>
-    <div class="w-full bg-slate-50">
-      <ul>
-        <li v-for="person in filteredPeople" :key="person.id">
-          <div class="flex justify-between items-center py-4">
-            <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
-              <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
-              <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
-              <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
+    <div class="w-[96%] mx-auto mt-10 flex flex-col mb-20">
+      <div class="h-[72px] w-full bg-slate-100 mx-auto flex justify-center items-center rounded-t-2xl">
+        <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
+          <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">
+          <i class="fas fa-search text-orange-400 text-2xl "></i>
+        </div>
+      </div>
+      <div class="w-full bg-slate-50">
+        <ul>
+          <li v-for="person in filteredPeople" :key="person.id">
+            <div class="flex justify-between items-center py-4">
+              <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
+                <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+                <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+                <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
+              </div>
+              <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
             </div>
-            <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </template>
+  <template v-else>
+    <div class="flex justify-center items-center h-[900px] my-36">
+        <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
+    </div>
+  </template>
 
   <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white rounded-md w-[500px]">

@@ -13,40 +13,47 @@
         </div>
       </div>
     </div>
-    <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
-      <div class="flex justify-between items-end">
-        <div v-if="profile">
-          <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
-          <p v-if="profile.email !== matchedEmail" ><span class="font-bold">Email: </span><span class="underline text-blue-500 cursor-pointer" title="Send an email">{{ profile.email }}</span></p>
-          <p v-else><span class="font-bold">Email: </span><span>{{ profile.email }}</span></p>
-          <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name ">Chat with {{ profile.name }}<i class="fas fa-rocket text-sm ml-2"></i></button>
-          <button v-else class="button" @click="goToChat" title="Go to my Chat page">Go to my Chats<i class="fas fa-rocket text-sm ml-2"></i></button>
-          <button class="button-icon" title="Facebook" ><i class="fab fa-facebook pl-[1px]"></i></button>
-          <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
-          <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
-          <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
-        </div>        
-        <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
-        <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
+    <template v-if="profile">
+      <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
+        <div class="flex justify-between items-end">
+          <div v-if="profile">
+            <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
+            <p v-if="profile.email !== matchedEmail" ><span class="font-bold">Email: </span><span class="underline text-blue-500 cursor-pointer" title="Send an email">{{ profile.email }}</span></p>
+            <p v-else><span class="font-bold">Email: </span><span>{{ profile.email }}</span></p>
+            <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name ">Chat with {{ profile.name }}<i class="fas fa-rocket text-sm ml-2"></i></button>
+            <button v-else class="button" @click="goToChat" title="Go to my Chat page">Go to my Chats<i class="fas fa-rocket text-sm ml-2"></i></button>
+            <button class="button-icon" title="Facebook" ><i class="fab fa-facebook pl-[1px]"></i></button>
+            <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
+            <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
+            <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
+          </div>        
+          <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
+          <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
+        </div>
+        <div class="text-justify mt-4">
+          <p v-if="profile && profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>
+          <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
+        </div>
       </div>
-      <div class="text-justify mt-4">
-        <p v-if="profile && profile.description"><span class="font-bold">Description: </span>{{ profile.description }}</p>
-        <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
+      <div v-if="statuses && statuses.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-1 rounded-lg shadow-md">
+        <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
+          <img v-if="profile.image" :src="profile.image" class="img-status"/>
+          <img v-else src="../assets/avatar.jpg" class="img-status" />
+          <p class="bg-gray-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
+          <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
+        </div>
       </div>
-    </div>
-    <div v-if="statuses && statuses.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-1 rounded-lg shadow-md">
-      <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
+      <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
         <img v-if="profile.image" :src="profile.image" class="img-status"/>
         <img v-else src="../assets/avatar.jpg" class="img-status" />
-        <p class="bg-gray-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
-        <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
+        <p class="bg-gray-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>
       </div>
-    </div>
-    <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
-      <img v-if="profile.image" :src="profile.image" class="img-status"/>
-      <img v-else src="../assets/avatar.jpg" class="img-status" />
-      <p class="bg-gray-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>
-    </div>
+    </template>
+    <template v-else>
+      <div class="flex justify-center items-center h-[500px] mt-28">
+          <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
+      </div>
+    </template>
   </div>
 </template>
 

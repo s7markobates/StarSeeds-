@@ -1,42 +1,49 @@
 <template>
-  <div>
-    <div class="w-[96%] mx-auto text-gray-600 text-lg mt-[70px] flex justify-between items-center">
-      <div v-if="profile" class=" text-xl font-bold flex-1 justify-start items-center">
-        <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
-          <RouterLink :to="{ name: 'chat'}">
-            <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
-            <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
-          </RouterLink>
+  <template v-if="profile">
+    <div>
+      <div class="w-[96%] mx-auto text-gray-600 text-lg mt-[70px] flex justify-between items-center">
+        <div v-if="profile" class=" text-xl font-bold flex-1 justify-start items-center">
+          <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
+            <RouterLink :to="{ name: 'chat'}">
+              <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
+              <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
+            </RouterLink>
+          </div>
+        </div>
+        <div v-if="currentPerson" class="text-xl font-bold flex-1">
+          <h1 class="flex justify-center items-center text-orange-400">CHAT: {{currentPerson.name}}</h1>
+        </div>
+        <div class="flex-1 ">
         </div>
       </div>
-      <div v-if="currentPerson" class="text-xl font-bold flex-1">
-        <h1 class="flex justify-center items-center text-orange-400">CHAT: {{currentPerson.name}}</h1>
-      </div>
-      <div class="flex-1 ">
-      </div>
+      <div v-if="profile" class="w-[96%] mx-auto mt-10 mb-20">
+        <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
+          <div class="pb-10">
+            <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
+            <img v-if="currentPerson && !currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  src="../assets/avatar.jpg" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
+          </div>
+          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[580px] w-[70%] text-white">
+            <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
+          </div>
+          <div class="pb-10">
+            <img v-if="profile && profile.image" title="Go to my profile" :src="profile.image" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
+            <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
+          </div>
+        </div>
+        <div class="flex justify-start items-start p-3">
+          <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
+          <button @click="sendMessage" class="bttn-class" title="Send message">
+            <i class="fas fa-rocket text-xl"></i>
+          </button>
+        </div>
+      </div>    
     </div>
-    <div v-if="profile" class="w-[96%] mx-auto mt-10 mb-20">
-      <div class="bg-gray-200 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
-        <div class="pb-10">
-          <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
-          <img v-if="currentPerson && !currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  src="../assets/avatar.jpg" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
-        </div>
-        <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[580px] w-[70%] text-white">
-          <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
-        </div>
-        <div class="pb-10">
-          <img v-if="profile && profile.image" title="Go to my profile" :src="profile.image" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
-          <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
-        </div>
-      </div>
-      <div class="flex justify-start items-start p-3">
-        <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
-        <button @click="sendMessage" class="bttn-class" title="Send message">
-          <i class="fas fa-rocket text-xl"></i>
-        </button>
-      </div>
-    </div>    
-  </div>
+  </template>
+  <template v-else>
+    <div class="flex justify-center items-center h-[600px] my-36">
+        <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
+    </div>
+  </template>
 </template>
 
 <script setup>

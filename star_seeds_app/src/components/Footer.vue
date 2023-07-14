@@ -63,9 +63,13 @@ const footerClass = computed(() => {
 .dark button:hover{
     background-color: white;
 }
+.dark hr {
+    border-color: #F97316;
+    border-width: 2px;
+}
 .light {
-    background-color: white;
-    color: gray;
+    background: linear-gradient(to top, #3B82F6, #60A5FA);
+    color: white;
 }
 .light button {
     color: #F97316;
