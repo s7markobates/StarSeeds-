@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 ">
+    <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 z-[1]">
       <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
       <Logo/>
       <div>

@@ -1,6 +1,6 @@
 <template>
-<div class="text-gray-600 mt-[70px] mb-32">
-    <template v-if="filteredProfiles.length > 0">
+<template v-if="filteredProfiles.length > 0">
+    <div class="text-gray-600 mt-[70px] mb-40">
         <div class="text-xl font-bold flex justify-between w-[96%] mx-auto">
             <div class="flex justify-center items-center">
                 <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
@@ -45,13 +45,13 @@
                 </div>
             </div>
         </div>
-    </template>
-    <template v-else>
-        <div class="flex justify-center items-center h-[800px] my-36">
+    </div>
+</template>
+<template v-else>
+        <div class="flex justify-center items-center h-[600px] my-44">
             <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
         </div>
-    </template>
-</div>
+</template>
 </template>
 
 <script setup>

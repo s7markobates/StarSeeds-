@@ -1,6 +1,6 @@
 <template>
   <template v-if="profile">
-    <div v-if="profile" class="text-gray-600 text-lg mt-[70px] mb-64">
+    <div v-if="profile" class="text-gray-600 text-lg mt-[70px] mb-40">
       <div class="w-[96%] mx-auto text-xl font-bold flex justify-between">
         <div class="flex-1">
           <div class="flex justify-start items-center">
@@ -150,7 +150,7 @@
     </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[600px] my-36">
+    <div class="flex justify-center items-center h-[600px] my-44">
         <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>

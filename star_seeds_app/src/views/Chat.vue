@@ -38,8 +38,8 @@
     </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[900px] my-36">
-        <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
+    <div class="flex justify-center items-center h-[750px] mt-36 mb-44">
+      <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>
 
