@@ -6,7 +6,7 @@
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">
             <div class="flex justify-center items-center hover:text-orange-400 ">
               <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2 "></i>
-              <p class="text-xl">
+              <p class="text-xl font-custom -mb-1">
                 <span class="text-orange-400 mr-[3px]">Star</span>
                 <i class="fas fa-meteor text-orange-400"></i>
                 <span class="text-yellow-400">seeds</span>
@@ -75,7 +75,7 @@
         </textarea>
       </div>
     </div>
-    <div v-if="profile" class="w-[40%] mx-auto mt-5 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
+    <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
       <div class="flex flex-col">
         <div>
           <textarea
@@ -94,7 +94,10 @@
           </button>
         </div>
         <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
-          <p class="bg-gray-100 rounded-lg p-2 w-full text-justify">{{ status.text }}</p>
+          <div class="bg-gray-100 rounded-lg p-2 w-full flex justify-between">
+            <p class="text-justify">{{ status.text }}</p>
+            <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
+          </div>
           <i
             class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
             @click="deleteStatus(status.id)"
@@ -246,6 +249,15 @@ const deleteStatus = (statusId) => {
   }
 }
 
+const formatTimestamp = (timestamp) => {
+  const date = new Date(timestamp)
+  const day = date.getDate().toString().padStart(2, '0')
+  const month = (date.getMonth() + 1).toString().padStart(2, '0')
+  const hours = date.getHours().toString().padStart(2, '0')
+  const minutes = date.getMinutes().toString().padStart(2, '0')
+  return `${hours}:${minutes} ${day}.${month}.`
+}
+
 </script>
 
 <style scoped>
@@ -263,6 +275,9 @@ const deleteStatus = (statusId) => {
 }
 .textarea-style {
   @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none
+}
+.font-custom {
+  font-family: 'Yatra One', cursive;
 }
 </style>
   

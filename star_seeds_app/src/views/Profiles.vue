@@ -4,7 +4,7 @@
         <div class="flex justify-center items-center">
             <i class="fas fa-user-astronaut text-xl mr-[11px]"></i>
             <div class="flex justify-center items-center">
-                <p class="text-xl">
+                <p class="text-xl font-custom -mb-1">
                     <span class="text-orange-400 mr-[3px]">Star</span>
                     <i class="fas fa-meteor text-orange-400"></i>
                     <span class="text-yellow-400">seeds</span>
@@ -71,5 +71,8 @@ const filteredProfiles = computed(() => {
 <style scoped>
 .img-profile {
     @apply h-52 w-52 rounded-full border-2 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400
-} 
+}
+.font-custom {
+    font-family: 'Yatra One', cursive;
+  }
 </style>

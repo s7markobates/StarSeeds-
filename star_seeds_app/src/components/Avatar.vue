@@ -2,25 +2,26 @@
   <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`" >
     <span class="text-md font-semibold text-center text-white" title="View profile details">{{ getInitials }}</span>
   </div>
-  <div v-if="isAvatarOpen" class="bg-gray-50 h-[400px] w-[300px] absolute top-14 right-0 text-gray-600 text-lg border-x-2 border-b-2 border-orange-400 rounded-b-2xl">
+  <div v-if="isAvatarOpen" class="bg-gray-50 h-[420px] w-[300px] absolute top-14 right-0 text-gray-600 text-lg border-x-2 border-b-2 border-orange-400 rounded-b-2xl">
     <div v-if="avatarProfile" class="mt-4 flex flex-col items-center">
       <div class="mt-2 flex items-center">
         <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
         <img v-else src="../assets/avatar.jpg" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
       </div>
       <p class="text-sm italic mt-2">(click on image to update profile)</p>
-      <div class="mt-5">
+      <div class="mt-5 flex flex-col items-center">
         <p class="font-bold">{{ avatarProfile.name }}</p>
         <p class="text-sm">{{ avatarProfile.email }}</p>
       </div>
       <button @click="handleLogout" class="logout-button">
-        <span class="text-sm font-semibold" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
+        <span class="text-sm font-semibold flex justify-center items-center" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
       </button>
-      <p class="mt-8 text-2xl">
+      <p class="mt-8 text-2xl font-custom">
         <span class="text-orange-400 mr-[3px]">Star</span>
         <i class="fas fa-meteor text-orange-400"></i>
         <span class="text-yellow-400">seeds</span>
       </p>
+      <p class="text-xs">Powered by bts©</p>
     </div>
   </div>
 </template>
@@ -129,5 +130,8 @@ const saveImageOnServer = (imageData) => {
 }
 .logout-button {
   @apply mt-8 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
+.font-custom {
+  font-family: 'Yatra One', cursive;
 }
 </style>

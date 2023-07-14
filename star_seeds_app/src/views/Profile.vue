@@ -4,7 +4,7 @@
       <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
-          <p class="text-xl">
+          <p class="text-xl font-custom -mb-1">
             <span class="text-orange-400 mr-[3px]">Star</span>
             <i class="fas fa-meteor text-orange-400"></i>
             <span class="text-yellow-400">seeds</span>
@@ -39,6 +39,7 @@
         <img v-if="profile.image" :src="profile.image" class="img-status"/>
         <img v-else src="../assets/avatar.jpg" class="img-status" />
         <p class="bg-gray-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
+        <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
       </div>
     </div>
     <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
@@ -85,6 +86,14 @@ export default {
     },
     goToFeed() {
       this.$router.push({ name: 'feed' })
+    },
+    formatTimestamp(timestamp) {
+      const date = new Date(timestamp)
+      const day = date.getDate().toString().padStart(2, '0')
+      const month = (date.getMonth() + 1).toString().padStart(2, '0')
+      const hours = date.getHours().toString().padStart(2, '0')
+      const minutes = date.getMinutes().toString().padStart(2, '0')
+      return `${hours}:${minutes} ${day}.${month}.`
     }
   }  
 }
@@ -102,5 +111,8 @@ export default {
 }
 .img-status{
   @apply h-10 w-10 rounded-full border-2 border-gray-300 mr-2
+}
+.font-custom {
+  font-family: 'Yatra One', cursive;
 }
 </style>

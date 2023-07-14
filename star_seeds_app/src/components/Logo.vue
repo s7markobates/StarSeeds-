@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[10px] z-30 font-style">
+  <div class="mt-[10px] z-30 font-custom">
     <div :class="darkModeClass">
       <a v-if="!darkModeClass.dark" href="/">
         <p class="text-4xl">
@@ -36,7 +36,7 @@ export default {
   background-color: #001f3f;
   color: white;
 }
-.font-style {
+.font-custom {
   font-family: 'Yatra One', cursive;
 }
 </style>
