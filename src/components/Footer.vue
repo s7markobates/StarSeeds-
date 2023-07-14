@@ -72,7 +72,9 @@ const footerClass = computed(() => {
     border-width: 2px;
 }
 .light {
-    background: linear-gradient(to right, #60A5FA, #3B82F6, #60A5FA);
+  background: #1488CC;
+  background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
+  background: linear-gradient(to left, #2B32B2, #1488CC); 
   color: white;
 }
 .light button {

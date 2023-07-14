@@ -1,5 +1,5 @@
 <template>
-  <template v-if="profile && filteredPeople">
+  <template v-if="profile && filteredPeople.length > 0">
     <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[96%] mx-auto text-xl">
       <div v-if="profile" class="flex-1 font-bold ">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
@@ -38,7 +38,7 @@
     </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[500px] my-44">
+    <div class="flex justify-center items-center h-[500px] mt-44 mb-64">
       <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>

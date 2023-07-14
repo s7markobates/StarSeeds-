@@ -33,7 +33,6 @@ export default {
 
 <style scoped>
 .dark {
-  background-color: #001f3f;
   color: white;
 }
 .font-custom {

@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
-    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 nav-color p-2 border-b-4 border-t border-orange-400">
+    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 nav-color p-2 border-b-4  border-orange-400">
       <RouterLink to="/about" class="mx-1 uppercase">About</RouterLink>
       <RouterLink to="/videos" class="mx-1 uppercase">Videos</RouterLink>
       <RouterLink to="/blogs" class="mx-1 uppercase">Blogs</RouterLink>
@@ -103,11 +103,15 @@ router.afterEach(() => {
 
 <style scoped>
 .dark {
-  background-color: #001f3f;
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to left, #24243e, #302b63, #0f0c29);
   color: white;
 }
 .light, .nav-color {
-  background: linear-gradient(to right, #60A5FA, #3B82F6, #60A5FA);
+  background: #1488CC;
+  background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
+  background: linear-gradient(to left, #2B32B2, #1488CC); 
   color: white;
 }
 

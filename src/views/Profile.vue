@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <template v-if="profile">
+    <template v-if="profile && profile.name">
       <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
         <div class="flex justify-between items-end">
           <div v-if="profile">
@@ -50,7 +50,7 @@
       </div>
     </template>
     <template v-else>
-      <div class="flex justify-center items-center h-[600px] mt-28">
+      <div class="flex justify-center items-center h-[350px] mt-44 mb-64">
           <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
       </div>
     </template>
