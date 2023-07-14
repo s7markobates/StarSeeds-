@@ -3,7 +3,7 @@
     <div v-if="profile" class="flex-1 font-bold ">
       <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
         <RouterLink :to="{ name: 'feed'}" >
-          <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2"></i>
+          <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
           <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
         </RouterLink>
       </div>

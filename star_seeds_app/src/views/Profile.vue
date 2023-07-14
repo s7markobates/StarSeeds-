@@ -2,7 +2,7 @@
   <div class="text-gray-600 mt-[70px] mb-[300px]">
     <div class="w-[96%] mx-auto text-xl font-bold flex justify-start">
       <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
-        <i class="fas fa-arrow-left text-orange-400 text-2xl mr-2"></i>
+        <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
           <p class="text-xl">
             <span class="text-orange-400 mr-[3px]">Star</span>
@@ -38,7 +38,7 @@
       <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
         <img v-if="profile.image" :src="profile.image" class="img-status"/>
         <img v-else src="../assets/avatar.jpg" class="img-status" />
-        <p class="bg-gray-100 rounded-lg px-2 py-1 w-full">{{ status.text }}</p>
+        <p class="bg-gray-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
       </div>
     </div>
     <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">

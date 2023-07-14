@@ -5,7 +5,7 @@
         <div class="flex justify-start items-center">
           <RouterLink :to="{ name: 'profiles'}" title="View all the members">
             <div class="flex justify-center items-center hover:text-orange-400 ">
-              <i class="fas fa-arrow-left text-orange-400 text-2xl cursor-pointer mr-2 "></i>
+              <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2 "></i>
               <p class="text-xl">
                 <span class="text-orange-400 mr-[3px]">Star</span>
                 <i class="fas fa-meteor text-orange-400"></i>
@@ -23,7 +23,7 @@
         <div class="flex justify-end items-center">
           <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
             <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
-            <i class="fas fa-arrow-right text-orange-400 text-2xl cursor-pointer ml-2"></i>
+            <i class="fas fa-om text-orange-400 text-2xl cursor-pointer ml-2"></i>
           </RouterLink>
         </div>
       </div>
@@ -94,7 +94,7 @@
           </button>
         </div>
         <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
-          <p class="bg-gray-100 rounded-lg p-2 w-full">{{ status.text }}</p>
+          <p class="bg-gray-100 rounded-lg p-2 w-full text-justify">{{ status.text }}</p>
           <i
             class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
             @click="deleteStatus(status.id)"

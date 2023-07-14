@@ -1,7 +1,7 @@
 <template>
   <div class="text-gray-600 mt-[170px] h-screen">
     <div class="fixed top-[96px] bg-white w-full ml-3 flex items-center -z-10">
-      <i class="fas fa-arrow-left text-orange-400 text-2xl" @click="goBack"></i>
+      <i class="fas fa-om text-orange-400 text-2xl" @click="goBack"></i>
       <span class="text-lg font-bold uppercase ml-3 ">About</span>
     </div>
     <div v-for="item in aboutLinks" class="md-container mx-[170px]">

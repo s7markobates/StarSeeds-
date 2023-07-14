@@ -1,12 +1,12 @@
 <template>
   <div :class="darkModeClass" >
     <button class="ml-3 mt-4 flex flex-col justify-center items-center w-[28px] h-[28px] bg-transparent border-0 cursor-pointer">
-      <i :class="`fas fa-bars text-[32px] ${!isOpen ? 'text-orange-500' : 'text-gray-300'}`"></i>
+      <i :class="`fas fa-bars text-[32px] ${!isOpen ? 'text-orange-400' : 'text-gray-300'}`"></i>
     </button>
     <div v-if="isOpen" :class="darkModeClass" class=" h-[300px] w-screen bg-white z-30">
       <RouterLink :to="{ name: 'home' }">
         <div class="w-full ml-6 pt-10 flex items-center">
-          <i class="fas fa-arrow-left text-gray-700 text-md" ></i>
+          <i class="fas fa-om text-orange-400 text-md" ></i>
           <span class="text-lg font-base ml-1 uppercase">Explore</span>
         </div>
       </RouterLink>

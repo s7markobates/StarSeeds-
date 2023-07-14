@@ -16,7 +16,7 @@
             <div class="flex items-center">
             <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                 <span class="hover:text-orange-400">Go to your feed</span>
-                <i class="fas fa-arrow-right text-orange-400 text-2xl ml-2"></i>
+                <i class="fas fa-om text-orange-400 text-2xl ml-2"></i>
             </RouterLink>
             </div>
         </div>

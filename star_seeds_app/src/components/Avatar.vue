@@ -8,16 +8,15 @@
         <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
         <img v-else src="../assets/avatar.jpg" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
       </div>
-      <p class="text-sm italic mt-2">(click image to update profile)</p>
-      <div class="mt-1">
+      <p class="text-sm italic mt-2">(click on image to update profile)</p>
+      <div class="mt-5">
         <p class="font-bold">{{ avatarProfile.name }}</p>
-        <p class="text-[15px]">{{ avatarProfile.email }}</p>
-        <p class="font-bold text-[15px] text-gray-400">Lifetime Member</p>
+        <p class="text-sm">{{ avatarProfile.email }}</p>
       </div>
       <button @click="handleLogout" class="logout-button">
         <span class="text-sm font-semibold" :title="'Log out from the ' + avatarProfile.name + ' profile'">Logout</span>
       </button>
-      <p class="mt-9 text-2xl">
+      <p class="mt-8 text-2xl">
         <span class="text-orange-400 mr-[3px]">Star</span>
         <i class="fas fa-meteor text-orange-400"></i>
         <span class="text-yellow-400">seeds</span>
@@ -129,6 +128,6 @@ const saveImageOnServer = (imageData) => {
   @apply h-32 w-32 rounded-full shadow-xl border border-gray-200 cursor-pointer
 }
 .logout-button {
-  @apply mt-2 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+  @apply mt-8 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>
