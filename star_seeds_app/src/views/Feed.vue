@@ -80,12 +80,12 @@
         <div>
           <textarea
             v-model="statusInput"
+            name="status-enter"
             @keydown.enter.prevent="handleEnter"
             class="w-full rounded-lg p-2 focus:outline-none"
-            rows="5"
-            name="status-enter"
             placeholder="What's on your mind right now?"
-            title="Write new status">
+            title="Write new status"
+            rows="5">
           </textarea>
         </div>
         <div class="flex justify-end mt-1">
@@ -93,17 +93,55 @@
             <i class="fas fa-poop"></i><i class="fas fa-poop"></i><i class="fas fa-poop"></i>
           </button>
         </div>
+
         <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
+          
           <div class="bg-gray-100 rounded-lg p-2 w-full flex justify-between">
-            <p class="text-justify">{{ status.text }}</p>
+            <!-- Provera da li se status trenutno uređuje -->
+
+            <template v-if="editingStatus && editingStatus.id === status.id">
+              <textarea
+                v-model="editingStatus.text"
+                class="w-full rounded-lg p-2 focus:outline-none"
+                rows="2"
+                placeholder="Edit your status..."
+                title="Edit status">
+              </textarea>
+            </template>
+
+            <template v-else>
+              <p class="text-justify">{{ status.text }}</p>
+            </template>
+
             <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
           </div>
+
           <i
-            class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
-            @click="deleteStatus(status.id)"
-            title="Delete status">
-          </i>
+          v-if="!editingStatus || editingStatus.id !== status.id"
+          class="fas fa-edit text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+          @click="startEditingStatus(status)"
+          title="Edit status"
+        ></i>
+        <i
+          v-if="!editingStatus || editingStatus.id !== status.id"
+          class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+          @click="deleteStatus(status.id)"
+          title="Delete status"
+        ></i>
+        <i
+          v-if="editingStatus && editingStatus.id === status.id"
+          class="far fa-check-circle text-green-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
+          @click="saveEditedStatus"
+          title="Save changes"
+        ></i>
+        <i
+          v-if="editingStatus && editingStatus.id === status.id"
+          class="fas fa-times-circle text-red-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
+          @click="cancelEditingStatus"
+          title="Cancel editing"
+        ></i>
         </div>
+
       </div>
     </div>
   </div>
@@ -120,6 +158,9 @@ const descriptionInput = ref('')
 const statusInput = ref('')
 const router = useRouter()
 const descriptionEditMode = ref(false)
+
+const editingStatus = ref(null)
+
 
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
@@ -248,6 +289,44 @@ const deleteStatus = (statusId) => {
     }
   }
 }
+
+const startEditingStatus = (status) => {
+  editingStatus.value = { ...status };
+}
+
+const saveEditedStatus = () => {
+  if (editingStatus.value && editingStatus.value.text.trim() !== '') {
+    editStatus(editingStatus.value);
+    editingStatus.value = null;
+  }
+}
+
+const cancelEditingStatus = () => {
+  editingStatus.value = null;
+}
+
+const editStatus = (status) => {
+  if (profile.value) {
+    const statusIndex = profile.value.statuses.findIndex((s) => s.id === status.id);
+    if (statusIndex !== -1) {
+      profile.value.statuses[statusIndex] = status;
+
+      fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ statuses: profile.value.statuses }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log('Status updated:', data);
+        })
+        .catch((error) => {
+          console.error('Error updating status:', error);
+        });
+    }
+  }
+};
+
 
 const formatTimestamp = (timestamp) => {
   const date = new Date(timestamp)

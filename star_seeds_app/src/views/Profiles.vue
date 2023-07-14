@@ -2,7 +2,7 @@
 <div class="text-gray-600 mt-[70px] mb-32">
     <div class="text-xl font-bold flex justify-between w-[96%] mx-auto">
         <div class="flex justify-center items-center">
-            <i class="fas fa-user-astronaut text-xl mr-[11px]"></i>
+            <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
             <div class="flex justify-center items-center">
                 <p class="text-xl font-custom -mb-1">
                     <span class="text-orange-400 mr-[3px]">Star</span>
