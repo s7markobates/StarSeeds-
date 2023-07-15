@@ -30,14 +30,14 @@
         </div>
       </div>
 
-        <div v-if="profile" class="w-[96%] mx-auto mt-10 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
+        <div v-if="profile" class="w-[80%] mx-auto mt-10 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
           <div class="flex">
             <div class="flex-1">
               <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
               <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
             </div>
             <div class="flex-1 text-center">
-              <button @click="goToProfiles" title="See all members"><i class="fas fa-users button-profiles"></i></button>
+              <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-profiles"></i></button>
               <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button-profile"></i></button>
               <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-chat"></i></button>
             </div>
@@ -90,7 +90,7 @@
                 class="w-full rounded-lg p-2 focus:outline-none"
                 placeholder="What's on your mind right now?"
                 title="Write new status"
-                rows="5">
+                rows="4">
               </textarea>
             </div>
             <div class="flex justify-end mt-1">

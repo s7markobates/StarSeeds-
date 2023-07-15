@@ -1,14 +1,14 @@
 <template>
     <div :class="footerClass">
         <hr>
-        <div class="flex justify-center mt-10">
-            <p class="text-4xl font-style">
+        <div class="flex justify-center mt-8">
+            <p class="text-3xl font-style">
                 <span class="text-orange-400 mr-[3px]">Star</span>
                 <i class="fas fa-meteor text-orange-400"></i>
                 <span class="text-yellow-400">seeds</span>
             </p>
         </div>
-        <div class="flex justify-center mt-5 text-lg font-semibold">
+        <div class="flex justify-center mt-5 text-md font-semibold">
             <p>Contact Us</p>
             <p class="mx-10">Terms and Conditions</p>
             <p>Privacy Policy</p> 

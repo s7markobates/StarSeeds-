@@ -8,7 +8,7 @@
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
-          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 bg-blue-400 hover:bg-orange-500 hover:text-white ">
+          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-500 hover:text-white ">
             <p class="font-medium text-[15px] px-[5px]">Sign In</p> 
           </button>
         </div>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
-    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 nav-color p-2 border-b-4  border-orange-400">
+    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 nav-color p-2 border-b-4 border-t border-orange-400">
       <RouterLink to="/about" class="mx-1 uppercase">About</RouterLink>
       <RouterLink to="/videos" class="mx-1 uppercase">Videos</RouterLink>
       <RouterLink to="/blogs" class="mx-1 uppercase">Blogs</RouterLink>
@@ -104,8 +104,8 @@ router.afterEach(() => {
 <style scoped>
 .dark {
   background: #0f0c29;
-  background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);
-  background: linear-gradient(to left, #24243e, #302b63, #0f0c29);
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
   color: white;
 }
 .light, .nav-color {
