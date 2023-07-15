@@ -9,7 +9,7 @@
         <img v-else src="../assets/avatar.jpg" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
       </div>
       <p class="text-sm italic mt-2">(click on image to update profile)</p>
-      <div class="mt-5 flex flex-col items-center">
+      <div class="mt-5 flex flex-col items-center" title="The Jedi Order">
         <i class="fas fa-jedi text-4xl text-orange-400"></i>
         <p class="font-bold text-orange-400">{{ avatarProfile.name }}</p>
         <p class="text-sm ">{{ avatarProfile.email }}</p>

@@ -1,6 +1,6 @@
 <template>
 <template v-if="filteredProfiles.length > 0">
-    <div class="text-gray-600 mt-[70px] mb-10">
+    <div class="text-gray-600 mt-[70px] mb-16">
         <div class="text-xl font-bold flex justify-between w-[96%] mx-auto">
             <div class="flex justify-center items-center">
                 <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-12 w-12 mx-auto mb-20 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
+    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-12 w-12 mx-auto mb-32 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
         <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 hover:text-orange-400"></i>
         </div>

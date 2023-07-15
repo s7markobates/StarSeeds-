@@ -37,17 +37,32 @@
       </div>
       <div v-if="statuses && statuses.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-1 rounded-lg shadow-md">
         <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
-          <img v-if="profile.image" :src="profile.image" class="img-status"/>
-          <img v-else src="../assets/avatar.jpg" class="img-status" />
+          <img v-if="profile.image" :src="profile.image" class="img-status" :title="profile.name"/>
+          <img v-else src="../assets/avatar.jpg" class="img-status" :title="profile.name"/>
           <p class="bg-gray-100 hover:bg-orange-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
           <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
         </div>
       </div>
       <div v-else class="w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
-        <img v-if="profile.image" :src="profile.image" class="img-status"/>
-        <img v-else src="../assets/avatar.jpg" class="img-status" />
+        <img v-if="profile.image" :src="profile.image" class="img-status" :title="profile.name"/>
+        <img v-else src="../assets/avatar.jpg" class="img-status" :title="profile.name"/>
         <p class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>
       </div>
+
+      <!-- <div v-if="profile && profile.videos && profile.videos.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-1 rounded-lg shadow-md">
+        <div v-for="video in profile.videos" :key="video.id" class="my-3 flex items-center">
+          <div class="w-2/3">
+            <img :src="getYouTubeThumbnail(video.link)" class="img-video" :title="video.title">
+          </div>
+          <div class="w-1/3">
+            <a :href="video.link" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">{{ video.title }}</a>
+            <button @click="deleteYouTubeVideo(video.id)" class="ml-2 text-red-500 hover:text-gray-600">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div> -->
+      
     </template>
     <template v-else>
       <div class="flex justify-center items-center h-[350px] mt-44 mb-64">
@@ -101,7 +116,43 @@ export default {
       const hours = date.getHours().toString().padStart(2, '0')
       const minutes = date.getMinutes().toString().padStart(2, '0')
       return `${hours}:${minutes} ${day}.${month}.`
-    }
+    },
+    // getYouTubeThumbnail(link) {
+    //   const videoId = this.extractYouTubeVideoId(link)
+    //   if (videoId) {
+    //     return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+    //   }
+    //   return ''
+    // },
+    // extractYouTubeVideoId(link) {
+    //   const regex = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/|y2u\.be\/)([a-zA-Z0-9_-]{11})/
+    //   const match = link.match(regex)
+    //   if (match && match[1]) {
+    //     return match[1]
+    //   }
+    //   return ''
+    // },
+    // deleteYouTubeVideo(videoId) {
+    //   if (profile.value) {
+    //     const videoIndex = profile.value.videos.findIndex(video => video.id === videoId)
+    //     if (videoIndex !== -1) {
+    //       profile.value.videos.splice(videoIndex, 1)
+
+    //       fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+    //         method: 'PATCH',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({ videos: profile.value.videos })
+    //       })
+    //       .then(response => response.json())
+    //       .then(data => {
+    //         // console.log('YouTube video deleted:', data)
+    //       })
+    //       .catch(error => {
+    //         console.error('Error deleting YouTube video:', error)
+    //       })
+    //     }
+    //   }
+    // }
   }  
 }
 </script>

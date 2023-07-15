@@ -167,10 +167,10 @@ const goToProfile = (personId) => {
   @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50
 }
 .img-class-profile {
-  @apply h-40 w-40 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-2xl cursor-pointer
+  @apply h-40 w-40 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
 }
 .img-class-current {
-  @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer
+  @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
 }
 .input-class {
   @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-200 focus:outline-none

@@ -30,134 +30,146 @@
         </div>
       </div>
 
-        <div v-if="profile" class="w-[60%] mx-auto mt-10 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
-          <div class="flex">
-            <div class="flex-1">
-              <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
-              <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
-            </div>
-            <div class="flex-1 text-center">
-              <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-profiles"></i></button>
-              <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button-profile"></i></button>
-              <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-chat"></i></button>
-            </div>
-            <div class="flex-1 text-end justify-end">
-              <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Member of The Jedi Order'"></i>
-              <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Citizen of the Galactic Republic'"></i>
-            </div>
+      <div v-if="profile" class="w-[60%] mx-auto mt-10 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+        <div class="flex">
+          <div class="flex-1">
+            <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
+            <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
           </div>
-          <div v-if="!descriptionEditMode" class="text-justify">
-            <div v-if="profile.description">
-              <span class="font-bold">Description:
-                <button @click="toggleDescriptionEditMode" title="Update description">
-                  <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
-                </button>
-              </span>
-              <p>{{ profile.description }}</p>
-            </div>
-            <div v-else class="text-justify">
-              <span class="font-bold">Description:
-                <button @click="toggleDescriptionEditMode" title="Add description">
-                  <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
-                </button>
-              </span>
-              <p>Profile has no description entered.</p>
-            </div>
+          <div class="flex-1 text-center">
+            <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-profiles"></i></button>
+            <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button-profile"></i></button>
+            <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-chat"></i></button>
           </div>
-          <div v-if="descriptionEditMode" class="mx-auto flex flex-col items-start">
-            <p class="font-bold">Description:
-              <button @click="updateDescription" class="" title="Save description">
-                <i class="far fa-edit text-gray-500 hover:text-orange-400"></i>
-                <span class="italic font-thin text-xs ml-1">(save description)</span>
+          <div class="flex-1 text-end justify-end">
+            <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Member of The Jedi Order'"></i>
+            <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Citizen of the Galactic Republic'"></i>
+          </div>
+        </div>
+        <div v-if="!descriptionEditMode" class="text-justify">
+          <div v-if="profile.description">
+            <span class="font-bold">Description:
+              <button @click="toggleDescriptionEditMode" title="Update description">
+                <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
               </button>
-            </p>
+            </span>
+            <p>{{ profile.description }}</p>
+          </div>
+          <div v-else class="text-justify">
+            <span class="font-bold">Description:
+              <button @click="toggleDescriptionEditMode" title="Add description">
+                <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
+              </button>
+            </span>
+            <p>Profile has no description entered.</p>
+          </div>
+        </div>
+        <div v-if="descriptionEditMode" class="mx-auto flex flex-col items-start">
+          <p class="font-bold">Description:
+            <button @click="updateDescription" class="" title="Save description">
+              <i class="far fa-edit text-gray-500 hover:text-orange-400"></i>
+              <span class="italic font-thin text-xs ml-1">(save description)</span>
+            </button>
+          </p>
+          <textarea
+            v-model="descriptionInput"
+            class="textarea-style"
+            rows="5"
+            placeholder="Enter profile description here..."
+            title="Update your description">
+          </textarea>
+        </div>
+      </div>
+      <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+        <div class="flex flex-col">
+          <di class="mb-2">
+            <h1 class="font-bold">Status:</h1>
+          </di>
+          <div>
             <textarea
-              v-model="descriptionInput"
-              class="textarea-style"
-              rows="5"
-              placeholder="Enter profile description here..."
-              title="Update your description">
+              v-model="statusInput"
+              name="status-enter"
+              @keydown.enter.prevent="handleEnter"
+              class="w-full rounded-lg p-2 focus:outline-none"
+              placeholder="What's on your mind right now?"
+              title="Write new status"
+              rows="4">
             </textarea>
           </div>
-        </div>
-        <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
-          <div class="flex flex-col">
-            <di class="mb-2">
-              <h1 class="font-bold">Status:</h1>
-            </di>
-            <div>
-              <textarea
-                v-model="statusInput"
-                name="status-enter"
-                @keydown.enter.prevent="handleEnter"
-                class="w-full rounded-lg p-2 focus:outline-none"
-                placeholder="What's on your mind right now?"
-                title="Write new status"
-                rows="4">
-              </textarea>
-            </div>
-            <div class="flex justify-end mt-1">
-              <button @click="saveStatus" class="button-status" title="Submit new status">
-                <p>Submit new status</p>
-                <i class="fas fa-bullhorn ml-2"></i>
-              </button>
-            </div>
+          <div class="flex justify-end mt-1">
+            <button @click="saveStatus" class="button-status" title="Submit new status">
+              <p>Submit new status</p>
+              <i class="fas fa-bullhorn ml-2"></i>
+            </button>
+          </div>
 
-            <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
+          <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
+            
+            <div class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full flex justify-between items-center">
               
-              <div class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full flex justify-between items-center">
-                
-                <!-- Provera da li se status trenutno uređuje -->
-                <template v-if="editingStatus && editingStatus.id === status.id">
-                  <textarea
-                    v-model="editingStatus.text"
-                    class="w-full rounded-lg p-2 focus:outline-none"
-                    rows="2"
-                    placeholder="Edit your status..."
-                    title="Edit status">
-                  </textarea>
-                </template>
+              <!-- Provera da li se status trenutno uređuje -->
+              <template v-if="editingStatus && editingStatus.id === status.id">
+                <textarea
+                  v-model="editingStatus.text"
+                  class="w-full rounded-lg p-2 focus:outline-none"
+                  rows="2"
+                  placeholder="Edit your status..."
+                  title="Edit status">
+                </textarea>
+              </template>
 
-                <template v-else>
-                  <p class="text-justif ">{{ status.text }}</p>
-                </template>
+              <template v-else>
+                <p class="text-justif ">{{ status.text }}</p>
+              </template>
 
-                <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
-              </div>
-
-              <i
-                v-if="!editingStatus || editingStatus.id !== status.id"
-                class="fas fa-edit text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
-                @click="startEditingStatus(status)"
-                title="Edit status">
-              </i>
-              <i
-                v-if="!editingStatus || editingStatus.id !== status.id"
-                class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
-                @click="deleteStatus(status.id)"
-                title="Delete status">
-              </i>
-              <i
-                v-if="editingStatus && editingStatus.id === status.id"
-                class="far fa-check-circle text-green-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
-                @click="saveEditedStatus"
-                title="Save changes">
-              </i>
-              <i
-                v-if="editingStatus && editingStatus.id === status.id"
-                class="fas fa-times-circle text-red-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
-                @click="cancelEditingStatus"
-                title="Cancel editing">
-              </i>
+              <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
             </div>
 
+            <i
+              v-if="!editingStatus || editingStatus.id !== status.id"
+              class="fas fa-edit text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+              @click="startEditingStatus(status)"
+              title="Edit status">
+            </i>
+            <i
+              v-if="!editingStatus || editingStatus.id !== status.id"
+              class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md ml-3 cursor-pointer"
+              @click="deleteStatus(status.id)"
+              title="Delete status">
+            </i>
+            <i
+              v-if="editingStatus && editingStatus.id === status.id"
+              class="far fa-check-circle text-green-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
+              @click="saveEditedStatus"
+              title="Save changes">
+            </i>
+            <i
+              v-if="editingStatus && editingStatus.id === status.id"
+              class="fas fa-times-circle text-red-500 hover:text-gray-600 text-md ml-3 cursor-pointer"
+              @click="cancelEditingStatus"
+              title="Cancel editing">
+            </i>
           </div>
         </div>
+      </div>
+      <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+        <h1 class="font-bold">YouTube Video:</h1>
+        <div class="flex items-center mt-2">
+          <input v-model="youtubeLink" type="text" class="w-full rounded-lg p-2 focus:outline-none" placeholder="Enter YouTube video link">
+          <button @click="addYouTubeVideo" class="ml-2 button-link">Add</button>
+        </div>
+        <div v-for="video in profile.videos" :key="video.id" class="mt-2">
+          <a :href="video.link" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">{{ video.title }}</a>
+          <button @click="deleteYouTubeVideo(video.id)" class="ml-2 text-red-500 hover:text-gray-600">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </template>
   <template v-else>
     <div class="flex justify-center items-center h-[500px] mt-44 mb-64">
-        <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
+      <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>
 </template>
@@ -338,7 +350,6 @@ const editStatus = (status) => {
   }
 };
 
-
 const formatTimestamp = (timestamp) => {
   const date = new Date(timestamp)
   const day = date.getDate().toString().padStart(2, '0')
@@ -346,6 +357,57 @@ const formatTimestamp = (timestamp) => {
   const hours = date.getHours().toString().padStart(2, '0')
   const minutes = date.getMinutes().toString().padStart(2, '0')
   return `${hours}:${minutes} ${day}.${month}.`
+}
+
+const youtubeLink = ref('')
+
+const addYouTubeVideo = () => {
+  if (youtubeLink.value && profile.value) {
+    const newVideo = {
+      id: Date.now(),
+      title: 'YouTube Video',
+      link: youtubeLink.value
+    }
+    if (!profile.value.videos) {
+      profile.value.videos = []
+    }
+    profile.value.videos.push(newVideo)
+
+    fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ videos: profile.value.videos })
+    })
+    .then(response => response.json())
+    .then(data => {
+      youtubeLink.value = ''
+    })
+    .catch(error => {
+      console.error('Error adding YouTube video:', error)
+    })
+  }
+}
+
+const deleteYouTubeVideo = (videoId) => {
+  if (profile.value) {
+    const videoIndex = profile.value.videos.findIndex(video => video.id === videoId)
+    if (videoIndex !== -1) {
+      profile.value.videos.splice(videoIndex, 1)
+
+      fetch(`http://localhost:3000/profile/${profile.value.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videos: profile.value.videos })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // console.log('YouTube video deleted:', data)
+      })
+      .catch(error => {
+        console.error('Error deleting YouTube video:', error)
+      })
+    }
+  }
 }
 
 </script>
