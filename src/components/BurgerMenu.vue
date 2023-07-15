@@ -3,7 +3,7 @@
     <button class="ml-3 mt-4 flex flex-col justify-center items-center w-[28px] h-[28px] bg-transparent border-0 cursor-pointer">
       <i :class="`fas fa-bars text-[32px] ${!isOpen ? 'text-orange-400' : 'text-white'}`"></i>
     </button>
-    <div v-if="isOpen" :class="burgerDark" class="h-[285px] w-screen text-white z-30 border-b-4 border-orange-400">
+    <div v-if="isOpen" :class="burgerDark" class="h-[280px] w-screen text-white z-30 border-b-4 border-orange-400">
       <div class="w-full ml-12 pt-10 flex items-center">
         <i class="fas fa-om text-orange-400 text-md" ></i>
         <span class="text-lg font-base ml-2 uppercase">Explore</span>

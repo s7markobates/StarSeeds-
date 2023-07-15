@@ -183,7 +183,23 @@
       "password": "123",
       "id": 12,
       "description": "Opis radi.",
-      "statuses": []
+      "statuses": [
+        {
+          "id": 1689460414866,
+          "text": "Da li rade statusi kod mene?"
+        },
+        {
+          "id": 1689460427098,
+          "text": "Radi sve super."
+        }
+      ],
+      "videos": [
+        {
+          "id": 1689459414070,
+          "title": "YouTube Video",
+          "link": "https://www.youtube.com/watch?v=Y5fBdpreJiU"
+        }
+      ]
     }
   ]
 }
