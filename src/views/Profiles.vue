@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-transparent border-2 border-gray-300 hover:bg-orange-100 flex items-center justify-center h-12 w-12 mx-auto mb-20 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
+    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-12 w-12 mx-auto mb-20 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
         <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 hover:text-orange-400"></i>
         </div>
@@ -88,7 +88,7 @@ const scrollToTop = () => {
 
 <style scoped>
 .img-profile {
-    @apply h-52 w-52 rounded-full border-2 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400
+    @apply h-52 w-52 rounded-full border-4 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400 hover:scale-110 duration-300 
 }
 .font-custom {
     font-family: 'Yatra One', cursive;

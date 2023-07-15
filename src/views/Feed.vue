@@ -42,8 +42,8 @@
               <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-chat"></i></button>
             </div>
             <div class="flex-1 text-end justify-end">
-              <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of the Jedi Order"></i>
-              <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of the Galactic Republic"></i>
+              <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Member of The Jedi Order'"></i>
+              <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Citizen of the Galactic Republic'"></i>
             </div>
           </div>
           <div v-if="!descriptionEditMode" class="text-justify">
@@ -82,6 +82,9 @@
         </div>
         <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
           <div class="flex flex-col">
+            <di class="mb-2">
+              <h1 class="font-bold">Status:</h1>
+            </di>
             <div>
               <textarea
                 v-model="statusInput"

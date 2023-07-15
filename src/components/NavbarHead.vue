@@ -8,8 +8,8 @@
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
-          <button class="m-3 h-8 w-16 border-2 rounded-full border-orange-500 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-500 hover:text-white ">
-            <p class="font-medium text-[15px] px-[5px]">Sign In</p> 
+          <button class="m-1 h-10 w-28 border-2 rounded-full border-orange-400 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-400 hover:text-white ">
+            <p><span class="font-medium text-md pr-2">Sign In</span><i class="fas fa-rocket fa-spin"></i></p> 
           </button>
         </div>
       </div>

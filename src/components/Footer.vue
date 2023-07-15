@@ -46,7 +46,7 @@ const footerClass = computed(() => {
 
 <style scoped>
 .button-icon {
-    @apply mx-2 h-10 w-10 py-[2px] px-[6px] border-2 rounded-full border-orange-400  cursor-pointer
+    @apply mx-2 h-10 w-10 py-[2px] px-[6px] border-2 rounded-full border-orange-400 cursor-pointer
 }
 .font-style {
     font-family: 'Yatra One', cursive;

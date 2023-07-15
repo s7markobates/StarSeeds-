@@ -14,7 +14,7 @@
       </div>
     </div>
     <template v-if="profile && profile.name">
-      <div class="w-[50%] mx-auto mt-10 bg-gray-300 px-4 py-3 rounded-lg shadow-md">
+      <div class="w-[50%] mx-auto mt-12 bg-gray-300 px-4 py-3 rounded-lg shadow-md">
         <div class="flex justify-between items-end">
           <div v-if="profile">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
@@ -27,7 +27,7 @@
             <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
             <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
           </div>        
-          <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
+          <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" :title="profile.name"/>
           <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
         </div>
         <div class="text-justify mt-4">
@@ -114,7 +114,7 @@ export default {
   @apply ml-2 py-[2px] px-[6px] border-2 rounded-full bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:cursor-no-drop active:border-red-500 cursor-pointer
 }
 .img-profile{
-  @apply h-36 w-36 rounded-full shadow-2xl border-2 border-gray-300 mx-6 -mt-14
+  @apply h-44 w-44 rounded-full shadow-2xl border-2 border-gray-300 mx-6 -mt-20
 }
 .img-status{
   @apply h-10 w-10 rounded-full border-2 border-gray-300 mr-2

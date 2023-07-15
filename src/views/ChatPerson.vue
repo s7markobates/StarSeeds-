@@ -17,7 +17,7 @@
         </div>
       </div>
       <div v-if="profile" class="w-[70%] mx-auto mt-10 mb-20">
-        <div class="bg-gray-300 w-full h-[580px] rounded-3xl flex justify-evenly items-end">
+        <div class="bg-gray-200 w-full h-[580px] rounded-t-3xl flex justify-evenly items-end">
           <div class="pb-10">
             <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
             <img v-if="currentPerson && !currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  src="../assets/avatar.jpg" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
@@ -30,7 +30,7 @@
             <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
           </div>
         </div>
-        <div class="flex justify-start items-start p-3">
+        <div class="flex justify- items-center p-3 bg-gray-300 rounded-b-2xl">
           <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
           <button @click="sendMessage" class="bttn-class" title="Send message">
             <i class="fas fa-rocket text-xl"></i>
