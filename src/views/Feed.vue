@@ -82,9 +82,9 @@
       </div>
       <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
         <div class="flex flex-col">
-          <di class="mb-2">
+          <div class="mb-2">
             <h1 class="font-bold">Status:</h1>
-          </di>
+          </div>
           <div>
             <textarea
               v-model="statusInput"

@@ -46,9 +46,9 @@
             </div>
         </div>
     </div>
-    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-12 w-12 mx-auto mb-32 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
+    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-9 w-9 mx-auto mb-32 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
         <div class="focus:outline-none">
-            <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 hover:text-orange-400"></i>
+            <i class="fas fa-angle-up text-gray-400 text-2xl py-1 px-2 hover:-mt-1 hover:text-orange-400"></i>
         </div>
     </div>
 </template>
