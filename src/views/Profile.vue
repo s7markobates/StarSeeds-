@@ -14,7 +14,7 @@
       </div>
     </div>
     <template v-if="profile && profile.name">
-      <div class="w-[50%] mx-auto mt-10 bg-gray-200 px-4 py-3 rounded-lg shadow-md">
+      <div class="w-[50%] mx-auto mt-10 bg-gray-300 px-4 py-3 rounded-lg shadow-md">
         <div class="flex justify-between items-end">
           <div v-if="profile">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
@@ -35,18 +35,18 @@
           <p v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
         </div>
       </div>
-      <div v-if="statuses && statuses.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-1 rounded-lg shadow-md">
+      <div v-if="statuses && statuses.length > 0" class="w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-1 rounded-lg shadow-md">
         <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-3 flex justify-start items-center">
           <img v-if="profile.image" :src="profile.image" class="img-status"/>
           <img v-else src="../assets/avatar.jpg" class="img-status" />
-          <p class="bg-gray-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
+          <p class="bg-gray-100 hover:bg-orange-100 rounded-lg px-2 py-1 w-full text-justify">{{ status.text }}</p>
           <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
         </div>
       </div>
-      <div v-else class="w-[50%] mx-auto mt-5 bg-gray-200 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
+      <div v-else class="w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
         <img v-if="profile.image" :src="profile.image" class="img-status"/>
         <img v-else src="../assets/avatar.jpg" class="img-status" />
-        <p class="bg-gray-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>
+        <p class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full">Member didn't enter any status yet.</p>
       </div>
     </template>
     <template v-else>

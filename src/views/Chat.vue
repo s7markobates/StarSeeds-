@@ -17,7 +17,7 @@
     <div class="w-[70%] mx-auto mt-10 flex flex-col mb-20 ">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
-          <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search profile...">
+          <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
           <i class="fas fa-search text-orange-400 text-2xl "></i>
         </div>
       </div>
@@ -35,7 +35,14 @@
           </li>
         </ul>
       </div>
+      <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-b-3xl">
+      <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
+        <div class="focus:outline-none">
+          <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 hover:text-orange-400"></i>
+        </div>
+      </div>
     </div>
+  </div>
   </template>
   <template v-else>
     <div class="flex justify-center items-center h-[500px] mt-44 mb-64">
@@ -143,6 +150,13 @@ const cancelDelete = () => {
 
 const openChat = (personId) => {
   router.push({ name: 'chatPerson', params: { id: personId } })
+}
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 }
 
 </script>

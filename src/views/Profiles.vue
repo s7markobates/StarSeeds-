@@ -1,6 +1,6 @@
 <template>
 <template v-if="filteredProfiles.length > 0">
-    <div class="text-gray-600 mt-[70px] mb-48">
+    <div class="text-gray-600 mt-[70px] mb-10">
         <div class="text-xl font-bold flex justify-between w-[96%] mx-auto">
             <div class="flex justify-center items-center">
                 <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="h-[72px] flex justify-center items-center">
-            <div class="h-8 w-[300px] bg-gray-100 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
-            <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-100" placeholder="Search members...">
+            <div class="h-8 w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
+            <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-200" placeholder="Search members...">
             <i class="fas fa-search text-orange-400 text-2xl "></i>
             </div>
         </div>
@@ -44,6 +44,11 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="bg-transparent border-2 border-gray-300 hover:bg-orange-100 flex items-center justify-center h-12 w-12 mx-auto mb-20 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Go to the Top">
+        <div class="focus:outline-none">
+            <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 hover:text-orange-400"></i>
         </div>
     </div>
 </template>
@@ -73,6 +78,12 @@ const filteredProfiles = computed(() => {
   return profiles.value.filter(profile => profile.name.toLowerCase().includes(searchText.value.toLowerCase()))
 })
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
 </script>
 
 <style scoped>
@@ -81,5 +92,5 @@ const filteredProfiles = computed(() => {
 }
 .font-custom {
     font-family: 'Yatra One', cursive;
-  }
+}
 </style>

@@ -30,7 +30,7 @@
         </div>
       </div>
 
-        <div v-if="profile" class="w-[80%] mx-auto mt-10 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
+        <div v-if="profile" class="w-[60%] mx-auto mt-10 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
           <div class="flex">
             <div class="flex-1">
               <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
@@ -43,7 +43,7 @@
             </div>
             <div class="flex-1 text-end justify-end">
               <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of the Jedi Order"></i>
-              <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of Galactic Republic"></i>
+              <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" title="Member of the Galactic Republic"></i>
             </div>
           </div>
           <div v-if="!descriptionEditMode" class="text-justify">
@@ -80,7 +80,7 @@
             </textarea>
           </div>
         </div>
-        <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-200 p-5 rounded-xl shadow-md text-lg">
+        <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
           <div class="flex flex-col">
             <div>
               <textarea
@@ -102,21 +102,21 @@
 
             <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full">
               
-              <div class="bg-gray-100 rounded-lg p-2 w-full flex justify-between items-center">
+              <div class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full flex justify-between items-center">
                 
                 <!-- Provera da li se status trenutno uređuje -->
                 <template v-if="editingStatus && editingStatus.id === status.id">
                   <textarea
                     v-model="editingStatus.text"
                     class="w-full rounded-lg p-2 focus:outline-none"
-                    rows="3"
+                    rows="2"
                     placeholder="Edit your status..."
                     title="Edit status">
                   </textarea>
                 </template>
 
                 <template v-else>
-                  <p class="text-justify">{{ status.text }}</p>
+                  <p class="text-justif ">{{ status.text }}</p>
                 </template>
 
                 <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>

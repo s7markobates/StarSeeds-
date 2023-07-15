@@ -161,10 +161,10 @@ const goToProfile = (personId) => {
 
 <style scoped>
 .profile-message {
-  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right 
+  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right hover:bg-opacity-90
 }
 .current-person-message {
-  @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl
+  @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50
 }
 .img-class-profile {
   @apply h-40 w-40 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-2xl cursor-pointer
@@ -173,7 +173,7 @@ const goToProfile = (personId) => {
   @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer
 }
 .input-class {
-  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-300 focus:outline-none
+  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-200 focus:outline-none
 }
 .bttn-class {
   @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
