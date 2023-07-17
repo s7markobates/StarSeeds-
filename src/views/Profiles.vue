@@ -1,5 +1,4 @@
 <template>
-<template v-if="filteredProfiles.length > 0">
     <div class="text-gray-600 mt-[70px] mb-16">
         <div class="text-xl font-bold flex justify-between w-[96%] mx-auto">
             <div class="flex justify-center items-center">
@@ -28,35 +27,48 @@
             <i class="fas fa-search text-orange-400 text-2xl "></i>
             </div>
         </div>
-        <div class="w-[70%] mx-auto mt-7">
-            <div class="grid grid-cols-3 gap-x-2 gap-y-12">
-                <div v-for="profile in filteredProfiles" :key="profile.id" class="flex justify-center items-center">
-                    <ul>
-                        <li class="p-2 text-lg hover:text-orange-400 hover:text-xl" :title="'Go to ' + profile.name + ' profile'">
-                        <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
-                            <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
-                            <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
-                            <div class="flex flex-col items-center mt-4">
-                                <h1 class="font-semibold">{{ profile.name }}</h1>
-                            </div>
-                        </RouterLink>
-                        </li>
-                    </ul>
+
+        <template v-if="profiles.length > 0">
+            <template v-if="profiles && filteredProfiles.length > 0">
+                <div class="w-[70%] mx-auto mt-7">
+                    <div class="grid grid-cols-3 gap-x-2 gap-y-12">
+                        <div v-for="profile in filteredProfiles" :key="profile.id" class="flex justify-center items-center">
+                            <ul>
+                                <li class="p-2 text-lg hover:text-orange-400 hover:text-xl" :title="'Go to ' + profile.name + ' profile'">
+                                <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
+                                    <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
+                                    <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
+                                    <div class="flex flex-col items-center mt-4">
+                                        <h1 class="font-semibold">{{ profile.name }}</h1>
+                                    </div>
+                                </RouterLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+            </template>
+            <template v-else-if="profiles && filteredProfiles.length === 0">
+                <div class="flex flex-col items-center mt-11">
+                    <img src="../assets/alien-avatar.jpg" class="img-profile" alt="Profile Image" />
+                    <div class="flex items-center">
+                        <h1 class="text-lg font-semibold mt-4">There is no one to be found.</h1>
+                        <i class="fas fa-satellite-dish text-2xl ml-2 -mb-1"></i>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <template v-else>
+            <div class="flex justify-center items-center h-[500px] mt-3 mb-64">
+                <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
             </div>
-        </div>
+        </template>
     </div>
     <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-9 w-9 mx-auto mb-32 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
         <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl py-1 px-2 hover:-mt-1 hover:text-orange-400"></i>
         </div>
     </div>
-</template>
-<template v-else>
-        <div class="flex justify-center items-center h-[500px] mt-44 mb-64">
-            <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
-        </div>
-</template>
 </template>
 
 <script setup>

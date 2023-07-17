@@ -37,7 +37,7 @@
           </ul>
         </div>
       </template>
-      <template v-if="profile && filteredPeople.length <= 0">
+      <template v-else-if="profile && filteredPeople.length === 0">
         <div class="w-full bg-gray-200">
           <div class="flex justify-center items-center py-[29.5px] text-gray-600">
             <h1 class=" text-[22px] font-semibold">There is no one to be found.</h1>
