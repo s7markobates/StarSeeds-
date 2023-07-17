@@ -29,7 +29,7 @@
   
 <script setup>
 import { computed, onMounted, ref } from 'vue'
-import { useRouter, RouterLink } from 'vue-router'
+import { useRouter } from 'vue-router'
   
 const router = useRouter()
 
