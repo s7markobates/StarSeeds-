@@ -5,6 +5,9 @@
       <h1 class="mt-20">Home page</h1>
       <h1 class="mt-20">Home page</h1>
       <h1 class="mt-20">Home page</h1>
+      <h1 class="mt-20">Home page</h1>
+      <h1 class="mt-20">Home page</h1>
+      <h1 class="mt-20">Home page</h1>
     </div>
   </div>
 </template>
