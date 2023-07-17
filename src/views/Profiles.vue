@@ -49,9 +49,9 @@
                 </div>
             </template>
             <template v-else-if="profiles && filteredProfiles.length === 0">
-                <div class="flex flex-col items-center mt-11">
+                <div class="flex flex-col items-center mt-9" title="There is no one to be found">
                     <img src="../assets/alien-avatar.jpg" class="img-profile" alt="Profile Image" />
-                    <div class="flex items-center">
+                    <div class="flex items-center mb-2">
                         <h1 class="text-lg font-semibold mt-4">There is no one to be found.</h1>
                         <i class="fas fa-satellite-dish text-2xl ml-2 -mb-1"></i>
                     </div>
