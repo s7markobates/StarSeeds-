@@ -1,5 +1,4 @@
 <template>
-  <template v-if="profile && filteredPeople.length > 0">
     <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[96%] mx-auto text-xl">
       <div v-if="profile" class="flex-1 font-bold ">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
@@ -14,6 +13,7 @@
       </div>
       <div class="flex-1"></div>
     </div>
+  <template v-if="profile">
     <div class="w-[70%] mx-auto mt-24 flex flex-col mb-[280px]">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
@@ -21,31 +21,41 @@
           <i class="fas fa-search text-orange-400 text-2xl "></i>
         </div>
       </div>
-      <div class="w-full bg-gray-200">
-        <ul>
-          <li v-for="person in filteredPeople" :key="person.id">
-            <div class="flex justify-between items-center py-4">
-              <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105 duration-300" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
-                <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
-                <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
-                <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
+      <template v-if="profile && filteredPeople.length > 0">
+        <div class="w-full bg-gray-200">
+          <ul>
+            <li v-for="person in filteredPeople" :key="person.id">
+              <div class="flex justify-between items-center py-4">
+                <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105 duration-300" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
+                  <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+                  <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+                  <h1 class="text-[22px] font-semibold ml-4 cursor-pointer">{{ person.name }}</h1>
+                </div>
+                <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
               </div>
-              <i class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-md mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
-            </div>
-          </li>
-        </ul>
-      </div>
+            </li>
+          </ul>
+        </div>
+      </template>
+      <template v-if="profile && filteredPeople.length <= 0">
+        <div class="w-full bg-gray-200">
+          <div class="flex justify-center items-center py-[29.5px] text-gray-600">
+            <h1 class=" text-[22px] font-semibold">There is no one to be found.</h1>
+            <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
+          </div>
+        </div>
+      </template>
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-b-3xl">
-      <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
-        <div class="focus:outline-none">
-          <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
+        <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
+          <div class="focus:outline-none">
+            <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[500px] mt-44 mb-64">
+    <div class="flex justify-center items-center h-[500px] mt-20 mb-[300px]">
       <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>
