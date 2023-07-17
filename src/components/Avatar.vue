@@ -2,7 +2,7 @@
   <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`" >
     <span class="text-md font-semibold text-center text-white" title="View profile details">{{ getInitials }}</span>
   </div>
-  <div v-if="isAvatarOpen" class="bg-white h-[470px] w-[300px] absolute top-14 right-0 text-gray-600 text-lg border-x-2 border-b-2 border-orange-400 rounded-b-2xl">
+  <div v-if="isAvatarOpen" class=" dark h-[470px] w-[300px] absolute top-14 right-0 text-white text-lg border-x-4 border-b-4 border-orange-400 rounded-b-2xl">
     <div v-if="avatarProfile" class="mt-4 flex flex-col items-center">
       <div class="mt-2 flex items-center">
         <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
@@ -127,12 +127,18 @@ const saveImageOnServer = (imageData) => {
   @apply relative top-[8px] right-[8px] w-[40px] h-[40px] rounded-full flex justify-center items-center cursor-pointer
 }
 .img-class {
-  @apply h-32 w-32 rounded-full shadow-xl border border-gray-200 cursor-pointer
+  @apply h-36 w-36 rounded-full shadow-xl border-4 border-orange-400 cursor-pointer
 }
 .logout-button {
-  @apply mt-8 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+  @apply mt-8 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-transparent hover:text-orange-400 cursor-pointer
 }
 .font-custom {
   font-family: 'Yatra One', cursive;
+}
+
+.dark {
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to top, #24243e, #302b63, #0f0c29);
 }
 </style>
