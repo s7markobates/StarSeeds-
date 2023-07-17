@@ -34,7 +34,7 @@
                     <div class="grid grid-cols-3 gap-x-2 gap-y-12">
                         <div v-for="profile in filteredProfiles" :key="profile.id" class="flex justify-center items-center">
                             <ul>
-                                <li class="p-2 text-lg hover:text-orange-400 hover:text-xl" :title="'Go to ' + profile.name + ' profile'">
+                                <li class="p-2 text-lg hover:text-orange-400 hover:text-xl duration-300" :title="'Go to ' + profile.name + ' profile'">
                                 <RouterLink :to="{ name: 'profileDetails', params: { id: profile.id } }">
                                     <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" />
                                     <img v-else src="../assets/avatar.jpg" class="img-profile" alt="Profile Image" />
