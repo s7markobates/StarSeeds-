@@ -14,7 +14,7 @@
       </div>
       <div class="flex-1"></div>
     </div>
-    <div class="w-[70%] mx-auto mt-10 flex flex-col mb-20 ">
+    <div class="w-[70%] mx-auto mt-24 flex flex-col mb-[280px]">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
