@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="root">
     <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 z-[1]">
       <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
       <Logo/>
@@ -37,7 +37,7 @@ import BurgerMenu from '../components/BurgerMenu.vue'
 import Logo from '../components/Logo.vue'
 import ModalSignIn from '../components/ModalSignIn.vue'
 import Avatar from './Avatar.vue'
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 const isOpen = ref(false)
@@ -45,8 +45,24 @@ const modalActive = ref(null)
 const isAvatarOpen = ref(false)
 const router = useRouter()
 
+const root = ref(null)
+
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
+
+const handleClickOutside = (event) => {
+  if (!root.value.contains(event.target)) {
+    isOpen.value = false
+  }
 }
 
 const toggleModal = () => {
