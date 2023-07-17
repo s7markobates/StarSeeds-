@@ -22,7 +22,7 @@
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div class="w-full bg-gray-200 overflow-y-scroll h-[520px] hide-scrollbar">
+        <div class="w-full bg-gray-200 overflow-y-scroll h-[515px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
               <div class="flex justify-between items-center py-4">
@@ -38,7 +38,7 @@
         </div>
       </template>
       <template v-else-if="profile && filteredPeople.length === 0">
-        <div class="w-full bg-gray-200 h-[520px]">
+        <div class="w-full bg-gray-200 h-[515px]">
           <div class="flex justify-center items-center py-[29.5px] text-gray-600">
             <h1 class=" text-[22px] font-semibold">There is no one to be found.</h1>
             <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
@@ -55,7 +55,7 @@
     </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[500px] mt-44 mb-[205px]">
+    <div class="flex justify-center items-center h-[500px] mt-20 mb-[205px]">
       <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>
