@@ -1,36 +1,36 @@
 <template>
   <template v-if="profile">
     <div v-if="profile" class="text-gray-600 text-lg mt-[65px] mb-40">
-      <div class="w-[60%] mx-auto text-xl font-bold flex justify-between">
+      <div class="w-[90%] sm:w-[60%] mx-auto text-md sm:text-xl font-bold flex justify-between">
         <div class="flex-1">
           <div class="flex justify-start items-center">
             <RouterLink :to="{ name: 'profiles'}" title="View all the members">
-              <div class="flex justify-center items-center hover:text-orange-400 ">
+              <div class="flex justify-center items-center hover:text-orange-400 text-sm sm:text-xl">
                 <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2 "></i>
-                <p class="text-xl font-custom -mb-1">
+                <div class="flex font-custom -mb-1">
                   <span class="text-orange-400 mr-[3px]">Star</span>
                   <i class="fas fa-meteor text-orange-400"></i>
                   <span class="text-yellow-400">seeds</span>
-                </p>
+                </div>
                 <h1 class="ml-1">members</h1>
               </div>
             </RouterLink>
           </div>
         </div>
-        <div class="flex-1">
+        <div class="hidden sm:flex-1">
           <span class="flex justify-center">{{ getFirstName }}'s FEED</span>
         </div>
         <div class="flex-1">
           <div class="flex justify-end items-center">
             <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
-              <span class="hover:text-orange-400">{{ getFirstName }}'s CHATS</span>
+              <span class="hover:text-orange-400 text-sm sm:text-xl">{{ getFirstName }}'s CHATS</span>
               <i class="fas fa-om text-orange-400 text-2xl cursor-pointer ml-2"></i>
             </RouterLink>
           </div>
         </div>
       </div>
 
-      <div v-if="profile" class="w-[60%] mx-auto mt-3 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+      <div v-if="profile" class="w-[90%] sm:w-[60%] mx-auto mt-3 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
         <div class="flex">
           <div class="flex-1">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
@@ -53,7 +53,7 @@
                 <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
               </button>
             </span>
-            <p>{{ profile.description }}</p>
+            <p class="text-sm sm:text-base">{{ profile.description }}</p>
           </div>
           <div v-else class="text-justify">
             <span class="font-bold">Description:
@@ -61,7 +61,7 @@
                 <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
               </button>
             </span>
-            <p>Profile has no description entered.</p>
+            <p text-sm sm:text-base>Profile has no description entered.</p>
           </div>
         </div>
         <div v-if="descriptionEditMode" class="mx-auto flex flex-col items-start">
@@ -80,7 +80,7 @@
           </textarea>
         </div>
       </div>
-      <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+      <div v-if="profile" class="w-[90%] sm:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
         <div class="flex flex-col">
           <div class="mb-2">
             <h1 class="font-bold">Status:</h1>
@@ -152,7 +152,7 @@
           </div>
         </div>
       </div>
-      <div v-if="profile" class="w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+      <div v-if="profile" class="w-[90%] sm:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
         <h1 class="font-bold">YouTube Video:</h1>
         <div class="flex items-center mt-2">
           <input v-model="youtubeLink" type="text" class="w-full rounded-lg p-2 focus:outline-none" placeholder="Enter YouTube video link">
@@ -426,7 +426,7 @@ const deleteYouTubeVideo = (videoId) => {
   @apply text-white bg-orange-400 hover:bg-white hover:text-orange-400 font-semibold text-base border-2 border-orange-400 rounded-full py-[2px] px-3 flex justify-center items-center
 }
 .textarea-style {
-  @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none
+  @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none text-sm sm:text-base
 }
 .font-custom {
   font-family: 'Yatra One', cursive;
