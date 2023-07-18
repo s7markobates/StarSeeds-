@@ -62,8 +62,6 @@ onUnmounted(() => {
 const handleClickOutside = (event) => {
   if (!root.value.contains(event.target)) {
     isOpen.value = false
-  }
-  if (!root.value.contains(event.target)) {
     isAvatarOpen.value = false
   }
 }
