@@ -2,7 +2,7 @@
   <Transition name="back-slide">
     <div v-show="modalActive" class="absolute p-6 z-50 w-screen h-screen bg-black bg-opacity-60">
       <Transition name="slide">
-        <div v-if="modalActive" class="w-[500px] h-[760px]  mx-auto border-4 rounded-2xl border-orange-400 light">
+        <div v-if="modalActive" class="w-[95%] sm:w-[500px]  sm:h-[740px] lg:h-[760px] mx-auto border-4 rounded-2xl border-orange-400 light">
           <div class="flex justify-end">
             <i class="fas fa-times mr-3 mt-1 text-2xl text-orange-400 cursor-pointer" @click="$emit('close-modal')"></i> 
           </div>
@@ -16,27 +16,27 @@
                 <span class="text-yellow-400">seeds</span>
             </p>
           </div>
-          <form class="flex flex-col w-[380px] m-auto mt-9">
-            <h2 class="self-center text-4xl uppercase font-style text-yellow-400 mb-3 tracking-tight">Log in</h2>
-            <div>
-              <label for="name" class="ml-3 text-orange-400 font-semibold">Name:</label>
+          <form class="flex flex-col sm:w-[380px] m-auto mt-2 sm:mt-9">
+            <h2 class="self-center text-[25px] sm:text-4xl uppercase font-style text-yellow-400 mb-3 tracking-tight">Log in</h2>
+            <div class="flex flex-col sm:flex-hidden">
+              <label for="name" class="mx-auto sm:ml-3 text-orange-400 text-sm sm:text-base font-semibold">Name:</label>
               <input v-model="formData.name" id="name" type="text" class="input-field" placeholder="Enter your full name" required >
             </div>
-            <div class="mt-2">
-              <label for="email" class="ml-3 text-orange-400 font-semibold">Email address:</label>
+            <div class="mt-2 flex flex-col sm:flex-hidden">
+              <label for="email" class="mx-auto sm:ml-3 text-orange-400 text-sm sm:text-base font-semibold">Email address:</label>
               <input v-model="formData.email" id="email" type="email" class="input-field" placeholder="Enter your email" required >
             </div>
-            <div class="mt-2">
-              <label for="password" class="ml-3 text-orange-400 font-semibold">Password:</label>
+            <div class="mt-2 flex flex-col sm:flex-hidden">
+              <label for="password" class="mx-auto sm:ml-3 text-orange-400 text-sm sm:text-base font-semibold">Password:</label>
               <input v-model="formData.password" id="password" type="password" class="input-field-gray" placeholder="••••••" required>
             </div>  
             <button class="yellow-button" @click.prevent="signIn" title="Sign in with existing member">SIGN IN</button>
             <button class="yellow-button-forget" @click.prevent="forgotPassword" title="Don't forget your password">FORGOT YOUR PASSWORD?</button>
-            <div class="mt-5">
-              <div class="flex items-center justify-center border-t border-gray-300 w-full pt-5">
-                <p class="mr-10 font-semibold text-orange-400">Don't have an account?</p>
+            <div class="my-3 sm:my-5">
+              <div class="flex items-center justify-center border-t border-gray-300 w-full pt-3 sm:pt-5">
+                <p class="text-sm sm:text-base mr-3 sm:mr-10 font-semibold text-orange-400">Don't have an account?</p>
                 <button @click.prevent="submitFormSignUp" class="signup-button" title="Sign up with new member">
-                  <p><span class="pr-2">SIGN UP</span><i class="fas fa-rocket fa-spin"></i></p>
+                  <p><span class="sm:pr-2">SIGN UP</span><i class="fas fa-rocket fa-spin hidden sm:block"></i></p>
                 </button>
               </div>
             </div>
@@ -167,20 +167,20 @@ const updateProfileOnServer = (profileData) => {
 </script>
 
 <style scoped>
-.yellow-button {
-  @apply mt-5 w-full p-3 border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 font-bold cursor-pointer
-}
-.yellow-button-forget {
-  @apply mt-5 w-full p-3 border-2 rounded-3xl border-orange-400 bg-transparent text-orange-400 hover:bg-white hover:text-orange-400 font-bold cursor-pointer
-}
 .input-field {
-  @apply mt-2 w-full p-3 border border-gray-400 light text-black rounded-3xl
+  @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-black rounded-3xl
 }
 .input-field-gray {
-  @apply mt-2 w-full p-3 border border-gray-400 light text-black rounded-3xl
+  @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-black rounded-3xl
+}
+.yellow-button {
+  @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 font-bold cursor-pointer
+}
+.yellow-button-forget {
+  @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-transparent text-orange-400 hover:bg-white hover:text-orange-400 font-bold cursor-pointer
 }
 .signup-button {
-  @apply bg-orange-400 text-white hover:bg-orange-500  font-bold border-4 border-orange-400 rounded-3xl cursor-pointer px-9 py-3
+  @apply px-3 py-1 sm:px-9 sm:py-3 bg-orange-400 text-white hover:bg-orange-500 font-bold border-4 border-orange-400 rounded-3xl cursor-pointer
 }
 
 .slide-enter-from {

@@ -8,8 +8,8 @@
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
-          <button class="m-1 h-10 w-28 border-2 rounded-full border-orange-400 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-400 hover:text-white ">
-            <p><span class="font-medium text-md pr-2">Sign In</span><i class="fas fa-rocket fa-spin"></i></p> 
+          <button class="my-2 mr-2 border-2 rounded-full border-orange-400 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-400 hover:text-white ">
+            <p class="py-1 px-2 sm:px-3"><span class="font-medium text-md sm:pr-2 hidden sm:inline">Sign In</span><i class="fas fa-rocket fa-spin text-lg sm:text-base"></i></p> 
           </button>
         </div>
       </div>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
-    <nav class="fixed top-[56px] w-full flex justify-between items-center h-10 nav-color p-2 border-b-4 border-t border-orange-400">
+    <nav class="fixed top-[56px] w-full text-sm sm:text-base flex justify-between items-center h-10 nav-color p-2 border-b-4 border-t border-orange-400">
       <RouterLink to="/about" class="mx-1 uppercase">About</RouterLink>
       <RouterLink to="/videos" class="mx-1 uppercase">Videos</RouterLink>
       <RouterLink to="/blogs" class="mx-1 uppercase">Blogs</RouterLink>
