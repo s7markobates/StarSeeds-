@@ -3,7 +3,7 @@
     <div :class="darkModeClass">
       <a v-if="!darkModeClass.dark">
         <RouterLink to="/">
-          <p class="text-[28px] -ml-8 sm:ml-auto sm:text-4xl">
+          <p class="text-[30px] my-auto sm:my-0 sm:text-4xl">
             <span class="text-orange-400 mr-[3px]">Star</span>
             <i class="fas fa-meteor text-orange-400"></i>
             <span class="text-yellow-400">seeds</span>

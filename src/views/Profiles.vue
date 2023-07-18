@@ -1,7 +1,7 @@
 <template>
     <div class="text-gray-600 mt-[65px] mb-16">
-        <div class="text-xl font-bold flex justify-between w-[60%] mx-auto">
-            <div class="flex justify-center items-center">
+        <div class="text-md sm:text-xl font-bold flex justify-between w-[40%] sm:w-[60%] mx-auto">
+            <div class="hidden sm:flex justify-center items-center">
                 <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
                 <div class="flex justify-center items-center">
                     <p class="text-xl font-custom -mb-1">
@@ -13,16 +13,16 @@
                 </div>
             </div>
             <div>
-                <div class="flex items-center">
-                <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
-                    <span class="hover:text-orange-400">Go to your feed</span>
-                    <i class="fas fa-om text-orange-400 text-2xl ml-2"></i>
-                </RouterLink>
+                <div class="sm:flex justify-center items-center">
+                    <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
+                        <span class="hover:text-orange-400">Go to your feed</span>
+                        <i class="fas fa-om text-orange-400 text-2xl ml-2"></i>
+                    </RouterLink>
                 </div>
             </div>
         </div>
         <div class="h-[70px] flex justify-center items-center">
-            <div class="h-8 w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
+            <div class="h-8 sm:w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
             <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-200" placeholder="Search members...">
             <i class="fas fa-search text-orange-400 text-2xl "></i>
             </div>
@@ -31,7 +31,7 @@
         <template v-if="profiles.length > 0">
             <template v-if="profiles && filteredProfiles.length > 0">
                 <div class="w-[70%] mx-auto mt-5">
-                    <div class="grid grid-cols-3 gap-x-2 gap-y-12">
+                    <div class="sm:grid grid-cols-3 gap-x-2 gap-y-12">
                         <div v-for="profile in filteredProfiles" :key="profile.id" class="flex justify-center items-center">
                             <ul>
                                 <li class="p-2 text-lg hover:text-orange-400 hover:text-xl duration-300" :title="'Go to ' + profile.name + ' profile'">

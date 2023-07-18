@@ -3,8 +3,8 @@
     <button class="ml-3 mt-4 flex flex-col justify-center items-center w-[28px] h-[28px] bg-transparent border-0 cursor-pointer">
       <i :class="`fas fa-bars text-2xl sm:text-[32px] ${!isOpen ? 'text-orange-400' : 'text-white'}`"></i>
     </button>
-    <div v-if="isOpen" :class="burgerDark" class="sm:h-[280px] w-screen text-white z-30 border-b-4 border-orange-400">
-      <div class="w-full ml-12 pt-10 flex items-center">
+    <div v-if="isOpen" :class="burgerDark" class="w-screen h-[280px] sm:w-screen text-white z-30 border-b-4 border-orange-400">
+      <div class="ml-12 pt-10 flex items-center">
         <i class="fas fa-om text-orange-400 text-md" ></i>
         <span class="sm:text-lg font-base ml-2 uppercase">Explore</span>
       </div>
@@ -14,7 +14,7 @@
             <li class="py-[6px] text-sm sm:text-lg">About StarSeeds WebApp</li>
         </ul>
       </div>
-      <div v-if="!burgerDark.dark" class="flex flex-col items-center text-white text-sm font-light mt-10">
+      <div v-if="!burgerDark.dark" class="flex flex-col items-center marker:text-sm font-light mt-10">
         <div class="flex justify-center sm:mt-7">
           <p class="text-xl sm:text-3xl font-style">
             <span class="text-orange-400 mr-[3px]">Star</span>
@@ -23,9 +23,9 @@
           </p>
         </div>
       </div>
-      <div v-else class="flex flex-col items-center text-white text-lg font-light mt-10">
+      <div v-else class="flex flex-col items-center text-lg font-light mt-10">
         <div class="flex justify-center mt-7">
-          <p class="text-3xl font-style">
+          <p class="text-xl sm:text-3xl font-style">
             <span class="text-orange-400 mr-[3px]">Star</span>
             <i class="fas fa-meteor text-orange-400"></i>
             <span class="text-yellow-400">seeds</span>
@@ -76,7 +76,8 @@ export default {
 .light {
   background: #1488CC;
   background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-  background: linear-gradient(to left, #2B32B2, #1488CC); 
+  background: linear-gradient(to left, #2B32B2, #1488CC);
+  color: white;
 }
 .font-style {
     font-family: 'Yatra One', cursive;

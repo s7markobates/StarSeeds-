@@ -2,7 +2,7 @@
   <div ref="root">
     <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 z-[1]">
       <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
-      <Logo/>
+      <Logo v-if="!isOpen" />
       <div>
         <div v-if="isOnFeed" v-show="!isOpen" >
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />

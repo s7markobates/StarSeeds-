@@ -2,7 +2,7 @@
   <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`" >
     <span class="text-md font-semibold text-center text-white" title="View profile details">{{ getInitials }}</span>
   </div>
-  <div v-if="isAvatarOpen" class=" dark h-[470px] w-[300px] absolute top-14 right-0 text-white text-lg border-x-4 border-b-4 border-orange-400 rounded-b-2xl">
+  <div v-if="isAvatarOpen" class="dark h-[470px] w-full sm:w-[300px] absolute top-14 right-0 text-white text-lg border-x-4 border-b-4 border-orange-400 rounded-b-2xl">
     <div v-if="avatarProfile" class="mt-4 flex flex-col items-center">
       <div class="mt-2 flex items-center">
         <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
@@ -124,7 +124,7 @@ const saveImageOnServer = (imageData) => {
 
 <style scoped>
 .avatar-frame {
-  @apply relative top-[8px] right-[8px] w-[40px] h-[40px] rounded-full flex justify-center items-center cursor-pointer
+  @apply relative top-2 right-2 w-[40px] h-[40px] rounded-full flex justify-center items-center cursor-pointer
 }
 .img-class {
   @apply h-36 w-36 rounded-full shadow-xl border-4 border-orange-400 cursor-pointer
