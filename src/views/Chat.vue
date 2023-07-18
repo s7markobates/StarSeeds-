@@ -1,5 +1,5 @@
 <template>
-    <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[96%] mx-auto text-xl">
+    <div class="text-gray-600 mt-[65px] flex justify-between items-center w-[70%] mx-auto text-xl">
       <div v-if="profile" class="flex-1 font-bold ">
         <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s feed'">
           <RouterLink :to="{ name: 'feed'}" >
@@ -14,7 +14,7 @@
       <div class="flex-1"></div>
     </div>
   <template v-if="profile">
-    <div class="w-[70%] mx-auto mt-10 flex flex-col mb-20">
+    <div class="w-[70%] mx-auto mt-3 flex flex-col mb-20">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
@@ -22,10 +22,10 @@
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div class="w-full bg-gray-200 overflow-y-scroll h-[515px] hide-scrollbar">
+        <div class="w-full bg-gray-200 overflow-y-scroll h-[650px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
-              <div class="flex justify-between items-center py-4">
+              <div class="flex justify-between items-center py-4 w-[98%] mx-auto">
                 <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105 duration-300" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
                   <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
                   <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
@@ -38,7 +38,7 @@
         </div>
       </template>
       <template v-else-if="profile && filteredPeople.length === 0">
-        <div class="w-full bg-gray-200 h-[515px]">
+        <div class="w-full bg-gray-200 h-[650px]">
           <div class="flex justify-center items-center py-[29.5px] text-gray-600">
             <h1 class=" text-[22px] font-semibold">There is no one to be found.</h1>
             <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
@@ -55,7 +55,7 @@
     </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[500px] mt-20 mb-[205px]">
+    <div class="flex justify-center items-center h-[500px] mt-20 mb-[280px]">
       <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>

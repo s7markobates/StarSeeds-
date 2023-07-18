@@ -1,6 +1,6 @@
 <template>
-  <div class="text-gray-600 mt-[70px] mb-[300px]">
-    <div class="w-[96%] mx-auto text-xl font-bold flex justify-start">
+  <div class="text-gray-600 mt-[65px] mb-[320px]">
+    <div class="w-[50%] mx-auto text-xl font-bold flex justify-start">
       <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
@@ -14,7 +14,7 @@
       </div>
     </div>
     <template v-if="profile && profile.name">
-      <div class="w-[50%] mx-auto mt-12 bg-gray-300 px-4 py-3 rounded-lg shadow-md">
+      <div class="w-[50%] mx-auto mt-10 bg-gray-300 px-4 py-3 rounded-lg shadow-md">
         <div class="flex justify-between items-end">
           <div v-if="profile">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
@@ -50,7 +50,7 @@
       </div>     
     </template>
     <template v-else>
-      <div class="flex justify-center items-center h-[350px] mt-44 mb-64">
+      <div class="flex justify-center items-center h-[350px] mt-48 mb-[280px]">
           <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
       </div>
     </template>

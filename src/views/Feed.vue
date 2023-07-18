@@ -1,7 +1,7 @@
 <template>
   <template v-if="profile">
-    <div v-if="profile" class="text-gray-600 text-lg mt-[70px] mb-40">
-      <div class="w-[96%] mx-auto text-xl font-bold flex justify-between">
+    <div v-if="profile" class="text-gray-600 text-lg mt-[65px] mb-40">
+      <div class="w-[60%] mx-auto text-xl font-bold flex justify-between">
         <div class="flex-1">
           <div class="flex justify-start items-center">
             <RouterLink :to="{ name: 'profiles'}" title="View all the members">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div v-if="profile" class="w-[60%] mx-auto mt-10 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+      <div v-if="profile" class="w-[60%] mx-auto mt-3 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
         <div class="flex">
           <div class="flex-1">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
@@ -168,7 +168,7 @@
     </div>
   </template>
   <template v-else>
-    <div class="flex justify-center items-center h-[500px] mt-44 mb-64">
+    <div class="flex justify-center items-center h-[500px] mt-44 mb-[280px]">
       <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>
     </div>
   </template>
