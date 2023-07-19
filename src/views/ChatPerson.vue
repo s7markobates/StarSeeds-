@@ -16,7 +16,7 @@
         <div class="hidden sm:block flex-1 ">
         </div>
         
-        <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
+        <div v-if="profile" class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
           <RouterLink :to="{ name: 'profiles' }">
             <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
           </RouterLink>
@@ -24,7 +24,7 @@
             <button class="button-phone mx-2 px-[11px] py-[7px] "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>
           </RouterLink>
           <RouterLink :to="{ name: 'chat' }">
-            <button><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
+            <button><i class="fas fa-rocket button-phone pl-[11px] pr-[12px] py-[12px]"></i></button>
           </RouterLink>
         </div>
       </div>

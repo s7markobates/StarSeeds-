@@ -15,9 +15,9 @@
       <div class="fixed bg-white w-full flex justify-center py-2 sm:hidden">
         <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
         <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
-          <button class="button-phone mx-2 px-3 py-2 "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>
+          <button class="button-phone mx-2 px-[11.5px] py-[7.7px] "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>
         </RouterLink>
-        <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
+        <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11.2px]"></i></button>
       </div>
     </div>
     <div class="mt-20 mb-5 sm:hidden">
