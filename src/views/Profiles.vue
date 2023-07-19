@@ -107,7 +107,7 @@ const scrollToTop = () => {
 
 <style scoped>
 .img-profile {
-    @apply h-52 w-52 rounded-full border-4 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400 hover:scale-110 duration-300 
+    @apply h-40 w-40 sm:h-52 sm:w-52 rounded-full border-4 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400 hover:scale-110 duration-300 
 }
 .font-custom {
     font-family: 'Yatra One', cursive;
