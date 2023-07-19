@@ -1,20 +1,27 @@
 <template>
-    <div class="text-gray-600 mt-[65px] flex justify-between items-center sm:w-[70%] sm:mx-auto text-md sm:text-xl">
-      <div v-if="profile" class="flex-1 font-bold ">
-        <div class="flex items-center " :title="'Go to ' + getFirstName + '\'s feed'">
-          <RouterLink :to="{ name: 'feed'}" >
-            <i class="fas fa-om text-orange-400 text-md sm:text-2xl cursor-pointer mr-2"></i>
-            <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
-          </RouterLink>
-        </div>
+  <div class="text-gray-600 mt-[65px] flex justify-between items-center sm:w-[70%] mx-auto text-xl">
+    <div v-if="profile" class="flex-1 font-bold ">
+      <div class="hidden sm:flex items-center " :title="'Go to ' + getFirstName + '\'s feed'">
+        <RouterLink :to="{ name: 'feed'}" >
+          <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
+          <span class="hover:text-orange-400">{{ getFirstName }}'s FEED</span>
+        </RouterLink>
       </div>
-      <div class="font-bold flex-1">
-        <h1 class="hidden sm:flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
-      </div>
-      <div class="flex-1"></div>
     </div>
+    <div class="font-bold flex-1">
+      <h1 class="hidden sm:flex justify-center items-center">{{ getFirstName }}'s CHATS</h1>
+    </div>
+    <div class="flex-1"></div>
+  </div>
+  <div class="fixed sm:hidden bg-white w-full text-center">
+    <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
+        <button class="button-phone">
+            <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>
+        </button>
+    </RouterLink>
+  </div>
   <template v-if="profile">
-    <div class="w-[90%] sm:w-[70%] mx-auto mt-3 flex flex-col mb-20">
+    <div class="w-[90%] sm:w-[70%] mx-auto mt-16 sm:mt-3 flex flex-col mb-20">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
@@ -183,5 +190,8 @@ const scrollToTop = () => {
 
 .hide-scrollbar::-webkit-scrollbar-thumb {
   background-color: transparent;
+}
+.button-phone {
+  @apply px-3 py-2 border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>

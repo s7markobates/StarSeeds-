@@ -1,9 +1,9 @@
 <template>
-    <div class="text-gray-600 mt-[65px] mb-16">
-        <div class="text-md sm:text-xl font-bold flex justify-between w-[40%] sm:w-[60%] mx-auto">
+    <div class="text-gray-600 mt-[55px] mb-16">
+        <div class="text-xl font-bold sm:flex justify-between sm:w-[60%] mx-auto">
             <div class="hidden sm:flex justify-center items-center">
-                <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
-                <div class="flex justify-center items-center">
+                <div class="flex justify-center items-center mt-2">
+                    <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
                     <p class="text-xl font-custom -mb-1">
                         <span class="text-orange-400 mr-[3px]">Star</span>
                         <i class="fas fa-meteor text-orange-400"></i>
@@ -13,24 +13,31 @@
                 </div>
             </div>
             <div>
-                <div class="sm:flex justify-center items-center">
+                <div class="hidden sm:flex justify-center items-center mt-2">
                     <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                         <span class="hover:text-orange-400">Go to your feed</span>
                         <i class="fas fa-om text-orange-400 text-2xl ml-2"></i>
                     </RouterLink>
                 </div>
             </div>
+            <div class="fixed py-2 bg-white sm:hidden w-full text-center">
+                <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
+                    <button class="button-phone">
+                        <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>
+                    </button>
+                </RouterLink>
+            </div>
         </div>
         <div class="h-[70px] flex justify-center items-center">
-            <div class="h-8 sm:w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
-            <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-200" placeholder="Search members...">
-            <i class="fas fa-search text-orange-400 text-2xl "></i>
+            <div class="h-8 mt-28 sm:mt-0 sm:w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
+                <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-200" placeholder="Search members...">
+                <i class="fas fa-search text-orange-400 text-2xl "></i>
             </div>
         </div>
 
         <template v-if="profiles.length > 0">
             <template v-if="profiles && filteredProfiles.length > 0">
-                <div class="w-[70%] mx-auto mt-5">
+                <div class="w-[70%] mx-auto mt-16 sm:mt-5">
                     <div class="sm:grid grid-cols-3 gap-x-2 gap-y-12">
                         <div v-for="profile in filteredProfiles" :key="profile.id" class="flex justify-center items-center">
                             <ul>
@@ -49,7 +56,7 @@
                 </div>
             </template>
             <template v-else-if="profiles && filteredProfiles.length === 0">
-                <div class="flex flex-col items-center mt-7" title="There is no one to be found">
+                <div class="flex flex-col items-center mt-[70px] sm:mt-7" title="There is no one to be found">
                     <img src="../assets/alien-avatar.jpg" class="img-profile" alt="Profile Image" />
                     <div class="flex items-center mb-2">
                         <h1 class="text-lg font-semibold mt-4">There is no one to be found.</h1>
@@ -64,7 +71,7 @@
             </div>
         </template>
     </div>
-    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-9 w-9 mx-auto mb-32 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
+    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-9 w-9 mx-auto mb-36 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
         <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl py-1 px-2 hover:-mt-1 hover:text-orange-400"></i>
         </div>
@@ -104,5 +111,8 @@ const scrollToTop = () => {
 }
 .font-custom {
     font-family: 'Yatra One', cursive;
+}
+.button-phone {
+    @apply px-3 py-2 border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="text-gray-600 mt-[65px] mb-[320px]">
-    <div class="sm:w-[50%] mx-auto text-md sm:text-xl font-bold flex justify-center sm:justify-start">
-      <div @click="goToProfiles" class="cursor-pointer flex items-center" title="View all the members">
+  <div class="text-gray-600 mt-[55px] mb-[320px]">
+    <div class="sm:w-[50%] mx-auto text-xl font-bold flex justify-center sm:justify-start">
+      <div @click="goToProfiles" class="hidden sm:flex items-center mt-2 cursor-pointer" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
           <p class="font-custom -mb-1">
@@ -12,8 +12,15 @@
           <h1 class="ml-1">members</h1>
         </div>
       </div>
+      <div class="fixed bg-white w-full flex justify-center py-2 sm:hidden">
+        <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
+        <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
+          <button class="button-phone mx-2 px-3 py-2 "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>
+        </RouterLink>
+        <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
+      </div>
     </div>
-    <div class="my-8 sm:hidden">
+    <div class="mt-20 mb-5 sm:hidden">
       <img v-if="profile.image" :src="profile.image" class="img-profile-responsive" alt="Profile Image" :title="profile.name"/>
       <img v-else src="../assets/avatar.jpg" class="img-profile-responsive" alt="Profile Image" />
     </div>
@@ -128,5 +135,8 @@ export default {
 }
 .font-custom {
   font-family: 'Yatra One', cursive;
+}
+.button-phone {
+  @apply border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
 </style>
