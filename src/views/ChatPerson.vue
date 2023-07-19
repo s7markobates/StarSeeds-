@@ -15,6 +15,7 @@
         </div>
         <div class="hidden sm:block flex-1 ">
         </div>
+        
         <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
           <RouterLink :to="{ name: 'profiles' }">
             <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
@@ -27,19 +28,20 @@
           </RouterLink>
         </div>
       </div>
+
       <!-- Chat window -desktop -->
-      <div v-if="profile" class="hidden sm:block w-[70%] mx-auto mt-3 mb-20">
+      <div v-if="profile" class="hidden sm:block w-[70%] mx-auto mt-3">
         <div class="bg-gray-200 w-full h-[715px] rounded-t-3xl flex justify-evenly items-end">
           <div class="pb-10">
-            <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
-            <img v-if="currentPerson && !currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  src="../assets/avatar.jpg" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
+            <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-current" alt="CurrentPersonImage" />
+            <img v-if="currentPerson && !currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  src="../assets/avatar.jpg" @click="goToProfile(currentPerson.id)" class="img-current" alt="CurrentPersonImage" />
           </div>
           <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[715px] w-[50%] text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
           </div>
           <div class="pb-10">
-            <img v-if="profile && profile.image" title="Go to my profile" :src="profile.image" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
-            <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-class-profile" alt="Profile Image" />
+            <img v-if="profile && profile.image" title="Go to my profile" :src="profile.image" @click="goToProfile(profile.id)" class="img-profile" alt="Profile Image" />
+            <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-profile" alt="Profile Image" />
           </div>
         </div>
         <div class="flex justify- items-center p-3 bg-gray-300 rounded-b-2xl">
@@ -49,8 +51,9 @@
           </button>
         </div>
       </div>
+
       <!-- Chat window - mobile -->
-      <div v-if="profile" class="fixed sm:hidden w-full mx-auto mt-28 mb-20 text-xs">
+      <div v-if="profile" class="fixed sm:hidden w-full mx-auto mt-28 text-xs">
         <div class="bg-gray-200 w-full h-[465px] flex justify-evenly items-end">
           <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[465px] w-[95%] text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
@@ -74,6 +77,7 @@
           </button>
         </div>
       </div>
+
     </div>
   </template>
   <template v-else>
@@ -203,10 +207,10 @@ const goToProfile = (personId) => {
 .current-person-message {
   @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50
 }
-.img-class-profile {
+.img-profile {
   @apply h-40 w-40 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
 }
-.img-class-current {
+.img-current {
   @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
 }
 .img-message-mobile {

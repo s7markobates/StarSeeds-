@@ -1,5 +1,5 @@
 <template>
-    <div :class="footerClass">
+    <div :class="footerClass" v-show="!shouldShowFooter">
         <hr>
         <div class="flex justify-center mt-3 sm:mt-8">
             <p class="text-2xl sm:text-3xl font-style">
@@ -28,7 +28,9 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const footerClass = computed(() => {
   const currentRoute = useRoute()
@@ -39,6 +41,14 @@ const footerClass = computed(() => {
     currentRoute.name === 'chat' ||
     currentRoute.name === 'chatPerson'
     ? 'dark' : 'light'
+  )
+})
+
+const shouldShowFooter = computed(() => {
+  const currentRouteName = router.currentRoute.value.name;
+  return (
+    currentRouteName === 'chat'||
+    currentRouteName === 'chatPerson'
   )
 })
 

@@ -21,7 +21,7 @@
     </RouterLink>
   </div>
   <template v-if="profile">
-    <div class="w-full sm:w-[70%] mx-auto mt-16 sm:mt-3 flex flex-col mb-20">
+    <div class="w-full sm:w-[70%] mx-auto mt-[60px] sm:mt-3  sm:flex flex-col">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center sm:rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[250px] sm:w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div class="w-full bg-gray-200 overflow-y-scroll h-[400px] sm:h-[650px] hide-scrollbar">
+        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[400px] sm:h-[650px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
               <div class="flex justify-between items-center py-4 w-[95%] mx-auto">
@@ -45,9 +45,9 @@
         </div>
       </template>
       <template v-else-if="profile && filteredPeople.length === 0">
-        <div class="w-full bg-gray-200 h-[650px]">
+        <div class="w-full bg-gray-200 h-[400px] sm:h-[650px]">
           <div class="flex justify-center items-center py-[29.5px] text-gray-600">
-            <h1 class=" text-[22px] font-semibold">There is no one to be found.</h1>
+            <h1 class="text-lg sm:text-[22px] font-semibold">There is no one to be found.</h1>
             <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
           </div>
         </div>
@@ -169,25 +169,26 @@ const openChat = (personId) => {
   router.push({ name: 'chatPerson', params: { id: personId } })
 }
 
+const peopleList = ref(null)
+
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
+  if (peopleList.value) {
+    peopleList.value.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 }
 
 </script>
 
-<style scoped>
-    
+<style scoped>    
 .hide-scrollbar::-webkit-scrollbar {
   width: 0.5rem; /* Promenite širinu skrol trake po potrebi */
 }
-
 .hide-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .hide-scrollbar::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
