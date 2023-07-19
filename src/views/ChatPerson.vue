@@ -17,7 +17,7 @@
         <div class="hidden sm:block flex-1 ">
         </div>
         
-        <div class="fixed top-14 bg-white w-full flex justify-center py-3 sm:hidden">
+        <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
           <RouterLink :to="{ name: 'profiles' }">
             <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
           </RouterLink>
