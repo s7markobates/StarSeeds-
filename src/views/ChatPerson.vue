@@ -2,6 +2,7 @@
   <template v-if="profile">
     <div>
       <div class="sm:w-[70%] mx-auto text-gray-600 text-lg sm:mt-[55px] flex justify-between items-center">
+        
         <div v-if="profile" class="hidden text-xl font-bold flex-1 sm:flex justify-start items-center mt-3">
           <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
             <RouterLink :to="{ name: 'chat'}">
@@ -16,7 +17,7 @@
         <div class="hidden sm:block flex-1 ">
         </div>
         
-        <div v-if="profile" class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
+        <div class="fixed top-14 bg-white w-full flex justify-center py-3 sm:hidden">
           <RouterLink :to="{ name: 'profiles' }">
             <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
           </RouterLink>
@@ -44,7 +45,7 @@
             <img v-if="profile && !profile.image" title="Go to my profile" src="../assets/avatar.jpg" @click="goToProfile(profile.id)" class="img-profile" alt="Profile Image" />
           </div>
         </div>
-        <div class="flex justify- items-center p-3 bg-gray-300 rounded-b-2xl">
+        <div class="flex items-center p-3 bg-gray-300 rounded-b-2xl">
           <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
           <button @click="sendMessage" class="bttn-class" title="Send message">
             <i class="fas fa-rocket text-xl"></i>
@@ -53,9 +54,9 @@
       </div>
 
       <!-- Chat window - mobile -->
-      <div v-if="profile" class="fixed sm:hidden w-full mx-auto mt-28 text-xs">
-        <div class="bg-gray-200 w-full h-[465px] flex justify-evenly items-end">
-          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[465px] w-[95%] text-white">
+      <div v-if="profile" class="fixed sm:hidden w-full mx-auto mt-28 text-xs bottom-0 ">
+        <div class="bg-gray-200 w-full h-[70vh] flex justify-evenly items-end">
+          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-full w-[95%] text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
               <div class="flex items-center justify-start">
                 <img v-if="message.sender === currentPerson.id && currentPerson.image" :src="currentPerson.image" class="img-message-mobile mr-3" alt="CurrentPersonImage" />
@@ -70,7 +71,7 @@
             </span>
           </div>
         </div>
-        <div class="flex justify- items-center p-3 bg-gray-300 ">
+        <div class="flex items-center p-3 bg-gray-300 ">
           <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
           <button @click="sendMessage" class="bttn-class" title="Send message">
             <i class="fas fa-rocket text-xl"></i>
