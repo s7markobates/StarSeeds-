@@ -13,7 +13,7 @@
     </div>
     <div class="flex-1"></div>
   </div>
-  <div class="fixed sm:hidden bg-white w-full text-center -mt-[10px] py-2">
+  <div class="fixed sm:hidden bg-white w-full text-center -mt-[10px] py-3">
     <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
         <button class="button-phone">
             <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>
@@ -21,18 +21,18 @@
     </RouterLink>
   </div>
   <template v-if="profile">
-    <div class="w-full sm:w-[70%] mx-auto mt-[56px] sm:mt-3 flex flex-col mb-20">
+    <div class="w-full sm:w-[70%] mx-auto mt-16 sm:mt-3 flex flex-col mb-20">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center sm:rounded-t-3xl">
-        <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
+        <div class="bg-white flex items-center justify-between h-8 w-[250px] sm:w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
           <i class="fas fa-search text-orange-400 text-2xl "></i>
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div class="w-full bg-gray-200 overflow-y-scroll h-[410px] sm:h-[650px] hide-scrollbar">
+        <div class="w-full bg-gray-200 overflow-y-scroll h-[400px] sm:h-[650px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
-              <div class="flex justify-between items-center py-4 w-[98%] mx-auto">
+              <div class="flex justify-between items-center py-4 w-[95%] mx-auto">
                 <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105 duration-300" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
                   <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
                   <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
