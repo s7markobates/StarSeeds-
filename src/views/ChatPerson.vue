@@ -1,8 +1,8 @@
 <template>
   <template v-if="profile">
     <div>
-      <div class="w-[70%] mx-auto text-gray-600 text-lg mt-[65px] flex justify-between items-center">
-        <div v-if="profile" class=" text-xl font-bold flex-1 justify-start items-center">
+      <div class="sm:w-[70%] mx-auto text-gray-600 text-lg sm:mt-[55px] flex justify-between items-center">
+        <div v-if="profile" class="hidden text-xl font-bold flex-1 sm:flex justify-start items-center mt-3">
           <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
             <RouterLink :to="{ name: 'chat'}">
               <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
@@ -10,13 +10,25 @@
             </RouterLink>
           </div>
         </div>
-        <div v-if="currentPerson" class="text-xl font-bold flex-1">
-          <h1 class="flex justify-center items-center text-orange-400">CHAT with: {{currentPerson.name}}</h1>
+        <div v-if="currentPerson" class="text-xl font-bold flex-1 mt-3">
+          <h1 class="hidden sm:flex justify-center items-center text-orange-400">CHAT with: {{currentPerson.name}}</h1>
         </div>
-        <div class="flex-1 ">
+        <div class="hidden sm:block flex-1 ">
+        </div>
+        <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
+          <RouterLink :to="{ name: 'profiles' }">
+            <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
+          </RouterLink>
+          <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
+            <button class="button-phone mx-2 px-[11px] py-[7px] "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>
+          </RouterLink>
+          <RouterLink :to="{ name: 'chat' }">
+            <button><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
+          </RouterLink>
         </div>
       </div>
-      <div v-if="profile" class="w-[70%] mx-auto mt-3 mb-20">
+      <!-- Chat window -desktop -->
+      <div v-if="profile" class="hidden sm:block w-[70%] mx-auto mt-3 mb-20">
         <div class="bg-gray-200 w-full h-[715px] rounded-t-3xl flex justify-evenly items-end">
           <div class="pb-10">
             <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-class-current" alt="CurrentPersonImage" />
@@ -36,7 +48,30 @@
             <i class="fas fa-rocket text-xl"></i>
           </button>
         </div>
-      </div>    
+      </div>
+      <!-- Chat window - mobile -->
+      <div v-if="profile" class="fixed sm:hidden w-full mx-auto mt-28 mb-20 text-xs">
+        <div class="bg-gray-200 w-full h-[465px] flex justify-evenly items-end">
+          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[465px] w-[95%] text-white">
+            <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
+              <div class="flex items-center justify-start">
+                <img v-if="message.sender === currentPerson.id && currentPerson.image" :src="currentPerson.image" class="img-message-mobile mr-3" alt="CurrentPersonImage" />
+                <span v-if="message.sender === currentPerson.id">{{ message.content }}</span>
+              </div>
+              <div class="flex items-center justify-end">
+                <span v-if="message.sender === profile.id">{{ message.content }}</span>
+                <img v-if="message.sender === profile.id && profile.image" :src="profile.image" class="img-message-mobile ml-3" alt="ProfileImage" />
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="flex justify- items-center p-3 bg-gray-300 ">
+          <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
+          <button @click="sendMessage" class="bttn-class" title="Send message">
+            <i class="fas fa-rocket text-xl"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </template>
   <template v-else>
@@ -172,21 +207,24 @@ const goToProfile = (personId) => {
 .img-class-current {
   @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
 }
+.img-message-mobile {
+  @apply h-10 w-10 rounded-full border-2 cursor-pointer
+}
 .input-class {
   @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-200 focus:outline-none
 }
 .bttn-class {
   @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
 }
-
+.button-phone {
+  @apply border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
 .hide-scrollbar::-webkit-scrollbar {
   width: 0.5rem; /* Promenite širinu skrol trake po potrebi */
 }
-
 .hide-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .hide-scrollbar::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
