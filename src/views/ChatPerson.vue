@@ -56,11 +56,13 @@
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
               <div class="flex items-center justify-start">
                 <img v-if="message.sender === currentPerson.id && currentPerson.image" :src="currentPerson.image" class="img-message-mobile mr-3" alt="CurrentPersonImage" />
+                <img v-if="message.sender === currentPerson.id && !currentPerson.image" src="../assets/avatar.jpg" class="img-message-mobile mr-3" alt="CurrentPersonImage" />
                 <span v-if="message.sender === currentPerson.id">{{ message.content }}</span>
               </div>
               <div class="flex items-center justify-end">
                 <span v-if="message.sender === profile.id">{{ message.content }}</span>
                 <img v-if="message.sender === profile.id && profile.image" :src="profile.image" class="img-message-mobile ml-3" alt="ProfileImage" />
+                <img v-if="message.sender === profile.id && !profile.image" src="../assets/avatar.jpg" class="img-message-mobile ml-3" alt="ProfileImage" />
               </div>
             </span>
           </div>
