@@ -13,7 +13,7 @@
     </div>
     <div class="flex-1"></div>
   </div>
-  <div class="fixed sm:hidden bg-white w-full text-center">
+  <div class="fixed sm:hidden bg-white w-full text-center -mt-[10px] py-2">
     <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
         <button class="button-phone">
             <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>
@@ -21,15 +21,15 @@
     </RouterLink>
   </div>
   <template v-if="profile">
-    <div class="w-[90%] sm:w-[70%] mx-auto mt-16 sm:mt-3 flex flex-col mb-20">
-      <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
+    <div class="w-full sm:w-[70%] mx-auto mt-[56px] sm:mt-3 flex flex-col mb-20">
+      <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center sm:rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
           <i class="fas fa-search text-orange-400 text-2xl "></i>
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div class="w-full bg-gray-200 overflow-y-scroll h-[400px] sm:h-[650px] hide-scrollbar">
+        <div class="w-full bg-gray-200 overflow-y-scroll h-[410px] sm:h-[650px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
               <div class="flex justify-between items-center py-4 w-[98%] mx-auto">
@@ -52,7 +52,7 @@
           </div>
         </div>
       </template>
-      <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-b-3xl">
+      <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center sm:rounded-b-3xl">
         <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
           <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
