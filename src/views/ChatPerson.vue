@@ -1,9 +1,9 @@
 <template>
   <template v-if="profile">
     <div>
-      <div class="sm:w-[70%] mx-auto text-gray-600 text-lg sm:mt-[55px] flex justify-between items-center">
+      <div class="xl:w-[70%] mx-auto text-gray-600 text-lg xl:mt-[55px] flex justify-between items-center">
         
-        <div v-if="profile" class="hidden text-xl font-bold flex-1 sm:flex justify-start items-center mt-3">
+        <div v-if="profile" class="hidden text-xl font-bold flex-1 xl:flex justify-start items-center mt-3">
           <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
             <RouterLink :to="{ name: 'chat'}">
               <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2"></i>
@@ -12,12 +12,12 @@
           </div>
         </div>
         <div v-if="currentPerson" class="text-xl font-bold flex-1 mt-3">
-          <h1 class="hidden sm:flex justify-center items-center text-orange-400">CHAT with: {{currentPerson.name}}</h1>
+          <h1 class="hidden xl:flex justify-center items-center text-orange-400">CHAT with: {{currentPerson.name}}</h1>
         </div>
-        <div class="hidden sm:block flex-1 ">
+        <div class="hidden xl:block flex-1 ">
         </div>
         
-        <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 sm:hidden">
+        <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 xl:hidden">
           <RouterLink :to="{ name: 'profiles' }">
             <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
           </RouterLink>
@@ -31,7 +31,7 @@
       </div>
 
       <!-- Chat window -desktop -->
-      <div v-if="profile" class="hidden sm:block w-[70%] mx-auto mt-3">
+      <div v-if="profile" class="hidden xl:block w-[70%] mx-auto mt-3">
         <div class="bg-gray-200 w-full h-[715px] rounded-t-3xl flex justify-evenly items-end">
           <div class="pb-10">
             <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-current" alt="CurrentPersonImage" />
@@ -54,7 +54,7 @@
       </div>
 
       <!-- Chat window - mobile -->
-      <div v-if="profile" class="fixed sm:hidden w-full mx-auto mt-28 text-xs bottom-0 ">
+      <div v-if="profile" class="fixed xl:hidden w-full mx-auto mt-28 text-xs bottom-0 ">
         <div class="bg-gray-200 w-full h-[70vh] flex justify-evenly items-end">
           <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-full w-[95%] text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
@@ -203,10 +203,10 @@ const goToProfile = (personId) => {
 
 <style scoped>
 .profile-message {
-  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right hover:bg-opacity-90
+  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right hover:bg-opacity-90 text-sm sm:text-base
 }
 .current-person-message {
-  @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50
+  @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50 text-sm sm:text-base
 }
 .img-profile {
   @apply h-40 w-40 rounded-full border-4 border-orange-400 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
