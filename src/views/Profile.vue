@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-600 mt-[55px] mb-[320px]">
+  <div class="text-gray-600 mt-[55px] mb-[300px]">
     <div class="xl:w-[50%] mx-auto text-xl font-bold flex justify-center xl:justify-start">
       <div @click="goToProfiles" class="hidden xl:flex items-center mt-2 cursor-pointer" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
