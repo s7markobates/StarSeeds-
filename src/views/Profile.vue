@@ -31,7 +31,7 @@
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
             <p v-if="profile.email !== matchedEmail" ><span class="font-bold">Email: </span><span class="underline text-blue-500 cursor-pointer" title="Send an email">{{ profile.email }}</span></p>
             <p v-else><span class="font-bold">Email: </span><span>{{ profile.email }}</span></p>
-            <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name "><span class="hidden md:inline">Chat with</span> {{ profile.name }}<i class="fas fa-rocket text-xs sm:text-sm ml-2"></i></button>
+            <button v-if="profile.name !== matchedName" @click="openChat(profile.id)" class="button" :title="'Chat with ' + profile.name "><span class="hidden md:inline">Chat with</span> {{ profile.name }}<i class="fas fa-rocket text-xs md:text-sm ml-2"></i></button>
             <button v-else class="button" @click="goToChat" title="Go to my Chat page"><span class="hidden md:inline">Go to my </span>Chats<i class="fas fa-rocket text-xs md:text-sm ml-2"></i></button>
             <button class="button-icon" title="Facebook" ><i class="fab fa-facebook pl-[1px]"></i></button>
             <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>

@@ -186,7 +186,7 @@
       "email": "proba@app.com",
       "password": "123",
       "id": 12,
-      "description": "Opis radi.",
+      "description": "",
       "statuses": [
         {
           "id": 1689460414866,
