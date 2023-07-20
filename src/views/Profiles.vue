@@ -1,7 +1,7 @@
 <template>
     <div class="text-gray-600 mt-[55px] mb-16">
-        <div class="text-xl font-bold sm:flex justify-between sm:w-[60%] mx-auto">
-            <div class="hidden sm:flex justify-center items-center">
+        <div class="text-xl font-bold lg:flex justify-between lg:w-[60%] mx-auto">
+            <div class="hidden lg:flex justify-center items-center">
                 <div class="flex justify-center items-center mt-2">
                     <i class="fas fa-user-astronaut text-xl mr-[14px]"></i>
                     <p class="text-xl font-custom -mb-1">
@@ -13,14 +13,14 @@
                 </div>
             </div>
             <div>
-                <div class="hidden sm:flex justify-center items-center mt-2">
+                <div class="hidden lg:flex justify-center items-center mt-2">
                     <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                         <span class="hover:text-orange-400">Go to your feed</span>
                         <i class="fas fa-om text-orange-400 text-2xl ml-2"></i>
                     </RouterLink>
                 </div>
             </div>
-            <div class="fixed py-2 bg-white sm:hidden w-full text-center">
+            <div class="fixed py-2 bg-white lg:hidden w-full text-center">
                 <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                     <button class="button-phone">
                         <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="h-[70px] flex justify-center items-center">
-            <div class="h-8 mt-28 sm:mt-0 sm:w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
+            <div class="h-8 mt-28 lg:mt-0 lg:w-[300px] bg-gray-200 flex justify-between items-center p-5 rounded-full cursor-pointer" title="Enter member name">
                 <input v-model="searchText" type="text" class="w-full focus:outline-none bg-gray-200" placeholder="Search members...">
                 <i class="fas fa-search text-orange-400 text-2xl "></i>
             </div>
@@ -37,8 +37,8 @@
 
         <template v-if="profiles.length > 0">
             <template v-if="profiles && filteredProfiles.length > 0">
-                <div class="w-[70%] mx-auto mt-16 sm:mt-5">
-                    <div class="sm:grid grid-cols-3 gap-x-2 gap-y-12">
+                <div class="w-[70%] mx-auto mt-16 lg:mt-5">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-2 sm:gap-y-8 md:gap-y-12">
                         <div v-for="profile in filteredProfiles" :key="profile.id" class="flex justify-center items-center">
                             <ul>
                                 <li class="p-2 text-lg hover:text-orange-400 hover:text-xl duration-300" :title="'Go to ' + profile.name + ' profile'">
@@ -56,7 +56,7 @@
                 </div>
             </template>
             <template v-else-if="profiles && filteredProfiles.length === 0">
-                <div class="flex flex-col items-center mt-[70px] sm:mt-7" title="There is no one to be found">
+                <div class="flex flex-col items-center mt-[70px] lg:mt-7" title="There is no one to be found">
                     <img src="../assets/alien-avatar.jpg" class="img-profile" alt="Profile Image" />
                     <div class="flex items-center mb-2">
                         <h1 class="text-lg font-semibold mt-4">There is no one to be found.</h1>
@@ -107,7 +107,7 @@ const scrollToTop = () => {
 
 <style scoped>
 .img-profile {
-    @apply h-40 w-40 sm:h-52 sm:w-52 rounded-full border-4 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400 hover:scale-110 duration-300 
+    @apply h-48 w-48 sm:h-52 sm:w-52 rounded-full border-4 border-gray-300 shadow-md hover:shadow-lg hover:border-orange-400 hover:scale-110 duration-300 
 }
 .font-custom {
     font-family: 'Yatra One', cursive;
