@@ -1,9 +1,9 @@
 <template>
   <template v-if="profile">
-    <div v-if="profile" class="text-gray-600 text-lg mt-[65px] mb-40">
+    <div v-if="profile" class="text-gray-600 text-sm sm:text-base xl:text-lg mt-[65px] mb-40">
       <div class="w-[60%] mx-auto text-xl font-bold flex justify-between">
         <div class="flex-1">
-          <div class="hidden sm:flex justify-start items-center">
+          <div class="hidden xl:flex justify-start items-center">
             <RouterLink :to="{ name: 'profiles'}" title="View all the members">
               <div class="flex justify-center items-center hover:text-orange-400 text-xl">
                 <i class="fas fa-om text-orange-400 text-2xl cursor-pointer mr-2 "></i>
@@ -18,10 +18,10 @@
           </div>
         </div>
         <div class="flex-1">
-          <span class="hidden sm:flex justify-center mt-[2px]">{{ getFirstName }}'s FEED</span>
+          <span class="hidden xl:flex justify-center mt-[2px]">{{ getFirstName }}'s FEED</span>
         </div>
         <div class="flex-1">
-          <div class="hidden sm:flex justify-end items-center">
+          <div class="hidden xl:flex justify-end items-center">
             <RouterLink :to="{ name: 'chat'}" :title="'Go to ' + getFirstName + '\'s chat page'">
               <span class="hover:text-orange-400 text-xl">{{ getFirstName }}'s CHATS</span>
               <i class="fas fa-om text-orange-400 text-2xl cursor-pointer ml-2"></i>
@@ -30,48 +30,48 @@
         </div>
       </div>
 
-      <div class="fixed bg-white w-full py-3 -mt-3 sm:hidden mx-auto text-xl font-bold flex justify-center">
+      <div class="fixed bg-white w-full py-3 -mt-3 xl:hidden mx-auto text-xl font-bold flex justify-center">
         <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button px-[9.5px] py-[11.6px]"></i></button>
         <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button mx-2 px-[12px] py-[11px]"></i></button>
         <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button pl-[10.8px] pr-[11.8px] py-[11px] "></i></button>
       </div>
 
-      <div v-if="profile" class="w-[90%] sm:w-[60%] mx-auto mt-16 sm:mt-3 bg-gray-300 p-5 rounded-xl shadow-md text-lg">
+      <div v-if="profile" class="w-[90%] xl:w-[60%] mx-auto mt-16 xl:mt-3 bg-gray-300 p-5 rounded-xl shadow-md text-sm sm:text-base xl:text-lg">
         <div class="flex">
-          <div class="flex-1 text-base sm:text-lg">
+          <div class="flex-1 text-sm sm:text-base xl:text-lg">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span></h1>
             <p><span class="font-bold">Email: </span>{{ profile.email }}</p>
           </div>
-          <div class="hidden sm:block flex-1 text-center">
+          <div class="hidden xl:block flex-1 text-center">
             <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button mx-1 mt-2 px-[9.5px] py-[11.6px]"></i></button>
             <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button mx-1 mt-2 px-[12px] py-[11px]"></i></button>
             <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button mx-1 mt-2 pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
           </div>
-          <div class="hidden flex-1 sm:flex text-end justify-end">
+          <div class="hidden flex-1 xl:flex text-end justify-end">
             <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Member of The Jedi Order'"></i>
             <i class="fab fa-galactic-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Citizen of the Galactic Republic'"></i>
           </div>
         </div>
         <div v-if="!descriptionEditMode" class="text-justify">
           <div v-if="profile.description">
-            <span class="font-bold text-base sm:text-lg">Description:
+            <span class="font-bold text-sm sm:text-base xl:text-lg">Description:
               <button @click="toggleDescriptionEditMode" title="Update description">
                 <i class="fas fa-edit text-gray-500 hover:text-orange-400 text-sm sm:text-lg"></i>
               </button>
             </span>
-            <p class="text-sm sm:text-lg">{{ profile.description }}</p>
+            <p class="text-sm sm:text-base xl:text-lg">{{ profile.description }}</p>
           </div>
           <div v-else class="text-justify">
-            <span class="font-bold text-base sm:text-lg">Description:
+            <span class="font-bold text-sm sm:text-base xl:text-lg">Description:
               <button @click="toggleDescriptionEditMode" title="Add description">
                 <i class="fas fa-edit text-gray-500 hover:text-orange-400 text-sm sm:text-lg"></i>
               </button>
             </span>
-            <p class="text-sm sm:text-lg">Profile has no description entered.</p>
+            <p class="text-sm sm:text-base xl:text-lg">Profile has no description entered.</p>
           </div>
         </div>
         <div v-if="descriptionEditMode" class="mx-auto flex flex-col items-start">
-          <p class="font-bold text-base sm:text-lg">Description:
+          <p class="font-bold text-sm sm:text-base xl:text-lg">Description:
             <button @click="updateDescription" class="" title="Save description">
               <i class="far fa-edit text-gray-500 hover:text-orange-400 text-sm sm:text-lg"></i>
               <span class="italic font-thin text-xs ml-1">(save description)</span>
@@ -86,8 +86,10 @@
           </textarea>
         </div>
       </div>
-      <div v-if="profile" class="w-[90%] sm:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-base sm:text-lg">
+
+      <div v-if="profile" class="w-[90%] xl:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-sm sm:text-base xl:text-lg">
         <div class="flex flex-col">
+
           <div class="mb-2">
             <h1 class="font-bold">Status:</h1>
           </div>
@@ -96,7 +98,7 @@
               v-model="statusInput"
               name="status-enter"
               @keydown.enter.prevent="handleEnter"
-              class="w-full rounded-lg p-2 focus:outline-none text-sm sm:text-base"
+              class="w-full rounded-lg p-2 focus:outline-none text-sm sm:text-base xl:text-lg"
               placeholder="What's on your mind right now?"
               title="Write new status"
               rows="4">
@@ -110,14 +112,12 @@
           </div>
 
           <div v-for="status in sortedStatuses.slice().reverse()" :key="status.id" class="mt-3 flex justify-between items-center w-full text-sm sm:text-base">
-            
             <div class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full flex justify-between items-center">
-              
               <!-- Provera da li se status trenutno uređuje -->
               <template v-if="editingStatus && editingStatus.id === status.id">
                 <textarea
                   v-model="editingStatus.text"
-                  class="w-full rounded-lg p-2 focus:outline-none text-sm sm:text-base"
+                  class="w-full rounded-lg p-2 focus:outline-none text-sm sm:text-base xl:text-lg"
                   rows="2"
                   placeholder="Edit your status..."
                   title="Edit status">
@@ -125,7 +125,7 @@
               </template>
 
               <template v-else>
-                <p class="text-justify ">{{ status.text }}</p>
+                <p class="text-justify">{{ status.text }}</p>
               </template>
 
               <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
@@ -156,10 +156,11 @@
               title="Cancel editing">
             </i>
           </div>
+
         </div>
       </div>
 
-      <div v-if="profile" class="w-[90%] sm:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-base sm:text-lg">
+      <div v-if="profile" class="w-[90%] xl:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-base sm:text-lg">
         <h1 class="font-bold">YouTube Video:</h1>
         <div class="flex items-center mt-2">
           <input v-model="youtubeLink" type="text" class="w-full rounded-lg p-2 focus:outline-none" placeholder="Enter YouTube video link">
@@ -428,7 +429,7 @@ const deleteYouTubeVideo = (videoId) => {
   @apply text-white bg-orange-400 hover:bg-white hover:text-orange-400 font-semibold text-base border-2 border-orange-400 rounded-full py-[2px] px-3 flex justify-center items-center
 }
 .textarea-style {
-  @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none text-sm sm:text-lg
+  @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none text-sm sm:text-base xl:text-lg
 }
 .font-custom {
   font-family: 'Yatra One', cursive;
