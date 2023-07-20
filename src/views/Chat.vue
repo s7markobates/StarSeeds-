@@ -21,7 +21,7 @@
     </RouterLink>
   </div>
   <template v-if="profile">
-    <div class="w-full sm:w-[70%] mx-auto mt-[60px] sm:mt-3  sm:flex flex-col">
+    <div class="w-full sm:w-[70%] mx-auto mt-[60px] sm:mt-3 sm:flex flex-col">
       <div class="h-[72px] w-full bg-gray-300 mx-auto flex justify-center items-center sm:rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-8 w-[250px] sm:w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[400px] sm:h-[650px] hide-scrollbar">
+        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[60vh] sm:h-[650px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
               <div class="flex justify-between items-center py-4 w-[95%] mx-auto">

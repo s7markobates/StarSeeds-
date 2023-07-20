@@ -56,7 +56,7 @@
           <div v-if="profile.description">
             <span class="font-bold text-base sm:text-lg">Description:
               <button @click="toggleDescriptionEditMode" title="Update description">
-                <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
+                <i class="fas fa-edit text-gray-500 hover:text-orange-400 text-sm sm:text-lg"></i>
               </button>
             </span>
             <p class="text-sm sm:text-lg">{{ profile.description }}</p>
@@ -64,7 +64,7 @@
           <div v-else class="text-justify">
             <span class="font-bold text-base sm:text-lg">Description:
               <button @click="toggleDescriptionEditMode" title="Add description">
-                <i class="fas fa-edit text-gray-500 hover:text-orange-400"></i>
+                <i class="fas fa-edit text-gray-500 hover:text-orange-400 text-sm sm:text-lg"></i>
               </button>
             </span>
             <p class="text-sm sm:text-lg">Profile has no description entered.</p>
@@ -73,7 +73,7 @@
         <div v-if="descriptionEditMode" class="mx-auto flex flex-col items-start">
           <p class="font-bold text-base sm:text-lg">Description:
             <button @click="updateDescription" class="" title="Save description">
-              <i class="far fa-edit text-gray-500 hover:text-orange-400"></i>
+              <i class="far fa-edit text-gray-500 hover:text-orange-400 text-sm sm:text-lg"></i>
               <span class="italic font-thin text-xs ml-1">(save description)</span>
             </button>
           </p>
@@ -133,25 +133,25 @@
 
             <i
               v-if="!editingStatus || editingStatus.id !== status.id"
-              class="fas fa-edit text-orange-400 hover:text-gray-600 text-base ml-3 cursor-pointer"
+              class="fas fa-edit text-orange-400 hover:text-gray-600 text-sm sm:text-base ml-3 cursor-pointer"
               @click="startEditingStatus(status)"
               title="Edit status">
             </i>
             <i
               v-if="!editingStatus || editingStatus.id !== status.id"
-              class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-base ml-3 cursor-pointer"
+              class="fas fa-trash-alt text-orange-400 hover:text-gray-600 text-sm sm:text-base ml-3 cursor-pointer"
               @click="deleteStatus(status.id)"
               title="Delete status">
             </i>
             <i
               v-if="editingStatus && editingStatus.id === status.id"
-              class="far fa-check-circle text-green-500 hover:text-gray-600 text-base ml-3 cursor-pointer"
+              class="far fa-check-circle text-green-500 hover:text-gray-600 text-sm sm:text-base ml-3 cursor-pointer"
               @click="saveEditedStatus"
               title="Save changes">
             </i>
             <i
               v-if="editingStatus && editingStatus.id === status.id"
-              class="fas fa-times-circle text-red-500 hover:text-gray-600 text-base ml-3 cursor-pointer"
+              class="fas fa-times-circle text-red-500 hover:text-gray-600 text-sm sm:text-base ml-3 cursor-pointer"
               @click="cancelEditingStatus"
               title="Cancel editing">
             </i>
