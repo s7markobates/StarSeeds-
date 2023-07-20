@@ -53,7 +53,7 @@
         </div>
       </template>
       <div class="h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center xl:rounded-b-3xl">
-        <div class="bg-white flex items-center justify-center h-[4vh] w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
+        <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
           <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
           </div>
