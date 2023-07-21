@@ -1,7 +1,7 @@
 <template>
   <div class="text-gray-600 mt-[55px] mb-[300px]">
-    <div class="xl:w-[50%] mx-auto text-xl font-bold flex justify-center xl:justify-start">
-      <div @click="goToProfiles" class="hidden xl:flex items-center mt-2 cursor-pointer" title="View all the members">
+    <div class="2xl:w-[50%] mx-auto text-xl font-bold flex justify-center 2xl:justify-start">
+      <div @click="goToProfiles" class="hidden 2xl:flex items-center mt-2 cursor-pointer" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
         <div class="flex justify-center items-center hover:text-orange-400">
           <p class="font-custom -mb-1">
@@ -12,7 +12,7 @@
           <h1 class="ml-1">members</h1>
         </div>
       </div>
-      <div class="fixed bg-white w-full flex justify-center py-2 xl:hidden">
+      <div class="fixed bg-white w-full flex justify-center py-2 2xl:hidden">
         <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
         <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
           <button class="button-phone mx-2 px-[11.5px] py-[7.7px] "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>
@@ -20,12 +20,12 @@
         <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11.2px]"></i></button>
       </div>
     </div>
-    <div class="mt-20 mb-5 xl:hidden">
+    <div class="mt-20 mb-5 2xl:hidden">
       <img v-if="profile.image" :src="profile.image" class="img-profile-responsive" alt="Profile Image" :title="profile.name"/>
       <img v-else src="../assets/avatar.jpg" class="img-profile-responsive" alt="Profile Image" />
     </div>
     <template v-if="profile && profile.name">
-      <div class="w-[90%] xl:w-[50%] mx-auto mt-2 xl:mt-10 bg-gray-300 px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-md">
+      <div class="w-[90%] 2xl:w-[50%] mx-auto mt-2 2xl:mt-10 bg-gray-300 px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-md">
         <div class="flex justify-between items-end">
           <div v-if="profile">
             <h1><span class="font-bold">Name: </span><span class="font-semibold">{{ profile.name }}</span><button v-if="profile.name == matchedName" @click="goToFeed" title="Edit your profile"><i class="fas fa-edit ml-2 text-gray-500 hover:text-orange-400"></i></button></h1>
@@ -46,7 +46,7 @@
           <p class="text-sm sm:text-base xl:text-lg" v-else><span class="font-bold">Description: </span>Profile has no description entered.</p>
         </div>
       </div>
-      <div v-if="statuses && statuses.length > 0" class="w-[90%] xl:w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-1 rounded-lg shadow-md">
+      <div v-if="statuses && statuses.length > 0" class="w-[90%] 2xl:w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-1 rounded-lg shadow-md">
         <div v-for="status in statuses.slice().reverse()" :key="status.text" class="my-1 md:my-3 flex justify-start items-center">
           <img v-if="profile.image" :src="profile.image" class="img-status" :title="profile.name"/>
           <img v-else src="../assets/avatar.jpg" class="img-status" :title="profile.name"/>
@@ -54,11 +54,27 @@
           <span class="w-[20px] mx-2 text-xs text-gray-500 text-right">{{ formatTimestamp(status.id) }}</span>
         </div>
       </div>
-      <div v-else class="w-[90%] xl:w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
+      <div v-else class="w-[90%] 2xl:w-[50%] mx-auto mt-5 bg-gray-300 px-4 py-4 rounded-lg shadow-md flex justify-start items-center">
         <img v-if="profile.image" :src="profile.image" class="img-status" :title="profile.name"/>
         <img v-else src="../assets/avatar.jpg" class="img-status" :title="profile.name"/>
         <p class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full text-sm sm:text-base xl:text-lg">Member didn't enter any status yet.</p>
-      </div>     
+      </div>
+
+      <div v-if="profile.videos" class="w-[90%] 2xl:w-[50%] mx-auto mt-5 bg-gray-300 p-4 rounded-lg shadow-md">
+        <div v-for="video in profile.videos" :key="video.id" class="mt-3">
+          <h2 class="font-bold text-gray-600 cursor-pointer mt-2 mb-1" @click="openVideoLink(video.link)">{{ video.title }}</h2>
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe
+              class="w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[60vh]"
+              :src="getEmbeddedYouTubeLink(video.link)"
+              title="YouTube video player"
+
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>  
+
     </template>
     <template v-else>
       <div class="flex justify-center items-center h-[350px] mt-48 mb-[280px]">
@@ -68,6 +84,9 @@
   </div>
 </template>
 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+frameborder="0"
+
 <script>
 export default {
   props: ['id'],
@@ -76,7 +95,8 @@ export default {
       profile: {},
       matchedName: '',
       matchedEmail: '',
-      statuses: []
+      statuses: [],
+      videos: []
     }
   },
   mounted() {
@@ -89,6 +109,7 @@ export default {
     .then(data => {
       this.profile = data
       this.statuses = data.statuses // Ažurirajte svojstvo statuses sa statusima iz odgovora servera
+      this.videos = data.videos
     })
     .catch(err => console.log(err.message))
   },
@@ -112,6 +133,20 @@ export default {
       const hours = date.getHours().toString().padStart(2, '0')
       const minutes = date.getMinutes().toString().padStart(2, '0')
       return `${hours}:${minutes} ${day}.${month}.`
+    },
+    getYouTubeVideoId(link) {
+      const match = link.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?.*\bv=|v\/|u\/\w\/|embed\/))([\w-]+)/i);
+      return match && match[1];
+    },
+    getEmbeddedYouTubeLink(link) {
+      const videoId = this.getYouTubeVideoId(link);
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
+    },
+    openVideoLink(link) {
+      const videoId = this.getYouTubeVideoId(link);
+      if (videoId) {
+        window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+      }
     }
   }  
 }
@@ -125,7 +160,7 @@ export default {
   @apply xl:text-lg ml-2 py-[2px] px-[6px] xl:py-[3px] xl:px-[8px] border-2 rounded-full bg-orange-400 border-orange-400 text-white font-semibold hover:bg-white hover:text-orange-400 active:bg-red-500 active:text-white active:cursor-no-drop active:border-red-500 cursor-pointer
 }
 .img-profile {
-  @apply sm:h-44 sm:w-44 rounded-full shadow-2xl border-2 border-gray-300 mx-6 sm:-mt-20 hidden xl:block
+  @apply sm:h-44 sm:w-44 rounded-full shadow-2xl border-2 border-gray-300 mx-6 sm:-mt-20 hidden 2xl:block
 }
 .img-profile-responsive{
   @apply h-64 w-64 rounded-full shadow-xl border-4 border-gray-300 mx-auto

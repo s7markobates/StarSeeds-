@@ -160,16 +160,17 @@
         </div>
       </div>
 
-      <div v-if="profile" class="w-[90%] xl:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-base sm:text-lg">
-        <h1 class="font-bold">YouTube Video:</h1>
+      <div v-if="profile" class="w-[90%] xl:w-[60%] mx-auto mt-5 bg-gray-300 p-5 rounded-xl shadow-md text-sm sm:text-base xl:text-lg">
+        <h1 class="font-bold">YouTube Videos:</h1>
         <div class="flex items-center mt-2">
-          <input v-model="youtubeLink" type="text" class="w-full rounded-lg p-2 focus:outline-none" placeholder="Enter YouTube video link">
-          <button @click="addYouTubeVideo" class="ml-2 button-link">Add</button>
+          <input v-model="youtubeLink" type="text" class="youtube-input" placeholder="Enter YouTube video link">
+          <input v-model="videoTitle" type="text" class="youtube-input ml-3" placeholder="Enter video title">
+          <button @click="addYouTubeVideo" class="ml-2 button-link"><i class="fas fa-plus-circle text-orange-400 hover:text-gray-600 text-sm sm:text-base xl:text-lg"></i></button>
         </div>
         <div v-for="video in profile.videos" :key="video.id" class="mt-2">
           <a :href="video.link" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">{{ video.title }}</a>
-          <button @click="deleteYouTubeVideo(video.id)" class="ml-2 text-red-500 hover:text-gray-600">
-            <i class="fas fa-trash-alt"></i>
+          <button @click="deleteYouTubeVideo(video.id)" class="ml-2 text-orange-400 hover:text-gray-600">
+            <i class="fas fa-trash-alt text-sm sm:text-base xl:text-lg"></i>
           </button>
         </div>
       </div>
@@ -346,18 +347,18 @@ const editStatus = (status) => {
       fetch(`http://localhost:3000/profile/${profile.value.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ statuses: profile.value.statuses }),
+        body: JSON.stringify({ statuses: profile.value.statuses })
       })
       .then((response) => response.json())
       .then((data) => {
-        // console.log('Status updated:', data);
+        // console.log('Status updated:', data)
       })
       .catch((error) => {
-        console.error('Error updating status:', error);
+        console.error('Error updating status:', error)
       })
     }
   }
-};
+}
 
 const formatTimestamp = (timestamp) => {
   const date = new Date(timestamp)
@@ -369,12 +370,13 @@ const formatTimestamp = (timestamp) => {
 }
 
 const youtubeLink = ref('')
+const videoTitle = ref('')
 
 const addYouTubeVideo = () => {
-  if (youtubeLink.value && profile.value) {
+  if (youtubeLink.value && videoTitle.value && profile.value) {
     const newVideo = {
       id: Date.now(),
-      title: 'YouTube Video',
+      title: videoTitle.value,
       link: youtubeLink.value
     }
     if (!profile.value.videos) {
@@ -390,6 +392,7 @@ const addYouTubeVideo = () => {
     .then(response => response.json())
     .then(data => {
       youtubeLink.value = ''
+      videoTitle.value = ''
     })
     .catch(error => {
       console.error('Error adding YouTube video:', error)
@@ -422,6 +425,9 @@ const deleteYouTubeVideo = (videoId) => {
 </script>
 
 <style scoped>
+.font-custom {
+  font-family: 'Yatra One', cursive;
+}
 .button {
   @apply border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
 }
@@ -431,8 +437,8 @@ const deleteYouTubeVideo = (videoId) => {
 .textarea-style {
   @apply border border-gray-200 bg-gray-50 w-[101%] -ml-[7px] px-[6px] -mt-[1px] rounded-lg text-justify focus:outline-none text-sm sm:text-base xl:text-lg
 }
-.font-custom {
-  font-family: 'Yatra One', cursive;
+.youtube-input {
+  @apply w-1/2 rounded-lg p-2 focus:outline-none bg-gray-100
 }
 </style>
   
