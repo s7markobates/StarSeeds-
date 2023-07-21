@@ -54,8 +54,8 @@
       </div>
 
       <!-- Chat window - mobile -->
-      <div v-if="profile" class="fixed xl:hidden w-full mx-auto mt-28 text-xs bottom-0 ">
-        <div class="bg-gray-200 w-full h-[70vh] flex justify-evenly items-end">
+      <div v-if="profile" class=" xl:hidden w-full mx-auto mt-28 text-xs  bg-gray-200">
+        <div class="bg-gray-200 w-full h-full mb-[75px] flex justify-evenly items-end">
           <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-full w-[95%] text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
               <div class="flex items-center justify-start">
@@ -71,7 +71,7 @@
             </span>
           </div>
         </div>
-        <div class="flex items-center p-3 bg-gray-300 ">
+        <div class="fixed flex items-center p-3 w-full bg-gray-300 bottom-0 ">
           <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
           <button @click="sendMessage" class="bttn-class" title="Send message">
             <i class="fas fa-rocket text-xl"></i>
@@ -168,6 +168,8 @@ const sendMessage = () => {
     messageInput.value = ''
 
     localStorage.setItem('messages', JSON.stringify(messages.value))
+
+    scrollToBottom()
   }
 }
 const messageClass = (message) => {

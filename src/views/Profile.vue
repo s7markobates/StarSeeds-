@@ -60,15 +60,13 @@
         <p class="bg-gray-100 hover:bg-orange-100 rounded-lg p-2 w-full text-sm sm:text-base xl:text-lg">Member didn't enter any status yet.</p>
       </div>
 
-      <div v-if="profile.videos" class="w-[90%] 2xl:w-[50%] mx-auto mt-5 bg-gray-300 p-4 rounded-lg shadow-md">
+      <div v-if="profile.videos" class="w-[90%] 2xl:w-[50%] mx-auto mt-5 bg-gray-300 px-4 pt-1 pb-4 rounded-lg shadow-md">
         <div v-for="video in profile.videos" :key="video.id" class="mt-3">
-          <h2 class="font-bold text-gray-600 cursor-pointer mt-2 mb-1" @click="openVideoLink(video.link)">{{ video.title }}</h2>
+          <h2 class="font-bold text-gray-600 text-center cursor-pointer my-1" @click="openVideoLink(video.link)">{{ video.title }}</h2>
           <div class="aspect-w-16 aspect-h-9">
             <iframe
-              class="w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[60vh]"
+              class="w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[50vh] border-4"
               :src="getEmbeddedYouTubeLink(video.link)"
-              title="YouTube video player"
-
               allowfullscreen
             ></iframe>
           </div>
@@ -84,8 +82,13 @@
   </div>
 </template>
 
+<!-- 
+delovi youtube iframe:
+
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 frameborder="0"
+title="YouTube video player"
+-->
 
 <script>
 export default {
