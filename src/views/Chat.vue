@@ -20,8 +20,10 @@
         </button>
     </RouterLink>
   </div>
+
+  <!-- Chat window - desktop -->
   <template v-if="profile">
-    <div class="w-full xl:w-[70%] mx-auto mt-[60px] xl:mt-3 flex flex-col">
+    <div class="hidden w-full xl:w-[70%] mx-auto mt-[60px] xl:mt-3 xl:flex flex-col">
       <div class="h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center xl:rounded-t-3xl">
         <div class="bg-white flex items-center justify-between h-[4vh] w-[250px] sm:w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
@@ -52,7 +54,7 @@
           </div>
         </div>
       </template>
-      <div class="h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center xl:rounded-b-3xl">
+      <div class="h-[8vh] w-full bg-gray-300 mx-auto sm:flex justify-center items-center xl:rounded-b-3xl">
         <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
           <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
@@ -61,6 +63,50 @@
       </div>
     </div>
   </template>
+
+  <!-- Chat window - mobile -->
+  <template v-if="profile">
+    <div class="xl:hidden w-full mx-auto mt-[60px] xl:mt-3 flex flex-col">
+      <div class="fixed h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center">
+        <div class="bg-white flex items-center justify-between h-[4vh] w-[250px] sm:w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
+          <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
+          <i class="fas fa-search text-orange-400 text-2xl "></i>
+        </div>
+      </div>
+      <template v-if="profile && filteredPeople.length > 0">
+        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[75vh] mt-[8vh] mb-[8vh] hide-scrollbar">
+          <ul>
+            <li v-for="person in filteredPeople" :key="person.id">
+              <div class="flex justify-between items-center py-4 w-[95%] mx-auto">
+                <div class="flex justify-between items-center text-gray-600 hover:text-orange-400 hover:scale-105 duration-300" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
+                  <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+                  <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
+                  <h1 class="text-base md:text-lg font-semibold ml-10 sm:ml-4 cursor-pointer">{{ person.name }}</h1>
+                </div>
+                <i class="fas fa-trash-alt text-sm md:text-base text-orange-400 hover:text-gray-600 text-md mr-3 sm:mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </template>
+      <template v-else-if="profile && filteredPeople.length === 0">
+        <div class="w-full bg-gray-200 h-[75vh] mt-[8vh]">
+          <div class="flex justify-center items-center py-[29.5px] text-gray-600">
+            <h1 class="text-base md:text-lg  font-semibold">There is no one to be found.</h1>
+            <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
+          </div>
+        </div>
+      </template>
+      <div class="fixed bottom-0 h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center ">
+        <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
+          <div class="focus:outline-none">
+            <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <template v-else>
     <div class="flex justify-center items-center h-[500px] mt-20 mb-[280px]">
       <i class="fas fa-meteor fa-spin text-[100px] text-orange-400"></i>

@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <!-- Chat window -desktop -->
+      <!-- Chat window - desktop -->
       <div v-if="profile" class="hidden xl:block w-[70%] mx-auto mt-3">
         <div class="bg-gray-200 w-full h-[715px] rounded-t-3xl flex justify-evenly items-end">
           <div class="pb-10">

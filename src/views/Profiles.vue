@@ -1,5 +1,5 @@
 <template>
-    <div class="text-gray-600 mt-[55px] mb-16">
+    <div class="text-gray-600 mt-[55px] mb-32">
         <div class="text-xl font-bold lg:flex justify-between lg:w-[60%] mx-auto">
             <div class="hidden lg:flex justify-center items-center">
                 <div class="flex justify-center items-center mt-2">
@@ -71,7 +71,7 @@
             </div>
         </template>
     </div>
-    <div class="bg-transparent border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center h-9 w-9 mx-auto mb-36 p-7 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
+    <div class="button-top" @click="scrollToTop" title="Top">
         <div class="focus:outline-none">
             <i class="fas fa-angle-up text-gray-400 text-2xl py-1 px-2 hover:-mt-1 hover:text-orange-400"></i>
         </div>
@@ -114,5 +114,8 @@ const scrollToTop = () => {
 }
 .button-phone {
     @apply px-3 py-2 border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
+.button-top{
+    @apply bg-transparent h-9 w-9 mx-auto mb-[300px] sm:mb-64 p-7 border-4 border-gray-300 hover:bg-white hover:scale-110 duration-100 flex items-center justify-center rounded-full cursor-pointer
 }
 </style>
