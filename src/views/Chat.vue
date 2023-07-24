@@ -23,15 +23,15 @@
 
   <!-- Chat window - desktop -->
   <template v-if="profile">
-    <div class="hidden w-full xl:w-[70%] mx-auto mt-[60px] xl:mt-3 xl:flex flex-col">
-      <div class="h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center xl:rounded-t-3xl">
-        <div class="bg-white flex items-center justify-between h-[4vh] w-[250px] sm:w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
+    <div class="hidden w-[70%] mx-auto mt-3 xl:flex flex-col">
+      <div class="h-[8vh] w-full bg-gray-300 mx-auto flex justify-center items-center rounded-t-3xl">
+        <div class="bg-white flex items-center justify-between h-[4vh] w-[300px] p-5 rounded-full cursor-pointer" title="Enter member name">
           <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
           <i class="fas fa-search text-orange-400 text-2xl "></i>
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[66vh] md:h-[70vh] xl:h-[650px] hide-scrollbar">
+        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[650px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
               <div class="flex justify-between items-center py-4 w-[95%] mx-auto">
@@ -90,7 +90,7 @@
         </div>
       </template>
       <template v-else-if="profile && filteredPeople.length === 0">
-        <div class="w-full bg-gray-200 h-[75vh] mt-[8vh]">
+        <div class="w-full bg-gray-200 h-[75vh] mt-[7.5vh]">
           <div class="flex justify-center items-center py-[29.5px] text-gray-600">
             <h1 class="text-base md:text-lg  font-semibold">There is no one to be found.</h1>
             <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
