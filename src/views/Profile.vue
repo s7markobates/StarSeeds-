@@ -1,9 +1,9 @@
 <template>
   <div class="text-gray-600 mt-[55px] mb-[300px]">
     <div class="2xl:w-[50%] mx-auto text-xl font-bold flex justify-center 2xl:justify-start">
-      <div @click="goToProfiles" class="hidden 2xl:flex items-center mt-2 cursor-pointer" title="View all the members">
+      <div @click="goToProfiles" class="hidden 2xl:flex items-center mt-2 cursor-pointer bg-white px-2 rounded-lg" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
-        <div class="flex justify-center items-center hover:text-orange-400 bg-white px-2">
+        <div class="flex justify-center items-center hover:text-orange-400">
           <p class="font-custom -mb-1">
             <span class="text-orange-400 mr-[3px]">Star</span>
             <i class="fas fa-meteor text-orange-400"></i>
@@ -20,9 +20,9 @@
         <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11.2px]"></i></button>
       </div>
 
-      <div class="cover-image">
-        <img src="../assets/outer.space.jpg" alt="Cover picture">
-      </div>
+      <!-- <div class="cover-image">
+        <img src="../assets/outer-space.jpg" alt="Cover picture">
+      </div> -->
 
     </div>
 
@@ -188,6 +188,6 @@ export default {
   @apply fixed top-0 left-0 w-[100vw] h-[100vh] z-[-1] object-fill
 }
 .cover-image img {
-  @apply w-[100vw] h-[100vh] object-cover mt-24
+  @apply w-[100vw] h-[100vh] object-cover mt-12
 }
 </style>
