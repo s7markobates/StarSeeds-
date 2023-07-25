@@ -3,7 +3,7 @@
     <div class="2xl:w-[50%] mx-auto text-xl font-bold flex justify-center 2xl:justify-start">
       <div @click="goToProfiles" class="hidden 2xl:flex items-center mt-2 cursor-pointer" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
-        <div class="flex justify-center items-center hover:text-orange-400">
+        <div class="flex justify-center items-center hover:text-orange-400 bg-white px-2">
           <p class="font-custom -mb-1">
             <span class="text-orange-400 mr-[3px]">Star</span>
             <i class="fas fa-meteor text-orange-400"></i>
@@ -19,7 +19,13 @@
         </RouterLink>
         <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button-phone pl-[10.8px] pr-[11.8px] py-[11.2px]"></i></button>
       </div>
+
+      <div class="cover-image">
+        <img src="../assets/outer.space.jpg" alt="Cover picture">
+      </div>
+
     </div>
+
     <div class="mt-20 mb-5 2xl:hidden">
       <img v-if="profile.image" :src="profile.image" class="img-profile-responsive" alt="Profile Image" :title="profile.name"/>
       <img v-else src="../assets/avatar.jpg" class="img-profile-responsive" alt="Profile Image" />
@@ -176,5 +182,12 @@ export default {
 }
 .button-phone {
   @apply border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
+
+.cover-image {
+  @apply fixed top-0 left-0 w-[100vw] h-[100vh] z-[-1] object-fill
+}
+.cover-image img {
+  @apply w-[100vw] h-[100vh] object-cover mt-24
 }
 </style>
