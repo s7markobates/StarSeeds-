@@ -169,7 +169,6 @@ const sendMessage = () => {
 
     localStorage.setItem('messages', JSON.stringify(messages.value))
 
-    scrollToBottom()
   }
 }
 const messageClass = (message) => {
