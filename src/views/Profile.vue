@@ -41,7 +41,7 @@
             <button v-else class="button" @click="goToChat" title="Go to my Chat page"><span class="hidden md:inline">Go to my </span>Chats<i class="fas fa-rocket text-xs md:text-sm ml-2"></i></button>
             <button class="button-icon" title="Facebook" ><i class="fab fa-facebook pl-[1px]"></i></button>
             <button class="button-icon" title="Instagram"><i class="fab fa-instagram pl-[1px]"></i></button>
-            <button class="button-icon" title="Twitter"><i class="fab fa-twitter pl-[1px]"></i></button>
+            <button class="button-icon" title="Viber"><i class="fab fa-viber pl-[1px]"></i></button>
             <button class="button-icon" title="GitHub"><i class="fab fa-github pl-[1px]"></i></button>
           </div>        
           <img v-if="profile.image" :src="profile.image" class="img-profile" alt="Profile Image" :title="profile.name"/>

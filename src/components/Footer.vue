@@ -16,9 +16,9 @@
         <div class="flex justify-center mt-3 sm:mt-5 pb-3 sm:pb-5">
             <button class="button-icon" title="LinkedIn"><i class="fab fa-linkedin-in text-sm sm:text-xl sm:pl-[1px]"></i></button>
             <button class="button-icon" title="Facebook"><i class="fab fa-facebook-f text-sm sm:text-xl sm:pl-[1px]"></i></button>
-            <button class="button-icon" title="Twitter"><i class="fab fa-twitter text-sm sm:text-xl sm:pl-[1px]"></i></button>
             <button class="button-icon" title="Instagram"><i class="fab fa-instagram text-sm sm:text-xl sm:pl-[1px]"></i></button>
             <button class="button-icon" title="GitHub"><i class="fab fa-github text-sm sm:text-xl sm:pl-[1px]"></i></button>
+            <button class="button-icon" title="Viber"><i class="fab fa-viber text-sm sm:text-xl sm:pl-[1px]"></i></button>
         </div>
         <div class="flex justify-center text-xs sm:text-sm font-light pb-5">
             <h1>© 2023 Star Seeds | All Rights Reserved | Powered by bts ©</h1>
