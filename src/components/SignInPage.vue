@@ -1,5 +1,5 @@
 <template>
-    <div class="sm:w-[450px] sm:h-[550px] mb-6 mx-auto border-4 rounded-2xl border-orange-400 light">
+    <div class="w-[80%] sm:w-[450px] sm:h-[520px] mb-6 mx-auto border-4 rounded-2xl border-orange-400 light">
         <div class="flex justify-center mt-6">
             <p class="text-4xl font-style">
                 <span class="text-orange-400 mr-[3px]">Star</span>
@@ -23,9 +23,8 @@
             <button class="yellow-button" @click.prevent="signIn" title="Sign in with existing member">SIGN IN</button>
             <div class="my-3 sm:my-5">
                 <div class="flex items-center justify-center border-t border-gray-300 w-full pt-3 sm:pt-5">
-                    <p class="text-sm sm:text-base mr-3 sm:mr-10 font-semibold text-orange-400">Don't have an account?</p>
                     <button @click.prevent="submitFormSignUp" class="signup-button" title="Sign up with new member">
-                        <p><span class="sm:pr-2">SIGN UP</span><i class="fas fa-rocket fa-spin hidden sm:block"></i></p>
+                        <p><span class="pr-2">SIGN UP</span><i class="fas fa-rocket"></i></p>
                     </button>
                 </div>
             </div>
@@ -122,7 +121,7 @@ const signIn = () => {
     @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-transparent text-orange-400 hover:bg-white hover:text-orange-400 font-bold cursor-pointer
 }
 .signup-button {
-    @apply px-3 py-1 sm:px-9 sm:py-3 bg-orange-400 text-white hover:bg-orange-500 font-bold border-4 border-orange-400 rounded-3xl duration-300 cursor-pointer
+    @apply px-3 py-1 sm:px-7 bg-orange-400 text-white hover:bg-orange-500 font-bold border-4 border-orange-400 rounded-3xl duration-300 cursor-pointer
 }
 .light {
     background: #1488CC;
