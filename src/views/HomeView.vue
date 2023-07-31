@@ -1,16 +1,6 @@
 <template>
   <div class="text-blue-500 mt-[120px] bg-white w-[70%] mx-auto">
-    <div class="h-[300px] flex justify-center items-center light border-b-2 border-orange-400 rounded-md">
-      <div>
-        <h1 class="text-center">Join the</h1>
-        <div class="text-[30px] my-auto sm:my-0 sm:text-4xl font-custom">
-          <span class="text-orange-400 mr-[3px]">Star</span>
-          <i class="fas fa-meteor text-orange-400"></i>
-          <span class="text-yellow-400">seeds</span>
-        </div>
-        <h1 class="text-center">community</h1>
-      </div>
-    </div>
+    <Banner/>
     <div class="bg-white p-2 h-40 border-b-2 border-orange-400">
       <h1>Message privatly</h1>
       <p>Simple, reliable, private messaging for free, available all over the world.</p>
@@ -40,6 +30,8 @@
 
 <script setup>
 import SignInPage from "../components/SignInPage.vue"
+import Banner from "../components/Banner.vue"
+
 </script>
 
 <style scoped>
@@ -48,9 +40,6 @@ h1 {
 }
 p {
   @apply p-2 sm:text-sm
-}
-.font-custom {
-  font-family: 'Yatra One', cursive;
 }
 .light {
   background: #1488CC;
