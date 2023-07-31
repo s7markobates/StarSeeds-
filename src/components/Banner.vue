@@ -10,13 +10,13 @@
         </div>
         <h1 class="text-center text-white text-lg">community</h1>
       </div>
-      <div>
+      <!-- <div>
         <i class="fas fa-rocket text-orange-400"></i>
         <i class="fas fa-rocket text-orange-400"></i>
         <i class="fas fa-rocket text-orange-400"></i>
         <i class="fas fa-rocket text-orange-400"></i>
         <i class="fas fa-rocket text-orange-400"></i>
-      </div>
+      </div> -->
     </div>
   </div>      
 </template>
