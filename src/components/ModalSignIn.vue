@@ -2,9 +2,9 @@
   <Transition name="back-slide">
     <div v-show="modalActive" class="absolute p-6 z-50 w-screen h-screen bg-black bg-opacity-60">
       <Transition name="slide">
-        <div v-if="modalActive" class="w-[95%] sm:w-[500px]  sm:h-[740px] lg:h-[760px] mx-auto border-4 rounded-2xl border-orange-400 light">
+        <div v-if="modalActive" class="w-[95%] sm:w-[500px] sm:h-[645px] mx-auto border-4 rounded-2xl border-orange-400 light">
           <div class="flex justify-end">
-            <i class="fas fa-times mr-3 mt-1 text-2xl text-orange-400 cursor-pointer" @click="$emit('close-modal')"></i> 
+            <i class="fas fa-times mr-3 mt-1 text-2xl text-orange-400 hover:text-orange-300 cursor-pointer" @click="$emit('close-modal')"></i> 
           </div>
           <div class="flex justify-center mt-1">
             <p class="font-style text-orange-400">Welcome to</p>
@@ -16,8 +16,8 @@
                 <span class="text-yellow-400">seeds</span>
             </p>
           </div>
-          <form class="flex flex-col sm:w-[380px] m-auto mt-2 sm:mt-9">
-            <h2 class="self-center text-[25px] sm:text-4xl uppercase font-style text-yellow-400 mb-3 tracking-tight">Log in</h2>
+          <form class="flex flex-col sm:w-[380px] m-auto mt-2 sm:mt-3">
+            <h2 class="self-center text-[25px] sm:text-3xl uppercase font-style text-yellow-400 mb-1 tracking-tight">Log in</h2>
             <div class="flex flex-col sm:flex-hidden">
               <label for="name" class="mx-auto sm:ml-3 text-orange-400 text-sm sm:text-base font-semibold">Name:</label>
               <input v-model="formData.name" id="name" type="text" class="input-field" placeholder="Enter your full name" required >
@@ -31,7 +31,7 @@
               <input v-model="formData.password" id="password" type="password" class="input-field-gray" placeholder="••••••" required>
             </div>  
             <button class="yellow-button" @click.prevent="signIn" title="Sign in with existing member">SIGN IN</button>
-            <button class="yellow-button-forget" @click.prevent="forgotPassword" title="Don't forget your password">FORGOT YOUR PASSWORD?</button>
+            <!-- <button class="yellow-button-forget" @click.prevent="forgotPassword" title="Don't forget your password">FORGOT YOUR PASSWORD?</button> -->
             <div class="my-3 sm:my-5">
               <div class="flex items-center justify-center border-t border-gray-300 w-full pt-3 sm:pt-5">
                 <p class="text-sm sm:text-base mr-3 sm:mr-10 font-semibold text-orange-400">Don't have an account?</p>
@@ -130,39 +130,9 @@ const signIn = () => {
   })
 }
 
-const forgotPassword = () => {
-  console.log('Tek treba ovo da naučim. :)');
-}
-
-const saveStatus = () => {
-  if (statusInput.value) {
-    const newStatus = { text: statusInput.value }
-
-    if (profile.value) {
-      profile.value.statuses.push(newStatus)
-      updateProfileOnServer(profile.value)
-    } else {
-      localStatuses.value.push(newStatus) // Sačuvajte status lokalno ako nema prijavljenog profila
-    }
-
-    statusInput.value = ""
-  }
-}
-
-const updateProfileOnServer = (profileData) => {
-  fetch(`http://localhost:3000/profile/${profileData.id}`, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ statuses: profileData.statuses })
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Profile updated:', data)
-    })
-    .catch(error => {
-      console.error('Error updating profile:', error)
-    })
-}
+// const forgotPassword = () => {
+//   console.log('Tek treba ovo da naučim. :)');
+// }
 
 </script>
 
@@ -174,13 +144,13 @@ const updateProfileOnServer = (profileData) => {
   @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-black rounded-3xl
 }
 .yellow-button {
-  @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 font-bold cursor-pointer
+  @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 duration-300 font-bold cursor-pointer
 }
 .yellow-button-forget {
   @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-transparent text-orange-400 hover:bg-white hover:text-orange-400 font-bold cursor-pointer
 }
 .signup-button {
-  @apply px-3 py-1 sm:px-9 sm:py-3 bg-orange-400 text-white hover:bg-orange-500 font-bold border-4 border-orange-400 rounded-3xl cursor-pointer
+  @apply px-3 py-1 sm:px-9 sm:py-3 bg-orange-400 text-white hover:bg-orange-500 font-bold border-4 border-orange-400 rounded-3xl duration-300 cursor-pointer
 }
 
 .slide-enter-from {
