@@ -1,7 +1,7 @@
 <template>
-  <div class="text-blue-500 mt-[60px] bg-white w-[80%] mx-auto">
+  <div class="text-blue-500 mt-[60px] bg-white w-[90%] mx-auto">
 
-    <Banner class="rounded-b-lg">
+    <Banner class="">
       <div class="flex flex-col justify-center items-center py-20">
         <div>
           <h1 class="text-center text-white text-lg font-custom">Join our community</h1>

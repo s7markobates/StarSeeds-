@@ -1,5 +1,5 @@
 <template>
-    <div class="light rounded-lg relative">
+    <div class="light relative">
 
         <div v-if="currentSlideIndex === 0" class="grid grid-cols-2 h-[660px] my-4">
             <div class="flex flex-col justify-center items-end my-auto">
@@ -8,7 +8,7 @@
               <i class="fas fa-meteor text-orange-400 absolute top-3 left-5 opacity-50 text-[250px]"></i>
             </div>
             <div class="flex justify-center my-auto ml-16">
-              <img src="../assets/01Chat.png" class="h-[600px] rounded-[44px] z-[1] shadow-md shadow-orange-400" alt="">
+              <img src="../assets/01Chat.png" class="phone-img" alt="">
               <i class="fas fa-meteor text-orange-400 absolute bottom-3 right-5 opacity-50 text-[470px]"></i>
             </div>
         </div>
@@ -20,7 +20,7 @@
           <i class="fas fa-meteor text-orange-400 absolute top-3 left-5 opacity-50 text-[250px]"></i>
         </div>
         <div class="flex justify-center my-auto ml-16">
-          <img src="../assets/02Profile.png" class="h-[600px] rounded-[44px] z-[1] shadow-md shadow-orange-400" alt="">
+          <img src="../assets/02Profile.png" class="phone-img" alt="">
           <i class="fas fa-meteor text-orange-400 absolute bottom-3 right-5 opacity-50 text-[470px]"></i>
         </div>
       </div>
@@ -32,7 +32,7 @@
           <i class="fas fa-meteor text-orange-400 absolute top-3 left-5 opacity-50 text-[250px]"></i>
         </div>
         <div class="flex justify-center my-auto ml-16">
-          <img src="../assets/03Messages.png" class="h-[600px] rounded-[44px] z-[1] shadow-md shadow-orange-400" alt="">
+          <img src="../assets/03Messages.png" class="phone-img" alt="">
           <i class="fas fa-meteor text-orange-400 absolute bottom-3 right-5 opacity-50 text-[470px]"></i>
         </div>
       </div>
@@ -65,6 +65,9 @@ onMounted(() => {
 }
 .paragraph {
   @apply pl-28 py-3 sm:text-sm text-white text-justify indent-12
+}
+.phone-img {
+    @apply h-[550px] rounded-[44px] z-[1] shadow-xl shadow-orange-400
 }
 
 .animate-slide-left {
