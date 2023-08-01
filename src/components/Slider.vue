@@ -53,8 +53,9 @@ const rotateSlides = () => {
 }
 
 onMounted(() => {
-  setInterval(rotateSlides, 8000)
+  setInterval(rotateSlides, 10000)
 })
+
 </script>
 
 <style scoped>
@@ -65,12 +66,11 @@ onMounted(() => {
   @apply pl-28 py-3 sm:text-base text-white text-justify indent-12 z-[1]
 }
 .phone-img {
-    @apply h-[550px] rounded-[44px] z-[1] shadow-lg shadow-orange-400
+  @apply h-[550px] rounded-[44px] z-[1] shadow-lg shadow-orange-400
 }
-
 .animate-slide-left {
   animation: slideLeft 1s;
-  animation-fill-mode: forwards; /* Zadrži stilove animacije nakon završetka */
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideLeft {

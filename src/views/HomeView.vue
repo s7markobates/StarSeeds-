@@ -72,7 +72,7 @@ import Slider from "../components/Slider.vue"
   background: linear-gradient(to left, #2B32B2, #1488CC); 
 }
 .title {
-  @apply text-3xl p-2 text-yellow-400
+  @apply text-3xl p-2 text-yellow-400 font-custom
 }
 .paragraph {
   @apply p-2 sm:text-sm

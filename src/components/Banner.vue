@@ -19,7 +19,7 @@ import { ref } from 'vue'
 // Niz koji će pratiti vidljivost svake rakete
 const rocketVisible = ref(new Array(20).fill(false))
 
-// Postavljanje vidljivosti prvih 5 raketa na false, ostale su po defaultu false
+// Postavljanje vidljivosti prvih nekoliko raketa na false, ostale su po defaultu false
 rocketVisible.value.slice(1, 20).forEach((_, index) => {
   setTimeout(() => {
     rocketVisible.value[index + 1] = true
@@ -51,7 +51,6 @@ rocketVisible.value.slice(1, 20).forEach((_, index) => {
 .animate-slide-up-right {
   animation: slideUpRight 4s infinite;
 }
-
 
 @keyframes slideUpRight {
   from {

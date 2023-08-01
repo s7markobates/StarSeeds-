@@ -2,7 +2,7 @@
   <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-[#F6893B]' : 'bg-gray-400'}`" >
     <span class="text-md font-semibold text-center text-white" title="View profile details">{{ getInitials }}</span>
   </div>
-  <div v-if="isAvatarOpen" :class="`dark ${isWideScreen ? 'dark-wide' : 'sm:max-w-[300px]'}`" class="h-[470px] w-full sm:w-[300px] absolute top-14 right-0 text-white text-lg border-x-4 border-b-4 border-orange-400 rounded-b-2xl">
+  <div v-if="isAvatarOpen" :class="`dark ${isWideScreen ? 'dark-wide' : 'sm:max-w-[300px]'}`" class="h-[470px] w-full sm:w-[300px] absolute top-[60px] right-0 text-white text-lg border-x-4 border-b-4 border-orange-400 rounded-b-2xl">
     <div v-if="avatarProfile" class="mt-4 flex flex-col items-center">
       <div class="mt-2 flex items-center">
         <img v-if="avatarProfile.image" :src="avatarProfile.image" class="img-class" alt="Profile Image" title="Change profile picture" @click="uploadImage"/>
@@ -153,7 +153,7 @@ onMounted(() => {
 }
 .dark-wide {
   background: #0f0c29;
-  background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);
-  background: linear-gradient(to top, #24243e, #302b63, #0f0c29);
+  background: -webkit-linear-gradient(to top right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to top right, #24243e, #302b63, #0f0c29);
 }
 </style>

@@ -74,6 +74,9 @@
               class="w-full h-[35vh] sm:h-[40vh] md:h-[50vh] lg:h-[50vh] border-4"
               :src="getEmbeddedYouTubeLink(video.link)"
               allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              frameborder="0"
+              title="YouTube video player"
             ></iframe>
           </div>
         </div>
@@ -87,14 +90,6 @@
     </template>
   </div>
 </template>
-
-<!-- 
-delovi youtube iframe:
-
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-frameborder="0"
-title="YouTube video player"
--->
 
 <script>
 export default {
