@@ -58,17 +58,18 @@
 }
 
 .animate-slide-up-right {
-  animation: slideUpRight 2s infinite;
+  animation: slideUpRight 4s infinite;
 }
+
 
 @keyframes slideUpRight {
   from {
-    opacity: 1;
-    transform: translateX(-50px) translateY(50px);
+    opacity: 0;
+    transform: translateX(-100px) translateY(200px);
   }
   to {
-    opacity: 0;
-    transform: translateX(calc(100% + 50px)) translateY(-100px);
+    opacity: 1;
+    transform: translateX(calc(100% + 100px)) translateY(-200px);
   }
 }
 
