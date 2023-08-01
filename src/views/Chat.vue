@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-600 mt-[65px] flex justify-between items-center xl:w-[70%] mx-auto text-xl">
+  <div class="text-gray-600 mt-[70px] flex justify-between items-center xl:w-[70%] mx-auto text-xl">
     <div v-if="profile" class="flex-1 font-bold ">
       <div class="hidden xl:flex items-center " :title="'Go to ' + getFirstName + '\'s feed'">
         <RouterLink :to="{ name: 'feed'}" >
@@ -13,7 +13,7 @@
     </div>
     <div class="flex-1"></div>
   </div>
-  <div class="fixed xl:hidden bg-white w-full text-center -mt-[10px] py-3">
+  <div class="fixed xl:hidden bg-white w-full text-center -mt-[9px] py-3">
     <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
         <button class="button-phone">
             <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>

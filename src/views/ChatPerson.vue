@@ -1,7 +1,7 @@
 <template>
   <template v-if="profile">
     <div>
-      <div class="xl:w-[70%] mx-auto text-gray-600 text-lg xl:mt-[55px] flex justify-between items-center">
+      <div class="xl:w-[70%] mx-auto text-gray-600 text-lg xl:mt-[60px] flex justify-between items-center">
         
         <div v-if="profile" class="hidden text-xl font-bold flex-1 xl:flex justify-start items-center mt-3">
           <div class="flex items-center" :title="'Go to ' + getFirstName + '\'s chat page'">
@@ -17,7 +17,7 @@
         <div class="hidden xl:block flex-1 ">
         </div>
         
-        <div class="fixed bg-white w-full flex justify-center mt-[165px] py-3 xl:hidden">
+        <div class="fixed bg-white w-full flex justify-center mt-[165px] pt-6 pb-2 xl:hidden">
           <RouterLink :to="{ name: 'profiles' }">
             <button><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
           </RouterLink>

@@ -1,5 +1,5 @@
 <template>
-    <div class="text-gray-600 mt-[55px] mb-32">
+    <div class="text-gray-600 mt-[60px] mb-32">
         <div class="text-xl font-bold lg:flex justify-between lg:w-[60%] mx-auto">
             <div class="hidden lg:flex justify-center items-center">
                 <div class="flex justify-center items-center mt-2">
@@ -20,7 +20,7 @@
                     </RouterLink>
                 </div>
             </div>
-            <div class="fixed py-2 bg-white lg:hidden w-full text-center">
+            <div class="fixed py-3 bg-white lg:hidden w-full text-center">
                 <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
                     <button class="button-phone">
                         <i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i>

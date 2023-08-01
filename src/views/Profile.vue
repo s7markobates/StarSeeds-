@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-600 mt-[55px] mb-[300px]">
+  <div class="text-gray-600 mt-[60px] mb-[300px]">
     <div class="2xl:w-[50%] mx-auto text-xl font-bold flex justify-center 2xl:justify-start">
       <div @click="goToProfiles" class="hidden 2xl:flex items-center mt-2 cursor-pointer bg-white px-2 rounded-lg" title="View all the members">
         <i class="fas fa-om text-orange-400 text-2xl mr-2"></i>
@@ -12,7 +12,7 @@
           <h1 class="ml-1">members</h1>
         </div>
       </div>
-      <div class="fixed bg-white w-full flex justify-center py-2 2xl:hidden">
+      <div class="fixed bg-white w-full flex justify-center py-3 2xl:hidden">
         <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button-phone px-[9.5px] py-[11.6px]"></i></button>
         <RouterLink :to="{ name: 'feed' }" title="Go to your feed">
           <button class="button-phone mx-2 px-[11.5px] py-[7.7px] "><i class="fas fa-meteor text-white hover:text-orange-400 text-xl"></i></button>

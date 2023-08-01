@@ -1,6 +1,6 @@
 <template>
   <template v-if="profile">
-    <div v-if="profile" class="text-gray-600 text-sm sm:text-base xl:text-lg mt-[65px] mb-40">
+    <div v-if="profile" class="text-gray-600 text-sm sm:text-base xl:text-lg mt-[70px] mb-40">
       <div class="w-[60%] mx-auto text-xl font-bold flex justify-between">
         <div class="flex-1">
           <div class="hidden xl:flex justify-start items-center">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="fixed bg-white w-full py-3 -mt-3 xl:hidden mx-auto text-xl font-bold flex justify-center">
+      <div class="fixed bg-white w-full py-3 -mt-2 xl:hidden mx-auto text-xl font-bold flex justify-center">
         <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button px-[9.5px] py-[11.6px]"></i></button>
         <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button mx-2 px-[12px] py-[11px]"></i></button>
         <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button pl-[10.8px] pr-[11.8px] py-[11px] "></i></button>
