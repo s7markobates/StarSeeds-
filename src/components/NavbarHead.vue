@@ -1,6 +1,6 @@
 <template>
   <div ref="root">
-    <div :class="navbarClass" class="w-full h-14 flex justify-between fixed top-0 z-[1]">
+    <div :class="navbarClass" class="w-full h-16 flex justify-between fixed top-0 z-[1] border-b-4 border-t border-orange-400">
       <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
       <Logo v-if="!isOpen" />
       <div>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-show="!isOpen && !shouldShowNav" v-if="!modalActive" >
-    <nav class="fixed top-[56px] w-full text-sm sm:text-base flex justify-between items-center h-10 nav-color p-2 border-b-4 border-t border-orange-400">
+    <!-- <nav class="fixed top-[56px] w-full text-sm sm:text-base flex justify-between items-center h-10 nav-color p-2 border-b-4 border-t border-orange-400">
       <RouterLink to="/about" class="mx-1 uppercase">About</RouterLink>
       <RouterLink to="/videos" class="mx-1 uppercase">Videos</RouterLink>
       <RouterLink to="/blogs" class="mx-1 uppercase">Blogs</RouterLink>
@@ -28,7 +28,7 @@
           <span class="text-yellow-400">seeds</span>
         </div>
       </RouterLink>
-    </nav>
+    </nav> -->
   </div>
 </template>
 

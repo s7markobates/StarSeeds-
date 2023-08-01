@@ -1,43 +1,34 @@
 <template>
-  <div class="h-[300px] light border-b-2 border-orange-400 rounded-md relative overflow-hidden">
-    <div class="flex flex-col justify-center items-center py-20">
-      <div>
-        <h1 class="text-center text-white text-lg">Join the</h1>
-        <div class="text-[30px] my-auto sm:my-1 sm:text-4xl font-custom">
-          <span class="text-orange-400 mr-[3px]">Star</span>
-          <i class="fas fa-meteor text-orange-400"></i>
-          <span class="text-yellow-400">seeds</span>
-        </div>
-        <h1 class="text-center text-white text-lg">community</h1>
-      </div>
-    </div>
+  <div class="light relative overflow-hidden">
+
+    <slot/>
+
     <div class="rocket-container">
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
-      <i class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"></i>
+      <i v-for="index in 19"
+        :key="index"
+        class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"
+        :style="{ animationDelay: `${0.75 * (index - 1)}s`, visibility: rocketVisible[index] ? 'visible' : 'hidden' }"
+      ></i>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 
+// Niz koji će pratiti vidljivost svake rakete
+const rocketVisible = ref(new Array(20).fill(false))
+
+// Postavljanje vidljivosti prvih 5 raketa na false, ostale su po defaultu false
+rocketVisible.value.slice(1, 20).forEach((_, index) => {
+  setTimeout(() => {
+    rocketVisible.value[index + 1] = true
+  }, 0.75 * (index + 1) * 1000)
+})
 </script>
 
 <style scoped>
-.font-custom {
-  font-family: 'Yatra One', cursive;
-}
+
 .light {
   background: #1488CC;
   background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
@@ -64,60 +55,15 @@
 
 @keyframes slideUpRight {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateX(-100px) translateY(200px);
   }
   to {
-    opacity: 1;
+    opacity: 0;
     transform: translateX(calc(100% + 100px)) translateY(-200px);
   }
 }
-
-.delay-75:nth-child(1) {
-  animation-delay: 0.75s;
-}
-
-.delay-75:nth-child(2) {
-  animation-delay: 1.5s;
-}
-
-.delay-75:nth-child(3) {
-  animation-delay: 2.25s;
-}
-
-.delay-75:nth-child(4) {
-  animation-delay: 3s;
-}
-
-.delay-75:nth-child(5) {
-  animation-delay: 3.75s;
-}
-
-.delay-75:nth-child(6) {
-  animation-delay: 4.5s;
-}
-.delay-75:nth-child(7) {
-  animation-delay: 5.25s;
-}
-.delay-75:nth-child(8) {
-  animation-delay: 6s;
-}
-.delay-75:nth-child(9) {
-  animation-delay: 6.75s;
-}
-.delay-75:nth-child(10) {
-  animation-delay: 7.5s;
-}
-.delay-75:nth-child(11) {
-  animation-delay: 5.25s;
-}
-.delay-75:nth-child(12) {
-  animation-delay: 6s;
-}
-.delay-75:nth-child(13) {
-  animation-delay: 6.75s;
-}
-.delay-75:nth-child(14) {
-  animation-delay: 7.5s;
+.delay-75:nth-child(n) {
+  animation-delay: calc(0.75s * (n - 1));
 }
 </style>
