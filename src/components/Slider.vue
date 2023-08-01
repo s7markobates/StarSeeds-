@@ -11,7 +11,6 @@
           <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[400px]"></i>
         </div>
       </div>
-  
       <div v-if="currentSlideIndex === 1" class="grid grid-cols-2 h-[660px] my-4">
         <div class="flex flex-col justify-center items-end my-auto">
           <h1 class="title">Unparalleled Security</h1>
@@ -23,7 +22,6 @@
           <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[400px]"></i>
         </div>
       </div>
-  
       <div v-if="currentSlideIndex === 2" class="grid grid-cols-2 h-[660px] my-4">
         <div class="flex flex-col justify-center items-end my-auto">
           <h1 class="title">Seamless User Experience</h1>
