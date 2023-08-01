@@ -1,6 +1,6 @@
 <template>
   <div ref="root">
-    <div :class="navbarClass" class="w-full h-16 flex justify-between fixed top-0 z-[1] border-b-4 border-t border-orange-400">
+    <div :class="navbarClass" class="w-full h-16 flex justify-between fixed top-0 z-[2] border-b-4 border-t border-orange-400">
       <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
       <Logo v-if="!isOpen" />
       <div>

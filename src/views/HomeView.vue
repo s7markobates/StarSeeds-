@@ -1,5 +1,5 @@
 <template>
-  <div class="text-blue-500 mt-[100px] bg-white w-[70%] mx-auto">
+  <div class="text-blue-500 mt-[80px] bg-white w-[80%] mx-auto">
 
     <Banner class="rounded-lg">
       <div class="flex flex-col justify-center items-center py-20">
@@ -42,10 +42,12 @@
       </div>
     </Banner>
 
-    <div>
+    <!-- <div>
       <h1 class="title">Connect with us</h1>
       <img class="w-[100%] h-[100%] md:w-[80%] md:h-[80%] mx-auto"  src="../assets/All.png" alt="">
-    </div>
+    </div> -->
+    
+    <Slider />
 
     <div class="flex items-center">
       <SignInPage />
@@ -57,6 +59,7 @@
 <script setup>
 import SignInPage from "../components/SignInPage.vue"
 import Banner from "../components/Banner.vue"
+import Slider from "../components/Slider.vue"
 
 </script>
 
