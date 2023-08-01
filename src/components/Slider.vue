@@ -7,8 +7,8 @@
           <i class="fas fa-meteor text-orange-300 absolute top-3 left-5 opacity-50 text-[250px]"></i>
         </div>
         <div class="flex justify-center my-auto ml-16">
-          <img src="../assets/01Chat.png" class="h-[600px] rounded-[44px] z-[1]" alt="">
-          <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[400px]"></i>
+          <img src="../assets/01Chat.png" class="h-[600px] rounded-[44px] z-[1] shadow-md shadow-orange-400" alt="">
+          <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[470px]"></i>
         </div>
       </div>
       <div v-if="currentSlideIndex === 1" class="grid grid-cols-2 h-[660px] my-4">
@@ -18,8 +18,8 @@
           <i class="fas fa-meteor text-orange-300 absolute top-3 left-5 opacity-50 text-[250px]"></i>
         </div>
         <div class="flex justify-center my-auto ml-16">
-          <img src="../assets/02Profile.png" class="h-[600px] rounded-[44px] z-[1]" alt="">
-          <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[400px]"></i>
+          <img src="../assets/02Profile.png" class="h-[600px] rounded-[44px] z-[1] shadow-md shadow-orange-400" alt="">
+          <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[470px]"></i>
         </div>
       </div>
       <div v-if="currentSlideIndex === 2" class="grid grid-cols-2 h-[660px] my-4">
@@ -29,8 +29,8 @@
           <i class="fas fa-meteor text-orange-300 absolute top-3 left-5 opacity-50 text-[250px]"></i>
         </div>
         <div class="flex justify-center my-auto ml-16">
-          <img src="../assets/03Messages.png" class="h-[600px] rounded-[44px] z-[1]" alt="">
-          <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[400px]"></i>
+          <img src="../assets/03Messages.png" class="h-[600px] rounded-[44px] z-[1] shadow-md shadow-orange-400" alt="">
+          <i class="fas fa-meteor text-orange-300 absolute bottom-3 right-5 opacity-50 text-[470px]"></i>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
   }
   
   onMounted(() => {
-    setInterval(rotateSlides, 10000)
+    setInterval(rotateSlides, 2000)
   })
   </script>
   
