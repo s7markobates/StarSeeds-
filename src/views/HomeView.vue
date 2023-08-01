@@ -1,16 +1,15 @@
 <template>
-  <div class="text-blue-500 mt-[80px] bg-white w-[80%] mx-auto">
+  <div class="text-blue-500 mt-[60px] bg-white w-[80%] mx-auto">
 
-    <Banner class="rounded-lg">
+    <Banner class="rounded-b-lg">
       <div class="flex flex-col justify-center items-center py-20">
         <div>
-          <h1 class="text-center text-white text-lg">Join the</h1>
-          <div class="text-[30px] my-auto sm:my-1 sm:text-4xl font-custom">
+          <h1 class="text-center text-white text-lg font-custom">Join our community</h1>
+          <div class="text-[30px] my-auto sm:my-1 sm:text-[100px] font-custom">
             <span class="text-orange-400 mr-[3px]">Star</span>
             <i class="fas fa-meteor text-orange-400"></i>
             <span class="text-yellow-400">seeds</span>
           </div>
-          <h1 class="text-center text-white text-lg">community</h1>
         </div>
       </div>
     </Banner>
