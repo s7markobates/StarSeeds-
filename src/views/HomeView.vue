@@ -13,19 +13,23 @@
       <i class="fas fa-globe-europe fa-flip-horizontal text-green-500 text-[700px] absolute -bottom-[500px] opacity-80 left-1"></i>
       <i class="fab fa-galactic-senate text-white text-[60px] absolute top-40 opacity-50 right-40"></i>
       <i class="fas fa-vihara text-yellow-400 text-[30px] absolute bottom-[175px] left-[260px] opacity-80"></i>
+      <i class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[270px]"></i>
 
       <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[480px]"></i>
       <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[280px]"></i>
       <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[400px]"></i>
       <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[510px]"></i>
+
       <i class="fas fa-street-view text-gray-100 text-[25px] opacity-90 absolute bottom-[175px] left-[320px] hover:text-[30px] duration-100"></i>
       <i class="fas fa-street-view text-yellow-600 text-[25px] opacity-90 absolute bottom-[150px] left-[430px] hover:text-[30px] duration-100"></i>
       <i class="fas fa-street-view text-red-700 text-[25px] opacity-90 absolute bottom-[100px] left-[460px] hover:text-[30px] duration-100"></i>
       <i class="fas fa-street-view text-amber-900 text-[25px] opacity-90 absolute bottom-[90px] left-[530px] hover:text-[30px] duration-100"></i>
       <i class="fas fa-street-view text-gray-800 text-[25px] opacity-90 absolute bottom-[40px] left-[560px] hover:text-[30px] duration-100"></i>
+
       <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[380px]"></i>
       <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[150px]"></i>
       <i class="fas fa-tree text-green-800 text-[31px] absolute bottom-[65px] left-[500px]"></i>
+
       <i class="fas fa-sun fa-spin text-yellow-500 text-[19px] opacity-80 absolute top-[100px] right-[65px]"></i>
       <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[110px] right-[205px]"></i>
       <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[95px] right-[250px]"></i>
