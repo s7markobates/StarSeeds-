@@ -140,7 +140,7 @@ onMounted(() => {
   @apply h-36 w-36 rounded-full shadow-xl border-4 border-orange-400 cursor-pointer
 }
 .logout-button {
-  @apply mt-8 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-transparent hover:text-orange-400 cursor-pointer
+  @apply mt-8 h-8 w-20 border-2 rounded-3xl bg-orange-400 border-orange-400 text-white hover:bg-transparent hover:text-orange-400 duration-300 cursor-pointer
 }
 .font-custom {
   font-family: 'Yatra One', cursive;
