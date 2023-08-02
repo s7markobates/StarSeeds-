@@ -1,7 +1,7 @@
 <template>
-  <div class="text-blue-500 mt-[60px] bg-white w-[90%] mx-auto">
+  <div class="text-blue-500 mt-[60px] bg-white  mx-auto">
 
-    <Banner class="">
+    <Banner class="light">
       <div class="flex flex-col justify-center items-center py-20">
         <div>
           <h1 class="text-center text-white text-lg font-custom">Join our community</h1>
@@ -48,9 +48,19 @@
     
     <Slider />
 
-    <div class="flex items-center">
-      <SignInPage />
+    <div class="flex w-full mt-12 py-8 light">
+      <SignInPage class="mr-36" />
+      <Banner class="flex flex-col justify-center items-center mr-40">
+        <h1 class="text-center text-white text-lg font-custom">Join our community</h1>
+        <div class="text-[30px] my-auto sm:my-1 sm:text-[80px] font-custom">
+          <span class="text-orange-400 mr-[3px]">Star</span>
+          <i class="fas fa-meteor text-orange-400"></i>
+          <span class="text-yellow-400">seeds</span>
+        </div>
+      </Banner>
     </div>
+
+    <Subscribe></Subscribe>
 
   </div>
 </template>
@@ -59,6 +69,7 @@
 import SignInPage from "../components/SignInPage.vue"
 import Banner from "../components/Banner.vue"
 import Slider from "../components/Slider.vue"
+import Subscribe from "../components/Subscribe.vue"
 
 </script>
 

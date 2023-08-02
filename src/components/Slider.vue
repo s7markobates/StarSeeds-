@@ -1,5 +1,5 @@
 <template>
-  <div class="light relative rounded-lg">
+  <div class="light relative">
     <div v-if="currentSlideIndex === 0" class="grid grid-cols-2 h-[660px] my-4">
       <div class="flex flex-col justify-center items-end my-auto">
         <h1 :class="{ 'opacity-0 translate-x-[-50px]': !slideVisible }" class="title transition-all duration-500">{{ slideVisible ? 'Private Messaging Redefined' : '' }}</h1>
