@@ -45,9 +45,11 @@
       <img class="w-[100%] h-[100%] md:w-[80%] md:h-[80%] mx-auto"  src="../assets/All.png" alt="">
     </div> -->
     
-    <Slider />
+    <Slider></Slider>
 
-    <div class="flex w-full mt-1 py-8 light">
+    <Features></Features>
+
+    <div class="flex w-full py-8 light">
       <SignInPage class="mr-36" />
       <Banner class="flex flex-col justify-center items-center mr-40">
         <h1 class="text-center text-white text-lg font-custom">Join our community</h1>
@@ -70,6 +72,7 @@ import Banner from "../components/Banner.vue"
 import Slider from "../components/Slider.vue"
 import Subscribe from "../components/Subscribe.vue"
 import AboutUs from "../components/AboutUs.vue"
+import Features from "../components/Features.vue"
 
 </script>
 

@@ -21,7 +21,7 @@
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-3xl text-yellow-400 text-center font-custom 
+    @apply text-4xl text-orange-400 text-center font-custom 
 }
 .paragraph {
     @apply py-3 sm:text-base opacity-100 text-blue-500 text-center z-[1]
