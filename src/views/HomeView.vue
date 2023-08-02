@@ -8,40 +8,42 @@
           <i class="fas fa-meteor text-orange-400"></i>
           <span class="text-yellow-400 ">seeds</span>
         </div>
-        <h1 class="-mt-6 mb-5 text-white text-xl">A very cool Chat App</h1>
+        <h1 class="-mt-6 mb-5 text-white text-xl">A very cool ChatApp</h1>
       </div>
       <i class="fas fa-globe-europe fa-flip-horizontal text-green-500 text-[700px] absolute -bottom-[500px] opacity-80 left-1"></i>
       <i class="fab fa-galactic-senate text-white text-[60px] absolute top-40 opacity-50 right-40"></i>
+      <i class="fas fa-vihara text-yellow-400 text-[30px] absolute bottom-[175px] left-[260px] opacity-80"></i>
+
+      <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[480px]"></i>
+      <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[280px]"></i>
+      <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[400px]"></i>
+      <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[510px]"></i>
+      <i class="fas fa-street-view text-gray-100 text-[25px] opacity-90 absolute bottom-[175px] left-[320px] hover:text-[30px] duration-100"></i>
+      <i class="fas fa-street-view text-yellow-600 text-[25px] opacity-90 absolute bottom-[150px] left-[430px] hover:text-[30px] duration-100"></i>
+      <i class="fas fa-street-view text-red-700 text-[25px] opacity-90 absolute bottom-[100px] left-[460px] hover:text-[30px] duration-100"></i>
+      <i class="fas fa-street-view text-amber-900 text-[25px] opacity-90 absolute bottom-[90px] left-[530px] hover:text-[30px] duration-100"></i>
+      <i class="fas fa-street-view text-gray-800 text-[25px] opacity-90 absolute bottom-[40px] left-[560px] hover:text-[30px] duration-100"></i>
+      <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[380px]"></i>
+      <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[150px]"></i>
+      <i class="fas fa-tree text-green-800 text-[31px] absolute bottom-[65px] left-[500px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[19px] opacity-80 absolute top-[100px] right-[65px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[110px] right-[205px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[95px] right-[250px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[105px] right-[400px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[280px] right-[60px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[300px] right-[40px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[18px] opacity-80 absolute top-[150px] right-[300px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[22px] absolute top-[300px] right-[140px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[380px] right-[120px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-90 absolute top-[100px] left-[240px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[90px] left-[290px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[110px] left-[340px]"></i>
+      <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute bottom-[110px] right-[340px]"></i>
+
+      <!-- <i class="fas fa-dice-d20 text-white text-[100px] opacity-60 absolute bottom-[300px] right-[320px]"></i> -->
     </Banner>
 
     <AboutUs></AboutUs>
-
-    <!-- <div class="bg-white p-2 h-40 border-b-2 border-orange-400">
-      <h1 class="title">Message privatly</h1>
-      <p class="paragraph">
-        Simple, reliable, private messaging for free, available all over the world.<br/>
-        With private messaging you can be yourself, speak freely and feel close to the most important people in your life no matter where they are.
-      </p>
-    </div>
-
-    <Banner>
-      <div class="light text-white text-right p-2 h-40 border-b-2 border-orange-400">
-        <h1 class="title">Safety first</h1>
-        <p class="paragraph">With end-to-end encryption, your personal messages are secured. Only you and the person you're talking to can read them, and nobody in between, not even StarSeeds App.</p>
-      </div>
-    </Banner>
-
-    <div class="bg-white p-2 h-40 border-b-2 border-orange-400">
-      <h1 class="title">Stay connected</h1>
-      <p class="paragraph">Whether it is planning a best friends outing or simply staying on top of your family chats, group conversations should feel effortless.</p>
-    </div>
-
-    <Banner>
-      <div class="light text-white text-right p-2 h-40 border-b-2 border-orange-400 ">
-        <h1 class="title">Multiplatform. Always Synced.</h1>
-        <p class="paragraph">Mobile, tablet and desktop - your chats on StarSeeds are 100% synced between any device you use.</p>
-      </div>
-    </Banner> -->
 
     <!-- <div>
       <h1 class="title">Connect with us</h1>

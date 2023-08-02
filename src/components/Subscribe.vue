@@ -27,10 +27,10 @@
     @apply py-3 sm:text-base opacity-100 text-blue-500 text-center z-[1]
 }
 .input-class {
-    @apply light py-2 pl-3 w-[350px] placeholder-white text-white focus:outline-none border-4 border-orange-400 z-[1] rounded-s-xl
+    @apply light py-2 pl-3 w-[350px] placeholder-yellow-400 text-yellow-400 focus:outline-none border-4 border-orange-400 z-[1] rounded-s-xl
 }
 .button {
-    @apply bg-orange-400 py-2 pr-3 border-4 border-l-0 -ml-1 text-right border-blue-600 w-[270px] text-white z-[1] hover:bg-orange-500 rounded-e-xl
+    @apply bg-orange-400 py-2 pr-3 border-4 border-l-0 -ml-1 text-right border-[#2B32B2] w-[270px] text-white z-[1] hover:bg-orange-500 rounded-e-xl
 }
 .meteor-class{
     @apply text-orange-400 absolute opacity-20

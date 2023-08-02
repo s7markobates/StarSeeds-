@@ -1,6 +1,6 @@
 <template>
   <Transition name="back-slide">
-    <div v-show="modalActive" class="absolute p-6 z-50 w-screen h-screen bg-black bg-opacity-70">
+    <div v-show="modalActive" class="absolute pt-24 z-50 w-screen h-screen bg-black bg-opacity-70">
       <Transition name="slide">
         <div v-if="modalActive" class="w-[95%] sm:w-[450px] sm:h-[645px] mx-auto border-4 rounded-2xl border-orange-400 light ">
           <div class="flex justify-end">
@@ -169,7 +169,7 @@ const signIn = () => {
   opacity: 1;
 }
 .slide-leave-active, .back-slide-leave-active {
-  transition: all linear 0.1s;
+  transition: all linear 0.2s;
 }
 .slide-leave-to, .back-slide-leave-to {
   transform: translateY(-100%);
