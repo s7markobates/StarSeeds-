@@ -1,8 +1,8 @@
 <template>
   <Transition name="back-slide">
-    <div v-show="modalActive" class="absolute p-6 z-50 w-screen h-screen bg-black bg-opacity-60">
+    <div v-show="modalActive" class="absolute p-6 z-50 w-screen h-screen bg-black bg-opacity-70">
       <Transition name="slide">
-        <div v-if="modalActive" class="w-[95%] sm:w-[450px] sm:h-[645px] mx-auto border-4 rounded-2xl border-orange-400 light">
+        <div v-if="modalActive" class="w-[95%] sm:w-[450px] sm:h-[645px] mx-auto border-4 rounded-2xl border-orange-400 light ">
           <div class="flex justify-end">
             <i class="fas fa-times mr-3 mt-1 text-2xl text-orange-400 hover:text-orange-300 cursor-pointer" @click="$emit('close-modal')"></i> 
           </div>
@@ -177,8 +177,8 @@ const signIn = () => {
 }
 .light {
   background: #1488CC;
-  background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-  background: linear-gradient(to left, #2B32B2, #1488CC); 
+  background: -webkit-linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  background: linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
 }
 .font-style {
     font-family: 'Yatra One', cursive;

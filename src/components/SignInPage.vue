@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[80%] sm:w-[450px] sm:h-[520px] mx-auto border-4 rounded-2xl border-orange-400 light">
+    <div class="w-[80%] sm:w-[450px] sm:h-[520px] mx-auto border-4 rounded-2xl border-orange-400 light opacity-90">
         <div class="flex justify-center mt-6">
             <p class="text-4xl font-style">
                 <span class="text-orange-400 mr-[3px]">Star</span>

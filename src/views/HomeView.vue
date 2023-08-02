@@ -8,7 +8,7 @@
           <i class="fas fa-meteor text-orange-400"></i>
           <span class="text-yellow-400 ">seeds</span>
         </div>
-        <h1 class="-mt-6 text-white text-xl">A very cool Chat App</h1>
+        <h1 class="-mt-6 mb-5 text-white text-xl">A very cool Chat App</h1>
       </div>
       <i class="fas fa-globe-europe fa-flip-horizontal text-green-500 text-[700px] absolute -bottom-[500px] opacity-80 left-1"></i>
       <i class="fab fa-galactic-senate text-white text-[60px] absolute top-40 opacity-50 right-40"></i>
@@ -52,8 +52,8 @@
 
     <Features></Features>
 
-    <div class="flex w-full py-8 light">
-      <SignInPage class="mr-36" />
+    <div class="flex w-full py-8 light relative">
+      <SignInPage class="mr-36 z-[1]" />
       <Banner class="flex flex-col justify-center items-center mr-40">
         <h1 class="text-center text-white text-lg font-custom">Join our community</h1>
         <div class="text-[30px] my-auto sm:my-1 sm:text-[80px] font-custom">
@@ -62,6 +62,7 @@
           <span class="text-yellow-400">seeds</span>
         </div>
       </Banner>
+      <i class="fas fa-meteor text-orange-400 absolute bottom-8 left-[230px] opacity-60 text-[400px]"></i>
     </div>
 
     <Subscribe></Subscribe>
