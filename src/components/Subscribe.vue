@@ -1,10 +1,10 @@
 <template>
     <div class="py-24 relative overflow-hidden">
-        <div class="w-[50%] mx-auto">
+        <div class="w-[60%] mx-auto">
             <h1 class="title">Subscribe to our newsletter</h1>
-            <p class="paragraph">After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice. When she got to the door, she found she had forgotten the little golden key, and when she went back.</p>
+            <p class="paragraph">After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice.<br> When she got to the door, she found she had forgotten the little golden key, and when she went back.</p>
         </div>
-        <div class="flex justify-center items-center mx-auto pt-2">
+        <div class="flex justify-center items-center mx-auto pt-3">
             <input type="email" placeholder="Enter your email" class="input-class">
             <button class="button">Dive into the rabbit hole</button>
         </div>
