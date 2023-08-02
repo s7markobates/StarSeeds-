@@ -53,7 +53,7 @@ const rotateSlides = () => {
 }
 
 onMounted(() => {
-  setInterval(rotateSlides, 10000)
+  setInterval(rotateSlides, 8000)
 })
 
 </script>
