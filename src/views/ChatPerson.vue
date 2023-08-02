@@ -54,9 +54,9 @@
       </div>
 
       <!-- Chat window - mobile -->
-      <div v-if="profile" class=" xl:hidden w-full mx-auto mt-28 text-xs  bg-gray-200">
-        <div class="bg-gray-200 w-full h-full mb-[75px] flex justify-evenly items-end">
-          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-full w-[95%] text-white">
+      <div v-if="profile" class=" xl:hidden w-full mx-auto mt-[120px] text-xs min-h-screen bg-gray-200">
+        <div class="bg-gray-200 w-full mb-[75px] flex justify-evenly items-end">
+          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar w-[95%] bg-gray-200 text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
               <div class="flex items-center justify-start">
                 <img v-if="message.sender === currentPerson.id && currentPerson.image" :src="currentPerson.image" class="img-message-mobile mr-3" alt="CurrentPersonImage" />
