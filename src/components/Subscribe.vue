@@ -6,7 +6,7 @@
         </div>
         <div class="flex justify-center items-center mx-auto pt-3">
             <input type="email" placeholder="Enter your email" class="input-class">
-            <button class="button">Dive into the rabbit hole</button>
+            <button class="button">Dive into the rabbit hole <i class="fas fa-carrot pl-1"></i></button>
         </div>
         <i class="fas fa-meteor meteor-class bottom-5 left-16 text-[250px]"></i>
         <i class="fas fa-meteor meteor-class bottom-12 right-12  text-[470px]"></i>
