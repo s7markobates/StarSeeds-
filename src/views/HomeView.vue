@@ -1,14 +1,17 @@
 <template>
-  <div class="text-blue-500 mt-[60px] bg-white  mx-auto">
+  <div class="text-blue-500 bg-white  mx-auto">
 
-    <Banner class="light">
-      <div class="flex flex-col justify-center items-center py-32">
-        <div class="text-[30px] my-auto sm:my-1 sm:text-[100px] font-custom">
-          <span class="text-orange-400 mr-[3px]">Star</span>
+    <Banner class="light relative overflow-hidden">
+      <div class="flex flex-col justify-center items-center py-[300px]">
+        <div class="text-[30px] my-auto sm:mt-1 sm:text-[120px] font-custom">
+          <span class="text-orange-400 mr-[5px]">Star</span>
           <i class="fas fa-meteor text-orange-400"></i>
-          <span class="text-yellow-400">seeds</span>
+          <span class="text-yellow-400 ">seeds</span>
         </div>
+        <h1 class="-mt-6 text-white text-xl">A very cool Chat App</h1>
       </div>
+      <i class="fas fa-globe-europe fa-flip-horizontal text-green-500 text-[700px] absolute -bottom-[500px] opacity-80 left-1"></i>
+      <i class="fab fa-galactic-senate text-white text-[60px] absolute top-40 opacity-50 right-40"></i>
     </Banner>
 
     <AboutUs></AboutUs>
@@ -82,8 +85,8 @@ import Features from "../components/Features.vue"
 }
 .light {
   background: #1488CC;
-  background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-  background: linear-gradient(to left, #2B32B2, #1488CC); 
+  background: -webkit-linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  background: linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
 }
 .title {
   @apply text-3xl p-2 text-yellow-400 font-custom

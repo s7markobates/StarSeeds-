@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white py-16 relative overflow-hidden">
+    <div class="bg-white py-20 relative overflow-hidden">
         <h1 class="title">Features</h1>
         <div class="flex mx-20 mt-3">
             <div class="feature-d">
@@ -45,6 +45,6 @@
     @apply text-center mb-3 font-custom text-orange-400 text-xl
 }
 .feature-p {
-    @apply px-12 text-justify 
+    @apply px-12 text-center 
 }
 </style>

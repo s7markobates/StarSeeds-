@@ -2,7 +2,7 @@
     <div class="py-24 relative overflow-hidden">
         <div class="w-[60%] mx-auto">
             <h1 class="title">Subscribe to our newsletter</h1>
-            <p class="paragraph">After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice.<br> When she got to the door, she found she had forgotten the little golden key, and when she went back.</p>
+            <p class="paragraph">"After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice.<br> When she got to the door, she found she had forgotten the little golden key, and when she went back..."</p>
         </div>
         <div class="flex justify-center items-center mx-auto pt-6">
             <input type="email" placeholder="Enter your email" class="input-class">
@@ -36,8 +36,8 @@
     @apply text-orange-400 absolute opacity-20
 }
 .light {
-    background: #1488CC;
-    background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-    background: linear-gradient(to left, #2B32B2, #1488CC);
-  }
+  background: #1488CC;
+  background: -webkit-linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  background: linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+}
 </style>

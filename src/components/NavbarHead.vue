@@ -8,7 +8,7 @@
           <Avatar :is-avatar-open="isAvatarOpen" @toggle-avatar="toggleAvatar" />
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
-          <button class="my-2 mr-2 border-2 rounded-full border-orange-400 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-400 hover:text-white ">
+          <button class="my-[10px] mr-2 border-2 rounded-full border-orange-400 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-400 hover:text-white duration-300">
             <p class="py-1 px-2 sm:px-3"><span class="font-medium text-md sm:pr-2 hidden sm:inline">Sign In</span><i class="fas fa-rocket fa-spin text-lg sm:text-base"></i></p> 
           </button>
         </div>
@@ -125,10 +125,11 @@ router.afterEach(() => {
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
   color: white;
 }
-.light, .nav-color {
+.light, -nav-color {
   background: #1488CC;
-  background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-  background: linear-gradient(to left, #2B32B2, #1488CC); 
+  background: -webkit-linear-gradient(to right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  background: linear-gradient(to right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  opacity: 95%;
   color: white;
 }
 

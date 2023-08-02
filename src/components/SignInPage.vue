@@ -109,10 +109,10 @@ const signIn = () => {
 
 <style scoped>
 .input-field {
-    @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-black rounded-3xl
+    @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-white rounded-3xl
 }
 .input-field-gray {
-    @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-black rounded-3xl
+    @apply mt-2 w-[85%] mx-auto sm:w-full p-2 sm:p-3 border border-gray-400 light text-white rounded-3xl
 }
 .yellow-button {
     @apply w-[85%] sm:w-full mt-5 mx-auto p-2 sm:p-3 border-2 rounded-3xl border-orange-400 bg-orange-400 text-white hover:bg-white hover:text-orange-400 duration-300 font-bold cursor-pointer
@@ -124,9 +124,9 @@ const signIn = () => {
     @apply px-3 py-1 sm:px-7 bg-orange-400 text-white hover:bg-orange-500 font-bold border-4 border-orange-400 rounded-3xl duration-300 cursor-pointer
 }
 .light {
-    background: #1488CC;
-    background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-    background: linear-gradient(to left, #2B32B2, #1488CC); 
+  background: #1488CC;
+  background: -webkit-linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  background: linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
 }
 .font-style {
     font-family: 'Yatra One', cursive;

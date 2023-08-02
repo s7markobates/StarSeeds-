@@ -1,8 +1,8 @@
 <template>
     <div :class="footerClass" v-show="!shouldShowFooter">
         <hr>
-        <div class="flex justify-center mt-3 sm:mt-8">
-            <p class="text-2xl sm:text-3xl font-style">
+        <div class="flex justify-center pt-16 sm:mt-8">
+            <p class="text-2xl sm:text-4xl font-style">
                 <span class="text-orange-400 mr-[3px]">Star</span>
                 <i class="fas fa-meteor text-orange-400"></i>
                 <span class="text-yellow-400">seeds</span>
@@ -20,7 +20,7 @@
             <button class="button-icon" title="GitHub"><i class="fab fa-github text-sm sm:text-xl sm:pl-[1px]"></i></button>
             <button class="button-icon" title="Viber"><i class="fab fa-viber text-sm sm:text-xl"></i></button>
         </div>
-        <div class="flex justify-center text-xs sm:text-sm font-light pb-5">
+        <div class="flex justify-center text-xs sm:text-sm font-light pb-20">
             <h1>© 2023 Star Seeds | All Rights Reserved | Powered by bts ©</h1>
         </div>
     </div>
@@ -83,8 +83,8 @@ const shouldShowFooter = computed(() => {
 }
 .light {
   background: #1488CC;
-  background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
-  background: linear-gradient(to left, #2B32B2, #1488CC); 
+  background: -webkit-linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
+  background: linear-gradient(to top right, #1488CC, #2B32B2, #302b63, #24243e, #0f0c29);
   color: white;
 }
 .light button {

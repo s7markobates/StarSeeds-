@@ -4,7 +4,7 @@
     <slot/>
 
     <div class="rocket-container">
-      <i v-for="index in 19"
+      <i v-for="index in 49"
         :key="index"
         class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"
         :style="{ animationDelay: `${0.75 * (index - 1)}s`, visibility: rocketVisible[index] ? 'visible' : 'hidden' }"
@@ -17,10 +17,9 @@
 import { ref } from 'vue'
 
 // Niz koji će pratiti vidljivost svake rakete
-const rocketVisible = ref(new Array(20).fill(false))
+const rocketVisible = ref(new Array(50).fill(false))
 
-// Postavljanje vidljivosti prvih nekoliko raketa na false, ostale su po defaultu false
-rocketVisible.value.slice(1, 20).forEach((_, index) => {
+rocketVisible.value.slice(1, 50).forEach((_, index) => {
   setTimeout(() => {
     rocketVisible.value[index + 1] = true
   }, 0.75 * (index + 1) * 1000)
@@ -55,11 +54,11 @@ rocketVisible.value.slice(1, 20).forEach((_, index) => {
 @keyframes slideUpRight {
   from {
     opacity: 1;
-    transform: translateX(-100px) translateY(200px);
+    transform: translateX(-190px) translateY(250px);
   }
   to {
     opacity: 0;
-    transform: translateX(calc(100% + 100px)) translateY(-200px);
+    transform: translateX(calc(100% + 100px)) translateY(-300px);
   }
 }
 .delay-75:nth-child(n) {
