@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-white py-20 relative overflow-hidden">
+    <div class="bg-white py-14 md:py-20 relative overflow-hidden">
         <h1 class="title">Features</h1>
-        <div class="flex mx-20 mt-3">
+        <div class="flex flex-col md:flex-row mx-20 md:mt-3">
             <div class="feature-d">
                 <i class="fab fa-connectdevelop feature-icon"></i>
                 <h1 class="feature-title">Instant Connectivity</h1>
@@ -18,8 +18,8 @@
                 <p class="feature-p">Fortified Confidentiality: Ensure your privacy with end-to-end encryption and self-destructing messages, providing a secure space for your most sensitive discussions.</p>
             </div>
         </div>
-        <i class="fas fa-meteor meteor-class bottom-5 left-16 text-[250px]"></i>
-        <i class="fas fa-meteor meteor-class bottom-12 right-12 text-[470px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-5 left-[-30px] md:left-16 text-[250px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-[500px] md:bottom-24 right-[-200px] md:right-[-60px] lg:right-10 text-[470px]"></i>
     </div>
 </template>
 
@@ -32,20 +32,20 @@
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-5xl text-orange-400 text-center font-custom
+    @apply text-2xl md:text-5xl text-orange-400 text-center font-custom
 }
 .feature-d {
     @apply flex flex-col mt-5
 }
 
 .feature-icon {
-    @apply text-5xl text-center mb-5 text-orange-400
+    @apply text-5xl text-center mb-5 mt-1 md:mt-0 text-orange-400
 }
 .feature-title {
-    @apply text-center mb-3 font-custom text-orange-400 text-2xl
+    @apply text-center mb-3 font-custom text-orange-400 text-lg md:text-2xl
 }
 .feature-p {
-    @apply px-12 text-center 
+    @apply px-5 lg:px-12 text-center text-[15px] md:text-base
 }
 .meteor-class {
     @apply text-orange-400 absolute opacity-20
