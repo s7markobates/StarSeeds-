@@ -21,10 +21,10 @@
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-4xl text-orange-400 text-center font-custom 
+    @apply text-5xl text-orange-400 text-center font-custom 
 }
 .paragraph {
-    @apply py-3 sm:text-base opacity-100 text-blue-500 text-center z-[1]
+    @apply py-4 sm:text-base opacity-100 text-blue-500 text-center z-[1]
 }
 .input-class {
     @apply light py-2 pl-3 w-[350px] placeholder-yellow-400 text-yellow-400 focus:outline-none border-4 border-orange-400 z-[1] rounded-s-xl

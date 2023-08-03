@@ -60,10 +60,10 @@ onMounted(() => {
 
 <style scoped>
 .title {
-  @apply text-4xl text-yellow-400 text-end font-custom
+  @apply text-[40px] text-yellow-400 text-end font-custom
 }
 .paragraph {
-  @apply pl-28 py-3 sm:text-base text-white text-justify indent-12 z-[1]
+  @apply pl-28 py-4 sm:text-base text-white text-justify indent-12 z-[1]
 }
 .phone-img {
   @apply h-[550px] rounded-[44px] z-[1] shadow-xl shadow-orange-400

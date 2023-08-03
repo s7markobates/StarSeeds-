@@ -1,8 +1,8 @@
 <template>
-    <div :class="footerClass" class="relative" v-show="!shouldShowFooter">
+    <div :class="footerClass" class="relative overflow-hidden" v-show="!shouldShowFooter">
         <hr>
         <div class="flex justify-center pt-16 sm:mt-8">
-            <p class="text-2xl sm:text-4xl font-style">
+            <p class="text-2xl sm:text-5xl font-style">
                 <span class="text-orange-400 mr-[3px]">Star</span>
                 <i class="fas fa-meteor text-orange-400"></i>
                 <span class="text-yellow-400">seeds</span>

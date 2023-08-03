@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white relative">
+    <div class="bg-white relative overflow-hidden">
       <div class="grid grid-cols-2">
         <img src="../assets/Lap-top.png" alt="">
         <div class="flex flex-col justify-center items-center">
@@ -29,7 +29,7 @@ onMounted(() => {
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-4xl text-orange-400 text-end font-custom z-[1]
+    @apply text-5xl text-orange-400 text-end font-custom z-[1]
 }
 .paragraph {
     @apply mx-20 mt-5 sm:text-base text-blue-500 text-justify indent-16 z-[1]
