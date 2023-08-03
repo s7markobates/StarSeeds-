@@ -39,7 +39,7 @@
 }
 
 .feature-icon {
-    @apply text-4xl text-center mb-3 text-orange-400
+    @apply text-5xl text-center mb-5 text-orange-400
 }
 .feature-title {
     @apply text-center mb-3 font-custom text-orange-400 text-2xl
