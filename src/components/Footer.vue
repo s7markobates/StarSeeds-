@@ -23,12 +23,14 @@
         <div class="flex justify-center text-xs sm:text-sm font-light pb-20">
             <h1>© 2023 Star Seeds | All Rights Reserved | Powered by bts ©</h1>
         </div>
-        <i class="fas fa-sun fa-spin text-yellow-400 text-[20px] absolute top-[100px] right-[105px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[60px] right-[205px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-600 text-[8px] opacity-80 absolute top-[35px] right-[250px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[20px] opacity-80 absolute top-[150px] right-[300px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[25px] opacity-90 absolute top-[300px] right-[140px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute top-[50px] right-[120px]"></i>
+        <div v-show="isLightTheme">
+            <i class="fas fa-sun fa-spin text-yellow-400 text-[20px] absolute top-[100px] right-[105px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[60px] right-[205px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-600 text-[8px] opacity-80 absolute top-[35px] right-[250px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[20px] opacity-80 absolute top-[150px] right-[300px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[25px] opacity-90 absolute top-[300px] right-[140px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute top-[50px] right-[120px]"></i>
+        </div>
     </div>
 </template>
 
@@ -57,6 +59,8 @@ const shouldShowFooter = computed(() => {
     currentRouteName === 'chatPerson'
   )
 })
+
+const isLightTheme = computed(() => footerClass.value === 'light')
 
 </script>
 
