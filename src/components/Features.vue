@@ -42,7 +42,7 @@
     @apply text-4xl md:text-5xl text-center mb-5 mt-1 md:mt-0 text-orange-400
 }
 .feature-title {
-    @apply text-center mb-3 font-custom text-orange-400 text-lg md:text-2xl
+    @apply text-center mb-3 font-custom text-orange-400 text-lg md:text-xl lg:text-2xl
 }
 .feature-p {
     @apply px-5 lg:px-12 text-center text-[15px] md:text-base

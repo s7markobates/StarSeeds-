@@ -1,5 +1,5 @@
 <template>
-  <div class="light relative">
+  <div class="light relative overflow-hidden">
     <div v-if="currentSlideIndex === 0" class="slider">
       <div class="flex flex-col justify-center items-end my-auto">
         <h1 :class="{ 'opacity-0 translate-x-[-50px]': !slideVisible }" class="title">{{ slideVisible ? 'Private Messaging Redefined' : '' }}</h1>
@@ -75,7 +75,7 @@ onMounted(() => {
   @apply  text-orange-400 absolute top-20 left-12 opacity-60 text-[200px] lg:text-[250px]
 }
 .meteor-big {
-  @apply text-orange-400 absolute bottom-8 right-12 opacity-60 text-[350px] lg:text-[470px]
+  @apply text-orange-400 absolute bottom-8 right-[-40px] lg:right-12 opacity-60 text-[350px] lg:text-[470px]
 }
 .animate-slide-left {
   animation: slideLeft 1s;
