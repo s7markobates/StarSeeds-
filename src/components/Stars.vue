@@ -10,11 +10,11 @@
         <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[400px]"></i>
         <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[510px]"></i>
 
-        <i class="fas fa-street-view text-gray-100 text-[25px] opacity-90 absolute bottom-[175px] left-[320px] hover:text-[30px] hover:-ml-[2px] duration-100"></i>
-        <i class="fas fa-street-view text-yellow-600 text-[25px] opacity-90 absolute bottom-[155px] left-[430px] hover:text-[30px] hover:-ml-[2px] duration-100"></i>
-        <i class="fas fa-street-view text-red-700 text-[25px] opacity-90 absolute bottom-[100px] left-[460px] hover:text-[30px] hover:-ml-[2px] duration-100"></i>
-        <i class="fas fa-street-view text-amber-900 text-[25px] opacity-90 absolute bottom-[90px] left-[530px] hover:text-[30px] hover:-ml-[2px] duration-100"></i>
-        <i class="fas fa-street-view text-gray-800 text-[25px] opacity-90 absolute bottom-[40px] left-[560px] hover:text-[30px] hover:-ml-[2px] duration-100"></i>
+        <i class="fas fa-street-view text-gray-100 text-[25px] opacity-90 absolute bottom-[175px] left-[320px] hover:text-[30px] hover:-ml-[2px] duration-100 hover:cursor-pointer"></i>
+        <i class="fas fa-street-view text-yellow-600 text-[25px] opacity-90 absolute bottom-[155px] left-[430px] hover:text-[30px] hover:-ml-[2px] duration-100 hover:cursor-pointer"></i>
+        <i class="fas fa-street-view text-red-700 text-[25px] opacity-90 absolute bottom-[100px] left-[460px] hover:text-[30px] hover:-ml-[2px] duration-100 hover:cursor-pointer"></i>
+        <i class="fas fa-street-view text-amber-900 text-[25px] opacity-90 absolute bottom-[90px] left-[530px] hover:text-[30px] hover:-ml-[2px] duration-100 hover:cursor-pointer"></i>
+        <i class="fas fa-street-view text-gray-800 text-[25px] opacity-90 absolute bottom-[40px] left-[560px] hover:text-[30px] hover:-ml-[2px] duration-100 hover:cursor-pointer"></i>
 
         <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[380px]"></i>
         <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[150px]"></i>
