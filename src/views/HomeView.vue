@@ -1,5 +1,5 @@
 <template>
-  <div class="text-blue-500 bg-white  mx-auto">
+  <div class="text-blue-500 bg-white mx-auto">
 
     <Banner class="light relative overflow-hidden">
       <div class="flex flex-col justify-center items-center py-[320px]">
@@ -14,11 +14,6 @@
     </Banner>
 
     <AboutUs></AboutUs>
-
-    <!-- <div>
-      <h1 class="title">Connect with us</h1>
-      <img class="w-[100%] h-[100%] md:w-[80%] md:h-[80%] mx-auto"  src="../assets/All.png" alt="">
-    </div> -->
     
     <Slider></Slider>
 
@@ -39,6 +34,8 @@
 
     <Subscribe></Subscribe>
 
+    <scrollToTopButton></scrollToTopButton>
+
   </div>
 </template>
 
@@ -50,6 +47,7 @@ import Subscribe from "../components/Subscribe.vue"
 import AboutUs from "../components/AboutUs.vue"
 import Features from "../components/Features.vue"
 import Stars from "../components/Stars.vue"
+import scrollToTopButton from "../components/ScrollToTopButton.vue"
 
 </script>
 
