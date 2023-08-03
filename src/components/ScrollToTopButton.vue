@@ -1,6 +1,11 @@
 <template>
-    <button v-show="shouldShowScrollToTopButton" title="Top" @click="scrollToTop" class="scroll-to-top">
-        <i class="fas fa-arrow-up"></i>
+    <button
+      v-show="shouldShowScrollToTopButton"
+      title="Top"
+      @click="scrollToTop"
+      class="scroll-to-top"
+    >
+      <i class="fas fa-arrow-up"></i>
     </button>
 </template>
 
