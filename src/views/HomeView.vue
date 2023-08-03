@@ -3,12 +3,12 @@
 
     <Banner class="light relative overflow-hidden">
       <div class="flex flex-col justify-center items-center py-[320px]">
-        <div class="text-[30px] my-auto sm:mt-1 sm:text-[120px] font-custom">
+        <div class="text-[50px] sm:text-[70px] lg:text-[120px] my-auto sm:mt-1 font-custom">
           <span class="text-orange-400 mr-[5px]">Star</span>
           <i class="fas fa-meteor text-orange-400"></i>
           <span class="text-yellow-400 ">seeds</span>
         </div>
-        <h1 class="-mt-6 mb-5 text-white text-xl">A very cool ChatApp</h1>
+        <h1 class="-mt-3 lg:-mt-6 mb-5 text-white text-lg lg:text-xl">A very cool ChatApp</h1>
       </div>
       <Stars />      
     </Banner>
