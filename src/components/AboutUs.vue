@@ -29,10 +29,10 @@ onMounted(() => {
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-2xl md:text-3xl lg:text-5xl my-8 md:my-5 text-orange-400 text-end font-custom z-[1]
+    @apply text-2xl md:text-3xl lg:text-5xl mt-8 md:mt-5 text-orange-400 text-end font-custom z-[1]
 }
 .paragraph {
-    @apply mx-10 md:mx-20 mb-10 md:mb-10 text-sm sm:text-base text-blue-500 text-justify indent-8 md:indent-16 z-[1]
+    @apply mx-10 md:mx-20 mt-5 mb-10 md:mb-10 text-sm sm:text-base text-blue-500 text-justify indent-8 md:indent-16 z-[1]
 }
 </style>
   
