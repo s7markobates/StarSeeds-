@@ -20,8 +20,8 @@
     <Features></Features>
 
     <div class="flex w-full py-8 light relative overflow-hidden">
-      <SignInPage class="mr-36 z-[1]" />
-      <Banner class="flex flex-col justify-center items-center mr-40">
+      <SignInPage class="2xl:mr-36 z-[1]" />
+      <Banner class="hidden 2xl:flex flex-col justify-center items-center mx-auto 2xl:mr-40 2xl:ml-0">
         <h1 class="text-center text-white text-lg font-custom">Join our community</h1>
         <div class="text-[30px] my-auto sm:my-1 sm:text-[80px] font-custom">
           <span class="text-orange-400 mr-[3px]">Star</span>
