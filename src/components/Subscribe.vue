@@ -2,14 +2,14 @@
     <div class="py-24 relative overflow-hidden">
         <div class="w-[60%] mx-auto">
             <h1 class="title">Subscribe to our newsletter</h1>
-            <p class="paragraph">"After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice.<br> When she got to the door, she found she had forgotten the little golden key, and when she went back..."</p>
+            <p class="paragraph">"After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice. When she got to the door, she found she had forgotten the little golden key, and when she went back..."</p>
         </div>
         <div class="flex justify-center items-center mx-auto pt-6">
             <input type="email" placeholder="Enter your email" class="input-class">
             <button class="button">Dive into the rabbit hole <i class="fas fa-carrot pl-1"></i></button>
         </div>
         <i class="fas fa-meteor meteor-class bottom-[-30px] lg:bottom-5 left-[-100px] lg:left-16 text-[250px]"></i>
-        <i class="fas fa-meteor meteor-class bottom-12 right-[-110px] lg:right-12 text-[470px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-12 right-[-300px] md:right-[-100px] lg:right-12 text-[470px]"></i>
     </div>
 </template>
 <script>
