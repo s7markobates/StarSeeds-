@@ -18,8 +18,8 @@
                 <p class="feature-p">Fortified Confidentiality: Ensure your privacy with end-to-end encryption and self-destructing messages, providing a secure space for your most sensitive discussions.</p>
             </div>
         </div>
-        <i class="fas fa-meteor text-orange-400 absolute opacity-20 bottom-5 left-16 text-[250px]"></i>
-        <i class="fas fa-meteor text-orange-400 absolute opacity-20 bottom-12 right-12  text-[470px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-5 left-16 text-[250px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-12 right-12 text-[470px]"></i>
     </div>
 </template>
 
@@ -46,5 +46,8 @@
 }
 .feature-p {
     @apply px-12 text-center 
+}
+.meteor-class {
+    @apply text-orange-400 absolute opacity-20
 }
 </style>
