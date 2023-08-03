@@ -32,14 +32,14 @@
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-2xl md:text-5xl text-orange-400 text-center font-custom
+    @apply text-2xl md:text-4xl lg:text-5xl text-orange-400 text-center font-custom
 }
 .feature-d {
     @apply flex flex-col mt-5
 }
 
 .feature-icon {
-    @apply text-5xl text-center mb-5 mt-1 md:mt-0 text-orange-400
+    @apply text-4xl md:text-5xl text-center mb-5 mt-1 md:mt-0 text-orange-400
 }
 .feature-title {
     @apply text-center mb-3 font-custom text-orange-400 text-lg md:text-2xl

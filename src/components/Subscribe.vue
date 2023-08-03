@@ -8,8 +8,8 @@
             <input type="email" placeholder="Enter your email" class="input-class">
             <button class="button">Dive into the rabbit hole <i class="fas fa-carrot pl-1"></i></button>
         </div>
-        <i class="fas fa-meteor meteor-class bottom-5 left-16 text-[250px]"></i>
-        <i class="fas fa-meteor meteor-class bottom-12 right-12  text-[470px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-[-30px] lg:bottom-5 left-[-100px] lg:left-16 text-[250px]"></i>
+        <i class="fas fa-meteor meteor-class bottom-12 right-[-110px] lg:right-12 text-[470px]"></i>
     </div>
 </template>
 <script>
@@ -21,16 +21,16 @@
     font-family: 'Yatra One', cursive;
 }
 .title {
-    @apply text-5xl text-orange-400 text-center font-custom 
+    @apply text-2xl md:text-4xl lg:text-5xl text-orange-400 text-center font-custom 
 }
 .paragraph {
-    @apply py-4 sm:text-base opacity-100 text-blue-500 text-center z-[1]
+    @apply py-4 text-[15px] md:text-base opacity-100 text-blue-500 text-center z-[1]
 }
 .input-class {
-    @apply light py-2 pl-3 w-[350px] placeholder-yellow-400 text-yellow-400 focus:outline-none border-4 border-orange-400 z-[1] rounded-s-xl
+    @apply light py-5 md:py-2 pl-3 w-[150px] md:w-[350px] placeholder-yellow-400 text-yellow-400 focus:outline-none border-4 border-orange-400 z-[1] rounded-s-xl
 }
 .button {
-    @apply bg-orange-400 py-2 pr-3 border-4 border-l-0 -ml-1 text-right border-[#2B32B2] w-[270px] text-white z-[1] hover:bg-orange-500 rounded-e-xl
+    @apply bg-orange-400 py-2 pr-3 border-4 border-l-0 -ml-1 text-right border-[#2B32B2] w-[150px] md:w-[270px] text-white z-[1] hover:bg-orange-500 rounded-e-xl
 }
 .meteor-class{
     @apply text-orange-400 absolute opacity-20
