@@ -1,8 +1,8 @@
 <template>
   <div class="text-blue-500 bg-white mx-auto">
 
-    <Banner class="light relative overflow-hidden">
-      <div class="flex flex-col justify-center items-center py-[320px]">
+    <Banner class="light relative overflow-hidden h-screen">
+      <div class="flex flex-col justify-center items-center py-[300px]">
         <div class="text-[50px] sm:text-[70px] lg:text-[120px] my-auto sm:mt-1 font-custom">
           <span class="text-orange-400 mr-[5px]">Star</span>
           <i class="fas fa-meteor text-orange-400"></i>

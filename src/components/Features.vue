@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white py-14 md:py-20 relative overflow-hidden">
         <h1 class="title">Features</h1>
-        <div class="flex flex-col md:flex-row mx-20 md:mt-3">
+        <div class="flex flex-col md:flex-row mx-5 md:mx-20 md:mt-3">
             <div class="feature-d">
                 <i class="fab fa-connectdevelop feature-icon"></i>
                 <h1 class="feature-title">Instant Connectivity</h1>
@@ -37,9 +37,8 @@
 .feature-d {
     @apply flex flex-col mt-5
 }
-
 .feature-icon {
-    @apply text-4xl md:text-5xl text-center mb-5 mt-1 md:mt-0 text-orange-400 hover:text-yellow-400 z-[1] hover:scale-105 duration-500
+    @apply text-4xl md:text-5xl text-center mb-5 mt-1 md:mt-0 text-orange-400 z-[1]
 }
 .feature-title {
     @apply text-center mb-3 font-custom text-orange-400 text-lg md:text-xl lg:text-2xl

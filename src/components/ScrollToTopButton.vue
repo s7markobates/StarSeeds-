@@ -31,7 +31,7 @@ onMounted(() => {
 
 <style scoped>
 .scroll-to-top {
-    @apply fixed bottom-10 right-10 py-3 px-[17px] bg-transparent rounded-full shadow-md border-2 md:border-4 border-orange-400 z-[2] cursor-pointer;
+    @apply fixed bottom-5 right-5 md:bottom-10 md:right-10 py-3 px-[17px] bg-transparent rounded-full shadow-md border-2 md:border-4 border-orange-400 z-[2] cursor-pointer;
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
   }
