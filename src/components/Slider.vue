@@ -69,13 +69,13 @@ onMounted(() => {
   @apply pl-10 pr-10 md:pl-28 md:pr-0 py-4 text-[14px] sm:text-base text-white text-justify indent-12 z-[1] duration-500 transition-all
 }
 .phone-img {
-  @apply h-[340px] md:h-[400px] lg:h-[550px] mb-12 md:mb-0 rounded-[30px] lg:rounded-[44px] z-[1] shadow-xl shadow-orange-400
+  @apply h-[300px] sm:h-[340px] md:h-[400px] lg:h-[550px] mb-12 md:mb-0 rounded-[30px] lg:rounded-[44px] z-[1] shadow-xl shadow-orange-400
 }
 .meteor-small {
-  @apply  text-orange-400 absolute top-20 left-12 opacity-60 text-[200px] lg:text-[250px]
+  @apply  text-orange-400 absolute top-20 left-10 opacity-60 text-[200px] lg:text-[250px]
 }
 .meteor-big {
-  @apply text-orange-400 absolute bottom-8 right-[-40px] lg:right-12 opacity-60 text-[350px] lg:text-[470px]
+  @apply text-orange-400 absolute bottom-8 right-[-70px] lg:right-12 opacity-60 text-[350px] lg:text-[470px]
 }
 .animate-slide-left {
   animation: slideLeft 1s;

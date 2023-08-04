@@ -27,30 +27,17 @@ rocketVisible.value.slice(1, 50).forEach((_, index) => {
 </script>
 
 <style scoped>
-
 .light {
   background: #1488CC;
   background: -webkit-linear-gradient(to left, #2B32B2, #1488CC);
   background: linear-gradient(to left, #2B32B2, #1488CC);
 }
-
 .rocket-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-  overflow: hidden;
+  @apply absolute w-full h-full top-0 left-0 flex justify-center items-center pointer-events-none overflow-hidden
 }
-
 .animate-slide-up-right {
   animation: slideUpRight 4s infinite;
 }
-
 @keyframes slideUpRight {
   from {
     opacity: 1;
