@@ -31,7 +31,7 @@
         </div>
       </div>
       <template v-if="profile && filteredPeople.length > 0">
-        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[650px] hide-scrollbar">
+        <div ref="peopleList" class="w-full bg-gray-200 overflow-y-scroll h-[640px] hide-scrollbar">
           <ul>
             <li v-for="person in filteredPeople" :key="person.id">
               <div class="flex justify-between items-center py-4 w-[95%] mx-auto">

@@ -32,12 +32,12 @@
 
       <!-- Chat window - desktop -->
       <div v-if="profile" class="hidden xl:block w-[70%] mx-auto mt-3">
-        <div class="bg-gray-200 w-full h-[715px] rounded-t-3xl flex justify-evenly items-end">
+        <div class="bg-gray-200 w-full h-[710px] rounded-t-3xl flex justify-evenly items-end">
           <div class="pb-10">
             <img v-if="currentPerson && currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  :src="currentPerson.image" @click="goToProfile(currentPerson.id)" class="img-current" alt="CurrentPersonImage" />
             <img v-if="currentPerson && !currentPerson.image" :title="'Go to ' + currentPerson.name + ' profile'"  src="../assets/avatar.jpg" @click="goToProfile(currentPerson.id)" class="img-current" alt="CurrentPersonImage" />
           </div>
-          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-[715px] w-[50%] text-white">
+          <div class="flex flex-col-reverse overflow-y-scroll hide-scrollbar h-full w-[50%] text-white">
             <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">{{ message.content }}</span>
           </div>
           <div class="pb-10">
