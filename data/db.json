@@ -237,5 +237,15 @@
         }
       ]
     }
+  ],
+  "subscribers": [
+    {
+      "email": "test@test.com",
+      "id": 1
+    },
+    {
+      "email": "bts@bates.com",
+      "id": 2
+    }
   ]
 }

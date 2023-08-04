@@ -5,15 +5,45 @@
             <p class="paragraph">"After a while, finding that nothing more happened, she decided on going into the garden at once, but, alas for poor Alice. When she got to the door, she found she had forgotten the little golden key, and when she went back..."</p>
         </div>
         <div class="flex justify-center items-center mx-auto pt-6">
-            <input type="email" placeholder="Enter your email" class="input-class">
-            <button class="button">Dive into the rabbit hole <i class="fas fa-carrot pl-1"></i></button>
+            <input v-model="subscriber.email" type="email" placeholder="Enter your email" class="input-class">
+            <button @click.prevent="subscribe" class="button">Dive into the rabbit hole <i class="fas fa-carrot pl-1"></i></button>
         </div>
         <i class="fas fa-meteor meteor-class bottom-[-30px] lg:bottom-5 left-[-100px] lg:left-16 text-[250px]"></i>
         <i class="fas fa-meteor meteor-class bottom-12 right-[-300px] md:right-[-100px] lg:right-12 text-[470px]"></i>
     </div>
-</template>
-<script>
 
+    <div v-if="showModal" class="fixed inset-0 flex items-center justify-center z-[5]">
+        <div class="light p-14 rounded-lg border-4 border-orange-400">
+            <p class="text-center text-orange-400">You have successfully subscribed to the mailing list. Congratulations!</p>
+            <button @click="showModal = false" class="mt-4 block mx-auto bg-orange-400 text-white px-4 py-2 rounded-md hover:bg-orange-500">Close</button>
+        </div>
+    </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const showModal = ref(false)
+
+const subscriber = ref({
+    email: ""
+})
+
+const subscribe = () => {
+    fetch('http://localhost:3000/subscribers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(subscriber.value)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Successfully subscribed:', data);
+        showModal.value = true;
+    })
+    .catch(err => {
+        console.log(err.message)
+    })
+}
 </script>
 
 <style scoped>
