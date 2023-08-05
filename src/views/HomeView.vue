@@ -3,7 +3,7 @@
 
     <Banner class="light relative overflow-hidden h-screen">
       <div class="flex flex-col justify-center items-center mt-[260px] sm:mt-[360px] md:mt-[420px] lg:mt-[250px] xl:mt-[20%]">
-        <div class="text-[50px] sm:text-[70px] lg:text-[120px] my-auto sm:mt-1 font-custom">
+        <div class="text-[50px] sm:text-[70px] lg:text-[120px] my-auto sm:mt-1 z-[4] font-custom">
           <span class="text-orange-400 mr-[5px]">Star</span>
           <i class="fas fa-meteor text-orange-400"></i>
           <span class="text-yellow-400 ">seeds</span>

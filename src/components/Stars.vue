@@ -2,22 +2,22 @@
     <div>
         <!-- Big Planet Earth -->
         <div>
-            <i class="fas fa-globe-africa fa-flip-horizontal text-green-600 text-[700px] absolute -bottom-[500px] -left-[160px] md:left-[10px] z-[1]"></i>
-            <i class="fas fa-circle text-blue-600 text-[700px] absolute opacity-90 -bottom-[500px] -left-[170px] md:left-[1px]"></i>
+            <i class="fas fa-globe-africa fa-flip-horizontal text-green-600 text-[700px] absolute -bottom-[500px] -left-[160px] md:left-[10px] z-[2]"></i>
+            <i class="fas fa-circle text-blue-600 text-[700px] absolute opacity-90 -bottom-[500px] -left-[170px] md:left-[1px] z-[1]"></i>
             <i class="far fa-circle text-white text-[715px] absolute opacity-20 -bottom-[500px] -left-[175px] md:left-[-7px] z-[2]"></i>
             <i class="far fa-circle text-white text-[735px] absolute opacity-10 -bottom-[510px] -left-[185px] md:left-[-15px] z-[2]"></i>
         </div>
 
         <!-- Main objects -->
         <div>
-            <i title="Come! Join us." class="fab fa-galactic-senate text-white text-[60px] absolute opacity-50 top-[200px] right-[70px] cursor-none hover:scale-[1.5] duration-[6s]"></i>
+            <i title="Come! Join us." class="fab fa-galactic-senate text-white text-[60px] absolute opacity-50 top-[200px] right-[70px] cursor-none hover:scale-[1.5] duration-[6s] z-[4]"></i>
             <i class="fas fa-vihara text-yellow-400 text-[30px] absolute opacity-90 bottom-[175px] left-[100px] md:left-[260px] z-[4]"></i>
             <i title="Ommm..." class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[110px] md:left-[270px] z-[3] hover:text-[18px] hover:ml-[-2px] duration-300 hover:cursor-none"></i>            
         </div>
         
         <!-- Rocket -->
         <div>
-            <i title="Launch!" @click="launchRocket" id="rocket" class="fas fa-rocket cursor-alias absolute text-xl text-orange-400 bottom-[70px] md:bottom-[50px] left-[220px] md:left-[435px] z-[4]"></i>
+            <i title="Launch!" @click="launchRocket" id="rocket" class="fas fa-rocket cursor-alias absolute text-lg text-orange-400 bottom-[70px] md:bottom-[50px] left-[220px] md:left-[435px] z-[4]"></i>
             <i class="fas fa-cubes absolute text-gray-600 bottom-[65px] md:bottom-[46px] left-[217px] md:left-[431px] z-[3]"></i>
             <i title="Explore outer Space!" class="fas fa-warehouse absolute text-gray-300 bottom-[70px] md:bottom-[53px] left-[200px] md:left-[414px] z-[2]"></i>
             <i class="fas fa-satellite-dish absolute text-gray-300 text-[15px] bottom-[86px] md:bottom-[70px] left-[207px] md:left-[420px] z-[2]"></i>
@@ -41,14 +41,14 @@
 
         <!-- Trees -->
         <div>
-            <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[190px] md:left-[380px] z-[1]"></i>
-            <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[20px] md:left-[150px] z-[1]"></i>
-            <i class="fas fa-tree text-green-800 text-[31px] absolute bottom-[65px] left-[300px] md:left-[500px] z-[1]"></i>
+            <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[190px] md:left-[380px] z-[2]"></i>
+            <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[20px] md:left-[150px] z-[2]"></i>
+            <i class="fas fa-tree text-green-800 text-[31px] absolute bottom-[65px] left-[300px] md:left-[500px] z-[2]"></i>
 
-            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[280px] md:left-[480px] z-[1]"></i>
-            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[80px] md:left-[280px] z-[1]"></i>
-            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[220px] md:left-[400px] z-[1]"></i>
-            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[350px] md:left-[510px] z-[1]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[280px] md:left-[480px] z-[2]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[80px] md:left-[280px] z-[2]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[220px] md:left-[400px] z-[2]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[350px] md:left-[510px] z-[2]"></i>
         </div>
 
         <!-- Stars -->
@@ -67,6 +67,9 @@
             <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[110px] left-[340px]"></i>
             <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute bottom-[200px] md:bottom-[110px] right-[20px] md:right-[100px]"></i>
         </div>
+
+        <img src="../assets/night_sky.jpg" class="absolute top-0 left-0 z-[0] w-full h-full opacity-[10%]" alt="">
+
 
         <!-- <i class="fas fa-journal-whills"></i> -->
         <!-- <i class="fas fa-dice-d20 text-white text-[100px] opacity-60 absolute bottom-[300px] right-[320px]"></i> -->
