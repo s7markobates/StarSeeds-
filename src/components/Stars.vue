@@ -84,7 +84,7 @@
             <i class="fas fa-satellite-dish absolute text-gray-300 text-[15px] bottom-[86px] md:bottom-[70px] left-[207px] md:left-[420px] z-[2]"></i>
             <i class="fas fa-cubes absolute text-gray-600 bottom-[65px] md:bottom-[46px] left-[217px] md:left-[431px] z-[3]"></i>
             <i title="Launch!" @click="launchRocket" id="rocket" class="fas fa-rocket cursor-alias absolute text-lg text-orange-400 bottom-[70px] md:bottom-[50px] left-[220px] md:left-[435px] z-[4]"></i>
-            <audio id="launch" src="../assets/launch.mp3" type="audio/mpeg"></audio>
+            <!-- <audio id="launch" src="../assets/launch.mp3" type="audio/mpeg"></audio> -->
         </div>
 
     </div>
@@ -99,8 +99,8 @@ const launchRocket = () => {
   rocket.style.transform = 'translate(700px, -900px) ';
   rocket.style.opacity = '0';
 
-  const rocketAudio = document.getElementById('launch');
-  rocketAudio.play(); // Reprodukuj zvuk odmah nakon promene stila
+//   const rocketAudio = document.getElementById('launch');
+//   rocketAudio.play(); // Reprodukuj zvuk odmah nakon promene stila
 
   setTimeout(() => {
     rocket.style.transition = 'none';
@@ -108,7 +108,6 @@ const launchRocket = () => {
     rocket.style.opacity = '1';
   }, 3500);
 }
-
 </script>
 
 
