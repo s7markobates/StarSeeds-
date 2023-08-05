@@ -12,9 +12,9 @@
         <i class="fas fa-meteor meteor-class bottom-12 right-[-300px] md:right-[-100px] lg:right-12 text-[470px]"></i>
     </div>
 
-    <div v-if="showModal" class="fixed inset-0 flex items-center justify-center z-[5]">
-        <div class="light p-14 rounded-2xl border-4 border-orange-400">
-            <p class="text-center text-xl text-orange-400">{{ modalText }}</p>
+    <div v-if="showModal" class="fixed inset-0 flex items-center justify-center z-[4]">
+        <div class="light opacity-[95%] py-5 px-4 md:p-14 rounded-2xl border-4 border-orange-400">
+            <p class="text-center text-base md:text-xl text-orange-400">{{ modalText }}</p>
             <button @click="closeModal" class="button-modal">Close</button>
         </div>
     </div>

@@ -6,7 +6,7 @@
     <div class="rocket-container">
       <i v-for="index in 49"
         :key="index"
-        class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75"
+        class="fas fa-rocket text-orange-400 animate-slide-up-right delay-75 z-[2]"
         :style="{ animationDelay: `${0.75 * (index - 1)}s`, visibility: rocketVisible[index] ? 'visible' : 'hidden' }"
       ></i>
     </div>
