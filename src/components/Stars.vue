@@ -1,53 +1,103 @@
 <template>
     <div>
-        <i class="fas fa-globe-europe fa-flip-horizontal text-green-500 text-[700px] absolute opacity-80 -bottom-[500px] -left-40 md:left-1"></i>
-        <i class="fab fa-galactic-senate text-white text-[60px] absolute opacity-50 top-40 right-40"></i>
-        <i class="fas fa-vihara text-yellow-400 text-[30px] absolute opacity-80 bottom-[175px] left-[100px] md:left-[260px]"></i>
-        <i class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[110px] md:left-[270px] hover:text-[30px] hover:-ml-2 duration-300 hover:cursor-none"></i>
+        <!-- Main objects -->
+        <div>
+            <i title="Come! Join us." class="fab fa-galactic-senate text-white text-[60px] absolute opacity-50 top-40 right-40 cursor-none hover:scale-[1.8] duration-[8s]"></i>
+            <i class="fas fa-vihara text-yellow-400 text-[30px] absolute opacity-80 bottom-[175px] left-[100px] md:left-[260px] z-[1]"></i>
+            <i title="Ommm..." class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[110px] md:left-[270px] z-[1] hover:text-[30px] hover:-ml-2 duration-500 hover:cursor-none"></i>
+            <i class="fas fa-globe-europe fa-flip-horizontal text-green-500 text-[700px] absolute opacity-80 -bottom-[500px] -left-40 md:left-1"></i>
+            
+            <!-- <i class="fas fa-globe-europe text-blue-500 text-[800px] absolute bottom-[-500px] -left-[-200px] md:left-[15px] z-[1]"></i>
+            <i class="fas fa-circle text-green-500 text-[800px] absolute bottom-[-500px] left-[-200px] md:left-[4px]"></i>
+            <i class="far fa-circle text-blue-700 text-[800px] absolute opacity-100 bottom-[-500px] left-[-200px] md:left-[4px] z-[1]"></i> -->
+        </div>
 
-        <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[280px] md:left-[480px]"></i>
-        <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[80px] md:left-[280px]"></i>
-        <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[220px] md:left-[400px]"></i>
-        <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[350px] md:left-[510px]"></i>
+        <!-- Rockets -->
+        <i title="Launch!" @click="launchRocket" id="rocket" class="fas fa-rocket cursor-alias absolute text-lg text-orange-400 bottom-[33px] md:bottom-[27px] left-[202px] md:left-[562px] z-[1]"></i>
+        <i class="fas fa-cubes absolute text-gray-600 bottom-[28px] md:bottom-[23px] left-[200px] md:left-[560px] z-[1]"></i>
+        <i title="Explore outer Space!" class="fas fa-warehouse absolute text-gray-300 bottom-[30px] md:bottom-[25px] left-[180px] md:left-[540px] z-[1]"></i>
         
-        <i class="fas fa-rocket absolute text-orange-400 bottom-[175px] left-[323px]"></i>
-        <i class="fas fa-rocket absolute text-orange-400 bottom-[155px] left-[433px]"></i>
-        <i class="fas fa-rocket absolute text-orange-400 bottom-[100px] left-[463px]"></i>
-        <i class="fas fa-rocket absolute text-orange-400 bottom-[155px] left-[433px]"></i>
-        <i class="fas fa-rocket absolute text-orange-400 bottom-[155px] left-[433px]"></i>
+        <!-- <i class="fas fa-kiwi-bird absolute text-amber-400 bottom-[60px] md:bottom-[25px] left-[140px] md:left-[400px]"></i> -->
 
-        <i class="fas fa-street-view text-gray-100 text-[25px] opacity-90 absolute bottom-[175px] left-[160px] md:left-[320px] hover:text-[40px] hover:-ml-[7px] duration-300 hover:cursor-none"></i>
-        <i class="fas fa-street-view text-yellow-600 text-[25px] opacity-90 absolute bottom-[155px] left-[230px] md:left-[430px] hover:text-[40px] hover:-ml-[7px] duration-300 hover:cursor-none"></i>
-        <i class="fas fa-street-view text-red-700 text-[25px] opacity-90 absolute bottom-[100px] left-[260px] md:left-[460px] hover:text-[40px] hover:-ml-[7px] duration-300 hover:cursor-none"></i>
-        <i class="fas fa-street-view text-amber-900 text-[25px] opacity-90 absolute bottom-[90px] left-[330px] md:left-[530px] hover:text-[40px] hover:-ml-[7px] duration-300 hover:cursor-none"></i>
-        <i class="fas fa-street-view text-gray-800 text-[25px] opacity-90 absolute bottom-[40px] left-[390px] md:left-[560px] hover:text-[40px] hover:-ml-[7px] duration-300 hover:cursor-none"></i>
+        <!-- Planet Earth -->
+        <div>
+            <i class="fas fa-globe-europe absolute font- text-blue-500 text-[100px] top-[200px] left-[200px] z-[1]"></i>
+            <i class="fas fa-circle absolute text-green-500 text-[100px] top-[200px] left-[199px]"></i>
+            <i class="far fa-circle absolute text-white opacity-0 text-[100px] top-[200px] left-[200px] z-[1]"></i>
+        </div>
 
-        <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[190px] md:left-[380px]"></i>
-        <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[20px] md:left-[150px]"></i>
-        <i class="fas fa-tree text-green-800 text-[31px] absolute bottom-[65px] left-[300px] md:left-[500px]"></i>
 
-        <i class="fas fa-sun fa-spin text-orange-500 text-[19px] opacity-80 absolute top-[100px] right-[65px] hover:text-yellow-500"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[110px] right-[205px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[95px] right-[250px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[105px] right-[400px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[280px] right-[60px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[300px] right-[40px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[18px] opacity-80 absolute top-[150px] right-[300px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[22px] absolute top-[300px] right-[80px] md:right-[140px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[380px] right-[50px] md:right-[120px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-90 absolute top-[100px] left-[240px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[90px] left-[290px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[110px] left-[340px]"></i>
-        <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute bottom-[200px] md:bottom-[110px] right-[20px] md:right-[100px]"></i>
+        <!-- 
+        <i class="fas fa-rocket absolute text-orange-400 bottom-[145px] left-[335px] z-[1]"></i>
+        <i class="fas fa-rocket absolute text-orange-400 bottom-[125px] left-[210px]"></i>
+        <i class="fas fa-rocket absolute text-orange-400 bottom-[60px] left-[420px]"></i>
+        <i class="fas fa-rocket absolute text-orange-400 bottom-[110px] left-[500px]"></i>
+        <i  class="fas fa-rocket absolute text-orange-400 bottom-[20px] left-[596px]"></i>
+        -->
 
+        <!-- People -->
+        <div>
+            <i title="Hello friend!" class="fas fa-street-view text-gray-100 text-[25px] hover:text-[35px] opacity-90 absolute bottom-[175px] left-[160px] md:left-[320px] hover:-ml-[5px] duration-200 hover:cursor-none  z-[1]" ></i>
+            <i title="Welcome to StarSeeds" class="fas fa-street-view text-yellow-600 text-[25px] hover:text-[35px] opacity-90 absolute bottom-[155px] left-[230px] md:left-[430px] hover:-ml-[5px] duration-200 hover:cursor-none  z-[1]"></i>
+            <i title="You love it here! :)" class="fas fa-street-view text-red-700 text-[25px] hover:text-[35px] opacity-90 absolute bottom-[100px] left-[260px] md:left-[460px] hover:-ml-[5px] duration-200 hover:cursor-none z-[1]"></i>
+            <i title="Namaste" class="fas fa-street-view text-amber-900 text-[25px] hover:text-[35px] opacity-90 absolute bottom-[130px] md:bottom-[90px] left-[40px] md:left-[540px] hover:-ml-[5px] duration-200 hover:cursor-none z-[1]"></i>
+            <i title="Hakuna Matata" class="fas fa-street-view text-gray-800 text-[25px] hover:text-[35px]  opacity-90 absolute bottom-[20px] md:bottom-[150px] left-[240px] md:left-[220px] hover:-ml-[5px] duration-200 hover:cursor-none z-[1]"></i>
+        </div>
+
+        <!-- Trees -->
+        <div>
+            <i class="fas fa-tree text-green-700 text-[31px] absolute bottom-[150px] left-[190px] md:left-[380px] z-[1]"></i>
+            <i class="fas fa-tree text-green-900 text-[28px] absolute bottom-[100px] left-[20px] md:left-[150px] z-[1]"></i>
+            <i class="fas fa-tree text-green-800 text-[31px] absolute bottom-[65px] left-[300px] md:left-[500px] z-[1]"></i>
+
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[280px] md:left-[480px] z-[1]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[80px] md:left-[280px] z-[1]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[220px] md:left-[400px] z-[1]"></i>
+            <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[350px] md:left-[510px] z-[1]"></i>
+        </div>
+
+        <!-- Stars -->
+        <div>
+            <i class="fas fa-sun fa-spin text-orange-500 text-[19px] opacity-80 absolute top-[100px] right-[65px] hover:text-yellow-500"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[110px] right-[205px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[95px] right-[250px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-80 absolute top-[105px] right-[400px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[280px] right-[60px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[300px] right-[40px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[18px] opacity-80 absolute top-[150px] right-[300px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[22px] absolute top-[300px] right-[80px] md:right-[140px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[380px] right-[50px] md:right-[120px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] opacity-90 absolute top-[100px] left-[240px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[90px] left-[290px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[110px] left-[340px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute bottom-[200px] md:bottom-[110px] right-[20px] md:right-[100px]"></i>
+        </div>
+
+        <!-- <i class="fas fa-journal-whills"></i> -->
         <!-- <i class="fas fa-dice-d20 text-white text-[100px] opacity-60 absolute bottom-[300px] right-[320px]"></i> -->
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+
+const launchRocket = () => {
+  const rocket = document.getElementById('rocket');
+
+  rocket.style.transition = 'all 3s ease-in';
+  rocket.style.transform = 'translate(700px, -900px) ';
+  rocket.style.opacity = '0';
+
+  setTimeout(() => {
+    rocket.style.transition = 'none';
+    rocket.style.transform = 'translate(0, 0)';
+    rocket.style.opacity = '1';
+  }, 3500);
+}
 </script>
 
+
 <style scoped>
-    
+
 </style>

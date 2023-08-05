@@ -24,7 +24,7 @@
             <h1>© 2023 Star Seeds | All Rights Reserved | Powered by bts ©</h1>
         </div>
         <div v-show="isLightTheme">
-            <i class="fas fa-sun fa-spin text-yellow-400 text-[20px] absolute top-[100px] right-[105px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-400 text-[20px] absolute top-[60px] sm:top-[100px] right-[50px] sm:right-[105px]"></i>
             <i class="fas fa-sun fa-spin text-yellow-500 text-[11px] opacity-80 absolute top-[60px] right-[205px]"></i>
             <i class="fas fa-sun fa-spin text-yellow-600 text-[8px] opacity-80 absolute top-[35px] right-[250px]"></i>
             <i class="fas fa-sun fa-spin text-yellow-500 text-[20px] opacity-80 absolute top-[150px] right-[300px]"></i>
