@@ -2,7 +2,7 @@
   <div class="text-blue-500 bg-white mx-auto">
 
     <Banner class="light relative overflow-hidden h-screen">
-      <div class="flex flex-col justify-center items-center mt-[320px] sm:mt-[360px] md:mt-[420px] lg:mt-[360px] xl:mt-[25%]">
+      <div class="flex flex-col justify-center items-center mt-[260px] sm:mt-[360px] md:mt-[420px] lg:mt-[250px] xl:mt-[20%]">
         <div class="text-[50px] sm:text-[70px] lg:text-[120px] my-auto sm:mt-1 font-custom">
           <span class="text-orange-400 mr-[5px]">Star</span>
           <i class="fas fa-meteor text-orange-400"></i>
