@@ -67,9 +67,9 @@
 
         <!-- Cloads -->
         <div>
-            <i class="fas fa-cloud text-white text-[33px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[40px] left-[30px] md:left-[200px] z-[2] "></i>
-            <i class="fas fa-cloud text-white text-[32px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[55px] left-[50px] md:left-[230px] z-[2] "></i>
-            <i class="fas fa-cloud text-white text-[35px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[30px] left-[70px] md:left-[240px] z-[3] "></i>
+            <i class="fas fa-cloud text-white text-[38px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[40px] left-[30px] md:left-[200px] z-[2] "></i>
+            <i class="fas fa-cloud text-white text-[38px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[55px] left-[50px] md:left-[230px] z-[2] "></i>
+            <i class="fas fa-cloud text-white text-[45px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[30px] left-[70px] md:left-[240px] z-[3] "></i>
             <i class="fas fa-cloud text-white text-[25px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[60px] left-[250px] md:left-[80px] z-[3] "></i>
             <i class="fas fa-cloud text-white text-[25px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[45px] left-[300px] md:left-[100px] z-[3] "></i>
             <i class="fas fa-cloud text-white text-[35px] absolute opacity-60 hover:opacity-90 duration-300 bottom-[140px] md:bottom-[100px] left-[310px] md:left-[530px] z-[3] "></i>
@@ -96,7 +96,7 @@ const launchRocket = () => {
   const rocket = document.getElementById('rocket');
 
   rocket.style.transition = 'all 3s ease-in';
-  rocket.style.transform = 'translate(700px, -900px) ';
+  rocket.style.transform = 'translate(700px, -900px)';
   rocket.style.opacity = '0';
 
 //   const rocketAudio = document.getElementById('launch');
