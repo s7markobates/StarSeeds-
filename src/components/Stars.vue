@@ -1,5 +1,8 @@
 <template>
     <div>
+        <!-- bg Picture -->
+        <img src="../assets/night_sky.jpg" class="absolute top-0 left-0 z-[0] w-full h-full opacity-[10%]" alt="">
+
         <!-- Big Planet Earth -->
         <div>
             <i class="fas fa-globe-africa fa-flip-horizontal text-green-600 text-[700px] absolute -bottom-[500px] -left-[160px] md:left-[10px] z-[2]"></i>
@@ -49,6 +52,8 @@
             <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[140px] left-[80px] md:left-[280px] z-[2]"></i>
             <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[100px] left-[220px] md:left-[400px] z-[2]"></i>
             <i class="fas fa-seedling text-green-700 text-[20px] absolute bottom-[25px] left-[350px] md:left-[510px] z-[2]"></i>
+
+            <i class="fas fa-dove text-white text-[11px] absolute opacity-90 bottom-[110px] left-[280px] md:left-[370px] z-[4]"></i>
         </div>
 
         <!-- Stars -->
@@ -68,8 +73,15 @@
             <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute bottom-[200px] md:bottom-[110px] right-[20px] md:right-[100px]"></i>
         </div>
 
-        <img src="../assets/night_sky.jpg" class="absolute top-0 left-0 z-[0] w-full h-full opacity-[10%]" alt="">
-
+        <!-- Cloads -->
+        <div>
+            <i class="fas fa-cloud text-white text-[33px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[40px] left-[30px] md:left-[200px] z-[2] "></i>
+            <i class="fas fa-cloud text-white text-[32px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[55px] left-[50px] md:left-[230px] z-[2] "></i>
+            <i class="fas fa-cloud text-white text-[35px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[30px] left-[70px] md:left-[240px] z-[3] "></i>
+            <i class="fas fa-cloud text-white text-[25px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[60px] left-[250px] md:left-[80px] z-[3] "></i>
+            <i class="fas fa-cloud text-white text-[25px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[45px] left-[300px] md:left-[100px] z-[3] "></i>
+            <i class="fas fa-cloud text-white text-[35px] absolute opacity-60 hover:opacity-90 duration-300 bottom-[140px] md:bottom-[100px] left-[310px] md:left-[530px] z-[3] "></i>
+        </div>
 
         <!-- <i class="fas fa-journal-whills"></i> -->
         <!-- <i class="fas fa-dice-d20 text-white text-[100px] opacity-60 absolute bottom-[300px] right-[320px]"></i> -->
@@ -77,8 +89,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
 
 const launchRocket = () => {
   const rocket = document.getElementById('rocket');
