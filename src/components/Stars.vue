@@ -17,15 +17,7 @@
             <i class="fas fa-vihara text-yellow-400 text-[30px] absolute opacity-90 bottom-[175px] left-[100px] md:left-[260px] z-[4]"></i>
             <i title="Ommm..." class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[110px] md:left-[270px] z-[3] hover:text-[18px] hover:ml-[-2px] duration-300 hover:cursor-none"></i>            
         </div>
-        
-        <!-- Rocket -->
-        <div>
-            <i title="Launch!" @click="launchRocket" id="rocket" class="fas fa-rocket cursor-alias absolute text-lg text-orange-400 bottom-[70px] md:bottom-[50px] left-[220px] md:left-[435px] z-[4]"></i>
-            <i class="fas fa-cubes absolute text-gray-600 bottom-[65px] md:bottom-[46px] left-[217px] md:left-[431px] z-[3]"></i>
-            <i title="Explore outer Space!" class="fas fa-warehouse absolute text-gray-300 bottom-[70px] md:bottom-[53px] left-[200px] md:left-[414px] z-[2]"></i>
-            <i class="fas fa-satellite-dish absolute text-gray-300 text-[15px] bottom-[86px] md:bottom-[70px] left-[207px] md:left-[420px] z-[2]"></i>
-        </div>
-        
+                
         <!-- Small Planet Earth -->
         <div>
             <i class="fas fa-globe-europe absolute text-blue-500 text-[25px] sm:text-[45px] top-[100px] right-[140px] z-[1]"></i>
@@ -85,6 +77,16 @@
 
         <!-- <i class="fas fa-journal-whills"></i> -->
         <!-- <i class="fas fa-dice-d20 text-white text-[100px] opacity-60 absolute bottom-[300px] right-[320px]"></i> -->
+
+        <!-- Rocket -->
+        <div>
+            <i title="Explore outer Space!" class="fas fa-warehouse absolute text-gray-300 bottom-[70px] md:bottom-[53px] left-[200px] md:left-[414px] z-[2]"></i>
+            <i class="fas fa-satellite-dish absolute text-gray-300 text-[15px] bottom-[86px] md:bottom-[70px] left-[207px] md:left-[420px] z-[2]"></i>
+            <i class="fas fa-cubes absolute text-gray-600 bottom-[65px] md:bottom-[46px] left-[217px] md:left-[431px] z-[3]"></i>
+            <i title="Launch!" @click="launchRocket" id="rocket" class="fas fa-rocket cursor-alias absolute text-lg text-orange-400 bottom-[70px] md:bottom-[50px] left-[220px] md:left-[435px] z-[4]"></i>
+            <audio id="launch" src="../assets/launch-85216.mp3" type="audio/mpeg"></audio>
+        </div>
+
     </div>
 </template>
 
@@ -97,12 +99,16 @@ const launchRocket = () => {
   rocket.style.transform = 'translate(700px, -900px) ';
   rocket.style.opacity = '0';
 
+  const rocketAudio = document.getElementById('launch');
+  rocketAudio.play(); // Reprodukuj zvuk odmah nakon promene stila
+
   setTimeout(() => {
     rocket.style.transition = 'none';
     rocket.style.transform = 'translate(0, 0)';
     rocket.style.opacity = '1';
   }, 3500);
 }
+
 </script>
 
 
