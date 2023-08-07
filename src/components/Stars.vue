@@ -22,7 +22,7 @@
         <div>
             <i class="fas fa-globe-europe absolute text-blue-500 text-[25px] sm:text-[45px] top-[100px] right-[140px] z-[1]"></i>
             <i class="fas fa-circle absolute text-green-500 text-[25px] sm:text-[45px] top-[100px] right-[140px]"></i>
-            <i title="Gaia" class="far fa-circle absolute text-white opacity-40 hover:opacity-60 text-[25px] sm:text-[45px] top-[100px] right-[140px] z-[1]"></i>
+            <i title="Gaia" class="far fa-circle absolute text-white opacity-40 hover:opacity-70 duration-500 text-[25px] sm:text-[45px] top-[100px] right-[140px] z-[1]"></i>
         </div>
 
         <!-- People -->
