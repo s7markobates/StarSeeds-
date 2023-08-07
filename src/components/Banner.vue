@@ -41,14 +41,14 @@ rocketVisible.value.slice(1, 50).forEach((_, index) => {
 @keyframes slideUpRight {
   from {
     opacity: 1;
-    transform: translateX(-150px) translateY(280px);
+    transform: translateX(-220px) translateY(380px);
   }
   to {
     opacity: 0;
-    transform: translateX(calc(100% + 150px)) translateY(-300px);
+    transform: translateX(calc(100% + 110px)) translateY(-340px);
   }
 }
 .delay-75:nth-child(n) {
-  animation-delay: calc(0.75s * (n - 1));
+  animation-delay: calc(1s * (n - 1));
 }
 </style>
