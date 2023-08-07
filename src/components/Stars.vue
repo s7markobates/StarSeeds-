@@ -6,7 +6,7 @@
         <!-- Big Planet Earth -->
         <div>
             <i class="fas fa-globe-africa fa-flip-horizontal text-green-600 text-[700px] absolute -bottom-[500px] -left-[160px] md:left-[10px] z-[2]"></i>
-            <i class="fas fa-circle text-blue-600 text-[700px] absolute opacity-90 -bottom-[500px] -left-[170px] md:left-[1px] z-[1]"></i>
+            <i class="fas fa-circle text-blue-600 text-[700px] absolute opacity-100 -bottom-[500px] -left-[170px] md:left-[1px] z-[1]"></i>
             <i class="far fa-circle text-white text-[715px] absolute opacity-20 -bottom-[500px] -left-[175px] md:left-[-7px] z-[2]"></i>
             <i class="far fa-circle text-white text-[735px] absolute opacity-10 -bottom-[510px] -left-[185px] md:left-[-15px] z-[2]"></i>
         </div>
