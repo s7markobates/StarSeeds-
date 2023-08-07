@@ -9,7 +9,7 @@
         </div>
         <div v-else v-show="!isOpen" @click="toggleModal" class="absolute top-[2px] right-[2px]" title="Click to Log in">
           <button class="my-[10px] mr-2 border-2 rounded-full border-orange-400 bg-transparent text-orange-400 bg-[#2B32B2] hover:bg-orange-400 hover:text-white duration-300">
-            <p class="py-1 px-2 sm:px-3"><span class="font-medium text-md sm:pr-2 hidden sm:inline">Sign In</span><i class="fas fa-rocket text-lg sm:text-base"></i></p> 
+            <p class="py-1 px-2 sm:px-3"><span class="font-medium text-md sm:pr-2 hidden sm:inline">Sign In</span><i class="fas fa-rocket text-lg pr-[1px] sm:text-base"></i></p> 
           </button>
         </div>
       </div>

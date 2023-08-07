@@ -15,7 +15,7 @@
         <div>
             <i title="Come! Join us." class="fab fa-galactic-senate text-white text-[60px] absolute opacity-50 top-[200px] right-[70px] cursor-none hover:scale-[1.5] duration-[6s] z-[4]"></i>
             <i class="fas fa-vihara text-yellow-400 text-[30px] absolute opacity-90 bottom-[175px] left-[100px] md:left-[260px] z-[4]"></i>
-            <i title="Ommm..." class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[110px] md:left-[270px] z-[3] hover:text-[18px] hover:ml-[-2px] duration-300 hover:cursor-none"></i>            
+            <i title="Ommm..." class="fas fa-om text-yellow-400 text-[15px] absolute bottom-[205px] left-[110px] md:left-[270px] z-[3] hover:text-[20px] hover:ml-[-3px] duration-[0.5s] hover:cursor-none"></i>            
         </div>
                 
         <!-- Small Planet Earth -->
@@ -31,7 +31,7 @@
             <i title="Welcome to StarSeeds" class="fas fa-street-view text-yellow-500 text-[25px] hover:text-[35px] opacity-80 absolute bottom-[155px] left-[230px] md:left-[430px] hover:-ml-[5px] duration-200 hover:cursor-none  z-[3]"></i>
             <i title="You'll love it here! :)" class="fas fa-street-view text-red-700 text-[25px] hover:text-[35px] opacity-80 absolute bottom-[100px] left-[320px] md:left-[460px] hover:-ml-[5px] duration-200 hover:cursor-none z-[3]"></i>
             <i title="Namaste" class="fas fa-street-view text-amber-900 text-[25px] hover:text-[35px] opacity-80 absolute bottom-[130px] md:bottom-[40px] left-[45px] md:left-[570px] hover:-ml-[5px] duration-200 hover:cursor-none z-[3]"></i>
-            <i title="Hakuna Matata" class="fas fa-street-view text-gray-800 text-[25px] hover:text-[35px] opacity-80 absolute bottom-[20px] md:bottom-[150px] left-[400px] md:left-[220px] hover:-ml-[5px] duration-200 hover:cursor-none z-[3]"></i>
+            <i title="Hakuna Matata" class="fas fa-street-view text-gray-800 text-[25px] hover:text-[35px] opacity-80 absolute bottom-[20px] md:bottom-[150px] left-[275px] md:left-[220px] hover:-ml-[5px] duration-200 hover:cursor-none z-[3]"></i>
         </div>
 
         <!-- Trees -->
@@ -67,12 +67,12 @@
 
         <!-- Cloads -->
         <div>
-            <i class="fas fa-cloud text-white text-[38px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[40px] left-[30px] md:left-[200px] z-[2] "></i>
-            <i class="fas fa-cloud text-white text-[38px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[55px] left-[50px] md:left-[230px] z-[2] "></i>
-            <i class="fas fa-cloud text-white text-[45px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[30px] left-[70px] md:left-[240px] z-[3] "></i>
-            <i class="fas fa-cloud text-white text-[25px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[60px] left-[250px] md:left-[80px] z-[3] "></i>
-            <i class="fas fa-cloud text-white text-[25px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[45px] left-[300px] md:left-[100px] z-[3] "></i>
-            <i class="fas fa-cloud text-white text-[35px] absolute opacity-60 hover:opacity-90 duration-300 bottom-[140px] md:bottom-[100px] left-[310px] md:left-[530px] z-[3] "></i>
+            <i class="fas fa-cloud animate-cloud text-white text-[38px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[40px] left-[30px] md:left-[205px] z-[2]"></i>
+            <i class="fas fa-cloud text-white text-[38px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[55px] left-[50px] md:left-[230px] z-[2]"></i>
+            <i class="fas fa-cloud animate-cloud text-white text-[48px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[30px] left-[70px] md:left-[240px] z-[3]"></i>
+            <i class="fas fa-cloud animate-cloud text-gray-100 text-[25px] absolute opacity-60 hover:opacity-80 duration-300 bottom-[60px] left-[330px] md:left-[80px] z-[3]"></i>
+            <i class="fas fa-cloud text-white text-[25px] absolute opacity-70 hover:opacity-90 duration-300 bottom-[45px] left-[315px] md:left-[95px] z-[3]"></i>
+            <i class="fas fa-cloud animate-cloud text-white text-[35px] absolute opacity-60 hover:opacity-90 duration-300 bottom-[140px] md:bottom-[100px] left-[310px] md:left-[530px] z-[3]"></i>
         </div>
 
         <!-- <i class="fas fa-journal-whills"></i> -->
@@ -112,5 +112,16 @@ const launchRocket = () => {
 
 
 <style scoped>
-
+@keyframes moveCloud {
+    0%, 100% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+  
+  .animate-cloud {
+    animation: moveCloud 10s infinite ease-in;
+  }
 </style>
