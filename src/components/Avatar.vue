@@ -2,7 +2,7 @@
   <div @click="$emit('toggle-avatar')" :class="`avatar-frame ${!isAvatarOpen ? 'bg-green-500' : 'bg-green-600'}`" class="relative">
     <span class="text-[20px] font-semibold text-center text-white opacity-90 font-custom mb-[-5px] mr-[-3px] z-[4]" title="View profile details">{{ getInitials }}</span>
     <i class="fas fa-globe-europe absolute text-blue-500 text-[45px] top-[-1px] right-[-2px] z-[2]"></i>
-    <i class="far fa-circle absolute text-orange-400 opacity-°[95%] text-[50px] top-[-4px] right-[-5px] z-[2]"></i>
+    <i class="far fa-circle absolute text-orange-400 text-[50px] top-[-4px] right-[-5px] z-[2]"></i>
   </div>
   <div v-if="isAvatarOpen" :class="`dark ${isWideScreen ? 'dark-wide' : 'sm:max-w-[300px]'}`" class="h-[470px] w-full sm:w-[300px] absolute top-[60px] right-0 text-white text-lg border-x-4 border-b-4 border-orange-400 rounded-b-2xl">
     <div v-if="avatarProfile" class="mt-4 flex flex-col items-center">
