@@ -63,6 +63,7 @@
             <i class="fas fa-sun fa-spin text-yellow-500 text-[8px] absolute top-[90px] left-[290px]"></i>
             <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-80 absolute top-[110px] left-[340px]"></i>
             <i class="fas fa-sun fa-spin text-yellow-500 text-[10px] opacity-90 absolute bottom-[200px] md:bottom-[110px] right-[20px] md:right-[100px]"></i>
+            <i class="fas fa-sun fa-spin text-yellow-500 text-[7px] opacity-80 absolute bottom-[190px] md:bottom-[80px] right-[10px] md:right-[80px]"></i>
         </div>
 
         <!-- Cloads -->
