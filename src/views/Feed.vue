@@ -46,6 +46,7 @@
             <button @click="goToProfiles" title="See all the members"><i class="fas fa-users button mx-1 mt-2 px-[9.5px] py-[11.6px]"></i></button>
             <button @click="goToProfile(profile.id)" title="Go to your profile"><i class="fas fa-user-astronaut button mx-1 mt-2 px-[12px] py-[11px]"></i></button>
             <button @click="goToChat" title="Go to your chat"><i class="fas fa-rocket button mx-1 mt-2 pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
+            <button @click="goToChatTest" title="Go to your chat"><i class="fas fa-rocket button-test mx-1 mt-2 pl-[10.8px] pr-[11.8px] py-[11px]"></i></button>
           </div>
           <div class="hidden flex-1 xl:flex text-end justify-end">
             <i class="fab fa-old-republic text-orange-400 text-5xl mx-1 mt-2" :title="profile.name + ' - Member of The Jedi Order'"></i>
@@ -235,6 +236,10 @@ const goToProfile = (personId) => {
 
 const goToChat = () => {
   router.push({ name: 'chat' })
+}
+
+const goToChatTest = () => {
+  router.push({ name: 'chatTest' })
 }
 
 const toggleDescriptionEditMode = () => {
@@ -430,6 +435,9 @@ const deleteYouTubeVideo = (videoId) => {
 }
 .button {
   @apply border-2 rounded-full bg-orange-400 border-orange-400 text-white hover:bg-white hover:text-orange-400 cursor-pointer
+}
+.button-test {
+  @apply border-2 rounded-full bg-yellow-400 border-yellow-400 text-white hover:bg-white hover:text-yellow-400 cursor-pointer
 }
 .button-status {
   @apply text-white bg-orange-400 hover:bg-white hover:text-orange-400 font-semibold text-base border-2 border-orange-400 rounded-full py-[2px] px-3 flex justify-center items-center

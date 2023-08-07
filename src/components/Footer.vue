@@ -47,6 +47,7 @@ const footerClass = computed(() => {
     currentRoute.name === 'profileDetails' ||
     currentRoute.name === 'feed' ||
     currentRoute.name === 'chat' ||
+    currentRoute.name === 'chatTest' ||
     currentRoute.name === 'chatPerson'
     ? 'dark' : 'light'
   )
@@ -56,6 +57,7 @@ const shouldShowFooter = computed(() => {
   const currentRouteName = router.currentRoute.value.name;
   return (
     currentRouteName === 'chat'||
+    currentRouteName === 'chatTest'||
     currentRouteName === 'chatPerson'
   )
 })

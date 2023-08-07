@@ -64,6 +64,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/chattest',
+      name: 'chatTest',
+      component: () => import('../views/ChatTest.vue'),
+      meta: {
+        darkMode: true
+      }
+    },
+    {
       path: '/chat/:id',
       name: 'chatPerson',
       props: true,

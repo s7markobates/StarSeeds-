@@ -77,6 +77,7 @@ const navbarClass = computed(() => {
     currentRoute.name === 'profileDetails' ||
     currentRoute.name === 'feed' ||
     currentRoute.name === 'chat' ||
+    currentRoute.name === 'chatTest' ||
     currentRoute.name === 'chatPerson'
     ? 'dark' : 'light'
   )
@@ -87,6 +88,7 @@ const isOnFeed = computed(() =>
   router.currentRoute.value.name === 'profiles' ||
   router.currentRoute.value.name === 'profileDetails' ||
   router.currentRoute.value.name === 'chat' ||
+  router.currentRoute.value.name === 'chatTest' ||
   router.currentRoute.value.name === 'chatPerson'
 )
 
@@ -97,6 +99,7 @@ const shouldShowNav = computed(() => {
     currentRouteName === 'profiles' ||
     currentRouteName === 'profileDetails'||
     currentRouteName === 'chat'||
+    currentRouteName === 'chatTest'||
     currentRouteName === 'chatPerson' ||
     currentRouteName === 'avatar'
   )
