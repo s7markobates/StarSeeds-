@@ -1,4 +1,4 @@
-<template>
+<template class="relative z-[2] overflow-hidden">
   <div class="text-gray-600 mt-[70px] flex justify-between items-center w-[70%] mx-auto text-xl">
     <div v-if="profile" class="flex-1 font-bold ">
       <div class="flex items-center " :title="'Go to ' + getFirstName + '\'s feed'">
@@ -21,24 +21,24 @@
       <div class="col-span-2">
         <div class="w-full flex flex-col">
 
-          <div class="h-[8vh] w-full test-color opacity-90 mx-auto flex justify-center items-center rounded-tl-xl">
-            <div class="bg-white flex items-center justify-between h-[4vh] w-[220px] p-5 rounded-full cursor-pointer" title="Enter member name">
+          <div class="h-[6vh] w-full test-color opacity-90 mx-auto flex justify-center items-center rounded-tl-lg">
+            <div class="bg-white opacity-95 flex items-center justify-between h-[2vh] w-[220px] p-4 rounded-full cursor-pointer" title="Enter member name">
               <input type="text" v-model="searchInput" class="w-full focus:outline-none" placeholder="Search members...">
-              <i class="fas fa-search text-orange-400 text-2xl "></i>
+              <i class="fas fa-search text-orange-400 text-lg "></i>
             </div>
           </div>
 
           <template v-if="profile && filteredPeople.length > 0">
-            <div ref="peopleList" class="w-full test-color opacity-80 overflow-y-scroll h-[650px] hide-scrollbar">
+            <div ref="peopleList" class="w-full test-color opacity-80 overflow-y-scroll h-[72vh] hide-scrollbar">
               <ul>
                 <li v-for="person in filteredPeople" :key="person.id">
-                  <div class="flex justify-between items-center py-4 w-[95%] mx-auto">
-                    <div class="flex justify-between items-center text-gray-300 hover:text-orange-400 hover:scale-105 duration-300" @click="openChat(person.id)" :title="'Chat with ' + person.name ">
+                  <div class="flex justify-between items-center py-4 w-[95%] mx-auto ">
+                    <div class="flex justify-between items-center text-gray-300 hover:text-orange-400 hover:scale-105 duration-300 " @click="openChat(person.id)" :title="'Chat with ' + person.name ">
                       <img v-if="person.image" :src="person.image" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
                       <img v-if="!person.image" src="../assets/avatar.jpg" class=" h-[60px] w-[60px] p-1 rounded-full border border-gray-600 ml-4 cursor-pointer" alt="Profile Image" />
-                      <h1 class="text-base md:text-lg font-semibold ml-10 sm:ml-4 cursor-pointer">{{ person.name }}</h1>
+                      <h1 class="text-base md:text-base font-semibold ml-10 sm:ml-4 cursor-pointer">{{ person.name }}</h1>
                     </div>
-                    <i class="fas fa-trash-alt text-sm md:text-base text-orange-400 hover:text-gray-600 text-md mr-3 sm:mr-8 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
+                    <i class="fas fa-trash-alt text-sm md:text-sm text-gray-600 hover:text-orange-400 text-md mr-1 cursor-pointer" @click="deletePerson(person.id)" :title="'Delete ' + person.name "></i>
                   </div>
                 </li>
               </ul>
@@ -46,16 +46,16 @@
           </template>
 
           <template v-else-if="profile && filteredPeople.length === 0">
-            <div class="w-full test-color opacity-80 h-[66vh] md:h-[70vh] xl:h-[650px]">
+            <div class="w-full test-color opacity-80 h-[72vh]">
               <div class="flex justify-center items-center py-[29.5px] text-gray-300">
-                <h1 class="text-base md:text-lg  font-semibold">There is no one to be found.</h1>
-                <i class="fas fa-satellite-dish text-2xl ml-2 -mt-2"></i>
+                <h1 class="text-base font-semibold">There is no one to be found.</h1>
+                <i class="fas fa-satellite-dish text-lg ml-2 -mt-2"></i>
               </div>
             </div>
           </template>
 
-          <div class="h-[8vh] w-full test-color opacity-90 mx-auto sm:flex justify-center items-center xl:rounded-bl-xl">
-            <div class="bg-white flex items-center justify-center h-10 w-10 p-5 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
+          <div class="h-[6vh] w-full test-color opacity-90 mx-auto sm:flex justify-center items-center xl:rounded-bl-xl">
+            <div class="bg-white opacity-95 flex items-center justify-center h-5 w-5 p-4 rounded-full cursor-pointer" @click="scrollToTop" title="Top">
               <div class="focus:outline-none">
                 <i class="fas fa-angle-up text-gray-400 text-2xl hover:-mt-1 px-[10px] py-1 hover:text-orange-400"></i>
               </div>
@@ -65,9 +65,9 @@
       </div>
 
       <div class="col-span-6">
-        <div v-if="selectedChat !== null && currentPerson !== null" class="w-full mx-auto text-base test-color opacity-90 rounded-r-xl">
+        <div v-if="selectedChat !== null && currentPerson !== null" class="w-full mx-auto text-base test-color opacity-90 rounded-r-lg">
           <div class=" w-full flex justify-evenly items-end">
-            <div class="flex flex-col-reverse h-[722px] overflow-y-scroll hide-scrollbar w-[95%] opacity-80 text-white">
+            <div class="flex flex-col-reverse h-[77.8vh] overflow-y-scroll hide-scrollbar w-[95%] opacity-80 text-white">
               <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
                 <div class="flex items-center justify-start">
                   <img v-if="message.sender === currentPerson.id && currentPerson.image" :src="currentPerson.image" class="img-message-mobile mr-3" />
@@ -82,7 +82,7 @@
               </span>
             </div>
           </div>
-          <div class="flex items-center p-3 w-full">
+          <div class="flex items-center pb-2 w-full">
             <input v-model="messageInput" @keyup.enter="sendMessage" type="text" title="Write a new message" class="input-class">
             <button @click="sendMessage" class="bttn-class" title="Send message">
               <i class="fas fa-rocket text-xl"></i>
@@ -91,9 +91,9 @@
         </div>
         <div v-else>
           <div>
-            <div class="test-color opacity-90 h-[8vh] rounded-tr-xl"></div>
-            <div class="test-color opacity-80 h-[650px]"></div>
-            <div class="test-color opacity-90 h-[8vh] rounded-br-xl"></div>
+            <div class="test-color opacity-90 h-[6vh] rounded-tr-xl"></div>
+            <div class="test-color opacity-80 h-[72vh]"></div>
+            <div class="test-color opacity-90 h-[6vh] rounded-br-xl"></div>
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@
     </div>
   </template>
 
-  <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+  <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-5 z-[4]">
     <div class="bg-white rounded-md w-64 md:w-[500px]">
       <div class="p-4 flex justify-end">
         <i class="fas fa-times mr-2 text-sm text-gray-500 cursor-pointer" @click="cancelDelete"></i>
@@ -122,6 +122,12 @@
       </div>
     </div>
   </div>
+
+  <!-- <div v-if="profile" class="z-[0]">
+    <i class="fas fa-meteor absolute bottom-[10px] opacity-30 right-[250px] text-[200px] text-orange-400 z-[0]"></i>
+    <i class="fas fa-meteor absolute top-[150px] opacity-30 left-[530px] text-[200px] text-orange-400 z-[0]"></i>
+  </div> -->
+
 
 </template>
 
@@ -296,10 +302,10 @@ const reversedFilteredMessages = computed(() => {
   background-color: #24243e;
 }
 .input-class {
-  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-200 focus:outline-none
+  @apply w-[90%] h-[4vh] pl-4 mx-auto rounded-lg border-2 border-orange-200 focus:outline-none
 }
 .bttn-class {
-  @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
+  @apply w-[50px] px-3 py-2 bg-gradient-to-tr bg-orange-400 hover:bg-orange-500 border-2 border-orange-400 text-white rounded-full mr-2
 }
 .img-current {
   @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300

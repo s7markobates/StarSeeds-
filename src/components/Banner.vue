@@ -46,6 +46,7 @@ rocketVisible.value.slice(1, 50).forEach((_, index) => {
   to {
     opacity: 0;
     transform: translateX(calc(100% + 115px)) translateY(-350px);
+    scale: 1.1;
   }
 }
 .delay-75:nth-child(n) {
