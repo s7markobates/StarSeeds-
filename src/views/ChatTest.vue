@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-span-6">
-                <div v-if="selectedChat !== null" class="w-full mx-auto text-base test-color opacity-90 rounded-r-xl">
+                <div v-if="selectedChat !== null && currentPerson !== null" class="w-full mx-auto text-base test-color opacity-90 rounded-r-xl">
                     <div class=" w-full flex justify-evenly items-end">
                       <div class="flex flex-col-reverse h-[722px] overflow-y-scroll hide-scrollbar w-[95%] opacity-80 text-white">
                         <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
@@ -135,8 +135,9 @@ const messages = ref([])
 
 const selectedChat = ref(null);
 
-const openChat = (person) => {
-    selectedChat.value = person;
+const openChat = (personId) => {
+    selectedChat.value = personId;
+    currentPerson.value = people.value.find(person => person.id === personId);
     console.log(selectedChat.value)
 };
 
