@@ -122,7 +122,7 @@
       </div>
     </div>
   </div>
-  
+
 </template>
 
 <script setup>
@@ -139,9 +139,9 @@ const messages = ref([])
 const selectedChat = ref(null);
 
 const openChat = (personId) => {
-    selectedChat.value = personId;
-    currentPerson.value = people.value.find(person => person.id === personId);
-    console.log(selectedChat.value)
+  selectedChat.value = personId;
+  currentPerson.value = people.value.find(person => person.id === personId);
+  console.log(selectedChat.value)
 };
 
 
@@ -294,24 +294,24 @@ const reversedFilteredMessages = computed(() => {
   background-color: transparent;
 }
 .test-color {
-    background-color: #24243e;
+  background-color: #24243e;
 }
 .input-class {
-    @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-200 focus:outline-none
-  }
+  @apply w-[80%] h-[55px] pl-6 ml-6 rounded-2xl border-2 border-orange-200 focus:outline-none
+}
 .bttn-class {
-    @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
+  @apply w-[80px] px-2 py-1 bg-gradient-to-tr from-orange-400 to-orange-600 border-2 border-orange-400 text-white rounded-full ml-5
 }
 .img-current {
-    @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
+  @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
 }
 .img-message-mobile {
-    @apply h-10 w-10 rounded-full border-2 cursor-pointer
+  @apply h-10 w-10 rounded-full border-2 cursor-pointer
 }
 .profile-message {
-    @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right hover:bg-opacity-90 text-sm sm:text-base
+  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right hover:bg-opacity-90 text-sm sm:text-base
 }
 .current-person-message {
-    @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50 text-sm sm:text-base
+  @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50 text-sm sm:text-base
 }
 </style>
