@@ -66,8 +66,8 @@
 
       <div class="col-span-6">
         <div v-if="selectedChat !== null && currentPerson !== null" class="w-full mx-auto text-base test-color opacity-90 rounded-r-lg">
-          <div class=" w-full flex justify-evenly items-end">
-            <div class="flex flex-col-reverse h-[77.8vh] overflow-y-scroll hide-scrollbar w-[95%] opacity-80 text-white">
+          <div class=" w-full flex justify-evenly items-end h-[77.8vh]">
+            <div class="flex flex-col-reverse h-[70.9vh] overflow-y-scroll hide-scrollbar w-[95%] opacity-80 text-white">
               <span v-for="message in reversedFilteredMessages" :key="message.id" :class="messageClass(message)">
                 <div class="flex items-center justify-start">
                   <img v-if="message.sender === currentPerson.id && currentPerson.image" :src="currentPerson.image" class="img-message-mobile mr-3" />
@@ -302,7 +302,7 @@ const reversedFilteredMessages = computed(() => {
   background-color: #24243e;
 }
 .input-class {
-  @apply w-[90%] h-[4vh] pl-4 mx-auto rounded-lg border-2 border-orange-200 focus:outline-none
+  @apply w-[90%] h-[4vh] pl-4 mx-auto rounded-lg border-2 border-orange-400 focus:outline-none
 }
 .bttn-class {
   @apply w-[50px] px-3 py-2 bg-gradient-to-tr bg-orange-400 hover:bg-orange-500 border-2 border-orange-400 text-white rounded-full mr-2
@@ -314,9 +314,9 @@ const reversedFilteredMessages = computed(() => {
   @apply h-10 w-10 rounded-full border-2 cursor-pointer
 }
 .profile-message {
-  @apply bg-orange-400 p-3 my-2 ml-16 rounded-b-xl rounded-tl-xl text-right hover:bg-opacity-90 text-sm sm:text-base
+  @apply bg-orange-400 p-2 my-1 ml-16 rounded-b-lg rounded-tl-lg text-right hover:bg-opacity-90 text-sm 
 }
 .current-person-message {
-  @apply bg-[#0f0c29] bg-opacity-60 p-3 my-2 mr-16 ml-2 rounded-b-xl rounded-tr-xl hover:bg-opacity-50 text-sm sm:text-base
+  @apply bg-[#100d26]  p-2 my-1 mr-16 ml-2 rounded-b-lg rounded-tr-lg hover:bg-opacity-70 text-sm
 }
 </style>

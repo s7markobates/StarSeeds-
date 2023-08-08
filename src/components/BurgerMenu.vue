@@ -58,6 +58,7 @@ export default {
         currentRoute.name === 'profileDetails' ||
         currentRoute.name === 'feed' ||
         currentRoute.name === 'chat' ||
+        currentRoute.name === 'chatTest' ||
         currentRoute.name === 'chatPerson'
         ? 'dark' : 'light'
       )
