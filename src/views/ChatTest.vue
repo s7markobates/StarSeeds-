@@ -253,7 +253,6 @@ const sendMessage = () => {
     messageInput.value = ''
 
     localStorage.setItem('messages', JSON.stringify(messages.value))
-
   }
 }
 const messageClass = (message) => {
