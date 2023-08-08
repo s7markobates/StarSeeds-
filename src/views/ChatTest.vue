@@ -142,15 +142,6 @@ const currentPerson = ref(null)
 const messageInput = ref('')
 const messages = ref([])
 
-const selectedChat = ref(null);
-
-const openChat = (personId) => {
-  selectedChat.value = personId;
-  currentPerson.value = people.value.find(person => person.id === personId);
-  console.log(selectedChat.value)
-};
-
-
 onMounted(() => {
   const localProfile = JSON.parse(localStorage.getItem('formData'))
   if (localProfile) {
@@ -207,6 +198,14 @@ const getFirstName = computed(() => {
     return firstName
   }
 })
+
+const selectedChat = ref(null);
+
+const openChat = (personId) => {
+  selectedChat.value = personId;
+  currentPerson.value = people.value.find(person => person.id === personId);
+  // console.log(selectedChat.value)
+};
 
 const showModal = ref(false)
 const personToDelete = ref(null)
@@ -307,11 +306,9 @@ const reversedFilteredMessages = computed(() => {
 .bttn-class {
   @apply w-[50px] px-3 py-2 bg-gradient-to-tr bg-orange-400 hover:bg-orange-500 border-2 border-orange-400 text-white rounded-full mr-2
 }
-.img-current {
-  @apply h-40 w-40 rounded-full border-4 border-[#0f0c29] border-opacity-60 hover:scale-105 hover:shadow-2xl cursor-pointer duration-300
-}
+
 .img-message-mobile {
-  @apply h-10 w-10 rounded-full border-2 cursor-pointer
+  @apply h-10 w-10 rounded-full border-2 cursor-pointer opacity-100
 }
 .profile-message {
   @apply bg-orange-400 p-2 my-1 ml-16 rounded-b-lg rounded-tl-lg text-right hover:bg-opacity-90 text-sm 
