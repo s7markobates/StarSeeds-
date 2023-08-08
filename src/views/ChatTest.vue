@@ -122,13 +122,11 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { RouterLink, useRouter, useRoute } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 const profile = ref(null)
 const people = ref([])
 const searchInput = ref('')
-// const router = useRouter()
-const route = useRoute()
 const currentPerson = ref(null)
 const messageInput = ref('')
 const messages = ref([])
