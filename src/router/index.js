@@ -79,11 +79,6 @@ const router = createRouter({
       meta: {
         darkMode: true
       }
-    },
-    {
-      path: '/avatar',
-      name: 'avatar',
-      component: () => import('../components/Avatar.vue')
     }
   ]
 })
