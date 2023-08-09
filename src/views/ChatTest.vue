@@ -202,10 +202,10 @@ const getFirstName = computed(() => {
 const selectedChat = ref(null);
 
 const openChat = (personId) => {
-  selectedChat.value = personId;
-  currentPerson.value = people.value.find(person => person.id === personId);
+  selectedChat.value = personId
+  currentPerson.value = people.value.find(person => person.id === personId)
   // console.log(selectedChat.value)
-};
+}
 
 const showModal = ref(false)
 const personToDelete = ref(null)
@@ -314,6 +314,6 @@ const reversedFilteredMessages = computed(() => {
   @apply bg-orange-400 p-2 my-1 ml-16 rounded-b-lg rounded-tl-lg text-right hover:bg-opacity-90 text-sm 
 }
 .current-person-message {
-  @apply bg-[#100d26]  p-2 my-1 mr-16 ml-2 rounded-b-lg rounded-tr-lg hover:bg-opacity-70 text-sm
+  @apply bg-[#100d26] p-2 my-1 mr-16 ml-2 rounded-b-lg rounded-tr-lg hover:bg-opacity-70 text-sm
 }
 </style>
