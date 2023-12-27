@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="ml-3 mt-4 flex flex-col justify-center items-center w-[28px] h-[28px] bg-transparent border-0 cursor-pointer"
-      @click="toggleOpen">
+      @click="toggleOpen" title="Open menu">
       <i :class="`fas fa-bars text-2xl sm:text-[32px] ${!isOpen ? 'text-orange-400' : 'text-yellow-400'} `"></i>
     </button>
     <div v-if="isOpen" :class="[burgerDark, 'w-screen sm:w-screen z-30 border-b-4 border-orange-400']" @click.stop>

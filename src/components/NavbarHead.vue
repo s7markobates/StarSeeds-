@@ -1,7 +1,7 @@
 <template>
   <div ref="root">
     <div :class="navbarClass" class="w-full h-16 flex justify-between fixed top-0 z-[5] border-b-4 border-t border-orange-400">
-      <BurgerMenu :is-open="isOpen" @click="toggleMenu" title="Open menu"/>
+      <BurgerMenu :is-open="isOpen" @click="toggleMenu"/>
       <Logo v-if="!isOpen" />
       <div>
         <div v-if="isOnFeed" v-show="!isOpen" >
